@@ -84,6 +84,44 @@ This class is used to interact with the Discord WebSocket and API.</p>
 
 </div></blockquote>
 <dl class="method">
+<dt id="discord.Client.delete_message">
+<code class="descname">delete_message</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.delete_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a></p>
+<p>A fairly straightforward function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> &#8211; The <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> to delete.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.edit_message">
+<code class="descname">edit_message</code><span class="sig-paren">(</span><em>message</em>, <em>new_content</em>, <em>mentions=True</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> with the new message content.</p>
+<p>The new_content must be able to be transformed into a string via <code class="docutils literal"><span class="pre">str(new_content)</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>message</strong> &#8211; The <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> to edit.</li>
+<li><strong>new_content</strong> &#8211; The new content to replace the message with.</li>
+<li><strong>mentions</strong> &#8211; The mentions for the user. Same as <a class="reference internal" href="#discord.Client.send_message" title="discord.Client.send_message"><code class="xref py py-meth docutils literal"><span class="pre">send_message()</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The new edited message or None if an error occurred.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.event">
 <code class="descname">event</code><span class="sig-paren">(</span><em>function</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.event" title="Permalink to this definition">¶</a></dt>
 <dd><p>A decorator that registers an event to listen to.</p>
@@ -129,6 +167,31 @@ errors occur.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="discord.Client.logs_from">
+<code class="descname">logs_from</code><span class="sig-paren">(</span><em>channel</em>, <em>limit=500</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.logs_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>A generator that obtains logs from a specified channel.</p>
+<p>Yielding from the generator returns a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> object with the message data.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">logs_from</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;!hello&#39;</span><span class="p">):</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">edit_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s">&#39;goodbye&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> to obtain the logs from.</li>
+<li><strong>limit</strong> &#8211; The number of messages to retrieve.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.run">
 <code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs the client and allows it to receive messages and events.</p>
@@ -149,11 +212,14 @@ no one is mentioned. Note that to mention someone in the content, you should use
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>destination</strong> &#8211; The location to send the message.</li>
 <li><strong>content</strong> &#8211; The content of the message to send.</li>
 <li><strong>mentions</strong> &#8211; A list of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to mention in the message or a boolean. Ignored for private messages.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> sent or None if error occurred.</p>
 </td>
 </tr>
 </tbody>
@@ -219,12 +285,25 @@ The parameter passed is raw data that was parsed via <code class="docutils liter
 <dl class="function">
 <dt id="discord.on_message_delete">
 <code class="descclassname">discord.</code><code class="descname">on_message_delete</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_message_delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Called when a message is deleted from any given server.</p>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="discord.on_message_edit">
+<code class="descclassname">discord.</code><code class="descname">on_message_edit</code><span class="sig-paren">(</span><em>before</em>, <em>after</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_message_edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a message is deleted or edited from any given server. If the message is not found in the
+<a class="reference internal" href="#discord.Client.messages" title="discord.Client.messages"><code class="xref py py-attr docutils literal"><span class="pre">Client.messages</span></code></a> cache, then these events will not be called. This happens if the message
+is too old or the client is participating in high traffic servers. To fix this, increase
+the <code class="docutils literal"><span class="pre">max_length</span></code> option of <a class="reference internal" href="#discord.Client" title="discord.Client"><code class="xref py py-class docutils literal"><span class="pre">Client</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> &#8211; A <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> of the deleted message.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> &#8211; A <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> of the deleted message.</li>
+<li><strong>before</strong> &#8211; A <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> of the previous version of the message.</li>
+<li><strong>after</strong> &#8211; A <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> of the current version of the message.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -288,13 +367,13 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.edited_timestamp">
 <code class="descname">edited_timestamp</code><a class="headerlink" href="#discord.Message.edited_timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>A datetime object containing the edited time of the message. Could be None.</p>
+<dd><p>A naive UTC datetime object containing the edited time of the message. Could be None.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.timestamp">
 <code class="descname">timestamp</code><a class="headerlink" href="#discord.Message.timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>A datetime object containing the time the message was created.</p>
+<dd><p>A naive UTC datetime object containing the time the message was created.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -336,7 +415,7 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.mentions">
 <code class="descname">mentions</code><a class="headerlink" href="#discord.Message.mentions" title="Permalink to this definition">¶</a></dt>
-<dd><p>An array of :class:<a href="#id1"><span class="problematic" id="id2">`</span></a>User`s that were mentioned.</p>
+<dd><p>An array of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> that were mentioned.</p>
 </dd></dl>
 
 <dl class="attribute">
