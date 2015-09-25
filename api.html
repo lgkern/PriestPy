@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API Reference &mdash; discord.py 0.5.0 documentation</title>
+    <title>API Reference &mdash; discord.py 0.5.1 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="discord.py 0.5.0 documentation" href="index.html" />
-    <link rel="prev" title="Welcome to discord.py’s documentation!" href="index.html" />
+    <link rel="top" title="discord.py 0.5.1 documentation" href="index.html" />
+    <link rel="prev" title="Setting Up Logging" href="logging.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -92,12 +92,13 @@ This class is used to interact with the Discord WebSocket and API.</p>
 <dl class="method">
 <dt id="discord.Client.accept_invite">
 <code class="descname">accept_invite</code><span class="sig-paren">(</span><em>invite</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.accept_invite" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accepts an <a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a>.</p>
+<dd><p>Accepts an <a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a> or a URL to an invite.</p>
+<p>The URL must be a discord.gg URL. e.g. &#8220;<a class="reference external" href="http://discord.gg/codehere">http://discord.gg/codehere</a>&#8220;</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>invite</strong> &#8211; The <a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a> to accept.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>invite</strong> &#8211; The <a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a> or URL to an invite to accept.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the invite was successfully accepted, False otherwise.</td>
 </tr>
@@ -114,10 +115,13 @@ This class is used to interact with the Discord WebSocket and API.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> to ban the member from.</li>
 <li><strong>user</strong> &#8211; The <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to ban.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if ban was successful, False otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -175,13 +179,16 @@ This class is used to interact with the Discord WebSocket and API.</p>
 <dl class="method">
 <dt id="discord.Client.delete_channel">
 <code class="descname">delete_channel</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.delete_channel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes a <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> from its respective <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
-<p>Note that you need proper permissions to delete the channel.</p>
+<dd><p>Deletes a channel.</p>
+<p>In order to delete the channel, the client must have the proper permissions
+in the server the channel belongs to.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> to delete.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if channel was deleted successfully, False otherwise.</td>
 </tr>
 </tbody>
 </table>
@@ -190,13 +197,63 @@ This class is used to interact with the Discord WebSocket and API.</p>
 <dl class="method">
 <dt id="discord.Client.delete_message">
 <code class="descname">delete_message</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.delete_message" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a></p>
-<p>A fairly straightforward function.</p>
+<dd><p>Deletes a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a>.</p>
+<p>Your own messages could be deleted without any proper permissions. However to
+delete other people&#8217;s messages, you need the proper permissions to do so.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> &#8211; The <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> to delete.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the message was deleted successfully, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.delete_role">
+<code class="descname">delete_role</code><span class="sig-paren">(</span><em>server</em>, <em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.delete_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the specified <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> for the entire <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
+<p>Works in a similar matter to <a class="reference internal" href="#discord.Client.edit_role" title="discord.Client.edit_role"><code class="xref py py-func docutils literal"><span class="pre">edit_role()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> the role belongs to.</li>
+<li><strong>role</strong> &#8211; The <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> to delete.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if deleting was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.edit_channel">
+<code class="descname">edit_channel</code><span class="sig-paren">(</span><em>channel</em>, <em>**options</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits a <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>.</p>
+<p>You must have the proper permissions to edit the channel.</p>
+<p>References pointed to the channel will be updated with the new information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> to update.</li>
+<li><strong>name</strong> &#8211; The new channel name.</li>
+<li><strong>position</strong> &#8211; The new channel&#8217;s position in the GUI.</li>
+<li><strong>topic</strong> &#8211; The new channel&#8217;s topic.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if editing was successful, False otherwise.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -247,6 +304,38 @@ This class is used to interact with the Discord WebSocket and API.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="discord.Client.edit_role">
+<code class="descname">edit_role</code><span class="sig-paren">(</span><em>server</em>, <em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits the specified <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> for the entire <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
+<p>To use this you have to edit the role yourself and then pass it
+to this member function. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">server</span>
+<span class="n">role</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;My Cool Role&#39;</span><span class="p">,</span> <span class="n">server</span><span class="o">.</span><span class="n">roles</span><span class="p">)</span>
+<span class="n">role</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;My Not So Cool Role&#39;</span>
+<span class="n">role</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">can_kick_members</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">role</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">can_ban_members</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">client</span><span class="o">.</span><span class="n">edit_role</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that you cannot edit the name of the &#64;everyone role as that role is special.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> the role belongs to.</li>
+<li><strong>role</strong> &#8211; The <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> to edit.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if editing was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.event">
 <code class="descname">event</code><span class="sig-paren">(</span><em>function</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.event" title="Permalink to this definition">¶</a></dt>
 <dd><p>A decorator that registers an event to listen to.</p>
@@ -280,10 +369,13 @@ This class is used to interact with the Discord WebSocket and API.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> to kick the member from.</li>
 <li><strong>user</strong> &#8211; The <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to kick.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if kick was successful, False otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -299,6 +391,8 @@ This class is used to interact with the Discord WebSocket and API.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> to leave.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if leaving was successful, False otherwise.</td>
 </tr>
 </tbody>
 </table>
@@ -365,7 +459,7 @@ errors occur.</p>
 
 <dl class="method">
 <dt id="discord.Client.send_message">
-<code class="descname">send_message</code><span class="sig-paren">(</span><em>destination</em>, <em>content</em>, <em>mentions=True</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.send_message" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send_message</code><span class="sig-paren">(</span><em>destination</em>, <em>content</em>, <em>mentions=True</em>, <em>tts=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.send_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sends a message to the destination given with the content given.</p>
 <p>The destination could be a <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> or a <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a>. For convenience
 it could also be a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>. If it&#8217;s a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> or <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a> then it
@@ -382,6 +476,7 @@ no one is mentioned. Note that to mention someone in the content, you should use
 <li><strong>destination</strong> &#8211; The location to send the message.</li>
 <li><strong>content</strong> &#8211; The content of the message to send.</li>
 <li><strong>mentions</strong> &#8211; A list of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to mention in the message or a boolean. Ignored for private messages.</li>
+<li><strong>tts</strong> &#8211; If <code class="docutils literal"><span class="pre">True</span></code>, sends tries to send the message using text-to-speech.</li>
 </ul>
 </td>
 </tr>
@@ -416,10 +511,13 @@ no one is mentioned. Note that to mention someone in the content, you should use
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> to unban the member from.</li>
 <li><strong>user</strong> &#8211; The <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to unban.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if unban was successful, False otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -556,6 +654,20 @@ on the value of <a class="reference internal" href="#discord.Channel.is_private"
 </dd></dl>
 
 <dl class="function">
+<dt id="discord.on_channel_update">
+<code class="descclassname">discord.</code><code class="descname">on_channel_update</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_channel_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called whenever a channel is updated. e.g. changed name, topic, permissions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> that got updated.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="discord.on_member_join">
 <code class="descclassname">discord.</code><code class="descname">on_member_join</code><span class="sig-paren">(</span><em>member</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_member_join" title="Permalink to this definition">¶</a></dt>
 <dt id="discord.on_member_remove">
@@ -604,6 +716,37 @@ that got deleted must have been part of the client&#8217;s participating servers
 </dd></dl>
 
 </div>
+</div>
+<div class="section" id="utility-functions">
+<h2>Utility Functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="discord.utils.find">
+<code class="descclassname">discord.utils.</code><code class="descname">find</code><span class="sig-paren">(</span><em>predicate</em>, <em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.utils.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>A helper to return the first element found in the sequence
+that meets the predicate. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">member</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;Mighty&#39;</span><span class="p">,</span> <span class="n">channel</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">members</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would find the first <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> whose name is &#8216;Mighty&#8217; and return it.</p>
+<p>This is different from <a class="reference external" href="https://docs.python.org/3.6/library/functions.html#filter">filter</a> due to the fact it stops the moment it finds
+a valid entry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>predicate</strong> &#8211; A function that returns a boolean-like result.</li>
+<li><strong>seq</strong> &#8211; The sequence to iterate through.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The first result of the predicate that returned a <code class="docutils literal"><span class="pre">True</span></code>-like value or <code class="docutils literal"><span class="pre">None</span></code> if nothing was found.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="data-classes">
 <h2>Data Classes<a class="headerlink" href="#data-classes" title="Permalink to this headline">¶</a></h2>
@@ -789,6 +932,12 @@ the user has no avatar.</p>
 <dt id="discord.Server.owner">
 <code class="descname">owner</code><a class="headerlink" href="#discord.Server.owner" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> who owns the server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Server.get_default_role">
+<code class="descname">get_default_role</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Server.get_default_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the &#64;everyone role that all members have by default.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1031,6 +1180,12 @@ were regular bools. This allows you to edit permissions.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="discord.Channel.topic">
+<code class="descname">topic</code><a class="headerlink" href="#discord.Channel.topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>The channel&#8217;s topic. None if it doesn&#8217;t exist.</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="discord.Channel.is_private">
 <code class="descname">is_private</code><a class="headerlink" href="#discord.Channel.is_private" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">True</span></code> if the channel is a private channel (i.e. PM). <code class="docutils literal"><span class="pre">False</span></code> in this case.</p>
@@ -1205,6 +1360,7 @@ values in the <a class="reference internal" href="#discord.Server.roles" title="
 <li><a class="reference internal" href="#event-reference">Event Reference</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
 <li><a class="reference internal" href="#data-classes">Data Classes</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
@@ -1214,7 +1370,7 @@ values in the <a class="reference internal" href="#discord.Server.roles" title="
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to discord.py&#8217;s documentation!</a></li>
+      <li>Previous: <a href="logging.html" title="previous chapter">Setting Up Logging</a></li>
   </ul></li>
 </ul>
 </div>
