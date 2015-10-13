@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Setting Up Logging &mdash; discord.py 0.6.0 documentation</title>
+    <title>Setting Up Logging &mdash; discord.py 0.7.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.0',
+        VERSION:     '0.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="discord.py 0.6.0 documentation" href="index.html" />
+    <link rel="top" title="discord.py 0.7.0 documentation" href="index.html" />
     <link rel="next" title="API Reference" href="api.html" />
     <link rel="prev" title="Welcome to discord.py’s documentation!" href="index.html" />
    
@@ -38,11 +38,30 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="setting-up-logging">
-<h1>Setting Up Logging<a class="headerlink" href="#setting-up-logging" title="Permalink to this headline">¶</a></h1>
-<p>Newer version of <em>discord.py</em> have the capability of logging certain events via the <a class="reference external" href="https://docs.python.org/2/library/logging.html">logging</a> python module.</p>
-<p>This is helpful if you want to see certain issues in <em>discord.py</em> or want to listen to events yourself.</p>
-<p>Setting up logging is fairly simple:</p>
+  <div class="versionadded">
+<p><span class="versionmodified">New in version 0.6.0.</span></p>
+</div>
+<div class="section" id="setting-up-logging">
+<span id="logging-setup"></span><h1>Setting Up Logging<a class="headerlink" href="#setting-up-logging" title="Permalink to this headline">¶</a></h1>
+<p><em>discord.py</em> logs errors, exceptions, and debug information via the
+<a class="reference external" href="https://docs.python.org/2/library/logging.html">logging</a> python module. It is strongly recommended that the logging
+module is configured, as no errors or warnings will be output at all if
+it is not set up. Configuration of the <code class="docutils literal"><span class="pre">logging</span></code> module can be as
+simple as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Placed at the start of the application. This will output the logs from
+discord as well as other libraries that uses the <code class="docutils literal"><span class="pre">logging</span></code> module
+directly to the console.</p>
+<p>The optinal <code class="docutils literal"><span class="pre">level</span></code> argument specifies what level of events to log
+out and can any of <code class="docutils literal"><span class="pre">CRITICAL</span></code>, <code class="docutils literal"><span class="pre">ERROR</span></code>, <code class="docutils literal"><span class="pre">WARNING</span></code>, <code class="docutils literal"><span class="pre">INFO</span></code>, and
+<code class="docutils literal"><span class="pre">DEBUG</span></code> and if not specified defaults to <code class="docutils literal"><span class="pre">WARNING</span></code>.</p>
+<p>More advance setups are possible with the <code class="docutils literal"><span class="pre">logging</span></code> module.  To for
+example write the logs to a file called <code class="docutils literal"><span class="pre">discord.log</span></code> instead of
+outputting them to to the console the following snippet can be used:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">discord</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 
@@ -53,9 +72,11 @@
 <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This would create a logger that writes to a file called <code class="docutils literal"><span class="pre">discord.log</span></code>. This is recommended as there are a lot of events
-logged at a time and it would clog out the stdout of your program.</p>
-<p>For more information, check the documentation and tutorial of the <a class="reference external" href="https://docs.python.org/2/library/logging.html">logging</a> module.</p>
+<p>This is recommended, especially at verbose levels such as <code class="docutils literal"><span class="pre">INFO</span></code>,
+and <code class="docutils literal"><span class="pre">DEBUG</span></code> as there are a lot of events logged and it would clog the
+stdout of your program.</p>
+<p>For more information, check the documentation and tutorial of the
+<a class="reference external" href="https://docs.python.org/2/library/logging.html">logging</a> module.</p>
 </div>
 
 
@@ -100,7 +121,7 @@ logged at a time and it would clog out the stdout of your program.</p>
       &copy;2015, Rapptz.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4a0+</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
