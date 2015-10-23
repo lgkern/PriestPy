@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API Reference &mdash; discord.py 0.7.0 documentation</title>
+    <title>API Reference &mdash; discord.py 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="discord.py 0.7.0 documentation" href="index.html" />
+    <link rel="top" title="discord.py 0.8.0 documentation" href="index.html" />
     <link rel="prev" title="Setting Up Logging" href="logging.html" />
    
   
@@ -40,6 +40,14 @@
   <div class="section" id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <p>The following section outlines the API of discord.py.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This module uses the Python logging module to log diagnostic and errors
+in an output independent way.  If the logging module is not configured,
+these logs will not be output anywhere.  See <a class="reference internal" href="logging.html#logging-setup"><span class="std std-ref">Setting Up Logging</span></a> for
+more information on how to set up and use the logging module with
+discord.py.</p>
+</div>
 <div class="section" id="client">
 <h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -107,6 +115,29 @@ This class is used to interact with the Discord WebSocket and API.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="discord.Client.add_roles">
+<code class="descname">add_roles</code><span class="sig-paren">(</span><em>member</em>, <em>*roles</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.add_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the specified <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> a number of <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> s.</p>
+<p>You must have the proper permissions to use this function.</p>
+<p>This method <strong>appends</strong> a role to a member.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>member</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> to give roles to.</li>
+<li><strong>roles</strong> &#8211; An iterable of <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> s to give the member.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if the operation was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.ban">
 <code class="descname">ban</code><span class="sig-paren">(</span><em>server</em>, <em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.ban" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bans a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> from their respective <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
@@ -122,6 +153,30 @@ This class is used to interact with the Discord WebSocket and API.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if ban was successful, False otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.change_status">
+<code class="descname">change_status</code><span class="sig-paren">(</span><em>game_id=None</em>, <em>idle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.change_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the client&#8217;s status.</p>
+<p>The game_id parameter is a numeric ID (not a string) that represents
+a game being played currently. The list of game_id to actual games changes
+constantly and would thus be out of date pretty quickly. An old version of
+the game_id database can be seen <a class="reference external" href="https://gist.github.com/Rapptz/a82b82381b70a60c281b">here</a> to help you get started.</p>
+<p>The idle parameter is a boolean parameter that indicates whether the
+client should go idle or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>game_id</strong> &#8211; The numeric game ID being played. None if no game is being played.</li>
+<li><strong>idle</strong> &#8211; A boolean indicating if the client should go idle.</li>
+</ul>
 </td>
 </tr>
 </tbody>
@@ -177,6 +232,21 @@ This class is used to interact with the Discord WebSocket and API.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="discord.Client.create_role">
+<code class="descname">create_role</code><span class="sig-paren">(</span><em>server</em>, <em>**fields</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.create_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a>.</p>
+<p>The fields parameter is the same as <a class="reference internal" href="#discord.Client.edit_role" title="discord.Client.edit_role"><code class="xref py py-func docutils literal"><span class="pre">edit_role()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> if creation was successful, None otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.delete_channel">
 <code class="descname">delete_channel</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.delete_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a channel.</p>
@@ -189,6 +259,30 @@ in the server the channel belongs to.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> to delete.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if channel was deleted successfully, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.delete_channel_permissions">
+<code class="descname">delete_channel_permissions</code><span class="sig-paren">(</span><em>channel</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.delete_channel_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a channel specific permission overwrites for a target
+in the specified <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>.</p>
+<p>The target parameter follows the same rules as <a class="reference internal" href="#discord.Client.set_channel_permissions" title="discord.Client.set_channel_permissions"><code class="xref py py-meth docutils literal"><span class="pre">set_channel_permissions()</span></code></a>.</p>
+<p>You must have the proper permissions to do this.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> to give the specific permissions for.</li>
+<li><strong>target</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> or <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> to overwrite permissions for.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if deletion is successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -308,19 +402,18 @@ delete other people&#8217;s messages, you need the proper permissions to do so.<
 
 <dl class="method">
 <dt id="discord.Client.edit_role">
-<code class="descname">edit_role</code><span class="sig-paren">(</span><em>server</em>, <em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_role" title="Permalink to this definition">¶</a></dt>
+<code class="descname">edit_role</code><span class="sig-paren">(</span><em>server</em>, <em>role</em>, <em>**fields</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_role" title="Permalink to this definition">¶</a></dt>
 <dd><p>Edits the specified <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> for the entire <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
-<p>To use this you have to edit the role yourself and then pass it
-to this member function. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">server</span>
-<span class="n">role</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;My Cool Role&#39;</span><span class="p">,</span> <span class="n">server</span><span class="o">.</span><span class="n">roles</span><span class="p">)</span>
-<span class="n">role</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;My Not So Cool Role&#39;</span>
-<span class="n">role</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">can_kick_members</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">role</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">can_ban_members</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">client</span><span class="o">.</span><span class="n">edit_role</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
-</pre></div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.8.0: </span>Editing now uses keyword arguments instead of editing the <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> object directly.</p>
 </div>
-<p>Note that you cannot edit the name of the &#64;everyone role as that role is special.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At the moment, the Discord API allows you to set the colour to any
+RGB value. This will change in the future so it is recommended that
+you use the constants in the <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> instead such as
+<code class="xref py py-attr docutils literal"><span class="pre">Colour.NAVY_BLUE</span></code>.</p>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -328,10 +421,15 @@ to this member function. For example:</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> the role belongs to.</li>
 <li><strong>role</strong> &#8211; The <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> to edit.</li>
+<li><strong>name</strong> &#8211; The new role name to change to. (optional)</li>
+<li><strong>permissions</strong> &#8211; The new <a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a> to change to. (optional)</li>
+<li><strong>colour</strong> &#8211; The new <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> to change to. (optional) (aliased to color as well)</li>
+<li><strong>hoist</strong> &#8211; A boolean indicating if the role should be shown separately. (optional)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if editing was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if editing was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise. If editing is successful,
+the <code class="docutils literal"><span class="pre">role</span></code> parameter will be updated with the changes.</p>
 </td>
 </tr>
 </tbody>
@@ -431,7 +529,7 @@ errors occur.</p>
 
 <dl class="method">
 <dt id="discord.Client.logs_from">
-<code class="descname">logs_from</code><span class="sig-paren">(</span><em>channel</em>, <em>limit=500</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.logs_from" title="Permalink to this definition">¶</a></dt>
+<code class="descname">logs_from</code><span class="sig-paren">(</span><em>channel</em>, <em>limit=100</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.logs_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>A generator that obtains logs from a specified channel.</p>
 <p>Yielding from the generator returns a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> object with the message data.</p>
 <p>Example:</p>
@@ -471,6 +569,54 @@ occur.</p>
 <li><strong>invite</strong> &#8211; An invite URL or <a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a> to register with.</li>
 <li><strong>fingerprint</strong> (<em>str</em>) &#8211; Unkown API parameter, defaults to None</li>
 </ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.remove_roles">
+<code class="descname">remove_roles</code><span class="sig-paren">(</span><em>member</em>, <em>*roles</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.remove_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> s from the <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>.</p>
+<p>You must have the proper permissions to use this function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>member</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> to remove roles from.</li>
+<li><strong>roles</strong> &#8211; An iterable of <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> s to remove from the member.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if the operation was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.replace_roles">
+<code class="descname">replace_roles</code><span class="sig-paren">(</span><em>member</em>, <em>*roles</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.replace_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces the <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>&#8216;s roles.</p>
+<p>You must have the proper permissions to use this function.</p>
+<p>This function <strong>replaces</strong> all roles that the member has.
+For example if the member has roles <code class="docutils literal"><span class="pre">[a,</span> <span class="pre">b,</span> <span class="pre">c]</span></code> and the
+call is <code class="docutils literal"><span class="pre">client.replace_roles(member,</span> <span class="pre">d,</span> <span class="pre">e,</span> <span class="pre">c)</span></code> then
+the member has the roles <code class="docutils literal"><span class="pre">[d,</span> <span class="pre">e,</span> <span class="pre">c]</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>member</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> to replace roles for.</li>
+<li><strong>roles</strong> &#8211; An iterable of <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> s to replace with.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if the operation was successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -538,6 +684,41 @@ no one is mentioned. Note that to mention someone in the content, you should use
 </dd></dl>
 
 <dl class="method">
+<dt id="discord.Client.set_channel_permissions">
+<code class="descname">set_channel_permissions</code><span class="sig-paren">(</span><em>channel</em>, <em>target</em>, <em>allow=None</em>, <em>deny=None</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.set_channel_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the channel specific permission overwrites for a target in the
+specified <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>.</p>
+<p>The <code class="docutils literal"><span class="pre">target</span></code> parameter should either be a <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> or a
+<a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> that belongs to the channel&#8217;s server.</p>
+<p>You must have the proper permissions to do this.</p>
+<p>Example code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">allow</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Permissions</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+<span class="n">deny</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Permissions</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+<span class="n">allow</span><span class="o">.</span><span class="n">can_mention_everyone</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">deny</span><span class="o">.</span><span class="n">can_manage_messages</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">client</span><span class="o">.</span><span class="n">set_channel_permissions</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">allow</span><span class="p">,</span> <span class="n">deny</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>channel</strong> &#8211; The <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> to give the specific permissions for.</li>
+<li><strong>target</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> or <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> to overwrite permissions for.</li>
+<li><strong>allow</strong> &#8211; A <a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a> object representing the permissions to explicitly allow. (optional)</li>
+<li><strong>deny</strong> &#8211; A <a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a> object representing the permissions to explicitly deny. (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">True</span></code> if setting is successful, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.start_private_message">
 <code class="descname">start_private_message</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.start_private_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts a private message with the user. This allows you to <a class="reference internal" href="#discord.Client.send_message" title="discord.Client.send_message"><code class="xref py py-meth docutils literal"><span class="pre">send_message()</span></code></a> to it.</p>
@@ -590,16 +771,9 @@ overriding the specific events. For example:</p>
 </pre></div>
 </div>
 <p>If an event handler raises an exception, <a class="reference internal" href="#discord.on_error" title="discord.on_error"><code class="xref py py-func docutils literal"><span class="pre">on_error()</span></code></a> will be called
-to handle it, which defaults to log a traceback and ignore the exception.</p>
+to handle it, which defaults to print a traceback and ignore the exception.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.7.0: </span>Subclassing to listen to events.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If the Python logging module is not configured, the logs will not be
-output anywhere. Meaning that exceptions in handlers will be
-silently ignored. See <a class="reference internal" href="logging.html#logging-setup"><span class="std std-ref">Setting Up Logging</span></a> for more information on how to
-set up and use the logging module with discord.py.</p>
 </div>
 <dl class="function">
 <dt id="discord.on_ready">
@@ -612,10 +786,10 @@ and the <a class="reference internal" href="#discord.Client.servers" title="disc
 <dt id="discord.on_error">
 <code class="descclassname">discord.</code><code class="descname">on_error</code><span class="sig-paren">(</span><em>event</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Usually when an event raises an uncaught exception, a traceback is
-logged and the exception is ignored. If you want to change this
-behaviour and handle the exception for whatever reason yourself,
-this event can be overridden. Which, when done, will supress the
-default logging done.</p>
+printed to stderr and the exception is ignored. If you want to
+change this behaviour and handle the exception for whatever reason
+yourself, this event can be overridden. Which, when done, will
+supress the default action of printing the traceback.</p>
 <p>The information of the exception rasied and the exception itself can
 be retreived with a standard call to <code class="docutils literal"><span class="pre">sys.exc_info()</span></code>.</p>
 <p>If you want exception to propogate out of the <a class="reference internal" href="#discord.Client" title="discord.Client"><code class="xref py py-class docutils literal"><span class="pre">Client</span></code></a> class
@@ -696,6 +870,60 @@ before the <a class="reference internal" href="#discord.Client" title="discord.C
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>response</strong> &#8211; The received message response after gone through <code class="docutils literal"><span class="pre">json.loads</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="discord.on_socket_raw_receive">
+<code class="descclassname">discord.</code><code class="descname">on_socket_raw_receive</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_socket_raw_receive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called whenever a message is received from the websocket, before
+it&#8217;s processed. Unlike <code class="docutils literal"><span class="pre">on_socket_response</span></code> this event is always
+dispatched when a message is received and the passed data is not
+processed in any way.</p>
+<p>This is only really useful for grabing the websocket stream and
+debugging purposes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>msg</strong> &#8211; The message passed on from the ws4py library. Can be an
+instance of either ws4py.messaging.TextMessage, or
+ws4py.messaging.BinaryMessage.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="discord.on_socket_raw_send">
+<code class="descclassname">discord.</code><code class="descname">on_socket_raw_send</code><span class="sig-paren">(</span><em>payload</em>, <em>binary=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_socket_raw_send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called whenever a send operation is done on the websocket before the
+message is sent. The passed parameter is the message that is to
+sent to the websocket.</p>
+<p>This is only really useful for grabing the websocket stream and
+debugging purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the <code class="docutils literal"><span class="pre">payload</span></code> parameter is mutable, and modified during the
+execution of this event, then the actual data sent out on the
+websocket will be mangled. This is especially true if
+<code class="docutils literal"><span class="pre">payload</span></code> is a generator, as reading them modifies their
+state.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>payload</strong> &#8211; The message that is about to be passed on to the
+ws4py library. It can be any of a string, a bytearray, an
+instance of ws4py.message.Message and a generator.</li>
+<li><strong>binary</strong> (<em>bool</em>) &#8211; True if the message being sent out is marked as
+binary.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -820,6 +1048,61 @@ that got deleted must have been part of the client&#8217;s participating servers
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="discord.on_server_role_create">
+<code class="descclassname">discord.</code><code class="descname">on_server_role_create</code><span class="sig-paren">(</span><em>server</em>, <em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_server_role_create" title="Permalink to this definition">¶</a></dt>
+<dt id="discord.on_server_role_delete">
+<code class="descclassname">discord.</code><code class="descname">on_server_role_delete</code><span class="sig-paren">(</span><em>server</em>, <em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_server_role_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> creates or deletes a new <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>server</strong> &#8211; The <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> that was created or deleted.</li>
+<li><strong>role</strong> &#8211; The <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> that was created or deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="discord.on_server_role_update">
+<code class="descclassname">discord.</code><code class="descname">on_server_role_update</code><span class="sig-paren">(</span><em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_server_role_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> is changed server-wide.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>role</strong> &#8211; The <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> that was updated.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="discord.on_voice_state_update">
+<code class="descclassname">discord.</code><code class="descname">on_voice_state_update</code><span class="sig-paren">(</span><em>member</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_voice_state_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> changes their voice state.</p>
+<p>The following, but not limited to, examples illustrate when this event is called:</p>
+<ul class="simple">
+<li>A member joins a voice room.</li>
+<li>A member leaves a voice room.</li>
+<li>A member is muted or deafened by their own accord.</li>
+<li>A member is muted or deafened by a server administrator.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>member</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> whose voice state changed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="utility-functions">
@@ -921,13 +1204,14 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.tts">
 <code class="descname">tts</code><a class="headerlink" href="#discord.Message.tts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks the message has text-to-speech support.</p>
+<dd><p>A boolean specifying if the message was done with text-to-speech.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.author">
 <code class="descname">author</code><a class="headerlink" href="#discord.Message.author" title="Permalink to this definition">¶</a></dt>
-<dd><p>A <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> that sent the message.</p>
+<dd><p>A <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> that sent the message. If <a class="reference internal" href="#discord.Message.channel" title="discord.Message.channel"><code class="xref py py-attr docutils literal"><span class="pre">channel</span></code></a> is a private channel,
+then it is a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> instead.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -939,7 +1223,7 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.embeds">
 <code class="descname">embeds</code><a class="headerlink" href="#discord.Message.embeds" title="Permalink to this definition">¶</a></dt>
-<dd><p>An array of embedded objects.</p>
+<dd><p>A list of embedded objects. The elements are objects that meet oEmbed&#8217;s <a class="reference external" href="http://oembed.com/">specification</a>.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -957,7 +1241,7 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.mentions">
 <code class="descname">mentions</code><a class="headerlink" href="#discord.Message.mentions" title="Permalink to this definition">¶</a></dt>
-<dd><p>An array of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> that were mentioned.</p>
+<dd><p>A list of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> that were mentioned.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -969,7 +1253,7 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.attachments">
 <code class="descname">attachments</code><a class="headerlink" href="#discord.Message.attachments" title="Permalink to this definition">¶</a></dt>
-<dd><p>An array of attachments given to a message.</p>
+<dd><p>A list of attachments given to a message.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1057,13 +1341,38 @@ that server members have such as roles and permissions.</p>
 <dl class="attribute">
 <dt id="discord.Member.deaf">
 <code class="descname">deaf</code><a class="headerlink" href="#discord.Member.deaf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies if the member is currently deafened by the user.</p>
+<dd><p>A boolean that specifies if the member is currently deafened by the server.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.mute">
 <code class="descname">mute</code><a class="headerlink" href="#discord.Member.mute" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies if the member is currently muted by the user.</p>
+<dd><p>A boolean that specifies if the member is currently muted by the server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Member.self_mute">
+<code class="descname">self_mute</code><a class="headerlink" href="#discord.Member.self_mute" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean that specifies if the member is currently muted by their own accord.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Member.self_deaf">
+<code class="descname">self_deaf</code><a class="headerlink" href="#discord.Member.self_deaf" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean that specifies if the member is currently deafened by their own accord.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Member.is_afk">
+<code class="descname">is_afk</code><a class="headerlink" href="#discord.Member.is_afk" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean that specifies if the member is currently in the AFK channel in the server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Member.voice_channel">
+<code class="descname">voice_channel</code><a class="headerlink" href="#discord.Member.voice_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A voice <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> that the member is currently connected to. None if the member
+is not currently in a voice channel.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1100,6 +1409,191 @@ the first time.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="discord.Colour">
+<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Colour</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a Discord role colour. This class is similar
+to an (red, green, blue) tuple.</p>
+<p>There is an alias for this called Color.</p>
+<p>Supported operations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>x == y</td>
+<td>Checks if two colours are equal.</td>
+</tr>
+<tr class="row-odd"><td>x != y</td>
+<td>Checks if two colours are not equal.</td>
+</tr>
+</tbody>
+</table>
+<p>Instance attributes:</p>
+<dl class="attribute">
+<dt id="discord.Colour.value">
+<code class="descname">value</code><a class="headerlink" href="#discord.Colour.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The raw integer colour value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Colour.b">
+<code class="descname">b</code><a class="headerlink" href="#discord.Colour.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the blue component of the colour.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.blue">
+<em class="property">classmethod </em><code class="descname">blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x3498db.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.cyan">
+<em class="property">classmethod </em><code class="descname">cyan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.cyan" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x1abc9c.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_blue">
+<em class="property">classmethod </em><code class="descname">dark_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x206694.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_cyan">
+<em class="property">classmethod </em><code class="descname">dark_cyan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_cyan" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x11806a.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_green">
+<em class="property">classmethod </em><code class="descname">dark_green</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_green" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x1f8b4c.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_grey">
+<em class="property">classmethod </em><code class="descname">dark_grey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_grey" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x7f8c8d.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_grey_blue">
+<em class="property">classmethod </em><code class="descname">dark_grey_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_grey_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x979c9f.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_navy_blue">
+<em class="property">classmethod </em><code class="descname">dark_navy_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_navy_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x2c3e50.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_orange">
+<em class="property">classmethod </em><code class="descname">dark_orange</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_orange" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0xa84300.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_purple">
+<em class="property">classmethod </em><code class="descname">dark_purple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_purple" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x71368a.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.dark_red">
+<em class="property">classmethod </em><code class="descname">dark_red</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.dark_red" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x992d22.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.default">
+<em class="property">classmethod </em><code class="descname">default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Colour.g">
+<code class="descname">g</code><a class="headerlink" href="#discord.Colour.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the green component of the colour.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.green">
+<em class="property">classmethod </em><code class="descname">green</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.green" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x2ecc71.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.grey">
+<em class="property">classmethod </em><code class="descname">grey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.grey" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x95a5a6.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.light_grey">
+<em class="property">classmethod </em><code class="descname">light_grey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.light_grey" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0xbcc0c0.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.navy_blue">
+<em class="property">classmethod </em><code class="descname">navy_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.navy_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x34495e.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.orange">
+<em class="property">classmethod </em><code class="descname">orange</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.orange" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0xe67e22.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.purple">
+<em class="property">classmethod </em><code class="descname">purple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.purple" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0x9b59b6.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Colour.r">
+<code class="descname">r</code><a class="headerlink" href="#discord.Colour.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the red component of the colour.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.red">
+<em class="property">classmethod </em><code class="descname">red</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.red" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0xe74c3c.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.strong_orange">
+<em class="property">classmethod </em><code class="descname">strong_orange</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.strong_orange" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0xc27c0e.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Colour.to_tuple">
+<code class="descname">to_tuple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.to_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an (r, g, b) tuple representing the colour.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Colour.yellow">
+<em class="property">classmethod </em><code class="descname">yellow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour.yellow" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that returns a <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> with a value of 0xf1c40f.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="discord.Role">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Role</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Role" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a Discord role in a <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
@@ -1127,7 +1621,7 @@ the first time.</p>
 <code class="descname">color</code><a class="headerlink" href="#discord.Role.color" title="Permalink to this definition">¶</a></dt>
 <dt id="discord.Role.colour">
 <code class="descname">colour</code><a class="headerlink" href="#discord.Role.colour" title="Permalink to this definition">¶</a></dt>
-<dd><p>A tuple of (r, g, b) associated with the role colour.</p>
+<dd><p>A <a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> representing the role colour.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1139,15 +1633,72 @@ the first time.</p>
 <dl class="attribute">
 <dt id="discord.Role.position">
 <code class="descname">position</code><a class="headerlink" href="#discord.Role.position" title="Permalink to this definition">¶</a></dt>
-<dd><p>The position of the role.</p>
+<dd><p>The position of the role. This number is usually positive.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Role.managed">
+<code class="descname">managed</code><a class="headerlink" href="#discord.Role.managed" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean indicating if the role is managed by the server through some form of integration
+such as Twitch.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Role.is_everyone">
+<code class="descname">is_everyone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Role.is_everyone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the role is the &#64;everyone role.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="discord.Permissions">
-<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Permissions</code><span class="sig-paren">(</span><em>permissions</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Permissions</code><span class="sig-paren">(</span><em>permissions=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps up the Discord permission value.</p>
+<p>Class attributes:</p>
+<dl class="attribute">
+<dt id="discord.Permissions.NONE">
+<code class="descname">NONE</code><a class="headerlink" href="#discord.Permissions.NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all permissions set to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.ALL">
+<code class="descname">ALL</code><a class="headerlink" href="#discord.Permissions.ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all permissions set to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.ALL_CHANNEL">
+<code class="descname">ALL_CHANNEL</code><a class="headerlink" href="#discord.Permissions.ALL_CHANNEL" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all channel-specific permissions set to True
+and the server-specific ones set to False. The server-specific permissions
+are currently:</p>
+<ul class="simple">
+<li>can_manager_server</li>
+<li>can_kick_members</li>
+<li>can_ban_members</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.GENERAL">
+<code class="descname">GENERAL</code><a class="headerlink" href="#discord.Permissions.GENERAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all &#8220;General&#8221; permissions set to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.TEXT">
+<code class="descname">TEXT</code><a class="headerlink" href="#discord.Permissions.TEXT" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all &#8220;Text&#8221; permissions set to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.VOICE">
+<code class="descname">VOICE</code><a class="headerlink" href="#discord.Permissions.VOICE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all &#8220;Voice&#8221; permissions set to True.</p>
+</dd></dl>
+
 <p>Instance attributes:</p>
 <dl class="attribute">
 <dt id="discord.Permissions.value">
@@ -1159,6 +1710,26 @@ than using this raw value.</p>
 
 <p>The properties provided are two way. You can set and retrieve individual bits using the properties as if they
 were regular bools. This allows you to edit permissions.</p>
+<dl class="classmethod">
+<dt id="discord.Permissions.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that creates a <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all
+permissions set to True.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Permissions.all_channel">
+<em class="property">classmethod </em><code class="descname">all_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.all_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all channel-specific permissions set to
+True and the server-specific ones set to False. The server-specific
+permissions are currently:</p>
+<ul class="simple">
+<li>can_manager_server</li>
+<li>can_kick_members</li>
+<li>can_ban_members</li>
+</ul>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="discord.Permissions.can_attach_files">
 <code class="descname">can_attach_files</code><a class="headerlink" href="#discord.Permissions.can_attach_files" title="Permalink to this definition">¶</a></dt>
@@ -1279,6 +1850,34 @@ were regular bools. This allows you to edit permissions.</p>
 <dd><p>Returns True if a user can use voice activation in voice channels.</p>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="discord.Permissions.general">
+<em class="property">classmethod </em><code class="descname">general</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.general" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that creates a <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all
+&#8220;General&#8221; permissions set to True.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Permissions.none">
+<em class="property">classmethod </em><code class="descname">none</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.none" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that creates a <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all
+permissions set to False.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Permissions.text">
+<em class="property">classmethod </em><code class="descname">text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that creates a <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all
+&#8220;Text&#8221; permissions set to True.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="discord.Permissions.voice">
+<em class="property">classmethod </em><code class="descname">voice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.voice" title="Permalink to this definition">¶</a></dt>
+<dd><p>A factory method that creates a <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all
+&#8220;Voice&#8221; permissions set to True.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -1335,6 +1934,43 @@ were regular bools. This allows you to edit permissions.</p>
 values in the <a class="reference internal" href="#discord.Server.roles" title="discord.Server.roles"><code class="xref py py-attr docutils literal"><span class="pre">Server.roles</span></code></a> attribute.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="discord.Channel.voice_members">
+<code class="descname">voice_members</code><a class="headerlink" href="#discord.Channel.voice_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>An array of <code class="xref py py-class docutils literal"><span class="pre">Members</span></code> that are currently inside this voice channel.
+If <a class="reference internal" href="#discord.Channel.type" title="discord.Channel.type"><code class="xref py py-attr docutils literal"><span class="pre">type</span></code></a> is not <code class="docutils literal"><span class="pre">'voice'</span></code> then this is always an empty array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Channel.is_default_channel">
+<code class="descname">is_default_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Channel.is_default_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if this is the default channel for the <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> it belongs to.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Channel.permissions_for">
+<code class="descname">permissions_for</code><span class="sig-paren">(</span><em>member</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Channel.permissions_for" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles permission resolution for the current <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>.</p>
+<p>This function takes into consideration the following cases:</p>
+<ul class="simple">
+<li>Server owner</li>
+<li>Server roles</li>
+<li>Channel overrides</li>
+<li>Member overrides</li>
+<li>Whether the channel is the default channel.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>member</strong> &#8211; The <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> to resolve permissions for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The resolved <a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a> for the <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -1358,6 +1994,30 @@ values in the <a class="reference internal" href="#discord.Server.roles" title="
 <dt id="discord.PrivateChannel.is_private">
 <code class="descname">is_private</code><a class="headerlink" href="#discord.PrivateChannel.is_private" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">True</span></code> if the channel is a private channel (i.e. PM). <code class="docutils literal"><span class="pre">True</span></code> in this case.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.PrivateChannel.permissions_for">
+<code class="descname">permissions_for</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.PrivateChannel.permissions_for" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles permission resolution for a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>.</p>
+<p>This function is there for compatibility with <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>.</p>
+<p>Actual private messages do not really have the concept of permissions.</p>
+<p>This returns all the Text related permissions set to true except:</p>
+<ul class="simple">
+<li>can_send_tts_messages: You cannot send TTS messages in a PM.</li>
+<li>can_manage_messages: You cannot delete others messages in a PM.</li>
+<li>can_mention_everyone: There is no one to mention in a PM.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> &#8211; The <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to check permissions for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with the resolved permission value.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
