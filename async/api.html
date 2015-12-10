@@ -92,7 +92,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#event-reference">Event Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#enumerators">Enumerators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-classes">Data Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-classes">Data Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#object">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#message">Message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server">Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#member">Member</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#colour">Colour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#role">Role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permissions">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#channel">Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#privatechannel">PrivateChannel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invite">Invite</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
@@ -2380,6 +2393,8 @@ the cache, and a common way of doing so is through the <a class="reference inter
 or attributes of data classes that you receive from the events specified in the
 <a class="reference internal" href="#discord-api-events"><span class="std std-ref">Event Reference</span></a>.</p>
 </div>
+<div class="section" id="object">
+<h3>Object<a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Object">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Object</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Object" title="Permalink to this definition">¶</a></dt>
@@ -2401,6 +2416,9 @@ extremely rare.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="user">
+<h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.User">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">User</code><span class="sig-paren">(</span><em>username</em>, <em>id</em>, <em>discriminator</em>, <em>avatar</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.User" title="Permalink to this definition">¶</a></dt>
@@ -2467,6 +2485,9 @@ the user has no avatar.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="message">
+<h3>Message<a class="headerlink" href="#message" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Message">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Message</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Message" title="Permalink to this definition">¶</a></dt>
@@ -2587,6 +2608,9 @@ even in a private message context.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="server">
+<h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Server">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Server" title="Permalink to this definition">¶</a></dt>
@@ -2681,6 +2705,9 @@ all be None. It is best to not do anything with the server if it is unavailable.
 
 </dd></dl>
 
+</div>
+<div class="section" id="member">
+<h3>Member<a class="headerlink" href="#member" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Member">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Member</code><span class="sig-paren">(</span><em>deaf</em>, <em>joined_at</em>, <em>user</em>, <em>roles</em>, <em>mute</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Member" title="Permalink to this definition">¶</a></dt>
@@ -2759,6 +2786,9 @@ if it is a value that is not recognised by the enumerator.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="colour">
+<h3>Colour<a class="headerlink" href="#colour" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Colour">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Colour</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Colour" title="Permalink to this definition">¶</a></dt>
@@ -2943,6 +2973,9 @@ to an (red, green, blue) tuple.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="role">
+<h3>Role<a class="headerlink" href="#role" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Role">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Role</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Role" title="Permalink to this definition">¶</a></dt>
@@ -2998,6 +3031,9 @@ integrations such as Twitch.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="permissions">
+<h3>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Permissions">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Permissions</code><span class="sig-paren">(</span><em>permissions=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions" title="Permalink to this definition">¶</a></dt>
@@ -3227,6 +3263,9 @@ permissions set to False.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="channel">
+<h3>Channel<a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Channel">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Channel</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Channel" title="Permalink to this definition">¶</a></dt>
@@ -3328,6 +3367,9 @@ If <a class="reference internal" href="#discord.Channel.type" title="discord.Cha
 
 </dd></dl>
 
+</div>
+<div class="section" id="privatechannel">
+<h3>PrivateChannel<a class="headerlink" href="#privatechannel" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.PrivateChannel">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">PrivateChannel</code><span class="sig-paren">(</span><em>user</em>, <em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.PrivateChannel" title="Permalink to this definition">¶</a></dt>
@@ -3378,6 +3420,9 @@ If <a class="reference internal" href="#discord.Channel.type" title="discord.Cha
 
 </dd></dl>
 
+</div>
+<div class="section" id="invite">
+<h3>Invite<a class="headerlink" href="#invite" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.Invite">
 <em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Invite</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Invite" title="Permalink to this definition">¶</a></dt>
@@ -3465,6 +3510,7 @@ If True, members who joined via this invite will be kicked upon disconnect.</p>
 
 </dd></dl>
 
+</div>
 </div>
 <div class="section" id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
