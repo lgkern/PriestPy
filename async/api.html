@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; discord.py 0.9.0 documentation</title>
+  <title>API Reference &mdash; discord.py 0.10.0-alpha documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="discord.py 0.9.0 documentation" href="index.html"/>
+    <link rel="top" title="discord.py 0.10.0-alpha documentation" href="index.html"/>
         <link rel="prev" title="Setting Up Logging" href="logging.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.9.0
+                0.10.0-alpha
               </div>
             
           
@@ -83,6 +83,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="logging.html">Setting Up Logging</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-related-info">Version Related Info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#client">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#voice">Voice</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#opus-library">Opus Library</a></li>
@@ -150,6 +151,24 @@ these logs will not be output anywhere.  See <a class="reference internal" href=
 more information on how to set up and use the logging module with
 discord.py.</p>
 </div>
+<div class="section" id="version-related-info">
+<h2>Version Related Info<a class="headerlink" href="#version-related-info" title="Permalink to this headline">¶</a></h2>
+<p>There are two main ways to query version information about the library.</p>
+<dl class="data">
+<dt id="discord.version_info">
+<code class="descclassname">discord.</code><code class="descname">version_info</code><a class="headerlink" href="#discord.version_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>A named tuple that is similar to <a class="reference external" href="https://docs.python.org/3.5/library/sys.html#sys.version_info">sys.version_info</a>.</p>
+<p>Just like <a class="reference external" href="https://docs.python.org/3.5/library/sys.html#sys.version_info">sys.version_info</a> the valid values for <code class="docutils literal"><span class="pre">releaselevel</span></code> are
+&#8216;alpha&#8217;, &#8216;beta&#8217;, &#8216;candidate&#8217; and &#8216;final&#8217;.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="discord.__version__">
+<code class="descclassname">discord.</code><code class="descname">__version__</code><a class="headerlink" href="#discord.__version__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string representation of the version. e.g. <code class="docutils literal"><span class="pre">'0.10.0-alpha0'</span></code>.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="client">
 <h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -177,6 +196,14 @@ in which case the default event loop is used via <code class="docutils literal">
 <dt id="discord.Client.user">
 <code class="descname">user</code><a class="headerlink" href="#discord.Client.user" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optional[<a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>] &#8211; Represents the connected client. None if not logged in.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Client.voice">
+<code class="descname">voice</code><a class="headerlink" href="#discord.Client.voice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional[<a class="reference internal" href="#discord.VoiceClient" title="discord.VoiceClient"><code class="xref py py-class docutils literal"><span class="pre">VoiceClient</span></code></a>] &#8211; Represents the current voice connection. None if you are not connected
+to a voice channel. To connect to voice use <a class="reference internal" href="#discord.Client.join_voice_channel" title="discord.Client.join_voice_channel"><code class="xref py py-meth docutils literal"><span class="pre">join_voice_channel()</span></code></a>.
+To query the voice connection state use <a class="reference internal" href="#discord.Client.is_voice_connected" title="discord.Client.is_voice_connected"><code class="xref py py-meth docutils literal"><span class="pre">is_voice_connected()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -935,11 +962,19 @@ patched in.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="discord.Client.is_voice_connected">
+<code class="descname">is_voice_connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.is_voice_connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool : Indicates if we are currently connected to a voice channel.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="discord.Client.join_voice_channel">
 <code class="descname">join_voice_channel</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.join_voice_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Joins a voice channel and creates a <a class="reference internal" href="#discord.VoiceClient" title="discord.VoiceClient"><code class="xref py py-class docutils literal"><span class="pre">VoiceClient</span></code></a> to
 establish your connection to the voice server.</p>
+<p>After this function is successfully called, <a class="reference internal" href="#discord.Client.voice" title="discord.Client.voice"><code class="xref py py-attr docutils literal"><span class="pre">voice</span></code></a> is
+set to the returned <a class="reference internal" href="#discord.VoiceClient" title="discord.VoiceClient"><code class="xref py py-class docutils literal"><span class="pre">VoiceClient</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1222,8 +1257,10 @@ this value by passing this in.</p>
 For convenience it could also be a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>. If it&#8217;s a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> or <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a>
 then it sends the message via private message, otherwise it sends the message to the channel.
 If the destination is a <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> then it&#8217;s equivalent to calling
-<a class="reference internal" href="#discord.Server.get_default_channel" title="discord.Server.get_default_channel"><code class="xref py py-meth docutils literal"><span class="pre">Server.get_default_channel()</span></code></a> and sending it there. If it is a <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a>
-instance then it is assumed to be the destination ID.</p>
+<a class="reference internal" href="#discord.Server.get_default_channel" title="discord.Server.get_default_channel"><code class="xref py py-meth docutils literal"><span class="pre">Server.get_default_channel()</span></code></a> and sending it there.</p>
+<p>If it is a <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a> instance then it is assumed to be the
+destination ID. The destination ID is a <em>channel</em> so passing in a user
+ID will not be a valid destination.</p>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 0.9.0: </span><code class="docutils literal"><span class="pre">str</span></code> being allowed was removed and replaced with <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a>.</p>
 </div>
@@ -1373,6 +1410,82 @@ must have the proper permissions in that server.</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="discord.Client.wait_for_message">
+<code class="descname">wait_for_message</code><span class="sig-paren">(</span><em>timeout=None</em>, <em>*</em>, <em>author=None</em>, <em>channel=None</em>, <em>content=None</em>, <em>check=None</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.wait_for_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
+<p>Waits for a message reply from Discord. This could be seen as another
+<a class="reference internal" href="#discord.on_message" title="discord.on_message"><code class="xref py py-func docutils literal"><span class="pre">discord.on_message()</span></code></a> event outside of the actual event. This could
+also be used for follow-ups and easier user interactions.</p>
+<p>The keyword arguments passed into this function are combined using the logical and
+operator. The <code class="docutils literal"><span class="pre">check</span></code> keyword argument can be used to pass in more complicated
+checks and must be a regular function (not a coroutine).</p>
+<p>The <code class="docutils literal"><span class="pre">timeout</span></code> parameter is passed into <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.wait_for">asyncio.wait_for</a>. By default, it
+does not timeout. Instead of throwing <code class="docutils literal"><span class="pre">asyncio.TimeoutError</span></code> the coroutine
+catches the exception and returns <code class="docutils literal"><span class="pre">None</span></code> instead of a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a>.</p>
+<p>If the <code class="docutils literal"><span class="pre">check</span></code> predicate throws an exception, then the exception is propagated.</p>
+<p>This function returns the <strong>first message that meets the requirements</strong>.</p>
+<p class="rubric">Examples</p>
+<p>Basic example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.async_event</span>
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;$greet&#39;</span><span class="p">)</span>
+        <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Say hello&#39;</span><span class="p">)</span>
+<span class="hll">        <span class="n">msg</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">wait_for_message</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s">&#39;hello&#39;</span><span class="p">)</span>
+</span>        <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Hello.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Asking for a follow-up question:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.async_event</span>
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;$start&#39;</span><span class="p">)</span>
+        <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Type $stop 4 times.&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="hll">            <span class="n">msg</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">wait_for_message</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s">&#39;$stop&#39;</span><span class="p">)</span>
+</span>            <span class="n">fmt</span> <span class="o">=</span> <span class="s">&#39;{} left to go...&#39;</span>
+            <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+
+        <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Good job!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Advanced filters using <code class="docutils literal"><span class="pre">check</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.async_event</span>
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;$cool&#39;</span><span class="p">):</span>
+        <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Who is cool? Type $name namehere&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">msg</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;$name&#39;</span><span class="p">)</span>
+
+<span class="hll">        <span class="n">message</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">wait_for_message</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="n">check</span><span class="p">)</span>
+</span>        <span class="n">name</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="s">&#39;$name&#39;</span><span class="p">):]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;{} is cool indeed&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>timeout</strong> (<em>float</em>) &#8211; The number of seconds to wait before returning <code class="docutils literal"><span class="pre">None</span></code>.</li>
+<li><strong>author</strong> (<a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> or <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>) &#8211; The author the message must be from.</li>
+<li><strong>channel</strong> (<a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> or <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a> or <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a>) &#8211; The channel the message must be from.</li>
+<li><strong>content</strong> (<em>str</em>) &#8211; The exact content the message must have.</li>
+<li><strong>check</strong> (<em>function</em>) &#8211; A predicate for other complicated checks. The predicate must take
+a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> as its only parameter.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The message that you requested for.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1380,7 +1493,7 @@ must have the proper permissions in that server.</p>
 <h2>Voice<a class="headerlink" href="#voice" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="discord.VoiceClient">
-<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">VoiceClient</code><span class="sig-paren">(</span><em>user</em>, <em>connected</em>, <em>main_ws</em>, <em>session_id</em>, <em>channel</em>, <em>data</em>, <em>loop</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.VoiceClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">VoiceClient</code><span class="sig-paren">(</span><em>user</em>, <em>main_ws</em>, <em>session_id</em>, <em>channel</em>, <em>data</em>, <em>loop</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.VoiceClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a Discord voice connection.</p>
 <p>This client is created solely through <a class="reference internal" href="#discord.Client.join_voice_channel" title="discord.Client.join_voice_channel"><code class="xref py py-meth docutils literal"><span class="pre">Client.join_voice_channel()</span></code></a>
 and its only purpose is to transmit voice.</p>
@@ -1419,6 +1532,12 @@ transmit audio.</p>
 <dt id="discord.VoiceClient.channel">
 <code class="descname">channel</code><a class="headerlink" href="#discord.VoiceClient.channel" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> &#8211; The voice channel connected to.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.VoiceClient.loop">
+<code class="descname">loop</code><a class="headerlink" href="#discord.VoiceClient.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>The event loop that the voice client is running on.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1477,8 +1596,8 @@ that returns a <em>bytes-like</em> object.</p>
 <p>The following operations are valid on the <code class="docutils literal"><span class="pre">StreamPlayer</span></code> object:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="26%" />
-<col width="74%" />
+<col width="28%" />
+<col width="72%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -1494,6 +1613,15 @@ that returns a <em>bytes-like</em> object.</p>
 </tr>
 <tr class="row-even"><td>player.is_done()</td>
 <td>Returns a bool indicating if the stream is done.</td>
+</tr>
+<tr class="row-odd"><td>player.is_playing()</td>
+<td>Returns a bool indicating if the stream is playing.</td>
+</tr>
+<tr class="row-even"><td>player.pause()</td>
+<td>Pauses the audio stream.</td>
+</tr>
+<tr class="row-odd"><td>player.resume()</td>
+<td>Resumes the audio stream.</td>
 </tr>
 </tbody>
 </table>
@@ -1555,6 +1683,12 @@ has no effect.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.VoiceClient.is_connected">
+<code class="descname">is_connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.VoiceClient.is_connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool : Indicates if the voice client is connected to voice.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3461,7 +3595,7 @@ for the <a class="reference internal" href="#discord.Client" title="discord.Clie
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.9.0',
+            VERSION:'0.10.0-alpha',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
