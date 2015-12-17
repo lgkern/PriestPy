@@ -82,6 +82,7 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="logging.html">Setting Up Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrating.html">Migrating to v0.10.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 </ul>
 
@@ -185,23 +186,15 @@
   </dt>
 
       
-  <dt><a href="api.html#discord.Permissions.ALL">ALL (discord.Permissions attribute)</a>
-  </dt>
-
-      
   <dt><a href="api.html#discord.Permissions.all">all() (discord.Permissions class method)</a>
   </dt>
 
       
-  <dt><a href="api.html#discord.Permissions.ALL_CHANNEL">ALL_CHANNEL (discord.Permissions attribute)</a>
+  <dt><a href="api.html#discord.Permissions.all_channel">all_channel() (discord.Permissions class method)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="api.html#discord.Permissions.all_channel">all_channel() (discord.Permissions class method)</a>
-  </dt>
-
       
   <dt><a href="api.html#discord.ServerRegion.amsterdam">amsterdam (discord.ServerRegion attribute)</a>
   </dt>
@@ -223,7 +216,7 @@
   </dt>
 
       
-  <dt><a href="api.html#discord.User.avatar_url">avatar_url() (discord.User method)</a>
+  <dt><a href="api.html#discord.User.avatar_url">avatar_url (discord.User attribute)</a>
   </dt>
 
   </dl></td>
@@ -336,12 +329,12 @@
   <dt><a href="api.html#discord.Client.change_status">change_status() (discord.Client method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.Channel.changed_roles">changed_roles (discord.Channel attribute)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.Channel">Channel (class in discord)</a>
   </dt>
@@ -370,6 +363,10 @@
 
       
   <dt><a href="api.html#discord.ChannelType">ChannelType (class in discord)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#discord.Message.clean_content">clean_content (discord.Message attribute)</a>
   </dt>
 
       
@@ -435,6 +432,10 @@
   </dt>
 
       
+  <dt><a href="api.html#discord.VoiceClient.create_ytdl_player">create_ytdl_player() (discord.VoiceClient method)</a>
+  </dt>
+
+      
   <dt><a href="api.html#discord.Invite.created_at">created_at (discord.Invite attribute)</a>
   </dt>
 
@@ -484,14 +485,22 @@
   <dt><a href="api.html#discord.Colour.darker_grey">darker_grey() (discord.Colour class method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.Member.deaf">deaf (discord.Member attribute)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.Colour.default">default() (discord.Colour class method)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#discord.Server.default_channel">default_channel (discord.Server attribute)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#discord.Server.default_role">default_role (discord.Server attribute)</a>
   </dt>
 
       
@@ -625,45 +634,33 @@
   </dt>
 
       
-  <dt><a href="api.html#discord.Permissions.GENERAL">GENERAL (discord.Permissions attribute)</a>
+  <dt><a href="api.html#discord.Permissions.general">general() (discord.Permissions class method)</a>
   </dt>
 
       
-  <dt><a href="api.html#discord.Permissions.general">general() (discord.Permissions class method)</a>
+  <dt><a href="api.html#discord.utils.get">get() (in module discord.utils)</a>
   </dt>
 
       
   <dt><a href="api.html#discord.Client.get_all_channels">get_all_channels() (discord.Client method)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.Client.get_all_members">get_all_members() (discord.Client method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api.html#discord.Client.get_bans">get_bans() (discord.Client method)</a>
+  </dt>
+
       
   <dt><a href="api.html#discord.Client.get_channel">get_channel() (discord.Client method)</a>
   </dt>
 
       
-  <dt><a href="api.html#discord.Server.get_default_channel">get_default_channel() (discord.Server method)</a>
-  </dt>
-
-      
-  <dt><a href="api.html#discord.Server.get_default_role">get_default_role() (discord.Server method)</a>
-  </dt>
-
-      
   <dt><a href="api.html#discord.Client.get_invite">get_invite() (discord.Client method)</a>
-  </dt>
-
-      
-  <dt><a href="api.html#discord.Message.get_raw_channel_mentions">get_raw_channel_mentions() (discord.Message method)</a>
-  </dt>
-
-      
-  <dt><a href="api.html#discord.Message.get_raw_mentions">get_raw_mentions() (discord.Message method)</a>
   </dt>
 
       
@@ -701,7 +698,7 @@
   </dt>
 
       
-  <dt><a href="api.html#discord.Server.icon_url">icon_url() (discord.Server method)</a>
+  <dt><a href="api.html#discord.Server.icon_url">icon_url (discord.Server attribute)</a>
   </dt>
 
       
@@ -755,6 +752,10 @@
   </dt>
 
       
+  <dt><a href="api.html#discord.Client.invites_from">invites_from() (discord.Client method)</a>
+  </dt>
+
+      
   <dt><a href="api.html#discord.Member.is_afk">is_afk (discord.Member attribute)</a>
   </dt>
 
@@ -769,11 +770,11 @@
   </dt>
 
       
-  <dt><a href="api.html#discord.Channel.is_default_channel">is_default_channel() (discord.Channel method)</a>
+  <dt><a href="api.html#discord.Channel.is_default">is_default (discord.Channel attribute)</a>
   </dt>
 
       
-  <dt><a href="api.html#discord.Role.is_everyone">is_everyone() (discord.Role method)</a>
+  <dt><a href="api.html#discord.Role.is_everyone">is_everyone (discord.Role attribute)</a>
   </dt>
 
       
@@ -901,6 +902,10 @@
   </dt>
 
       
+  <dt><a href="api.html#discord.Server.me">me (discord.Server attribute)</a>
+  </dt>
+
+      
   <dt><a href="api.html#discord.Member">Member (class in discord)</a>
   </dt>
 
@@ -911,12 +916,12 @@
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api.html#discord.Channel.mention">mention() (discord.Channel method)</a>
+  <dt><a href="api.html#discord.Channel.mention">mention (discord.Channel attribute)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="api.html#discord.User.mention">(discord.User method)</a>
+  <dt><a href="api.html#discord.User.mention">(discord.User attribute)</a>
   </dt>
 
       </dl></dd>
@@ -965,15 +970,11 @@
 
       </dl></dd>
       
-  <dt><a href="api.html#discord.Permissions.NONE">NONE (discord.Permissions attribute)</a>
+  <dt><a href="api.html#discord.Permissions.none">none() (discord.Permissions class method)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="api.html#discord.Permissions.none">none() (discord.Permissions class method)</a>
-  </dt>
-
       
   <dt><a href="api.html#discord.NotFound">NotFound</a>
   </dt>
@@ -1058,12 +1059,12 @@
   <dt><a href="api.html#discord.on_server_role_create">on_server_role_create() (in module discord)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.on_server_role_delete">on_server_role_delete() (in module discord)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.on_server_role_update">on_server_role_update() (in module discord)</a>
   </dt>
@@ -1098,10 +1099,6 @@
 
       
   <dt><a href="api.html#discord.on_socket_update">on_socket_update() (in module discord)</a>
-  </dt>
-
-      
-  <dt><a href="api.html#discord.on_status">on_status() (in module discord)</a>
   </dt>
 
       
@@ -1195,6 +1192,14 @@
   </dt>
 
       
+  <dt><a href="api.html#discord.Message.raw_channel_mentions">raw_channel_mentions (discord.Message attribute)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#discord.Message.raw_mentions">raw_mentions (discord.Message attribute)</a>
+  </dt>
+
+      
   <dt><a href="api.html#discord.Colour.red">red() (discord.Colour class method)</a>
   </dt>
 
@@ -1206,12 +1211,12 @@
   <dt><a href="api.html#discord.Client.remove_roles">remove_roles() (discord.Client method)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.Client.replace_roles">replace_roles() (discord.Client method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#discord.HTTPException.response">response (discord.HTTPException attribute)</a>
   </dt>
@@ -1347,10 +1352,6 @@
   </dt>
 
       
-  <dt><a href="api.html#discord.Permissions.TEXT">TEXT (discord.Permissions attribute)</a>
-  </dt>
-
-      
   <dt><a href="api.html#discord.Permissions.text">text() (discord.Permissions class method)</a>
   </dt>
 
@@ -1461,15 +1462,11 @@
 
       </dl></dd>
       
-  <dt><a href="api.html#discord.Permissions.VOICE">VOICE (discord.Permissions attribute)</a>
+  <dt><a href="api.html#discord.Permissions.voice">voice() (discord.Permissions class method)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="api.html#discord.Permissions.voice">voice() (discord.Permissions class method)</a>
-  </dt>
-
       
   <dt><a href="api.html#discord.Member.voice_channel">voice_channel (discord.Member attribute)</a>
   </dt>
