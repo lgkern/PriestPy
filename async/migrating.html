@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Migrating to v0.10.0 &mdash; discord.py 0.10.0-alpha documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="discord.py 0.10.0-alpha documentation" href="index.html"/>
+        <link rel="next" title="API Reference" href="api.html"/>
+        <link rel="prev" title="Setting Up Logging" href="logging.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> discord.py
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.10.0-alpha
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Setting Up Logging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Migrating to v0.10.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#event-registration">Event Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-changes">Event Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coroutines">Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enumerators">Enumerators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-client">Running the Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">discord.py</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Migrating to v0.10.0</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/migrating.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="migrating-to-v0-10-0">
+<span id="migrating-to-async"></span><h1>Migrating to v0.10.0<a class="headerlink" href="#migrating-to-v0-10-0" title="Permalink to this headline">¶</a></h1>
+<p>v0.10.0 is one of the biggest breaking changes in the library due to massive
+fundamental changes in how the library operates.</p>
+<p>The biggest major change is that the library has dropped support to all versions prior to
+Python 3.4.2. This was made to support <code class="docutils literal"><span class="pre">asyncio</span></code>, in which more detail can be seen
+<a class="reference external" href="https://github.com/Rapptz/discord.py/issues/50">in the corresponding issue</a>. To reiterate this, the implication is that
+<strong>python version 2.7 and 3.3 are no longer supported</strong>.</p>
+<p>Below are all the other major changes from v0.9.0 to v0.10.0.</p>
+<div class="section" id="event-registration">
+<span id="migrating-event-registration"></span><h2>Event Registration<a class="headerlink" href="#event-registration" title="Permalink to this headline">¶</a></h2>
+<p>All events before were registered using <a class="reference internal" href="api.html#discord.Client.event" title="discord.Client.event"><code class="xref py py-meth docutils literal"><span class="pre">Client.event()</span></code></a>. While this is still
+possible, the events must be decorated with <code class="docutils literal"><span class="pre">&#64;asyncio.coroutine</span></code>.</p>
+<p>Before:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.event</span>
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>After:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.event</span>
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Or in Python 3.5+:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.event</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Because there is a lot of typing, a utility decorator (<a class="reference internal" href="api.html#discord.Client.async_event" title="discord.Client.async_event"><code class="xref py py-meth docutils literal"><span class="pre">Client.async_event()</span></code></a>) is provided
+for easier registration. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@client.async_event</span>
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Be aware however, that this is still a coroutine and your other functions that are coroutines must
+be decorated with `` &#64;asyncio.coroutine`` or be <code class="docutils literal"><span class="pre">async</span> <span class="pre">def</span></code>.</p>
+</div>
+<div class="section" id="event-changes">
+<span id="migrating-event-changes"></span><h2>Event Changes<a class="headerlink" href="#event-changes" title="Permalink to this headline">¶</a></h2>
+<p>Some events in v0.9.0 were considered pretty useless due to having no separate states. The main
+events that were changed were the <code class="docutils literal"><span class="pre">_update</span></code> events since previously they had no context on what
+was changed.</p>
+<p>Before:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">on_channel_update</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_member_update</span><span class="p">(</span><span class="n">member</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_status</span><span class="p">(</span><span class="n">member</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_server_role_update</span><span class="p">(</span><span class="n">role</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_voice_state_update</span><span class="p">(</span><span class="n">member</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
+</div>
+<p>After:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">on_channel_update</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">after</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_member_update</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">after</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_server_role_update</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">after</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">on_voice_state_update</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">after</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal"><span class="pre">on_status</span></code> was removed. If you want its functionality, use <a class="reference internal" href="api.html#discord.on_member_update" title="discord.on_member_update"><code class="xref py py-func docutils literal"><span class="pre">on_member_update()</span></code></a>.
+See <a class="reference internal" href="api.html#discord-api-events"><span class="std std-ref">Event Reference</span></a> for more information.</p>
+</div>
+<div class="section" id="coroutines">
+<span id="migrating-coroutines"></span><h2>Coroutines<a class="headerlink" href="#coroutines" title="Permalink to this headline">¶</a></h2>
+<p>The biggest change that the library went through is that almost every function in <a class="reference internal" href="api.html#discord.Client" title="discord.Client"><code class="xref py py-class docutils literal"><span class="pre">Client</span></code></a>
+was changed to be a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html">coroutine</a>. Functions
+that are marked as a coroutine in the documentation must be awaited from or yielded from in order
+for the computation to be done. For example...</p>
+<p>Before:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Hello&#39;</span><span class="p">)</span>
+
+<span class="c"># or in python 3.5+</span>
+<span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="s">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In order for you to <code class="docutils literal"><span class="pre">yield</span> <span class="pre">from</span></code> or <code class="docutils literal"><span class="pre">await</span></code> a coroutine then your function must be decorated
+with <code class="docutils literal"><span class="pre">&#64;asyncio.coroutine</span></code> or <code class="docutils literal"><span class="pre">async</span> <span class="pre">def</span></code>.</p>
+</div>
+<div class="section" id="enumerators">
+<span id="migrating-enums"></span><h2>Enumerators<a class="headerlink" href="#enumerators" title="Permalink to this headline">¶</a></h2>
+<p>Due to dropping support for versions lower than Python 3.4.2, the library can now use
+<a class="reference external" href="https://docs.python.org/3/library/enum.html">enumerators</a> in places where it makes sense.</p>
+<p>The common places where this was changed was in the server region, member status, and channel type.</p>
+<p>Before:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="s">&#39;us-west&#39;</span>
+<span class="n">member</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s">&#39;online&#39;</span>
+<span class="n">channel</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s">&#39;text&#39;</span>
+</pre></div>
+</div>
+<p>After:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">server</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="n">discord</span><span class="o">.</span><span class="n">ServerRegion</span><span class="o">.</span><span class="n">us_west</span>
+<span class="n">member</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">online</span>
+<span class="n">channel</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">discord</span><span class="o">.</span><span class="n">ChannelType</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+<p>The main reason for this change was to reduce the use of finnicky strings in the API as this
+could give users a false sense of power. More information can be found in the <a class="reference internal" href="api.html#discord-api-enums"><span class="std std-ref">Enumerators</span></a> page.</p>
+</div>
+<div class="section" id="properties">
+<span id="migrating-properties"></span><h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p>A lot of function calls that returned constant values were changed into Python properties for ease of use
+in format strings.</p>
+<p>The following functions were changed into properties:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Before</td>
+<td>After</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">user.avatar_url()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.User.avatar_url" title="discord.User.avatar_url"><code class="xref py py-attr docutils literal"><span class="pre">User.avatar_url</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">user.mention()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.User.mention" title="discord.User.mention"><code class="xref py py-attr docutils literal"><span class="pre">User.mention</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">channel.mention()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Channel.mention" title="discord.Channel.mention"><code class="xref py py-attr docutils literal"><span class="pre">Channel.mention</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">channel.is_default_channel()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Channel.is_default" title="discord.Channel.is_default"><code class="xref py py-attr docutils literal"><span class="pre">Channel.is_default</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">role.is_everyone()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Role.is_everyone" title="discord.Role.is_everyone"><code class="xref py py-attr docutils literal"><span class="pre">Role.is_everyone</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">server.get_default_role()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Server.default_role" title="discord.Server.default_role"><code class="xref py py-attr docutils literal"><span class="pre">Server.default_role</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">server.icon_url()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Server.icon_url" title="discord.Server.icon_url"><code class="xref py py-attr docutils literal"><span class="pre">Server.icon_url</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">server.get_default_channel()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Server.default_channel" title="discord.Server.default_channel"><code class="xref py py-attr docutils literal"><span class="pre">Server.default_channel</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">message.get_raw_mentions()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Message.raw_mentions" title="discord.Message.raw_mentions"><code class="xref py py-attr docutils literal"><span class="pre">Message.raw_mentions</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">message.get_raw_channel_mentions()</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Message.raw_channel_mentions" title="discord.Message.raw_channel_mentions"><code class="xref py py-attr docutils literal"><span class="pre">Message.raw_channel_mentions</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="running-the-client">
+<span id="migrating-running"></span><h2>Running the Client<a class="headerlink" href="#running-the-client" title="Permalink to this headline">¶</a></h2>
+<p>In earlier versions of discord.py, <code class="docutils literal"><span class="pre">client.run()</span></code> was a blocking call to the main thread
+that called it. In v0.10.0 it is still a blocking call but it handles the event loop for you.
+However, in order to do that you must pass in your credentials to <a class="reference internal" href="api.html#discord.Client.run" title="discord.Client.run"><code class="xref py py-meth docutils literal"><span class="pre">Client.run()</span></code></a>.</p>
+<p>Basically, before:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>After:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">client</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is a utility function that abstracts the event loop for you. There&#8217;s no need for
+the run call to be blocking and out of your control. Indeed, if you want control of the
+event loop then doing so is quite straightforward:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">discord</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">main_task</span><span class="p">():</span>
+    <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">)</span>
+    <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main_task</span><span class="p">())</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">logout</span><span class="p">())</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="logging.html" class="btn btn-neutral" title="Setting Up Logging" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Rapptz.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.10.0-alpha',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
