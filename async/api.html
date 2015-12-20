@@ -322,7 +322,7 @@ in-place.</p>
 
 <dl class="method">
 <dt id="discord.Client.ban">
-<code class="descname">ban</code><span class="sig-paren">(</span><em>member</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.ban" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ban</code><span class="sig-paren">(</span><em>member</em>, <em>delete_message_days=1</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.ban" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Bans a <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> from the server they belong to.</p>
 <div class="admonition warning">
@@ -335,7 +335,11 @@ must have the proper permissions in that server.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>member</strong> (<a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>) &#8211; The member to ban from their server.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>member</strong> (<a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>) &#8211; The member to ban from their server.</li>
+<li><strong>delete_message_days</strong> (<em>int</em>) &#8211; The number of days worth of messages to delete from the user
+in the server. The minimum is 0 and the maximum is 7.</li>
+</ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
@@ -559,7 +563,7 @@ in the server the channel belongs to.</p>
 <dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Removes a channel specific permission overwrites for a target
 in the specified <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>.</p>
-<p>The target parameter follows the same rules as <code class="xref py py-meth docutils literal"><span class="pre">set_channel_permissions()</span></code>.</p>
+<p>The target parameter follows the same rules as <a class="reference internal" href="#discord.Client.edit_channel_permissions" title="discord.Client.edit_channel_permissions"><code class="xref py py-meth docutils literal"><span class="pre">edit_channel_permissions()</span></code></a>.</p>
 <p>You must have the proper permissions to do this.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -701,7 +705,7 @@ specified <a class="reference internal" href="#discord.Channel" title="discord.C
 <span class="n">deny</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Permissions</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
 <span class="n">allow</span><span class="o">.</span><span class="n">can_mention_everyone</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="n">deny</span><span class="o">.</span><span class="n">can_manage_messages</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">set_channel_permissions</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">allow</span><span class="o">=</span><span class="n">allow</span><span class="p">,</span> <span class="n">deny</span><span class="o">=</span><span class="n">deny</span><span class="p">)</span>
+<span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">edit_channel_permissions</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">allow</span><span class="o">=</span><span class="n">allow</span><span class="p">,</span> <span class="n">deny</span><span class="o">=</span><span class="n">deny</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1563,6 +1567,24 @@ a <a class="reference internal" href="#discord.Message" title="discord.Message">
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="discord.Client.wait_until_login">
+<code class="descname">wait_until_login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.wait_until_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
+<p>This coroutine waits until the client is logged on successfully. This
+is different from waiting until the client&#8217;s state is all ready. For
+that check <a class="reference internal" href="#discord.on_ready" title="discord.on_ready"><code class="xref py py-func docutils literal"><span class="pre">discord.on_ready()</span></code></a> and <a class="reference internal" href="#discord.Client.wait_until_ready" title="discord.Client.wait_until_ready"><code class="xref py py-meth docutils literal"><span class="pre">wait_until_ready()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.wait_until_ready">
+<code class="descname">wait_until_ready</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.wait_until_ready" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
+<p>This coroutine waits until the client is all ready. This could be considered
+another way of asking for <a class="reference internal" href="#discord.on_ready" title="discord.on_ready"><code class="xref py py-func docutils literal"><span class="pre">discord.on_ready()</span></code></a> except meant for your own
+background tasks.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -2341,6 +2363,39 @@ existed in the <a class="reference internal" href="#discord.Client.servers" titl
 </dd></dl>
 
 <dl class="function">
+<dt id="discord.on_member_ban">
+<code class="descclassname">discord.</code><code class="descname">on_member_ban</code><span class="sig-paren">(</span><em>member</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_member_ban" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> gets banned from a <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
+<p>You can access the server that the member got banned from via <a class="reference internal" href="#discord.Member.server" title="discord.Member.server"><code class="xref py py-attr docutils literal"><span class="pre">Member.server</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>member</strong> &#8211; The member that got banned.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="discord.on_member_unban">
+<code class="descclassname">discord.</code><code class="descname">on_member_unban</code><span class="sig-paren">(</span><em>server</em>, <em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_member_unban" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> gets unbanned from a <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>server</strong> &#8211; The server the user got unbanned from.</li>
+<li><strong>user</strong> &#8211; The user that got unbanned.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="discord.on_typing">
 <code class="descclassname">discord.</code><code class="descname">on_typing</code><span class="sig-paren">(</span><em>channel</em>, <em>user</em>, <em>when</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.on_typing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called when someone begins typing a message.</p>
@@ -2565,7 +2620,7 @@ extremely rare.</p>
 <h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="discord.User">
-<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">User</code><span class="sig-paren">(</span><em>username</em>, <em>id</em>, <em>discriminator</em>, <em>avatar</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.User" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">User</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a Discord user.</p>
 <p>Supported Operations:</p>
 <table border="1" class="docutils">
@@ -3220,9 +3275,9 @@ to an (red, green, blue) tuple.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Role.color">
-<code class="descname">color</code><a class="headerlink" href="#discord.Role.color" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> &#8211; Represents the role colour.</p>
+<dt id="discord.Role.colour">
+<code class="descname">colour</code><a class="headerlink" href="#discord.Role.colour" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> &#8211; Represents the role colour. An alias exists under <code class="docutils literal"><span class="pre">color</span></code>.</p>
 </dd></dl>
 
 <dl class="attribute">

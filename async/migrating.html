@@ -177,7 +177,7 @@ for easier registration. For example:</p>
 </pre></div>
 </div>
 <p>Be aware however, that this is still a coroutine and your other functions that are coroutines must
-be decorated with `` &#64;asyncio.coroutine`` or be <code class="docutils literal"><span class="pre">async</span> <span class="pre">def</span></code>.</p>
+be decorated with <code class="docutils literal"><span class="pre">&#64;asyncio.coroutine</span></code> or be <code class="docutils literal"><span class="pre">async</span> <span class="pre">def</span></code>.</p>
 </div>
 <div class="section" id="event-changes">
 <span id="migrating-event-changes"></span><h2>Event Changes<a class="headerlink" href="#event-changes" title="Permalink to this headline">¶</a></h2>
@@ -256,34 +256,34 @@ in format strings.</p>
 <tr class="row-odd"><td>Before</td>
 <td>After</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">user.avatar_url()</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">User.avatar_url()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.User.avatar_url" title="discord.User.avatar_url"><code class="xref py py-attr docutils literal"><span class="pre">User.avatar_url</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">user.mention()</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">User.mention()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.User.mention" title="discord.User.mention"><code class="xref py py-attr docutils literal"><span class="pre">User.mention</span></code></a></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">channel.mention()</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Channel.mention()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Channel.mention" title="discord.Channel.mention"><code class="xref py py-attr docutils literal"><span class="pre">Channel.mention</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">channel.is_default_channel()</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Channel.is_default_channel()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Channel.is_default" title="discord.Channel.is_default"><code class="xref py py-attr docutils literal"><span class="pre">Channel.is_default</span></code></a></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">role.is_everyone()</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Role.is_everyone()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Role.is_everyone" title="discord.Role.is_everyone"><code class="xref py py-attr docutils literal"><span class="pre">Role.is_everyone</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">server.get_default_role()</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Server.get_default_role()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Server.default_role" title="discord.Server.default_role"><code class="xref py py-attr docutils literal"><span class="pre">Server.default_role</span></code></a></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">server.icon_url()</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Server.icon_url()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Server.icon_url" title="discord.Server.icon_url"><code class="xref py py-attr docutils literal"><span class="pre">Server.icon_url</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">server.get_default_channel()</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Server.get_default_channel()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Server.default_channel" title="discord.Server.default_channel"><code class="xref py py-attr docutils literal"><span class="pre">Server.default_channel</span></code></a></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">message.get_raw_mentions()</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Message.get_raw_mentions()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Message.raw_mentions" title="discord.Message.raw_mentions"><code class="xref py py-attr docutils literal"><span class="pre">Message.raw_mentions</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">message.get_raw_channel_mentions()</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Message.get_raw_channel_mentions()</span></code></td>
 <td><a class="reference internal" href="api.html#discord.Message.raw_channel_mentions" title="discord.Message.raw_channel_mentions"><code class="xref py py-attr docutils literal"><span class="pre">Message.raw_channel_mentions</span></code></a></td>
 </tr>
 </tbody>
