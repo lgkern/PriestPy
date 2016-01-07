@@ -100,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#server">Server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#member">Member</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#colour">Colour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#game">Game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#role">Role</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#permissions">Permissions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#channel">Channel</a></li>
@@ -132,7 +133,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -161,7 +162,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This module uses the Python logging module to log diagnostic and errors
 in an output independent way.  If the logging module is not configured,
-these logs will not be output anywhere.  See <a class="reference internal" href="logging.html#logging-setup"><span class="std std-ref">Setting Up Logging</span></a> for
+these logs will not be output anywhere.  See <a class="reference internal" href="logging.html#logging-setup"><span>Setting Up Logging</span></a> for
 more information on how to set up and use the logging module with
 discord.py.</p>
 </div>
@@ -212,13 +213,15 @@ disk to a temporary directory.</li>
 <dl class="attribute">
 <dt id="discord.Client.user">
 <code class="descname">user</code><a class="headerlink" href="#discord.Client.user" title="Permalink to this definition">¶</a></dt>
-<dd><p>Optional[<a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>] &#8211; Represents the connected client. None if not logged in.</p>
+<dd><p>Optional[<a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>]</p>
+<p>Represents the connected client. None if not logged in.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Client.voice">
 <code class="descname">voice</code><a class="headerlink" href="#discord.Client.voice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Optional[<a class="reference internal" href="#discord.VoiceClient" title="discord.VoiceClient"><code class="xref py py-class docutils literal"><span class="pre">VoiceClient</span></code></a>] &#8211; Represents the current voice connection. None if you are not connected
+<dd><p>Optional[<a class="reference internal" href="#discord.VoiceClient" title="discord.VoiceClient"><code class="xref py py-class docutils literal"><span class="pre">VoiceClient</span></code></a>]</p>
+<p>Represents the current voice connection. None if you are not connected
 to a voice channel. To connect to voice use <a class="reference internal" href="#discord.Client.join_voice_channel" title="discord.Client.join_voice_channel"><code class="xref py py-meth docutils literal"><span class="pre">join_voice_channel()</span></code></a>.
 To query the voice connection state use <a class="reference internal" href="#discord.Client.is_voice_connected" title="discord.Client.is_voice_connected"><code class="xref py py-meth docutils literal"><span class="pre">is_voice_connected()</span></code></a>.</p>
 </dd></dl>
@@ -226,13 +229,15 @@ To query the voice connection state use <a class="reference internal" href="#dis
 <dl class="attribute">
 <dt id="discord.Client.servers">
 <code class="descname">servers</code><a class="headerlink" href="#discord.Client.servers" title="Permalink to this definition">¶</a></dt>
-<dd><p>list of <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> &#8211; The servers that the connected client is a member of.</p>
+<dd><p>list of <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a></p>
+<p>The servers that the connected client is a member of.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Client.private_channels">
 <code class="descname">private_channels</code><a class="headerlink" href="#discord.Client.private_channels" title="Permalink to this definition">¶</a></dt>
-<dd><p>list of <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a> &#8211; The private channels that the connected client is participating on.</p>
+<dd><p>list of <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a></p>
+<p>The private channels that the connected client is participating on.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -277,8 +282,10 @@ An ID for the invite is just the &#8220;codehere&#8221; portion of the invite UR
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Accepting the invite failed.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The invite is invalid or expired.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Accepting the invite failed.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The invite is invalid or expired.</li>
 </ul>
 </td>
 </tr>
@@ -305,8 +312,10 @@ in-place.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to add roles.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Adding roles failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to add roles.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Adding roles failed.</li>
 </ul>
 </td>
 </tr>
@@ -343,8 +352,10 @@ in the server. The minimum is 0 and the maximum is 7.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have the proper permissions to ban.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Banning failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have the proper permissions to ban.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Banning failed.</li>
 </ul>
 </td>
 </tr>
@@ -354,13 +365,11 @@ in the server. The minimum is 0 and the maximum is 7.</li>
 
 <dl class="method">
 <dt id="discord.Client.change_status">
-<code class="descname">change_status</code><span class="sig-paren">(</span><em>game_id=None</em>, <em>idle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.change_status" title="Permalink to this definition">¶</a></dt>
+<code class="descname">change_status</code><span class="sig-paren">(</span><em>game=None</em>, <em>idle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.change_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Changes the client&#8217;s status.</p>
-<p>The game_id parameter is a numeric ID (not a string) that represents
-a game being played currently. The list of game_id to actual games changes
-constantly and would thus be out of date pretty quickly. An old version of
-the game_id database can be seen <a class="reference external" href="game_list">here</a> to help you get started.</p>
+<p>The game parameter is a Game object (not a string) that represents
+a game being played currently.</p>
 <p>The idle parameter is a boolean parameter that indicates whether the
 client should go idle or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -368,12 +377,13 @@ client should go idle or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>game_id</strong> (<em>Optional[int]</em>) &#8211; The game ID being played. None if no game is being played.</li>
+<li><strong>game</strong> (Optional[<a class="reference internal" href="#discord.Game" title="discord.Game"><code class="xref py py-class docutils literal"><span class="pre">Game</span></code></a>]) &#8211; The game being played. None if no game is being played.</li>
 <li><strong>idle</strong> (<em>bool</em>) &#8211; Indicates if the client should go idle.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; If the <code class="docutils literal"><span class="pre">game_id</span></code> parameter is convertible integer or None.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+If the <code class="docutils literal"><span class="pre">game</span></code> parameter is not <a class="reference internal" href="#discord.Game" title="discord.Game"><code class="xref py py-class docutils literal"><span class="pre">Game</span></code></a> or None.</p>
 </td>
 </tr>
 </tbody>
@@ -401,7 +411,15 @@ be executed later using <code class="docutils literal"><span class="pre">loop.cr
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211; If this is called before <a class="reference internal" href="#discord.Client.login" title="discord.Client.login"><code class="xref py py-meth docutils literal"><span class="pre">login()</span></code></a> was invoked successfully.</td>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211;
+If this is called before <a class="reference internal" href="#discord.Client.login" title="discord.Client.login"><code class="xref py py-meth docutils literal"><span class="pre">login()</span></code></a> was invoked successfully
+or when an unexpected closure of the websocket occurs.</li>
+<li><a class="reference internal" href="#discord.GatewayNotFound" title="discord.GatewayNotFound"><code class="xref py py-exc docutils literal"><span class="pre">GatewayNotFound</span></code></a> &#8211;
+If the gateway to connect to discord is not found. Usually if this
+is thrown then there is a discord API outage.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -425,9 +443,12 @@ be executed later using <code class="docutils literal"><span class="pre">loop.cr
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have the proper permissions to create the channel.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The server specified was not found.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Creating the channel failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have the proper permissions to create the channel.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The server specified was not found.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Creating the channel failed.</li>
 </ul>
 </td>
 </tr>
@@ -464,7 +485,8 @@ are unlimited uses. Defaults to 0.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Invite creation failed.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Invite creation failed.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The invite that was created.</p>
@@ -509,15 +531,17 @@ is stored in cache.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>name</strong> (<em>str</em>) &#8211; The name of the server.</li>
 <li><strong>region</strong> (<a class="reference internal" href="#discord.ServerRegion" title="discord.ServerRegion"><code class="xref py py-class docutils literal"><span class="pre">ServerRegion</span></code></a>) &#8211; The region for the voice communication server.
-Defaults to :attr`ServerRegion.us_west`.</li>
+Defaults to <a class="reference internal" href="#discord.ServerRegion.us_west" title="discord.ServerRegion.us_west"><code class="xref py py-attr docutils literal"><span class="pre">ServerRegion.us_west</span></code></a>.</li>
 <li><strong>icon</strong> (<em>bytes</em>) &#8211; The <em>bytes-like</em> object representing the icon. See <a class="reference internal" href="#discord.Client.edit_profile" title="discord.Client.edit_profile"><code class="xref py py-meth docutils literal"><span class="pre">edit_profile()</span></code></a>
 for more details on what is expected.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Server creation failed.</li>
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; Invalid icon image format given. Must be PNG or JPG.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Server creation failed.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+Invalid icon image format given. Must be PNG or JPG.</li>
 </ul>
 </td>
 </tr>
@@ -547,9 +571,12 @@ in the server the channel belongs to.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have proper permissions to delete the channel.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The specified channel was not found.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Deleting the channel failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have proper permissions to delete the channel.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The specified channel was not found.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Deleting the channel failed.</li>
 </ul>
 </td>
 </tr>
@@ -576,9 +603,12 @@ in the specified <a class="reference internal" href="#discord.Channel" title="di
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to delete channel specific permissions.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The channel specified was not found.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Deleting channel specific permissions failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to delete channel specific permissions.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The channel specified was not found.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Deleting channel specific permissions failed.</li>
 </ul>
 </td>
 </tr>
@@ -601,9 +631,12 @@ in the specified <a class="reference internal" href="#discord.Channel" title="di
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to revoke invites.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The invite is invalid or expired.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Revoking the invite failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to revoke invites.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The invite is invalid or expired.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Revoking the invite failed.</li>
 </ul>
 </td>
 </tr>
@@ -626,8 +659,10 @@ delete other people&#8217;s messages, you need the proper permissions to do so.<
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have proper permissions to delete the message.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Deleting the message failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have proper permissions to delete the message.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Deleting the message failed.</li>
 </ul>
 </td>
 </tr>
@@ -652,8 +687,10 @@ delete other people&#8217;s messages, you need the proper permissions to do so.<
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to delete the role.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Deleting the role failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to delete the role.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Deleting the role failed.</li>
 </ul>
 </td>
 </tr>
@@ -681,8 +718,10 @@ delete other people&#8217;s messages, you need the proper permissions to do so.<
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to edit the channel.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Editing the channel failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to edit the channel.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Editing the channel failed.</li>
 </ul>
 </td>
 </tr>
@@ -703,8 +742,8 @@ specified <a class="reference internal" href="#discord.Channel" title="discord.C
 <p>Setting allow and deny:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">allow</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Permissions</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
 <span class="n">deny</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Permissions</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
-<span class="n">allow</span><span class="o">.</span><span class="n">can_mention_everyone</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">deny</span><span class="o">.</span><span class="n">can_manage_messages</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">allow</span><span class="o">.</span><span class="n">mention_everyone</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">deny</span><span class="o">.</span><span class="n">manage_messages</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">edit_channel_permissions</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">allow</span><span class="o">=</span><span class="n">allow</span><span class="p">,</span> <span class="n">deny</span><span class="o">=</span><span class="n">deny</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -721,10 +760,14 @@ specified <a class="reference internal" href="#discord.Channel" title="discord.C
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to edit channel specific permissions.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The channel specified was not found.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Editing channel specific permissions failed.</li>
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; The allow or deny arguments were not of type <a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to edit channel specific permissions.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The channel specified was not found.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Editing channel specific permissions failed.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The allow or deny arguments were not of type <a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a>
 or the target type was not <a class="reference internal" href="#discord.Role" title="discord.Role"><code class="xref py py-class docutils literal"><span class="pre">Role</span></code></a> or <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>.</li>
 </ul>
 </td>
@@ -735,7 +778,7 @@ or the target type was not <a class="reference internal" href="#discord.Role" ti
 
 <dl class="method">
 <dt id="discord.Client.edit_message">
-<code class="descname">edit_message</code><span class="sig-paren">(</span><em>message</em>, <em>new_content</em>, <em>*</em>, <em>mentions=True</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_message" title="Permalink to this definition">¶</a></dt>
+<code class="descname">edit_message</code><span class="sig-paren">(</span><em>message</em>, <em>new_content</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.edit_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Edits a <a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> with the new message content.</p>
 <p>The new_content must be able to be transformed into a string via <code class="docutils literal"><span class="pre">str(new_content)</span></code>.</p>
@@ -746,11 +789,11 @@ or the target type was not <a class="reference internal" href="#discord.Role" ti
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>message</strong> (<a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a>) &#8211; The message to edit.</li>
 <li><strong>new_content</strong> &#8211; The new content to replace the message with.</li>
-<li><strong>mentions</strong> &#8211; The mentions for the user. Same as <a class="reference internal" href="#discord.Client.send_message" title="discord.Client.send_message"><code class="xref py py-meth docutils literal"><span class="pre">send_message()</span></code></a>.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Editing the message failed.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Editing the message failed.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The new edited message.</p>
@@ -793,8 +836,10 @@ Could be <code class="docutils literal"><span class="pre">None</span></code> to 
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Editing your profile failed.</li>
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; Wrong image format passed for <code class="docutils literal"><span class="pre">avatar</span></code>.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Editing your profile failed.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+Wrong image format passed for <code class="docutils literal"><span class="pre">avatar</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -834,8 +879,10 @@ you use the constants in the <a class="reference internal" href="#discord.Colour
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to change the role.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Editing the role failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to change the role.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Editing the role failed.</li>
 </ul>
 </td>
 </tr>
@@ -866,10 +913,14 @@ for more details. Could be <code class="docutils literal"><span class="pre">None
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to edit the server.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The server you are trying to edit does not exist.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Editing the server failed.</li>
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; The image format passed in to <code class="docutils literal"><span class="pre">icon</span></code> is invalid. It must be
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to edit the server.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The server you are trying to edit does not exist.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Editing the server failed.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The image format passed in to <code class="docutils literal"><span class="pre">icon</span></code> is invalid. It must be
 PNG or JPG.</li>
 </ul>
 </td>
@@ -882,7 +933,7 @@ PNG or JPG.</li>
 <dt id="discord.Client.event">
 <code class="descname">event</code><span class="sig-paren">(</span><em>coro</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.event" title="Permalink to this definition">¶</a></dt>
 <dd><p>A decorator that registers an event to listen to.</p>
-<p>You can find more info about the events on the <a class="reference internal" href="#discord-api-events"><span class="std std-ref">documentation below</span></a>.</p>
+<p>You can find more info about the events on the <a class="reference internal" href="#discord-api-events"><span>documentation below</span></a>.</p>
 <p>The events must be a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>, if not, <a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> is raised.</p>
 <p class="rubric">Examples</p>
 <p>Using the basic <a class="reference internal" href="#discord.Client.event" title="discord.Client.event"><code class="xref py py-meth docutils literal"><span class="pre">event()</span></code></a> decorator:</p>
@@ -945,8 +996,10 @@ server.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have proper permissions to get the information.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; An error occurred while fetching the information.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have proper permissions to get the information.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+An error occurred while fetching the information.</li>
 </ul>
 </td>
 </tr>
@@ -985,8 +1038,10 @@ patched in.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The invite has expired or is invalid.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Getting the invite failed.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The invite has expired or is invalid.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Getting the invite failed.</li>
 </ul>
 </td>
 </tr>
@@ -1015,12 +1070,15 @@ a <a class="reference internal" href="#discord.Server" title="discord.Server"><c
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have proper permissions to get the information.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; An error occurred while fetching the information.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have proper permissions to get the information.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+An error occurred while fetching the information.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a> &#8211; The invite with the message data parsed.</p>
+<tr class="field-odd field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.Invite" title="discord.Invite"><code class="xref py py-class docutils literal"><span class="pre">Invite</span></code></a> &#8211;
+The invite with the message data parsed.</p>
 </td>
 </tr>
 </tbody>
@@ -1030,13 +1088,13 @@ a <a class="reference internal" href="#discord.Server" title="discord.Server"><c
 <dl class="attribute">
 <dt id="discord.Client.is_closed">
 <code class="descname">is_closed</code><a class="headerlink" href="#discord.Client.is_closed" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the websocket connection is closed.</p>
+<dd><p>bool: Indicates if the websocket connection is closed.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Client.is_logged_in">
 <code class="descname">is_logged_in</code><a class="headerlink" href="#discord.Client.is_logged_in" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the client has logged in successfully.</p>
+<dd><p>bool: Indicates if the client has logged in successfully.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1061,10 +1119,14 @@ set to the returned <a class="reference internal" href="#discord.VoiceClient" ti
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; The channel was not a voice channel.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">asyncio.TimeoutError</span></code> &#8211; Could not connect to the voice channel in time.</li>
-<li><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211; You are already connected to a voice channel.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">OpusNotLoaded</span></code> &#8211; The opus library has not been loaded.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The channel was not a voice channel.</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">asyncio.TimeoutError</span></code> &#8211;
+Could not connect to the voice channel in time.</li>
+<li><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211;
+You are already connected to a voice channel.</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">OpusNotLoaded</span></code> &#8211;
+The opus library has not been loaded.</li>
 </ul>
 </td>
 </tr>
@@ -1097,8 +1159,10 @@ must have the proper permissions in that server.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have the proper permissions to kick.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Kicking failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have the proper permissions to kick.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Kicking failed.</li>
 </ul>
 </td>
 </tr>
@@ -1121,7 +1185,8 @@ must have the proper permissions in that server.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>server</strong> (<a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>) &#8211; The server to leave.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; If leaving the server failed.</td>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+If leaving the server failed.</td>
 </tr>
 </tbody>
 </table>
@@ -1143,11 +1208,12 @@ must have the proper permissions in that server.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.LoginFailure" title="discord.LoginFailure"><code class="xref py py-exc docutils literal"><span class="pre">LoginFailure</span></code></a> &#8211; The wrong credentials are passed.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; An unknown HTTP related error occurred,
+<li><a class="reference internal" href="#discord.LoginFailure" title="discord.LoginFailure"><code class="xref py py-exc docutils literal"><span class="pre">LoginFailure</span></code></a> &#8211;
+The wrong credentials are passed.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+An unknown HTTP related error occurred,
 usually when it isn&#8217;t 200 or the known incorrect credentials
 passing status code.</li>
-<li><a class="reference internal" href="#discord.GatewayNotFound" title="discord.GatewayNotFound"><code class="xref py py-exc docutils literal"><span class="pre">GatewayNotFound</span></code></a> &#8211; The gateway to connect to discord was not found.</li>
 </ul>
 </td>
 </tr>
@@ -1180,13 +1246,17 @@ passing status code.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to get channel logs.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The channel you are requesting for doesn&#8217;t exist.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; The request to get logs failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to get channel logs.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The channel you are requesting for doesn&#8217;t exist.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+The request to get logs failed.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> &#8211; The message with the message data parsed.</p>
+<tr class="field-odd field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.Message" title="discord.Message"><code class="xref py py-class docutils literal"><span class="pre">Message</span></code></a> &#8211;
+The message with the message data parsed.</p>
 </td>
 </tr>
 </tbody>
@@ -1200,6 +1270,41 @@ passing status code.</li>
             <span class="k">yield from</span> <span class="n">client</span><span class="o">.</span><span class="n">edit_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s">&#39;goodbye&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Client.move_member">
+<code class="descname">move_member</code><span class="sig-paren">(</span><em>member</em>, <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.move_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
+<p>Moves a <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> to a different voice channel.</p>
+<p>You must have proper permissions to do this.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You cannot pass in a <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a> in place of a <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>
+object in this function.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>member</strong> (<a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>) &#8211; The member to move to another voice channel.</li>
+<li><strong>channel</strong> (<a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>) &#8211; The voice channel to move the member to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The channel provided is not a voice channel.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Moving the member failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to move the member.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1230,8 +1335,10 @@ Check <a class="reference internal" href="#discord.on_error" title="discord.on_e
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to revoke roles.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Removing roles failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to revoke roles.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Removing roles failed.</li>
 </ul>
 </td>
 </tr>
@@ -1261,8 +1368,10 @@ the member has the roles <code class="docutils literal"><span class="pre">[d,</s
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have permissions to revoke roles.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Removing roles failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have permissions to revoke roles.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Removing roles failed.</li>
 </ul>
 </td>
 </tr>
@@ -1319,7 +1428,8 @@ this value by passing this in.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Sending the file failed.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Sending the file failed.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The message sent.</p>
@@ -1334,7 +1444,7 @@ this value by passing this in.</p>
 
 <dl class="method">
 <dt id="discord.Client.send_message">
-<code class="descname">send_message</code><span class="sig-paren">(</span><em>destination</em>, <em>content</em>, <em>*</em>, <em>mentions=True</em>, <em>tts=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.send_message" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send_message</code><span class="sig-paren">(</span><em>destination</em>, <em>content</em>, <em>*</em>, <em>tts=False</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Client.send_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is a <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Sends a message to the destination given with the content given.</p>
 <p>The destination could be a <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a>, <a class="reference internal" href="#discord.PrivateChannel" title="discord.PrivateChannel"><code class="xref py py-class docutils literal"><span class="pre">PrivateChannel</span></code></a> or <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>.
@@ -1349,9 +1459,6 @@ ID will not be a valid destination.</p>
 <p><span class="versionmodified">Changed in version 0.9.0: </span><code class="docutils literal"><span class="pre">str</span></code> being allowed was removed and replaced with <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a>.</p>
 </div>
 <p>The content must be a type that can convert to a string through <code class="docutils literal"><span class="pre">str(content)</span></code>.</p>
-<p>The mentions must be either an array of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to mention or a boolean. If
-<code class="docutils literal"><span class="pre">mentions</span></code> is <code class="docutils literal"><span class="pre">True</span></code> then all the users mentioned in the content are mentioned, otherwise
-no one is mentioned. Note that to mention someone in the content, you should use <a class="reference internal" href="#discord.User.mention" title="discord.User.mention"><code class="xref py py-meth docutils literal"><span class="pre">User.mention()</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1359,16 +1466,19 @@ no one is mentioned. Note that to mention someone in the content, you should use
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>destination</strong> &#8211; The location to send the message.</li>
 <li><strong>content</strong> &#8211; The content of the message to send.</li>
-<li><strong>mentions</strong> &#8211; A list of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> to mention in the message or a boolean. Ignored for private messages.</li>
 <li><strong>tts</strong> (<em>bool</em>) &#8211; Indicates if the message should be sent using text-to-speech.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Sending the message failed.</li>
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have the proper permissions to send the message.</li>
-<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211; The destination was not found and hence is invalid.</li>
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; The destination parameter is invalid.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Sending the message failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have the proper permissions to send the message.</li>
+<li><a class="reference internal" href="#discord.NotFound" title="discord.NotFound"><code class="xref py py-exc docutils literal"><span class="pre">NotFound</span></code></a> &#8211;
+The destination was not found and hence is invalid.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The destination parameter is invalid.</li>
 </ul>
 </td>
 </tr>
@@ -1422,8 +1532,10 @@ So you must have the proper permissions in that server.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have the proper permissions to deafen or mute.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; The operation failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have the proper permissions to deafen or mute.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+The operation failed.</li>
 </ul>
 </td>
 </tr>
@@ -1457,8 +1569,10 @@ does it automatically for you.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; The request failed.</li>
-<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; The user argument was not of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+The request failed.</li>
+<li><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The user argument was not of <a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a>.</li>
 </ul>
 </td>
 </tr>
@@ -1482,8 +1596,10 @@ does it automatically for you.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211; You do not have the proper permissions to unban.</li>
-<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211; Unbanning failed.</li>
+<li><a class="reference internal" href="#discord.Forbidden" title="discord.Forbidden"><code class="xref py py-exc docutils literal"><span class="pre">Forbidden</span></code></a> &#8211;
+You do not have the proper permissions to unban.</li>
+<li><a class="reference internal" href="#discord.HTTPException" title="discord.HTTPException"><code class="xref py py-exc docutils literal"><span class="pre">HTTPException</span></code></a> &#8211;
+Unbanning failed.</li>
 </ul>
 </td>
 </tr>
@@ -1606,31 +1722,36 @@ transmit audio.</p>
 <dl class="attribute">
 <dt id="discord.VoiceClient.session_id">
 <code class="descname">session_id</code><a class="headerlink" href="#discord.VoiceClient.session_id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The voice connection session ID.</p>
+<dd><p><em>str</em></p>
+<p>The voice connection session ID.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.VoiceClient.token">
 <code class="descname">token</code><a class="headerlink" href="#discord.VoiceClient.token" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The voice connection token.</p>
+<dd><p><em>str</em></p>
+<p>The voice connection token.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.VoiceClient.user">
 <code class="descname">user</code><a class="headerlink" href="#discord.VoiceClient.user" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> &#8211; The user connected to voice.</p>
+<dd><p><a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a></p>
+<p>The user connected to voice.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.VoiceClient.endpoint">
 <code class="descname">endpoint</code><a class="headerlink" href="#discord.VoiceClient.endpoint" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The endpoint we are connecting to.</p>
+<dd><p><em>str</em></p>
+<p>The endpoint we are connecting to.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.VoiceClient.channel">
 <code class="descname">channel</code><a class="headerlink" href="#discord.VoiceClient.channel" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> &#8211; The voice channel connected to.</p>
+<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a></p>
+<p>The voice channel connected to.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1674,7 +1795,8 @@ played. All exceptions the finalizer throws are silently discarded.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211; Popen failed to due to an error in <code class="docutils literal"><span class="pre">ffmpeg</span></code> or <code class="docutils literal"><span class="pre">avconv</span></code>.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211;
+Popen failed to due to an error in <code class="docutils literal"><span class="pre">ffmpeg</span></code> or <code class="docutils literal"><span class="pre">avconv</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A stream player with specific operations.
@@ -1790,7 +1912,8 @@ played. All exceptions the finalizer throws are silently discarded.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211; Popen failure from either <code class="docutils literal"><span class="pre">ffmpeg</span></code>/<code class="docutils literal"><span class="pre">avconv</span></code>.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211;
+Popen failure from either <code class="docutils literal"><span class="pre">ffmpeg</span></code>/<code class="docutils literal"><span class="pre">avconv</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A stream player with specific operations.
@@ -1831,7 +1954,8 @@ has no effect.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211; The values provided are invalid.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#discord.InvalidArgument" title="discord.InvalidArgument"><code class="xref py py-exc docutils literal"><span class="pre">InvalidArgument</span></code></a> &#8211;
+The values provided are invalid.</p>
 </td>
 </tr>
 </tbody>
@@ -1857,8 +1981,10 @@ has no effect.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211; You are not connected.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">OpusError</span></code> &#8211; Encoding the data failed.</li>
+<li><a class="reference internal" href="#discord.ClientException" title="discord.ClientException"><code class="xref py py-exc docutils literal"><span class="pre">ClientException</span></code></a> &#8211;
+You are not connected.</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">OpusError</span></code> &#8211;
+Encoding the data failed.</li>
 </ul>
 </td>
 </tr>
@@ -1947,12 +2073,12 @@ errors. In order to turn a function into a coroutine they must either be decorat
 with <code class="docutils literal"><span class="pre">&#64;asyncio.coroutine</span></code> or in Python 3.5+ be defined using the <code class="docutils literal"><span class="pre">async</span> <span class="pre">def</span></code>
 declaration.</p>
 <p>The following two functions are examples of coroutine functions:</p>
-<div class="highlight-python"><div class="highlight"><pre>async def on_ready():
-    pass
+<div class="highlight-python"><div class="highlight"><pre><span class="n">async</span> <span class="k">def</span> <span class="nf">on_ready</span><span class="p">():</span>
+    <span class="k">pass</span>
 
-@asyncio.coroutine
-def on_ready():
-    pass
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">on_ready</span><span class="p">():</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 <p class="last">Since this can be a potentially common mistake, there is a helper
@@ -2455,6 +2581,8 @@ all the traits passed in <code class="docutils literal"><span class="pre">attrs<
 <p>When multiple attributes are specified, they are checked using
 logical AND, not logical OR. Meaning they have to meet every
 attribute passed in and not one of them.</p>
+<p>To have a nested attribute search (i.e. search by <code class="docutils literal"><span class="pre">x.y</span></code>) then
+pass in <code class="docutils literal"><span class="pre">x__y</span></code> as the keyword argument.</p>
 <p>If nothing is found that matches the attributes passed, then
 <code class="docutils literal"><span class="pre">None</span></code> is returned.</p>
 <p class="rubric">Examples</p>
@@ -2464,6 +2592,10 @@ attribute passed in and not one of them.</p>
 </div>
 <p>Multiple attribute matching:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">channel</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;Foo&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">ChannelType</span><span class="o">.</span><span class="n">voice</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nested attribute matching:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">channel</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_all_channels</span><span class="p">(),</span> <span class="n">server__name</span><span class="o">=</span><span class="s">&#39;Cool&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;general&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2590,7 +2722,16 @@ nor should you modify the <a class="reference internal" href="#discord.User" tit
 <p class="last">If you want to get one of these data classes instances they&#8217;d have to be through
 the cache, and a common way of doing so is through the <a class="reference internal" href="#discord.utils.find" title="discord.utils.find"><code class="xref py py-func docutils literal"><span class="pre">utils.find()</span></code></a> function
 or attributes of data classes that you receive from the events specified in the
-<a class="reference internal" href="#discord-api-events"><span class="std std-ref">Event Reference</span></a>.</p>
+<a class="reference internal" href="#discord-api-events"><span>Event Reference</span></a>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Nearly all data classes here have <code class="docutils literal"><span class="pre">__slots__</span></code> defined which means that it is
+impossible to have dynamic attributes to the data classes. The only exception
+to this rule is <a class="reference internal" href="#discord.Object" title="discord.Object"><code class="xref py py-class docutils literal"><span class="pre">Object</span></code></a> which was designed with dynamic attributes in
+mind.</p>
+<p class="last">More information about <code class="docutils literal"><span class="pre">__slots__</span></code> can be found
+<a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#slots">in the official python documentation</a>.</p>
 </div>
 <div class="section" id="object">
 <h3>Object<a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h3>
@@ -2610,7 +2751,8 @@ extremely rare.</p>
 <dl class="attribute">
 <dt id="discord.Object.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.Object.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The ID of the object.</p>
+<dd><p><em>str</em></p>
+<p>The ID of the object.</p>
 </dd></dl>
 
 </dd></dl>
@@ -2651,25 +2793,29 @@ extremely rare.</p>
 <dl class="attribute">
 <dt id="discord.User.name">
 <code class="descname">name</code><a class="headerlink" href="#discord.User.name" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The user&#8217;s username.</p>
+<dd><p><em>str</em></p>
+<p>The user&#8217;s username.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.User.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.User.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The user&#8217;s unique ID.</p>
+<dd><p><em>str</em></p>
+<p>The user&#8217;s unique ID.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.User.discriminator">
 <code class="descname">discriminator</code><a class="headerlink" href="#discord.User.discriminator" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str or int</em> &#8211; The user&#8217;s discriminator. This is given when the username has conflicts.</p>
+<dd><p><em>str or int</em></p>
+<p>The user&#8217;s discriminator. This is given when the username has conflicts.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.User.avatar">
 <code class="descname">avatar</code><a class="headerlink" href="#discord.User.avatar" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The avatar hash the user has. Could be None.</p>
+<dd><p><em>str</em></p>
+<p>The avatar hash the user has. Could be None.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2698,19 +2844,22 @@ the user has no avatar.</p>
 <dl class="attribute">
 <dt id="discord.Message.edited_timestamp">
 <code class="descname">edited_timestamp</code><a class="headerlink" href="#discord.Message.edited_timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>Optional[datetime.datetime]</em> &#8211; A naive UTC datetime object containing the edited time of the message.</p>
+<dd><p><em>Optional[datetime.datetime]</em></p>
+<p>A naive UTC datetime object containing the edited time of the message.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.timestamp">
 <code class="descname">timestamp</code><a class="headerlink" href="#discord.Message.timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>datetime.datetime</em> &#8211; A naive UTC datetime object containing the time the message was created.</p>
+<dd><p><em>datetime.datetime</em></p>
+<p>A naive UTC datetime object containing the time the message was created.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.tts">
 <code class="descname">tts</code><a class="headerlink" href="#discord.Message.tts" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Specifies if the message was done with text-to-speech.</p>
+<dd><p><em>bool</em></p>
+<p>Specifies if the message was done with text-to-speech.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2723,13 +2872,15 @@ private channel, then it is a <a class="reference internal" href="#discord.User"
 <dl class="attribute">
 <dt id="discord.Message.content">
 <code class="descname">content</code><a class="headerlink" href="#discord.Message.content" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The actual contents of the message.</p>
+<dd><p><em>str</em></p>
+<p>The actual contents of the message.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.embeds">
 <code class="descname">embeds</code><a class="headerlink" href="#discord.Message.embeds" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>list</em> &#8211; A list of embedded objects. The elements are objects that meet oEmbed&#8217;s <a class="reference external" href="http://oembed.com/">specification</a>.</p>
+<dd><p><em>list</em></p>
+<p>A list of embedded objects. The elements are objects that meet oEmbed&#8217;s <a class="reference external" href="http://oembed.com/">specification</a>.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2744,13 +2895,15 @@ In <a class="reference external" href="https://github.com/Rapptz/discord.py/issu
 <dl class="attribute">
 <dt id="discord.Message.server">
 <code class="descname">server</code><a class="headerlink" href="#discord.Message.server" title="Permalink to this definition">¶</a></dt>
-<dd><p>Optional[<a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>] &#8211; The server that the message belongs to. If not applicable (i.e. a PM) then it&#8217;s None instead.</p>
+<dd><p>Optional[<a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a>]</p>
+<p>The server that the message belongs to. If not applicable (i.e. a PM) then it&#8217;s None instead.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.mention_everyone">
 <code class="descname">mention_everyone</code><a class="headerlink" href="#discord.Message.mention_everyone" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Specifies if the message mentions everyone.</p>
+<dd><p><em>bool</em></p>
+<p>Specifies if the message mentions everyone.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This does not check if the <code class="docutils literal"><span class="pre">&#64;everyone</span></code> text is in the message itself.
@@ -2762,7 +2915,8 @@ Rather this boolean indicates if the <code class="docutils literal"><span class=
 <dl class="attribute">
 <dt id="discord.Message.mentions">
 <code class="descname">mentions</code><a class="headerlink" href="#discord.Message.mentions" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>list</em> &#8211; A list of <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> that were mentioned. If the message is in a private message
+<dd><p><em>list</em></p>
+<p>A list of <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> that were mentioned. If the message is in a private message
 then the list is always empty.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -2774,20 +2928,23 @@ not rely on it. This is a discord limitation, not one with the library.</p>
 <dl class="attribute">
 <dt id="discord.Message.channel_mentions">
 <code class="descname">channel_mentions</code><a class="headerlink" href="#discord.Message.channel_mentions" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>list</em> &#8211; A list of <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> that were mentioned. If the message is in a private message
+<dd><p><em>list</em></p>
+<p>A list of <a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> that were mentioned. If the message is in a private message
 then the list is always empty.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.Message.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The message ID.</p>
+<dd><p><em>str</em></p>
+<p>The message ID.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Message.attachments">
 <code class="descname">attachments</code><a class="headerlink" href="#discord.Message.attachments" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>list</em> &#8211; A list of attachments given to a message.</p>
+<dd><p><em>list</em></p>
+<p>A list of attachments given to a message.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2855,13 +3012,15 @@ even in a private message context.</p>
 <dl class="attribute">
 <dt id="discord.Server.name">
 <code class="descname">name</code><a class="headerlink" href="#discord.Server.name" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The server name.</p>
+<dd><p><em>str</em></p>
+<p>The server name.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Server.me">
 <code class="descname">me</code><a class="headerlink" href="#discord.Server.me" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> &#8211; Similar to <a class="reference internal" href="#discord.Client.user" title="discord.Client.user"><code class="xref py py-attr docutils literal"><span class="pre">Client.user</span></code></a> except an instance of <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>.
+<dd><p><a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a></p>
+<p>Similar to <a class="reference internal" href="#discord.Client.user" title="discord.Client.user"><code class="xref py py-attr docutils literal"><span class="pre">Client.user</span></code></a> except an instance of <a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a>.
 This is essentially used to get the member version of yourself.</p>
 </dd></dl>
 
@@ -2874,20 +3033,23 @@ This is essentially used to get the member version of yourself.</p>
 <dl class="attribute">
 <dt id="discord.Server.region">
 <code class="descname">region</code><a class="headerlink" href="#discord.Server.region" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.ServerRegion" title="discord.ServerRegion"><code class="xref py py-class docutils literal"><span class="pre">ServerRegion</span></code></a> &#8211; The region the server belongs on. There is a chance that the region
+<dd><p><a class="reference internal" href="#discord.ServerRegion" title="discord.ServerRegion"><code class="xref py py-class docutils literal"><span class="pre">ServerRegion</span></code></a></p>
+<p>The region the server belongs on. There is a chance that the region
 will be a <code class="docutils literal"><span class="pre">str</span></code> if the value is not recognised by the enumerator.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Server.afk_timeout">
 <code class="descname">afk_timeout</code><a class="headerlink" href="#discord.Server.afk_timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; The timeout to get sent to the AFK channel.</p>
+<dd><p><em>int</em></p>
+<p>The timeout to get sent to the AFK channel.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Server.afk_channel">
 <code class="descname">afk_channel</code><a class="headerlink" href="#discord.Server.afk_channel" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> &#8211; The channel that denotes the AFK channel. None if it doesn&#8217;t exist.</p>
+<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a></p>
+<p>The channel that denotes the AFK channel. None if it doesn&#8217;t exist.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2905,25 +3067,29 @@ will be a <code class="docutils literal"><span class="pre">str</span></code> if 
 <dl class="attribute">
 <dt id="discord.Server.icon">
 <code class="descname">icon</code><a class="headerlink" href="#discord.Server.icon" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The server&#8217;s icon.</p>
+<dd><p><em>str</em></p>
+<p>The server&#8217;s icon.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Server.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.Server.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The server&#8217;s ID.</p>
+<dd><p><em>str</em></p>
+<p>The server&#8217;s ID.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Server.owner">
 <code class="descname">owner</code><a class="headerlink" href="#discord.Server.owner" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a> &#8211; The member who owns the server.</p>
+<dd><p><a class="reference internal" href="#discord.Member" title="discord.Member"><code class="xref py py-class docutils literal"><span class="pre">Member</span></code></a></p>
+<p>The member who owns the server.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Server.unavailable">
 <code class="descname">unavailable</code><a class="headerlink" href="#discord.Server.unavailable" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the server is unavailable. If this is <code class="docutils literal"><span class="pre">True</span></code> then the
+<dd><p><em>bool</em></p>
+<p>Indicates if the server is unavailable. If this is <code class="docutils literal"><span class="pre">True</span></code> then the
 reliability of other attributes outside of <a class="reference internal" href="#discord.Server.id" title="discord.Server.id"><code class="xref py py-meth docutils literal"><span class="pre">Server.id()</span></code></a> is slim and they might
 all be None. It is best to not do anything with the server if it is unavailable.</p>
 <p>Check the <a class="reference internal" href="#discord.on_server_unavailable" title="discord.on_server_unavailable"><code class="xref py py-func docutils literal"><span class="pre">on_server_unavailable()</span></code></a> and <a class="reference internal" href="#discord.on_server_available" title="discord.on_server_available"><code class="xref py py-func docutils literal"><span class="pre">on_server_available()</span></code></a> events.</p>
@@ -2961,37 +3127,43 @@ that server members have such as roles and permissions.</p>
 <dl class="attribute">
 <dt id="discord.Member.deaf">
 <code class="descname">deaf</code><a class="headerlink" href="#discord.Member.deaf" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the member is currently deafened by the server.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the member is currently deafened by the server.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.mute">
 <code class="descname">mute</code><a class="headerlink" href="#discord.Member.mute" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the member is currently muted by the server.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the member is currently muted by the server.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.self_mute">
 <code class="descname">self_mute</code><a class="headerlink" href="#discord.Member.self_mute" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the member is currently muted by their own accord.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the member is currently muted by their own accord.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.self_deaf">
 <code class="descname">self_deaf</code><a class="headerlink" href="#discord.Member.self_deaf" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the member is currently deafened by their own accord.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the member is currently deafened by their own accord.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.is_afk">
 <code class="descname">is_afk</code><a class="headerlink" href="#discord.Member.is_afk" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the member is currently in the AFK channel in the server.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the member is currently in the AFK channel in the server.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.voice_channel">
 <code class="descname">voice_channel</code><a class="headerlink" href="#discord.Member.voice_channel" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> &#8211; The voice channel that the member is currently connected to. None if the member
+<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a></p>
+<p>The voice channel that the member is currently connected to. None if the member
 is not currently in a voice channel.</p>
 </dd></dl>
 
@@ -3005,27 +3177,49 @@ list is always the default <a class="reference external" href="mailto:'&#37;&#52
 <dl class="attribute">
 <dt id="discord.Member.joined_at">
 <code class="descname">joined_at</code><a class="headerlink" href="#discord.Member.joined_at" title="Permalink to this definition">¶</a></dt>
-<dd><p><cite>datetime.datetime</cite> &#8211; A datetime object that specifies the date and time in UTC that the member joined the server for
+<dd><p><cite>datetime.datetime</cite></p>
+<p>A datetime object that specifies the date and time in UTC that the member joined the server for
 the first time.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.status">
 <code class="descname">status</code><a class="headerlink" href="#discord.Member.status" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Status" title="discord.Status"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code></a> &#8211; The member&#8217;s status. There is a chance that the status will be a <code class="docutils literal"><span class="pre">str</span></code>
+<dd><p><a class="reference internal" href="#discord.Status" title="discord.Status"><code class="xref py py-class docutils literal"><span class="pre">Status</span></code></a></p>
+<p>The member&#8217;s status. There is a chance that the status will be a <code class="docutils literal"><span class="pre">str</span></code>
 if it is a value that is not recognised by the enumerator.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Member.game_id">
-<code class="descname">game_id</code><a class="headerlink" href="#discord.Member.game_id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; The game ID that the user is currently playing. Could be None if no game is being played.</p>
+<dt id="discord.Member.game">
+<code class="descname">game</code><a class="headerlink" href="#discord.Member.game" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#discord.Game" title="discord.Game"><code class="xref py py-class docutils literal"><span class="pre">Game</span></code></a></p>
+<p>The game that the user is currently playing. Could be None if no game is being played.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Member.server">
 <code class="descname">server</code><a class="headerlink" href="#discord.Member.server" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> &#8211; The server that the member belongs to.</p>
+<dd><p><a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a></p>
+<p>The server that the member belongs to.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="discord.Member.permissions_in">
+<code class="descname">permissions_in</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Member.permissions_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>An alias for <a class="reference internal" href="#discord.Channel.permissions_for" title="discord.Channel.permissions_for"><code class="xref py py-meth docutils literal"><span class="pre">Channel.permissions_for()</span></code></a>.</p>
+<p>Basically equivalent to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">channel</span><span class="o">.</span><span class="n">permissions_for</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> &#8211; The channel to check your permissions for.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3068,7 +3262,8 @@ to an (red, green, blue) tuple.</p>
 <dl class="attribute">
 <dt id="discord.Colour.value">
 <code class="descname">value</code><a class="headerlink" href="#discord.Colour.value" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; The raw integer colour value.</p>
+<dd><p><em>int</em></p>
+<p>The raw integer colour value.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -3224,6 +3419,48 @@ to an (red, green, blue) tuple.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="game">
+<h3>Game<a class="headerlink" href="#game" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="discord.Game">
+<em class="property">class </em><code class="descclassname">discord.</code><code class="descname">Game</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#discord.Game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a Discord game.</p>
+<p>Supported Operations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>x == y</td>
+<td>Checks if two games are equal.</td>
+</tr>
+<tr class="row-odd"><td>x != y</td>
+<td>Checks if two games are not equal.</td>
+</tr>
+<tr class="row-even"><td>hash(x)</td>
+<td>Return the games&#8217;s hash.</td>
+</tr>
+<tr class="row-odd"><td>str(x)</td>
+<td>Returns the games&#8217;s name.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="discord.Game.name">
+<code class="descname">name</code><a class="headerlink" href="#discord.Game.name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em></p>
+<p>The game&#8217;s name.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="role">
 <h3>Role<a class="headerlink" href="#role" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -3259,43 +3496,50 @@ to an (red, green, blue) tuple.</p>
 <dl class="attribute">
 <dt id="discord.Role.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.Role.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The ID for the role.</p>
+<dd><p><em>str</em></p>
+<p>The ID for the role.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Role.name">
 <code class="descname">name</code><a class="headerlink" href="#discord.Role.name" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The name of the role.</p>
+<dd><p><em>str</em></p>
+<p>The name of the role.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Role.permissions">
 <code class="descname">permissions</code><a class="headerlink" href="#discord.Role.permissions" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a> &#8211; Represents the role&#8217;s permissions.</p>
+<dd><p><a class="reference internal" href="#discord.Permissions" title="discord.Permissions"><code class="xref py py-class docutils literal"><span class="pre">Permissions</span></code></a></p>
+<p>Represents the role&#8217;s permissions.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Role.colour">
 <code class="descname">colour</code><a class="headerlink" href="#discord.Role.colour" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a> &#8211; Represents the role colour. An alias exists under <code class="docutils literal"><span class="pre">color</span></code>.</p>
+<dd><p><a class="reference internal" href="#discord.Colour" title="discord.Colour"><code class="xref py py-class docutils literal"><span class="pre">Colour</span></code></a></p>
+<p>Represents the role colour. An alias exists under <code class="docutils literal"><span class="pre">color</span></code>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Role.hoist">
 <code class="descname">hoist</code><a class="headerlink" href="#discord.Role.hoist" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the role will be displayed separately from other members.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the role will be displayed separately from other members.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Role.position">
 <code class="descname">position</code><a class="headerlink" href="#discord.Role.position" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; The position of the role. This number is usually positive.</p>
+<dd><p><em>int</em></p>
+<p>The position of the role. This number is usually positive.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Role.managed">
 <code class="descname">managed</code><a class="headerlink" href="#discord.Role.managed" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the role is managed by the server through some form of
+<dd><p><em>bool</em></p>
+<p>Indicates if the role is managed by the server through some form of
 integrations such as Twitch.</p>
 </dd></dl>
 
@@ -3369,130 +3613,46 @@ permissions set to True.</p>
 True and the server-specific ones set to False. The server-specific
 permissions are currently:</p>
 <ul class="simple">
-<li>can_manager_server</li>
-<li>can_kick_members</li>
-<li>can_ban_members</li>
+<li>manager_server</li>
+<li>kick_members</li>
+<li>ban_members</li>
 </ul>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Permissions.can_attach_files">
-<code class="descname">can_attach_files</code><a class="headerlink" href="#discord.Permissions.can_attach_files" title="Permalink to this definition">¶</a></dt>
+<dt id="discord.Permissions.attach_files">
+<code class="descname">attach_files</code><a class="headerlink" href="#discord.Permissions.attach_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if a user can send files in their messages.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Permissions.can_ban_members">
-<code class="descname">can_ban_members</code><a class="headerlink" href="#discord.Permissions.can_ban_members" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if the user can ban users from the server.</p>
+<dt id="discord.Permissions.ban_members">
+<code class="descname">ban_members</code><a class="headerlink" href="#discord.Permissions.ban_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can ban users from the server.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Permissions.can_connect">
-<code class="descname">can_connect</code><a class="headerlink" href="#discord.Permissions.can_connect" title="Permalink to this definition">¶</a></dt>
+<dt id="discord.Permissions.connect">
+<code class="descname">connect</code><a class="headerlink" href="#discord.Permissions.connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if a user can connect to a voice channel.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Permissions.can_create_instant_invite">
-<code class="descname">can_create_instant_invite</code><a class="headerlink" href="#discord.Permissions.can_create_instant_invite" title="Permalink to this definition">¶</a></dt>
+<dt id="discord.Permissions.create_instant_invite">
+<code class="descname">create_instant_invite</code><a class="headerlink" href="#discord.Permissions.create_instant_invite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the user can create instant invites.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Permissions.can_deafen_members">
-<code class="descname">can_deafen_members</code><a class="headerlink" href="#discord.Permissions.can_deafen_members" title="Permalink to this definition">¶</a></dt>
+<dt id="discord.Permissions.deafen_members">
+<code class="descname">deafen_members</code><a class="headerlink" href="#discord.Permissions.deafen_members" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if a user can deafen other users.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="discord.Permissions.can_embed_links">
-<code class="descname">can_embed_links</code><a class="headerlink" href="#discord.Permissions.can_embed_links" title="Permalink to this definition">¶</a></dt>
+<dt id="discord.Permissions.embed_links">
+<code class="descname">embed_links</code><a class="headerlink" href="#discord.Permissions.embed_links" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if a user&#8217;s messages will automatically be embedded by Discord.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_kick_members">
-<code class="descname">can_kick_members</code><a class="headerlink" href="#discord.Permissions.can_kick_members" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can kick users from the server.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_manage_channels">
-<code class="descname">can_manage_channels</code><a class="headerlink" href="#discord.Permissions.can_manage_channels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can edit, delete, or create channels in the server.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_manage_messages">
-<code class="descname">can_manage_messages</code><a class="headerlink" href="#discord.Permissions.can_manage_messages" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can delete messages from a text channel. Note that there are currently no ways to edit other people&#8217;s messages.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_manage_roles">
-<code class="descname">can_manage_roles</code><a class="headerlink" href="#discord.Permissions.can_manage_roles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can manage server roles. This role overrides all other permissions.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_manage_server">
-<code class="descname">can_manage_server</code><a class="headerlink" href="#discord.Permissions.can_manage_server" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can edit server properties.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_mention_everyone">
-<code class="descname">can_mention_everyone</code><a class="headerlink" href="#discord.Permissions.can_mention_everyone" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user&#8217;s &#64;everyone will mention everyone in the text channel.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_move_members">
-<code class="descname">can_move_members</code><a class="headerlink" href="#discord.Permissions.can_move_members" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can move users between other voice channels.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_mute_members">
-<code class="descname">can_mute_members</code><a class="headerlink" href="#discord.Permissions.can_mute_members" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can mute other users.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_read_message_history">
-<code class="descname">can_read_message_history</code><a class="headerlink" href="#discord.Permissions.can_read_message_history" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can read a text channel&#8217;s previous messages.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_read_messages">
-<code class="descname">can_read_messages</code><a class="headerlink" href="#discord.Permissions.can_read_messages" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can read messages from all or specific text channels.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_send_messages">
-<code class="descname">can_send_messages</code><a class="headerlink" href="#discord.Permissions.can_send_messages" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can send messages from all or specific text channels.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_send_tts_messages">
-<code class="descname">can_send_tts_messages</code><a class="headerlink" href="#discord.Permissions.can_send_tts_messages" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can send TTS messages from all or specific text channels.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_speak">
-<code class="descname">can_speak</code><a class="headerlink" href="#discord.Permissions.can_speak" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can speak in a voice channel.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="discord.Permissions.can_use_voice_activation">
-<code class="descname">can_use_voice_activation</code><a class="headerlink" href="#discord.Permissions.can_use_voice_activation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if a user can use voice activation in voice channels.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -3502,6 +3662,54 @@ permissions are currently:</p>
 &#8220;General&#8221; permissions set to True.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="discord.Permissions.kick_members">
+<code class="descname">kick_members</code><a class="headerlink" href="#discord.Permissions.kick_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the user can kick users from the server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.manage_channels">
+<code class="descname">manage_channels</code><a class="headerlink" href="#discord.Permissions.manage_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can edit, delete, or create channels in the server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.manage_messages">
+<code class="descname">manage_messages</code><a class="headerlink" href="#discord.Permissions.manage_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can delete messages from a text channel. Note that there are currently no ways to edit other people&#8217;s messages.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.manage_roles">
+<code class="descname">manage_roles</code><a class="headerlink" href="#discord.Permissions.manage_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can manage server roles. This role overrides all other permissions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.manage_server">
+<code class="descname">manage_server</code><a class="headerlink" href="#discord.Permissions.manage_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can edit server properties.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.mention_everyone">
+<code class="descname">mention_everyone</code><a class="headerlink" href="#discord.Permissions.mention_everyone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user&#8217;s &#64;everyone will mention everyone in the text channel.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.move_members">
+<code class="descname">move_members</code><a class="headerlink" href="#discord.Permissions.move_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can move users between other voice channels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.mute_members">
+<code class="descname">mute_members</code><a class="headerlink" href="#discord.Permissions.mute_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can mute other users.</p>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="discord.Permissions.none">
 <em class="property">classmethod </em><code class="descname">none</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.none" title="Permalink to this definition">¶</a></dt>
@@ -3509,11 +3717,47 @@ permissions are currently:</p>
 permissions set to False.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="discord.Permissions.read_message_history">
+<code class="descname">read_message_history</code><a class="headerlink" href="#discord.Permissions.read_message_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can read a text channel&#8217;s previous messages.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.read_messages">
+<code class="descname">read_messages</code><a class="headerlink" href="#discord.Permissions.read_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can read messages from all or specific text channels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.send_messages">
+<code class="descname">send_messages</code><a class="headerlink" href="#discord.Permissions.send_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can send messages from all or specific text channels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.send_tts_messages">
+<code class="descname">send_tts_messages</code><a class="headerlink" href="#discord.Permissions.send_tts_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can send TTS messages from all or specific text channels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.speak">
+<code class="descname">speak</code><a class="headerlink" href="#discord.Permissions.speak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can speak in a voice channel.</p>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="discord.Permissions.text">
 <em class="property">classmethod </em><code class="descname">text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#discord.Permissions.text" title="Permalink to this definition">¶</a></dt>
 <dd><p>A factory method that creates a <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> with all
 &#8220;Text&#8221; permissions set to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="discord.Permissions.use_voice_activation">
+<code class="descname">use_voice_activation</code><a class="headerlink" href="#discord.Permissions.use_voice_activation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if a user can use voice activation in voice channels.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -3561,43 +3805,50 @@ permissions set to False.</p>
 <dl class="attribute">
 <dt id="discord.Channel.name">
 <code class="descname">name</code><a class="headerlink" href="#discord.Channel.name" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The channel name.</p>
+<dd><p><em>str</em></p>
+<p>The channel name.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.server">
 <code class="descname">server</code><a class="headerlink" href="#discord.Channel.server" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> &#8211; The server the channel belongs to.</p>
+<dd><p><a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a></p>
+<p>The server the channel belongs to.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.Channel.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The channel ID.</p>
+<dd><p><em>str</em></p>
+<p>The channel ID.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.topic">
 <code class="descname">topic</code><a class="headerlink" href="#discord.Channel.topic" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>Optional[str]</em> &#8211; The channel&#8217;s topic. None if it doesn&#8217;t exist.</p>
+<dd><p><em>Optional[str]</em></p>
+<p>The channel&#8217;s topic. None if it doesn&#8217;t exist.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.is_private">
 <code class="descname">is_private</code><a class="headerlink" href="#discord.Channel.is_private" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; <code class="docutils literal"><span class="pre">True</span></code> if the channel is a private channel (i.e. PM). <code class="docutils literal"><span class="pre">False</span></code> in this case.</p>
+<dd><p><em>bool</em></p>
+<p><code class="docutils literal"><span class="pre">True</span></code> if the channel is a private channel (i.e. PM). <code class="docutils literal"><span class="pre">False</span></code> in this case.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.position">
 <code class="descname">position</code><a class="headerlink" href="#discord.Channel.position" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; The position in the channel list.</p>
+<dd><p><em>int</em></p>
+<p>The position in the channel list.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.type">
 <code class="descname">type</code><a class="headerlink" href="#discord.Channel.type" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.ChannelType" title="discord.ChannelType"><code class="xref py py-class docutils literal"><span class="pre">ChannelType</span></code></a> &#8211; The channel type. There is a chance that the type will be <code class="docutils literal"><span class="pre">str</span></code> if
+<dd><p><a class="reference internal" href="#discord.ChannelType" title="discord.ChannelType"><code class="xref py py-class docutils literal"><span class="pre">ChannelType</span></code></a></p>
+<p>The channel type. There is a chance that the type will be <code class="docutils literal"><span class="pre">str</span></code> if
 the channel type is not within the ones recognised by the enumerator.</p>
 </dd></dl>
 
@@ -3618,13 +3869,13 @@ If <a class="reference internal" href="#discord.Channel.type" title="discord.Cha
 <dl class="attribute">
 <dt id="discord.Channel.is_default">
 <code class="descname">is_default</code><a class="headerlink" href="#discord.Channel.is_default" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if this is the default channel for the <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> it belongs to.</p>
+<dd><p>bool : Indicates if this is the default channel for the <a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> it belongs to.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Channel.mention">
 <code class="descname">mention</code><a class="headerlink" href="#discord.Channel.mention" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The string that allows you to mention the channel.</p>
+<dd><p>str : The string that allows you to mention the channel.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3691,19 +3942,22 @@ If <a class="reference internal" href="#discord.Channel.type" title="discord.Cha
 <dl class="attribute">
 <dt id="discord.PrivateChannel.user">
 <code class="descname">user</code><a class="headerlink" href="#discord.PrivateChannel.user" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> &#8211; The user you are participating with in the private channel.</p>
+<dd><p><a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a></p>
+<p>The user you are participating with in the private channel.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.PrivateChannel.id">
 <code class="descname">id</code><a class="headerlink" href="#discord.PrivateChannel.id" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The private channel ID.</p>
+<dd><p><em>str</em></p>
+<p>The private channel ID.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.PrivateChannel.is_private">
 <code class="descname">is_private</code><a class="headerlink" href="#discord.PrivateChannel.is_private" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; <code class="docutils literal"><span class="pre">True</span></code> if the channel is a private channel (i.e. PM). <code class="docutils literal"><span class="pre">True</span></code> in this case.</p>
+<dd><p><em>bool</em></p>
+<p><code class="docutils literal"><span class="pre">True</span></code> if the channel is a private channel (i.e. PM). <code class="docutils literal"><span class="pre">True</span></code> in this case.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3714,9 +3968,9 @@ If <a class="reference internal" href="#discord.Channel.type" title="discord.Cha
 <p>Actual private messages do not really have the concept of permissions.</p>
 <p>This returns all the Text related permissions set to true except:</p>
 <ul class="simple">
-<li>can_send_tts_messages: You cannot send TTS messages in a PM.</li>
-<li>can_manage_messages: You cannot delete others messages in a PM.</li>
-<li>can_mention_everyone: There is no one to mention in a PM.</li>
+<li>send_tts_messages: You cannot send TTS messages in a PM.</li>
+<li>manage_messages: You cannot delete others messages in a PM.</li>
+<li>mention_everyone: There is no one to mention in a PM.</li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -3772,68 +4026,79 @@ have a value of <code class="docutils literal"><span class="pre">None</span></co
 <dl class="attribute">
 <dt id="discord.Invite.max_age">
 <code class="descname">max_age</code><a class="headerlink" href="#discord.Invite.max_age" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; How long the before the invite expires in seconds. A value of 0 indicates that it doesn&#8217;t expire.</p>
+<dd><p><em>int</em></p>
+<p>How long the before the invite expires in seconds. A value of 0 indicates that it doesn&#8217;t expire.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.code">
 <code class="descname">code</code><a class="headerlink" href="#discord.Invite.code" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The URL fragment used for the invite. <a class="reference internal" href="#discord.Invite.xkcd" title="discord.Invite.xkcd"><code class="xref py py-attr docutils literal"><span class="pre">xkcd</span></code></a> is also a possible fragment.</p>
+<dd><p><em>str</em></p>
+<p>The URL fragment used for the invite. <a class="reference internal" href="#discord.Invite.xkcd" title="discord.Invite.xkcd"><code class="xref py py-attr docutils literal"><span class="pre">xkcd</span></code></a> is also a possible fragment.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.server">
 <code class="descname">server</code><a class="headerlink" href="#discord.Invite.server" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a> &#8211; The server the invite is for.</p>
+<dd><p><a class="reference internal" href="#discord.Server" title="discord.Server"><code class="xref py py-class docutils literal"><span class="pre">Server</span></code></a></p>
+<p>The server the invite is for.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.revoked">
 <code class="descname">revoked</code><a class="headerlink" href="#discord.Invite.revoked" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates if the invite has been revoked.</p>
+<dd><p><em>bool</em></p>
+<p>Indicates if the invite has been revoked.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.created_at">
 <code class="descname">created_at</code><a class="headerlink" href="#discord.Invite.created_at" title="Permalink to this definition">¶</a></dt>
-<dd><p><cite>datetime.datetime</cite> &#8211; A datetime object denoting the time the invite was created.</p>
+<dd><p><cite>datetime.datetime</cite></p>
+<p>A datetime object denoting the time the invite was created.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.temporary">
 <code class="descname">temporary</code><a class="headerlink" href="#discord.Invite.temporary" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em> &#8211; Indicates that the invite grants temporary membership.
+<dd><p><em>bool</em></p>
+<p>Indicates that the invite grants temporary membership.
 If True, members who joined via this invite will be kicked upon disconnect.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.uses">
 <code class="descname">uses</code><a class="headerlink" href="#discord.Invite.uses" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; How many times the invite has been used.</p>
+<dd><p><em>int</em></p>
+<p>How many times the invite has been used.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.max_uses">
 <code class="descname">max_uses</code><a class="headerlink" href="#discord.Invite.max_uses" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; How many times the invite can be used.</p>
+<dd><p><em>int</em></p>
+<p>How many times the invite can be used.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.xkcd">
 <code class="descname">xkcd</code><a class="headerlink" href="#discord.Invite.xkcd" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em> &#8211; The URL fragment used for the invite if it is human readable.</p>
+<dd><p><em>str</em></p>
+<p>The URL fragment used for the invite if it is human readable.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.inviter">
 <code class="descname">inviter</code><a class="headerlink" href="#discord.Invite.inviter" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> &#8211; The user who created the invite.</p>
+<dd><p><a class="reference internal" href="#discord.User" title="discord.User"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a></p>
+<p>The user who created the invite.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="discord.Invite.channel">
 <code class="descname">channel</code><a class="headerlink" href="#discord.Invite.channel" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a> &#8211; The channel the invite is for.</p>
+<dd><p><a class="reference internal" href="#discord.Channel" title="discord.Channel"><code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></a></p>
+<p>The channel the invite is for.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -3928,7 +4193,8 @@ for the <a class="reference internal" href="#discord.Client" title="discord.Clie
 <dl class="attribute">
 <dt id="discord.OpusError.code">
 <code class="descname">code</code><a class="headerlink" href="#discord.OpusError.code" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>int</em> &#8211; The error code returned.</p>
+<dd><p><em>int</em></p>
+<p>The error code returned.</p>
 </dd></dl>
 
 </dd></dl>

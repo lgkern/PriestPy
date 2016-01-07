@@ -89,6 +89,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#coroutines">Coroutines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#enumerators">Enumerators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#member-management">Member Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renamed-functions">Renamed Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forced-keyword-arguments">Forced Keyword Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-the-client">Running the Client</a></li>
 </ul>
 </li>
@@ -115,7 +118,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -200,7 +203,7 @@ was changed.</p>
 </pre></div>
 </div>
 <p>Note that <code class="docutils literal"><span class="pre">on_status</span></code> was removed. If you want its functionality, use <a class="reference internal" href="api.html#discord.on_member_update" title="discord.on_member_update"><code class="xref py py-func docutils literal"><span class="pre">on_member_update()</span></code></a>.
-See <a class="reference internal" href="api.html#discord-api-events"><span class="std std-ref">Event Reference</span></a> for more information.</p>
+See <a class="reference internal" href="api.html#discord-api-events"><span>Event Reference</span></a> for more information.</p>
 </div>
 <div class="section" id="coroutines">
 <span id="migrating-coroutines"></span><h2>Coroutines<a class="headerlink" href="#coroutines" title="Permalink to this headline">¶</a></h2>
@@ -240,7 +243,7 @@ with <code class="docutils literal"><span class="pre">&#64;asyncio.coroutine</sp
 </pre></div>
 </div>
 <p>The main reason for this change was to reduce the use of finnicky strings in the API as this
-could give users a false sense of power. More information can be found in the <a class="reference internal" href="api.html#discord-api-enums"><span class="std std-ref">Enumerators</span></a> page.</p>
+could give users a false sense of power. More information can be found in the <a class="reference internal" href="api.html#discord-api-enums"><span>Enumerators</span></a> page.</p>
 </div>
 <div class="section" id="properties">
 <span id="migrating-properties"></span><h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
@@ -288,6 +291,85 @@ in format strings.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="member-management">
+<span id="migrating-member"></span><h2>Member Management<a class="headerlink" href="#member-management" title="Permalink to this headline">¶</a></h2>
+<p>Functions that involved banning and kicking were changed.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Before</td>
+<td>After</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Client.ban(server,</span> <span class="pre">user)</span></code></td>
+<td><code class="docutils literal"><span class="pre">Client.ban(member)</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Client.kick(server,</span> <span class="pre">user)</span></code></td>
+<td><code class="docutils literal"><span class="pre">Client.kick(member)</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="renamed-functions">
+<h2>Renamed Functions<a class="headerlink" href="#renamed-functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions have been renamed.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Before</td>
+<td>After</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Client.set_channel_permissions</span></code></td>
+<td><a class="reference internal" href="api.html#discord.Client.edit_channel_permissions" title="discord.Client.edit_channel_permissions"><code class="xref py py-meth docutils literal"><span class="pre">Client.edit_channel_permissions()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p>All the <code class="xref py py-class docutils literal"><span class="pre">Permission</span></code> related attributes have been renamed and the <cite>can_</cite> prefix has been
+dropped. So for example, <code class="docutils literal"><span class="pre">can_manage_messages</span></code> has become <code class="docutils literal"><span class="pre">manage_messages</span></code>.</p>
+</div>
+<div class="section" id="forced-keyword-arguments">
+<span id="migrating-kwargs"></span><h2>Forced Keyword Arguments<a class="headerlink" href="#forced-keyword-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Since 3.0+ of Python, we can now force questions to take in forced keyword arguments. A keyword argument is when you
+explicitly specify the name of the variable and assign to it, for example: <code class="docutils literal"><span class="pre">foo(name='test')</span></code>. Due to this support,
+some functions in the library were changed to force things to take said keyword arguments. This is to reduce errors of
+knowing the argument order and the issues that could arise from them.</p>
+<p>The following parameters are now exclusively keyword arguments:</p>
+<ul>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="api.html#discord.Client.send_message" title="discord.Client.send_message"><code class="xref py py-meth docutils literal"><span class="pre">Client.send_message()</span></code></a></dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">tts</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="api.html#discord.Client.logs_from" title="discord.Client.logs_from"><code class="xref py py-meth docutils literal"><span class="pre">Client.logs_from()</span></code></a></dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">before</span></code></li>
+<li><code class="docutils literal"><span class="pre">after</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="api.html#discord.Client.edit_channel_permissions" title="discord.Client.edit_channel_permissions"><code class="xref py py-meth docutils literal"><span class="pre">Client.edit_channel_permissions()</span></code></a></dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">allow</span></code></li>
+<li><code class="docutils literal"><span class="pre">deny</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>In the documentation you can tell if a function parameter is a forced keyword argument if it is after <code class="docutils literal"><span class="pre">\*,</span></code>
+in the function signature.</p>
 </div>
 <div class="section" id="running-the-client">
 <span id="migrating-running"></span><h2>Running the Client<a class="headerlink" href="#running-the-client" title="Permalink to this headline">¶</a></h2>
