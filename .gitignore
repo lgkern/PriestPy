@@ -9,3 +9,8 @@ docs/_build
 *.png
 *.jpg
 *.flac
+botkey.py
+cmdhere.bat
+*.bat
+.vs
+*.pyproj

@@ -1,0 +1,187 @@
+{
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon",
+	"roles":"Staff",
+	"authorized":"118461244784115713",
+
+	"help":"Command under maintenance! My other commands still work tho!",
+
+	"item.invalid":"Invalid argument\nUsage:\n\t!item <spec> <slot>\n\t!item <itemNumber>",
+	"list.invalid":"Invalid argument\nUsage: !list <spec> <type>",
+	"link.invalid":"Invalid argument\nUsage: !link <spec> [information]",
+	"stat.invalid":"Invalid argument\nUsage: !stats <spec> [subtype]",
+    "wa.invalid":"Invalid argument\nUsage: !weakauras <spec> [author]",
+	"link.invalid":"Invalid argument\nUsage: !link <spec> <information>",
+	"stats.invalid":"Invalid argument\nUsage: !stats <spec> [subtype]",
+    "wa.invalid":"Invalid argument\nUsage: !weakauras <spec> [author]",
+
+    "bis.invalid":"Invalid argument\nUsage: !bis <spec> [subtype]",
+    "boss.invalid":"Invalid argument\nUsage: !boss <spec> <bossName>",
+	"artifact.invalid":"Invalid argument\nUsage: !artifact <spec> <route>\nRoutes: first, second, full",
+
+	"shame":"http://i.imgur.com/FidZknJ.gif",		
+	"power":"http://i.imgur.com/8Igah2t.png",
+	"decent":"Here is Twintop's best StM to date:\nhttps://puu.sh/qgWCQ/f565207eb0.jpg",
+	"racial":"\"Follow your :heart:\"\n~Hygeia 2016",	
+	"fantasy":"http://i.imgur.com/EMSiUF3.jpg",
+	"sims":"stm",
+	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
+	
+
+	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
+	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
+	
+	"item.legendary.shadow.wrist":"item.shadow.wrist",
+	"item.shadow.wrist":"https://legion.wowhead.com/item=132409",
+
+	"item.legendary.shadow.waist":"item.shadow.waist",
+	"item.shadow.waist":"https://legion.wowhead.com/item=132864",
+	
+	"item.legendary.shadow.helm":"item.shadow.head",
+	"item.shadow.head":"https://legion.wowhead.com/item=133971",
+	
+	"list.shadow.legendaries":"list.legendary.shadow",
+	"list.legendaries.shadow":"list.legendary.shadow",
+	"list.legendary.shadow":"https://legion.wowhead.com/items=4.1?filter=minle=895;ub=5;ro=2;qu=5",
+	
+	"list.holy.legendaries":"list.healing.legendaries",
+	"list.discipline.legendaries":"list.healing.legendaries",
+	"list.healing.legendaries":"https://legion.wowhead.com/items=4.1?filter=minle=895;ub=5;ro=4;qu=5",
+
+	"item.legendary.discipline.waist":"item.discipline.waist",
+	"item.discipline.waist":"https://legion.wowhead.com/item=133800",
+	
+	"item.legendary.discipline.chest":"item.discipline.chest",
+	"item.discipline.chest":"https://legion.wowhead.com/item=132861",
+	
+	"item.legendary.discipline.gloves":"item.discipline.gloves",
+	"item.discipline.gloves":"https://legion.wowhead.com/item=132461",
+	
+	"item.legendary.discipline.wrist":"item.discipline.wrist",
+	"item.discipline.wrist":"https://legion.wowhead.com/item=132436",
+	
+	"item.legendary.holy.waist":"item.holy.waist",
+	"item.holy.waist":"https://legion.wowhead.com/item=132445",
+	
+	"item.legendary.holy.legs":"item.holy.legs",
+	"item.holy.legs":"https://legion.wowhead.com/item=132447",
+		
+	"item.legendary.holy.wrist":"item.holy.wrist",
+	"item.holy.wrist":"https://legion.wowhead.com/item=132450",
+	
+	"link.shadow.guide.cop.kilee":"http://howtopriest.com/viewtopic.php?f=19&t=7355",
+	
+	"link.patreon":"https://www.patreon.com/howtopriest",
+	"link.donor":"http://howtopriest.com/viewtopic.php?f=5&t=2714",
+	
+	"link.shadow.hub":"http://howtopriest.com/viewtopic.php?f=8&t=4483",
+	"link.shadow.bis":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?t=7637",
+	"link.shadow.bis.cop":"http://howtopriest.com/viewtopic.php?t=7643",
+	"link.shadow.bis.as":"http://howtopriest.com/viewtopic.php?t=7642",
+	"link.shadow.guide":"http://howtopriest.com/viewtopic.php?f=19&t=8402",
+	
+	"link.healing.hub":"http://howtopriest.com/viewtopic.php?f=13&t=4484",
+	"link.holy.hub":"link.healing.hub",
+	"link.discipline.hub":"link.healing.hub",
+	"link.holy.guide":"http://howtopriest.com/viewtopic.php?f=13&t=7648",
+	"link.discipline.guide":"http://howtopriest.com/viewtopic.php?f=8&t=4483",	
+	
+	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
+	
+	"stats.shadow":"Pre-patch recommendation:\nFor Legacy of the Void\n1 Target: Int > Haste > Crit > Vers > Mastery\n2+ Targets: Int > Haste >= Crit > Mastery > Vers\n\nFor StM\nHaste to around 22% > Crit = Int > Mastery > Vers",
+	"stats.shadow.cop":"Int = 1.0000\nSpell Power = 0.9057\nCrit = 0.7592\nHaste = 0.8540\nMastery = 0.9198\nMultistrike = 0.6584\nVersatility = 0.6427\nDPS (Pure Damage) = 0.1118",
+	"stats.shadow.cop.short":"Int>SP>Mastery>Haste>Crit>Multi>Vers>DPS",
+	"stats.shadow.as":"Int = 1.0000\nSpell Power = 0.9266\nCrit = 1.0729\nHaste = 0.8429\nMastery = 0.4907\nMultistrike = 0.6946\nVersatility = 0.6529\nDPS (Pure Damage) = 0.1125",
+	"stats.shadow.as.short":"Crit>Int>SP>Haste>Multi>Vers>Mast>DPS",
+	
+	"stats.discipline":"Raids: Haste > Crit > Versatiliy = Mastery\nDungeons: Haste > Crit > Versatility >>> Mastery",
+	"stats.holy":"Mastery > Crit > Haste > Versatility",
+    
+    "wa.shadow":"wa.shadow.twintop",
+    "wa.holy":"None",
+    "wa.discipline":"None",
+	"wa.shadow.val":"http://howtopriest.com/viewtopic.php?f=95&t=8341",
+	"wa.shadow.twintop":"http://howtopriest.com/viewtopic.php?f=104&t=8339",
+	
+	
+	"discord":"Invalid Argument\nUsage: !discord <class>",	
+	"discord.invalid":"discord",	
+	"discord.death.knight":" https://discord.gg/0ez1cFfUH3ingV96",
+	"discord.demon.hunter":"https://discord.gg/0enuZ4FBFluNZH1r",
+	"discord.druid":"https://discord.gg/0dWu0WkuetF87H9H",
+	"discord.hunter":"https://discord.gg/yqer4BX",
+	"discord.mage":"https://discord.gg/0gLMHikX2aZ23VdA",
+	"discord.paladin":"https://discord.gg/0dvRDgpa5xZHFfnD",
+	"discord.priest":"https://discord.gg/0f1Ta8lT8xXXEAIY",
+	"discord.rogue":"https://discord.gg/0h08tydxoNhfDVZf",
+	"discord.monk":"https://discord.gg/0dkfBMAxzTmggsPH",
+	"discord.warlock":"https://discord.gg/0onXDymd9Wpc2CEu",
+	"discord.warrior":"https://discord.gg/0pYY7932lTH4FHW6",
+	"discord.shaman":"https://discord.gg/0VcupJEQX0JmBCcC",
+	
+	"discord.dh":"discord.demon.hunter",
+	"discord.dk":"discord.death.knight",
+	"discord.pally":"discord.paladin",
+	"discord.lock":"discord.warlock",
+	"discord.shammy":"discord.shaman",
+	
+    "bis.shadow":">>Pre-patch data<<\nhttp://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
+    "bis.shadow.cop":"http://howtopriest.com/viewtopic.php?t=7643",
+    "bis.shadow.as":"http://howtopriest.com/viewtopic.php?t=7642",
+    "bis.holy":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7648#BiS",
+    "bis.discipline":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7649#BiS",
+	
+	"artifact.shadow":"artifact.shadow.full",
+	"artifact.shadow.full":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/MN6IjP5.png",
+	"artifact.shadow.first":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/KcxBzbI.png",
+	"artifact.shadow.second":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/i7Y7RK6.png",
+	
+	"artifact.holy":"artifact.holy.full",
+	"artifact.holy.full":"http://i.imgur.com/j2Pn8mM.png",
+	"artifact.holy.first":"http://i.imgur.com/VNCWHGI.png",
+	"artifact.holy.second":"http://i.imgur.com/s7BdF71.png",
+	
+	"artifact.discipline":"artifact.discipline.full",
+	"artifact.discipline.full":"http://i.imgur.com/ibZJ5tP.png",
+	"artifact.discipline.first":"artifact.discipline.full",
+	"artifact.discipline.second":"artifact.discipline.full",
+    
+    "boss.shadow.nythendra":"TBA",
+    "boss.shadow.ursoc":"TBA",
+    "boss.shadow.xavius":"TBA",
+    "boss.shadow.don":"TBA",
+    "boss.shadow.ilgynoth":"TBA",
+    "boss.shadow.elerethe ":"TBA",
+    "boss.shadow.cenarius":"TBA",
+    "boss.shadow.guldan":"TBA",
+    "boss.shadow.skorpyron":"TBA",
+    "boss.shadow.krosus":"TBA",
+    "boss.shadow.chromatic.anomaly":"TBA",
+    "boss.shadow.trilliax":"TBA",
+    "boss.shadow.star.augur.etraeus":"TBA",
+    "boss.shadow.guldan":"TBA",
+    "boss.shadow.grand.magistrix.elisande":"TBA",   
+    "boss.shadow.spellblade.aluriel":"TBA",
+    "boss.shadow.high.botanist.tel'arn":"TBA",
+    "boss.shadow.tichondrius":"TBA",
+    "boss":"TBA",
+
+    "boss.shadow.dragons.of.nightmare":"boss.shadow.don",
+    "boss.shadow.dragons":"boss.shadow.don",
+    "boss.shadow.dragon.council":"boss.shadow.don",    
+    "boss.shadow.chromaticanomaly":"boss.shadow.chromatic.anomaly",
+    "boss.shadow.ca":"boss.shadow.chromatic.anomaly",
+    "boss.shadow.gul'dan":"boss.shadow.guldan",
+    "boss.shadow.sae":"boss.shadow.star.augur.etraeus",
+    "boss.shadow.star.augur":"boss.shadow.star.augur.etraeus",
+    "boss.shadow.etraeus":"boss.shadow.star.augur.etraeus",    
+    "boss.shadow.gme":"boss.shadow.grand.magistrix.elisande",
+    "boss.shadow.grand.magistrix":"boss.shadow.grand.magistrix.elisande",
+    "boss.shadow.elisande":"boss.shadow.grand.magistrix.elisande",
+    "boss.shadow.aluriel":"boss.shadow.spellblade.aluriel",
+    "boss.shadow.sba":"boss.shadow.spellblade.aluriel",
+    "boss.shadow.high.botanist.telarn":"boss.shadow.high.botanist.tel'arn",
+    "boss.shadow.hbt":"boss.shadow.high.botanist.tel'arn",
+    "boss.shadow.high.botanist":"boss.shadow.high.botanist.tel'arn",
+    "boss.shadow.tel'arn":"boss.shadow.high.botanist.tel'arn",
+    "boss.shadow.telarn":"boss.shadow.high.botanist.tel'arn"
+}
