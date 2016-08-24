@@ -21,7 +21,7 @@
 	"shame":"http://i.imgur.com/FidZknJ.gif",		
 	"power":"http://i.imgur.com/8Igah2t.png",
 	"decent":"Here is Twintop's best StM to date:\nhttps://puu.sh/qgWCQ/f565207eb0.jpg",
-	"racial":"There is no objective best race for every situation, and even in a racial's best situation it is only ahead of the next one by an incredibly tiny margin (not even 1%) so in short: it's an illusion of an optimization. You're not actually optimizing shit.\n\nTL;DR: \"Follow your :heart:\"\n~Hygeia 2016",	
+	"racial":"Racials are extraordinarily close to one another in Legion, comprising less than a 1% difference. That being said, it may be useful to look at things like Arcane Torrent, Rocket Jump, and Darkflight. Otherwise, just go for whatever race you enjoy playing.\n\nTL;DR: \"Follow your :heart:\"\n~Hygeia 2016",	
 	"fantasy":"http://i.imgur.com/EMSiUF3.jpg",
 	"sims":"stm",
 	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
