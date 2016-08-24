@@ -85,6 +85,8 @@ class DictionaryReader:
 		result = result.replace("weakauras","wa",1)
 		if "link" not in result:
 			result = result.replace("lexicon","link.lexicon",1)
+			result = result.replace("guide","link.guide",1)
+		
 	
 		return result
 		
