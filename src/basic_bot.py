@@ -19,7 +19,6 @@ bot = commands.Bot(command_prefix='!', description=description)
 
 client = discord.Client()
 
-p = DictionaryReader()
 
 @client.event
 async def on_ready():
@@ -49,6 +48,7 @@ async def on_message(message):
 			#msg = 'Hello {0.author.mention}'.format(message)
 
 async def maintenanceMessages(message):
+	p = DictionaryReader()
 	if message.content.startswith('!fullupdate'): 
 		if message.author.id not in p.admins():
 			await client.send_message(message.channel, 'You\'re not my dad, {0.mention}!'.format(message.author))
@@ -60,6 +60,7 @@ async def maintenanceMessages(message):
 		call(["git","pull"])
 
 async def forwardMessage(message):
+	p = DictionaryReader()
 	roles = message.author.roles
 	canSend = False
 	for role in roles:
@@ -80,10 +81,12 @@ async def forwardMessage(message):
 			await client.send_message(message.channel, 'Invalid Message, {0.mention}'.format(message.author))
 
 async def itemMessage(message):
+	p = DictionaryReader()
 	msg = p.itemReader(message.content[1::])
 	await client.send_message(message.channel, msg)
 
 async def generalMessage(message):
+	p = DictionaryReader()
 	command = message.content[1::].split(' ')[0]
 	msg = p.commandReader(message.content[1::])
 	if msg != None:

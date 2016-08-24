@@ -25,7 +25,6 @@
 	"fantasy":"http://i.imgur.com/EMSiUF3.jpg",
 	"sims":"stm",
 	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
-	
 
 	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
 	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
@@ -131,7 +130,7 @@
     "bis.discipline":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7649#BiS",
 	
 	"artifact.shadow":"artifact.shadow.full",
-	"artifact.shadow.full":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/MN6IjP5.png",
+	"artifact.shadow.full":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/4XxPlQ0.png",
 	"artifact.shadow.first":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/KcxBzbI.png",
 	"artifact.shadow.second":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/i7Y7RK6.png",
 	
