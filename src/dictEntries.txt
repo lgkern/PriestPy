@@ -87,7 +87,8 @@
 	
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 	
-	"stats.shadow":"Pre-patch recommendation:\nFor Legacy of the Void\n1 Target: Int > Haste > Crit > Vers > Mastery\n2+ Targets: Int > Haste >= Crit > Mastery > Vers\n\nFor StM\nHaste to around 22% > Crit = Int > Mastery > Vers",
+	"stats.shadow":"Surrender to Madness\nInt = 1.00\nCrit = 1.26\nHaste = 1.78\nMast = 1.07\nVers = 0.94\n\nLegacy of the Void / Mind Spike\nInt = 1.00\nCrit = 1.25\nHaste = 1.20\nMast = 1.03\nVers = 0.94\n\nCombined\nInt = 1.00\nCrit = 1.25\nHaste = 1.39\nMast = 1.05\nVers = 0.94",
+	"stats.shadow.short":"Surrender to Madness\nHaste>>Crit>Mastery>=Int>Vers\n\nLegacy of the Void / Mind Spike\nCrit>=Haste>Mastery>=Int>Vers\n\nCombined\nHaste>Crit>Mastery>=Int>Vers",
 	"stats.shadow.cop":"Int = 1.0000\nSpell Power = 0.9057\nCrit = 0.7592\nHaste = 0.8540\nMastery = 0.9198\nMultistrike = 0.6584\nVersatility = 0.6427\nDPS (Pure Damage) = 0.1118",
 	"stats.shadow.cop.short":"Int>SP>Mastery>Haste>Crit>Multi>Vers>DPS",
 	"stats.shadow.as":"Int = 1.0000\nSpell Power = 0.9266\nCrit = 1.0729\nHaste = 0.8429\nMastery = 0.4907\nMultistrike = 0.6946\nVersatility = 0.6529\nDPS (Pure Damage) = 0.1125",
