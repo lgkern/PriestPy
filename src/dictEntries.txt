@@ -141,7 +141,7 @@
     "bis.discipline":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7649#BiS",
 	
 	"artifact.shadow":"artifact.shadow.full",
-	"artifact.shadow.full":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/4XxPlQ0.png",
+	"artifact.shadow.full":"http://i.imgur.com/4XxPlQ0.png\nMore info: https://howtopriest.com/viewtopic.php?f=19&t=8402#Artifact",
 	"artifact.shadow.first":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/KcxBzbI.png",
 	"artifact.shadow.second":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/i7Y7RK6.png",
 	
