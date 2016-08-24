@@ -25,7 +25,6 @@
 	"fantasy":"http://i.imgur.com/EMSiUF3.jpg",
 	"sims":"stm",
 	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
-	
 
 	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
 	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
@@ -78,12 +77,22 @@
 	"link.shadow.bis.cop":"http://howtopriest.com/viewtopic.php?t=7643",
 	"link.shadow.bis.as":"http://howtopriest.com/viewtopic.php?t=7642",
 	"link.shadow.guide":"http://howtopriest.com/viewtopic.php?f=19&t=8402",
+	"link.guide.shadow":"link.shadow.guide",
+	"link.bis.shadow":"link.shadow.bis",
+	"link.hub.shadow":"link.shadow.hub",
+	
 	
 	"link.healing.hub":"http://howtopriest.com/viewtopic.php?f=13&t=4484",
 	"link.holy.hub":"link.healing.hub",
 	"link.discipline.hub":"link.healing.hub",
 	"link.holy.guide":"http://howtopriest.com/viewtopic.php?f=13&t=7648",
 	"link.discipline.guide":"http://howtopriest.com/viewtopic.php?f=8&t=4483",	
+	"link.guide.holy":"link.holy.guide",
+	"link.guide.discipline":"link.discipline.guide",
+	"link.bis.holy":"link.holy.bis",
+	"link.hub.holy":"link.holy.hub",
+	"link.bis.discipline":"link.discipline.bis",
+	"link.hub.discipline":"link.discipline.hub",
 	
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 	
@@ -132,7 +141,7 @@
     "bis.discipline":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7649#BiS",
 	
 	"artifact.shadow":"artifact.shadow.full",
-	"artifact.shadow.full":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/MN6IjP5.png",
+	"artifact.shadow.full":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/4XxPlQ0.png",
 	"artifact.shadow.first":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/KcxBzbI.png",
 	"artifact.shadow.second":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/i7Y7RK6.png",
 	

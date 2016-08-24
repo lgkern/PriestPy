@@ -91,9 +91,11 @@ class DictionaryReader:
 		return result
 		
 	def commandReader(self, params):
+		self.loop = 0
 		return self.readEntry('.'.join(params.split(' ')))
 
 	def itemReader(self, params):
+		self.loop = 0
 		result = self.commandReader(params)
 		if 'Invalid' in result:
 			itemId = params.split(' ')[1]
