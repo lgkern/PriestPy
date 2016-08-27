@@ -87,10 +87,10 @@ async def itemMessage(message):
 
 async def generalMessage(message):
 	p = DictionaryReader()
-	command = message.content[1::].split(' ')[0]
+	command = message.content[1::].split(' ')[0].lower()
 	msg = p.commandReader(message.content[1::])
 	if msg != None:
-		if command in p.whisperCommands():
+		if command in p.whisperCommands() or 'help' in message.content:
 			await client.send_message(message.author, msg)
 			await client.delete_message(message)
 		else:

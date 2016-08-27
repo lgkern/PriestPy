@@ -1,9 +1,10 @@
 {
-	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide",
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help",
 	"roles":"Staff",
 	"authorized":"118461244784115713",
 
-	"help":"Command under maintenance! My other commands still work tho!",
+	"help":"```I'm PriestBot, your robot friend for links and quick info!\n\nBelow you'll find my basic commands.\n\nYou can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tartifact\t\t Displays the paths of the artifact of a given specialization;\n\tlist\t\t\t Handful lists;\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all class' Discord channels;\n\tweakauras, wa\tLinks to WeakAuras from a given specialization;\n\tlexicon\t\t  Link to the \"Raider's Lexicon\" with overall info into Legion systems;\n\tguide\t\t\tSpecialization guides;\n\tboss\t\t\t Links to boss' discussions on HowToPriest\n\tshame\t\t\tWhat a shame!\n\tpower\t\t\tCan you handle it?\n\tdecent\t\t   Some are just blessed by RNGesus;\n\tracial\t\t   Which racial is THE best for Legion?\n\tfantasy\t\t  Can you feel it?\n\tsims\t\t\t What happens when you release an early batch of sims.\n\nList of prefixes:\n\tpub\t\t\t  Displays a result in the channel instead of by whisper\n\tsend\t\t\t Sends the result to a target person - only usable by Staff members\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```",
+
 
 	"item.invalid":"Invalid argument\nUsage:\n\t!item <spec> <slot>\n\t!item <itemNumber>",
 	"list.invalid":"Invalid argument\nUsage: !list <spec> <type>",
