@@ -33,22 +33,33 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 	if message.content.startswith('!'):
+		await messageHandler(message)
+			
+async def messageHandler(message):
+	try:
+		await client.send_message(client.get_channel('220534135947526154'), '{0.server.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
+	except:
+		try:
+			await client.send_message(client.get_channel('220534135947526154'), 'PM - PM - {0.author} invoked {0.content}'.format(message))
+		except:
+			print('error while writing log')
+	
+	if message.content.startswith('!fullupdate') or message.content.startswith('!update'):
+		await maintenanceMessages(message)
+
+	elif message.content.startswith('!send'):
+		await forwardMessage(message)
 		
-		if message.content.startswith('!fullupdate') or message.content.startswith('!update'):
-			await maintenanceMessages(message)
-
-		elif message.content.startswith('!send'):
-			await forwardMessage(message)
-			
-		elif message.content.startswith('!item'):
-			await itemMessage(message)
-			
-		elif message.content.startswith('!channel'):
-			await client.send_message(message.channel, message.channel.id)
-
-		else:
-			await generalMessage(message)
-			#msg = 'Hello {0.author.mention}'.format(message)
+	elif message.content.startswith('!item'):
+		await itemMessage(message)
+		
+	elif message.content.startswith('!channel'):
+		await client.send_message(message.channel, message.channel.id)
+		
+	else:
+		await generalMessage(message)
+	
+	
 
 async def maintenanceMessages(message):
 	p = DictionaryReader()
