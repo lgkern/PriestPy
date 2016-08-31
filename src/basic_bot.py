@@ -42,6 +42,9 @@ async def on_message(message):
 			
 		elif message.content.startswith('!item'):
 			await itemMessage(message)
+			
+		elif message.content.startswith('!channel'):
+			await client.send_message(message.channel, message.channel.id)
 
 		else:
 			await generalMessage(message)
