@@ -33,19 +33,31 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 	if message.content.startswith('!'):
-		
-		if message.content.startswith('!fullupdate') or message.content.startswith('!update'):
-			await maintenanceMessages(message)
-
-		elif message.content.startswith('!send'):
-			await forwardMessage(message)
+		await messageHandler(message)
+		#msg = 'Hello {0.author.mention}'.format(message)
 			
-		elif message.content.startswith('!item'):
-			await itemMessage(message)
+async def messageHandler(message):
 
-		else:
-			await generalMessage(message)
-			#msg = 'Hello {0.author.mention}'.format(message)
+	logChannel = client.get_channel(220534135947526154)
+	
+	await client.send_message(logChannel, '{0.author} invoked {0.content}'.format(message))
+	
+	if message.content.startswith('!fullupdate') or message.content.startswith('!update'):
+		await maintenanceMessages(message)
+
+	elif message.content.startswith('!send'):
+		await forwardMessage(message)
+		
+	elif message.content.startswith('!item'):
+		await itemMessage(message)
+		
+	elif message.content.startswith('!channel'):
+		await client.send_message(message.channel, message.channel.id)
+		
+	else:
+		await generalMessage(message)
+	
+	
 
 async def maintenanceMessages(message):
 	p = DictionaryReader()
