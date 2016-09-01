@@ -86,6 +86,16 @@ class DictionaryReader:
 		if "link" not in result:
 			result = result.replace("lexicon","link.lexicon",1)
 			result = result.replace("guide","link.guide",1)
+			
+		#TODO: Better logic
+		
+		result = result.replace("holy.artifact","artifact.holy",1)
+		result = result.replace("shadow.artifact","artifact.shadow",1)
+		result = result.replace("discipline.artifact","artifact.discipline",1)
+		
+		result = result.replace("holy.guide","artifact.guide",1)
+		result = result.replace("shadow.guide","artifact.guide",1)
+		result = result.replace("discipline.guide","artifact.guide",1)
 		
 	
 		return result
