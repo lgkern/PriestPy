@@ -151,8 +151,8 @@
 	
 	"artifact.shadow":"artifact.shadow.full",
 	"artifact.shadow.full":"http://i.imgur.com/4XxPlQ0.png\nMore info: https://howtopriest.com/viewtopic.php?f=19&t=8402#Artifact",
-	"artifact.shadow.first":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/KcxBzbI.png",
-	"artifact.shadow.second":"Disclaimer: SUBJECT TO CHANGE BEFORE LEGION LAUNCH\nhttp://i.imgur.com/i7Y7RK6.png",
+	"artifact.shadow.first":"http://i.imgur.com/KcxBzbI.png",
+	"artifact.shadow.second":"http://i.imgur.com/i7Y7RK6.png",
 	
 	"artifact.holy":"artifact.holy.full",
 	"artifact.holy.full":"http://i.imgur.com/uS8GYKC.png",
