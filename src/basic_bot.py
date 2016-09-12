@@ -105,9 +105,12 @@ async def generalMessage(message):
 	command = message.content[1::].split(' ')[0].lower()
 	msg = p.commandReader(message.content[1::])
 	if msg != None:
-		if len(roles) < 2 or command in p.whisperCommands() or 'help' in message.content:
-			await client.send_message(message.author, msg)
-			await client.delete_message(message)
+		if command in p.whisperCommands():
+			if command == 'pub' and len(roles) > 1 and 'help' not in message.content:
+				await client.send_message(message.channel, msg)
+			else:
+				await client.send_message(message.author, msg)
+				await client.delete_message(message)
 		else:
 			await client.send_message(message.channel, msg)
 
