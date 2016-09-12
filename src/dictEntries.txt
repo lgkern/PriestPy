@@ -1,5 +1,5 @@
 {
-	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn",
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub",
 	"roles":"Staff",
 	"authorized":"118461244784115713",
 

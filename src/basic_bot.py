@@ -100,12 +100,16 @@ async def itemMessage(message):
 	await client.send_message(message.channel, msg)
 
 async def generalMessage(message):
+	print('general message')
 	p = DictionaryReader()
 	roles = message.author.roles
 	command = message.content[1::].split(' ')[0].lower()
 	msg = p.commandReader(message.content[1::])
 	if msg != None:
 		if command in p.whisperCommands():
+			print(command == 'pub')
+			print(len(roles) > 1)
+			print('help' not in message.content)
 			if command == 'pub' and len(roles) > 1 and 'help' not in message.content:
 				await client.send_message(message.channel, msg)
 			else:
