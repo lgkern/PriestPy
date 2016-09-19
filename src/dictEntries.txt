@@ -97,7 +97,7 @@
 	"link.bis.discipline":"link.discipline.bis",
 	"link.hub.discipline":"link.discipline.hub",
 	
-	"pawn.shadow":"pawn.shadow.combined",
+	"pawn.shadow":"pawn.shadow.stm",
 	"pawn.shadow.combined":"Combined stat weights\n```( Pawn: v1: \"Shadow Combined\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.25, IsAxe=-1000000, HasteRating=1.39, MasteryRating=1.05, IsCrossbow=-1000000, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Is2HSword=-1000000, IsSword=-1000000, Versatility=0.94, Avoidance=0.01, Stamina=0.01, IsShield=-1000000 )```",
 	"pawn.shadow.lotv":"pawn.shadow.lotv-ms",
 	"pawn.shadow.ms":"pawn.shadow.lotv-ms",
