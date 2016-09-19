@@ -14,6 +14,7 @@
 	"link.invalid":"Invalid argument\nUsage: !link <spec> <information>",
 	"stats.invalid":"Invalid argument\nUsage: !stats <spec> [subtype]",
     "wa.invalid":"Invalid argument\nUsage: !weakauras <spec> [author]",
+	"guide.invalid":"Invalid argument\nUsage: !guide <spec>",
 
     "bis.invalid":"Invalid argument\nUsage: !bis <spec> [subtype]",
     "boss.invalid":"Invalid argument\nUsage: !boss <spec> <bossName>",
