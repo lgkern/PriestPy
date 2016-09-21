@@ -3,7 +3,6 @@ from discord import Forbidden
 from discord.ext import commands
 import random
 from dict import DictionaryReader
-from botkey import Key
 from subprocess import call
 import sys
 import logging
@@ -115,6 +114,6 @@ async def generalMessage(message):
 		else:
 			await client.send_message(message.channel, msg)
 
-client.run(Key().value())
+client.run('MTg0MzA4NTU1OTY3MzY1MTIx.CsHQeg.cbgr_yNUPigi0nKQAL4HU7KDRV4')
 #bot.run(Key().value())
 
