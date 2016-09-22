@@ -36,6 +36,10 @@ async def on_message(message):
 	if message.content.startswith(prefix):
 		await messageHandler(message)
 			
+@client.event
+async def on_member_join(member):
+	await sendWelcomeMessage(member)
+			
 async def messageHandler(message):
 	try:
 		await client.send_message(client.get_channel('220534135947526154'), '{0.server.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
@@ -100,6 +104,11 @@ async def itemMessage(message):
 	p = DictionaryReader()
 	msg = p.itemReader(message.content[1::])
 	await client.send_message(message.channel, msg)
+	
+async def sendWelcomeMessage(member):
+	p = DictionaryReader()
+	msg = p.commandReader('help')
+	await client.send_message(member, msg)
 	
 async def sendPinMessages(message):
 	pins = await client.pins_from(message.channel)
