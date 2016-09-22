@@ -124,7 +124,10 @@ async def sendPinMessages(message):
 
 async def generalMessage(message):
 	p = DictionaryReader()
-	roles = message.author.roles
+	try:
+		roles = message.author.roles
+	except Exception:
+		roles = 10
 	command = message.content[1::].split(' ')[0].lower()
 	msg = p.commandReader(message.content[1::])
 	if msg != None:
