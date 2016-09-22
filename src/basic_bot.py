@@ -3,6 +3,7 @@ from discord import Forbidden
 from discord.ext import commands
 import random
 from dict import DictionaryReader
+from botkey import Key
 from subprocess import call
 import sys
 import logging
@@ -51,14 +52,15 @@ async def messageHandler(message):
 		
 	elif message.content.startswith('!item'):
 		await itemMessage(message)
+	
+	elif message.content.startswith('!pin') or message.content.startswith('!pins'):
+		await sendPinMessages(message)
 		
 	elif message.content.startswith('!channel'):
 		await client.send_message(message.channel, message.channel.id)
 		
 	else:
 		await generalMessage(message)
-	
-	
 
 async def maintenanceMessages(message):
 	p = DictionaryReader()
@@ -97,9 +99,19 @@ async def itemMessage(message):
 	p = DictionaryReader()
 	msg = p.itemReader(message.content[1::])
 	await client.send_message(message.channel, msg)
+	
+async def sendPinMessages(message):
+	pins = pins_from(message.channel)
+	size = 10
+	command = message.content.split(' ')
+	if len(command) > 1:
+		size = command[1]
+		if !isinstance(size, int):
+			size = 10
+	for x in range(0, size):
+		await client.send_message(message.author, pins[x])
 
 async def generalMessage(message):
-	print('general message')
 	p = DictionaryReader()
 	roles = message.author.roles
 	command = message.content[1::].split(' ')[0].lower()
@@ -114,6 +126,6 @@ async def generalMessage(message):
 		else:
 			await client.send_message(message.channel, msg)
 
-client.run('MTg0MzA4NTU1OTY3MzY1MTIx.CsHQeg.cbgr_yNUPigi0nKQAL4HU7KDRV4')
+client.run(Key().value())
 #bot.run(Key().value())
 
