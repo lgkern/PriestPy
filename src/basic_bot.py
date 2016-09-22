@@ -108,7 +108,7 @@ async def itemMessage(message):
 async def sendWelcomeMessage(member):
 	p = DictionaryReader()
 	msg = p.commandReader('help')
-	await client.send_message(member, msg)
+	await client.send_message(member, msg))
 	
 async def sendPinMessages(message):
 	pins = await client.pins_from(message.channel)
@@ -145,7 +145,10 @@ async def generalMessage(message):
 				await client.send_message(message.channel, msg)
 			else:
 				await client.send_message(message.author, msg)
-				await client.delete_message(message)
+				try:
+					await client.delete_message(message)
+				except Exception:
+					print('Error deleting message, probably from whisper')
 		else:
 			await client.send_message(message.channel, msg)
 
