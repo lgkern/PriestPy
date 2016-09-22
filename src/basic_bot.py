@@ -19,6 +19,7 @@ bot = commands.Bot(command_prefix='!', description=description)
 
 client = discord.Client()
 
+prefix = Key().prefix()
 
 @client.event
 async def on_ready():
@@ -32,7 +33,7 @@ async def on_message(message):
     # we do not want the bot to reply to itself
 	if message.author == client.user:
 		return
-	if message.content.startswith('!'):
+	if message.content.startswith(prefix):
 		await messageHandler(message)
 			
 async def messageHandler(message):
@@ -44,19 +45,19 @@ async def messageHandler(message):
 		except:
 			print('error while writing log')
 	
-	if message.content.startswith('!fullupdate') or message.content.startswith('!update'):
+	if message.content.startswith(prefix+'fullupdate') or message.content.startswith(prefix+'update'):
 		await maintenanceMessages(message)
 
-	elif message.content.startswith('!send'):
+	elif message.content.startswith(prefix+'send'):
 		await forwardMessage(message)
 		
-	elif message.content.startswith('!item'):
+	elif message.content.startswith(prefix+'item'):
 		await itemMessage(message)
 	
-	elif message.content.startswith('!pin') or message.content.startswith('!pins'):
+	elif message.content.startswith(prefix+'pin') or message.content.startswith(prefix+'pins'):
 		await sendPinMessages(message)
 		
-	elif message.content.startswith('!channel'):
+	elif message.content.startswith(prefix+'channel'):
 		await client.send_message(message.channel, message.channel.id)
 		
 	else:
@@ -64,7 +65,7 @@ async def messageHandler(message):
 
 async def maintenanceMessages(message):
 	p = DictionaryReader()
-	if message.content.startswith('!fullupdate'): 
+	if message.content.startswith(prefix+'fullupdate'): 
 		if message.author.id not in p.admins():
 			await client.send_message(message.channel, 'You\'re not my dad, {0.mention}!'.format(message.author))
 			return
@@ -101,15 +102,25 @@ async def itemMessage(message):
 	await client.send_message(message.channel, msg)
 	
 async def sendPinMessages(message):
-	pins = pins_from(message.channel)
+	pins = await client.pins_from(message.channel)
 	size = 10
+	count = 0
 	command = message.content.split(' ')
 	if len(command) > 1:
 		size = command[1]
 		if not isinstance(size, int):
 			size = 10
-	for x in range(0, size):
-		await client.send_message(message.author, pins[x])
+	for msg in pins:
+		if count > size:
+			return
+		await client.send_message(message.author, msg.content)
+		count += 1
+		
+	try:
+		await client.delete_message(message)
+	except Exception:
+		print('Error deleting message, probably from whisper')
+	
 
 async def generalMessage(message):
 	p = DictionaryReader()
@@ -126,6 +137,7 @@ async def generalMessage(message):
 		else:
 			await client.send_message(message.channel, msg)
 
+#client.run('MjI4NTQzMzIwNzE5MDk3ODU2.CsWPFw.Hz3E67ykKwVRt6Dy14qnEJUiSUw')
 client.run(Key().value())
 #bot.run(Key().value())
 
