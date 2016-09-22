@@ -106,7 +106,7 @@ async def sendPinMessages(message):
 	command = message.content.split(' ')
 	if len(command) > 1:
 		size = command[1]
-		if !isinstance(size, int):
+		if not isinstance(size, int):
 			size = 10
 	for x in range(0, size):
 		await client.send_message(message.author, pins[x])
