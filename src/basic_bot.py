@@ -40,6 +40,7 @@ async def on_message(message):
 		
 	if message.channel.name in r.logChannels():
 		logger.log(message)
+		
 	if message.content.startswith(prefix):
 		await messageHandler(message)
 			
@@ -115,7 +116,7 @@ async def itemMessage(message):
 async def sendWelcomeMessage(member):
 	p = DictionaryReader()
 	msg = p.commandReader('help')
-	await client.send_message(member, msg))
+	await client.send_message(member, msg)
 	
 async def sendPinMessages(message):
 	pins = await client.pins_from(message.channel)
