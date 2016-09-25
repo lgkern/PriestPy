@@ -24,6 +24,9 @@ class DictionaryReader:
 
 	def admins(self):
 		return self.dictionary["authorized"]
+		
+	def logChannels(self):
+		return self.dictionary["logchannels"]
 
 	def readEntry(self, entry):
 		self.loop = self.loop + 1

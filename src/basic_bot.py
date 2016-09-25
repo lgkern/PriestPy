@@ -6,6 +6,7 @@ from dict import DictionaryReader
 from botkey import Key
 from subprocess import call
 import sys
+from priestLogger import PriestLogger
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +22,8 @@ client = discord.Client()
 
 prefix = Key().prefix()
 
+logger = PriestLogger
+
 @client.event
 async def on_ready():
     print('Logged in as')
@@ -30,9 +33,13 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+	r = DictionaryReader()
     # we do not want the bot to reply to itself
 	if message.author == client.user:
 		return
+		
+	if message.channel.name in r.logChannels():
+		logger.log(message)
 	if message.content.startswith(prefix):
 		await messageHandler(message)
 			
