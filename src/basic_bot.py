@@ -11,18 +11,11 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-description = '''I'm PriestBot, your robot friend for links and quick info!
-
-Below you'll find my basic commands.
-
-You can find my full list of commands at https://github.com/lgkern/discord.py/blob/async/examples/dictEntries.txt'''
-bot = commands.Bot(command_prefix='!', description=description)
-
 client = discord.Client()
 
 prefix = Key().prefix()
 
-logger = PriestLogger
+logger = PriestLogger()
 
 @client.event
 async def on_ready():
