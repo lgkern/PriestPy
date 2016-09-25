@@ -4,7 +4,7 @@ from logging.handlers import TimedRotatingFileHandler
 class PriestLogger:
 
 	def __init__(self):
-		logHandler = TimedRotatingFileHandler("HowToPriest",when="midnight")
+		logHandler = TimedRotatingFileHandler("C:\\lucas\\PriestPy\\logs\\HowToPriest",when="midnight")
 		logFormatter = logging.Formatter('%(asctime)s - %(message)s')
 		logHandler.setFormatter( logFormatter )
 		logger = logging.getLogger( 'H2PLogger' )
