@@ -425,6 +425,28 @@ class HTTPClient:
         }
         return self.get(url, params=params, bucket=_func_())
 
+    def create_custom_emoji(self, guild_id, name, image):
+        payload = {
+            'name': name,
+            'image': image
+        }
+
+        bucket = '%s:%s' % (_func_(), guild_id)
+        return self.post('{0.GUILDS}/{1}/emojis'.format(self, guild_id), json=payload, bucket=bucket)
+
+    def delete_custom_emoji(self, guild_id, emoji_id):
+        url = '{0.GUILDS}/{1}/emojis/{2}'.format(self, guild_id, emoji_id)
+        bucket = '%s:%s' % (_func_(), guild_id)
+        return self.delete(url, bucket=bucket)
+
+    def edit_custom_emoji(self, guild_id, emoji_id, *, name):
+        payload = {
+            'name': name
+        }
+        url = '{0.GUILDS}/{1}/emojis/{2}'.format(self, guild_id, emoji_id)
+        bucket = '%s:%s' % (_func_(), guild_id)
+        return self.patch(url, bucket=bucket, json=payload)
+
     # Invite management
 
     def create_invite(self, channel_id, **options):
@@ -515,3 +537,6 @@ class HTTPClient:
         except HTTPException as e:
             raise GatewayNotFound() from e
         return data.get('url') + '?encoding=json&v=6'
+
+    def get_user_info(self, user_id):
+        return self.get('{0.USERS}/{1}'.format(self, user_id), bucket=_func_())

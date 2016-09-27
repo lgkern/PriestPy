@@ -460,6 +460,9 @@ All enumerations are subclasses of `enum`_.
     .. attribute:: channel_icon_change
 
         The system message denoting that a channel's icon has been changed.
+    .. attribute:: pins_add
+
+        The system message denoting that a pinned message has been added to a channel.
 
 .. class:: ServerRegion
 
@@ -471,6 +474,15 @@ All enumerations are subclasses of `enum`_.
     .. attribute:: us_east
 
         The US East region.
+    .. attribute:: us_central
+
+        The US Central region.
+    .. attribute:: eu_west
+
+        The EU West region.
+    .. attribute:: eu_central
+
+        The EU Central region.
     .. attribute:: singapore
 
         The Singapore region.
@@ -500,6 +512,30 @@ All enumerations are subclasses of `enum`_.
 
         The Amsterdam region for VIP servers.
 
+.. class:: VerificationLevel
+
+    Specifies a :class:`Server`\'s verification level, which is the criteria in
+    which a member must meet before being able to send messages to the server.
+
+    .. attribute:: none
+
+        No criteria set.
+    .. attribute:: low
+
+        Member must have a verified email on their Discord account.
+    .. attribute:: medium
+
+        Member must have a verified email and be registered on Discord for more
+        than five minutes.
+    .. attribute:: high
+
+        Member must have a verified email, be registered on Discord for more
+        than five minutes, and be a member of the server itself for more than
+        ten minutes.
+    .. attribute:: table_flip
+
+        An alias for :attr:`high`.
+
 .. class:: Status
 
     Specifies a :class:`Member` 's status.
@@ -513,6 +549,17 @@ All enumerations are subclasses of `enum`_.
     .. attribute:: idle
 
         The member is idle.
+    .. attribute:: dnd
+
+        The member is "Do Not Disturb".
+    .. attribute:: do_not_disturb
+
+        An alias for :attr:`dnd`.
+    .. attribute:: invisible
+
+        The member is "invisible". In reality, this is only used in sending
+        a presence a la :meth:`Client.change_presence`. When you receive a
+        user's presence this will be :attr:`offline` instead.
 
 .. _discord_api_data:
 

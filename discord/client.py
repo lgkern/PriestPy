@@ -25,7 +25,6 @@ DEALINGS IN THE SOFTWARE.
 """
 
 from . import __version__ as library_version
-from . import endpoints
 from .user import User
 from .member import Member
 from .channel import Channel, PrivateChannel
@@ -38,10 +37,11 @@ from .errors import *
 from .state import ConnectionState
 from .permissions import Permissions, PermissionOverwrite
 from . import utils, compat
-from .enums import ChannelType, ServerRegion
+from .enums import ChannelType, ServerRegion, VerificationLevel, Status
 from .voice_client import VoiceClient
 from .iterators import LogsFromIterator
 from .gateway import *
+from .emoji import Emoji
 from .http import HTTPClient
 
 import asyncio
@@ -58,8 +58,6 @@ from os.path import split as path_split
 
 PY35 = sys.version_info >= (3, 5)
 log = logging.getLogger(__name__)
-request_logging_format = '{method} {response.url} has returned {response.status}'
-request_success_log = '{response.url} with {json} received {data}'
 
 AppInfo = namedtuple('AppInfo', 'id name description icon owner')
 def app_info_icon_url(self):
@@ -1529,6 +1527,7 @@ class Client:
                 self._update_cache(self.email, password)
 
     @asyncio.coroutine
+    @utils.deprecated('change_presence')
     def change_status(self, game=None, idle=False):
         """|coro|
 
@@ -1540,7 +1539,8 @@ class Client:
         The idle parameter is a boolean parameter that indicates whether the
         client should go idle or not.
 
-        .. _game_list: https://gist.github.com/Rapptz/a82b82381b70a60c281b
+        .. deprecated:: v0.13.0
+            Use :meth:`change_presence` instead.
 
         Parameters
         ----------
@@ -1555,6 +1555,42 @@ class Client:
             If the ``game`` parameter is not :class:`Game` or None.
         """
         yield from self.ws.change_presence(game=game, idle=idle)
+
+    @asyncio.coroutine
+    def change_presence(self, *, game=None, status=None, afk=False):
+        """|coro|
+
+        Changes the client's presence.
+
+        The game parameter is a Game object (not a string) that represents
+        a game being played currently.
+
+        Parameters
+        ----------
+        game: Optional[:class:`Game`]
+            The game being played. None if no game is being played.
+        status: Optional[:class:`Status`]
+            Indicates what status to change to. If None, then
+            :attr:`Status.online` is used.
+        afk: bool
+            Indicates if you are going AFK. This allows the discord
+            client to know how to handle push notifications better
+            for you in case you are actually idle and not lying.
+
+        Raises
+        ------
+        InvalidArgument
+            If the ``game`` parameter is not :class:`Game` or None.
+        """
+
+        if status is None:
+            status = 'online'
+        elif status is Status.offline:
+            status = 'invisible'
+        else:
+            status = str(status)
+
+        yield from self.ws.change_presence(game=game, status=status, afk=afk)
 
     @asyncio.coroutine
     def change_nickname(self, member, nickname):
@@ -1665,7 +1701,7 @@ class Client:
         if position < 0:
             raise InvalidArgument('Channel position cannot be less than 0.')
 
-        url = '{0}/{1.server.id}/channels'.format(endpoints.SERVERS, channel)
+        url = '{0}/{1.server.id}/channels'.format(self.http.GUILDS, channel)
         channels = [c for c in channel.server.channels if c.type is channel.type]
 
         if position >= len(channels):
@@ -1930,6 +1966,8 @@ class Client:
         owner : :class:`Member`
             The new owner of the server to transfer ownership to. Note that you must
             be owner of the server to do this.
+        verification_level: :class:`VerificationLevel`
+            The new verification level for the server.
 
         Raises
         -------
@@ -1965,6 +2003,14 @@ class Client:
 
             fields['owner_id'] = fields['owner'].id
 
+        if 'region' in fields:
+            fields['region'] = str(fields['region'])
+
+        level = fields.get('verification_level', server.verification_level)
+        if not isinstance(level, VerificationLevel):
+            raise InvalidArgument('verification_level field must of type VerificationLevel')
+
+        fields['verification_level'] = level.value
         yield from self.http.edit_server(server.id, **fields)
 
     @asyncio.coroutine
@@ -2074,6 +2120,92 @@ class Client:
 
         data = yield from self.http.estimate_pruned_members(server.id, days)
         return data['pruned']
+
+    @asyncio.coroutine
+    def create_custom_emoji(self, server, *, name, image):
+        """|coro|
+
+        Creates a custom :class:`Emoji` for a :class:`Server`.
+
+        This endpoint is only allowed for user bots or white listed
+        bots. If this is done by a user bot then this is a local
+        emoji that can only be used inside that server.
+
+        There is currently a limit of 50 local emotes per server.
+
+        Parameters
+        -----------
+        server: :class:`Server`
+            The server to add the emoji to.
+        name: str
+            The emoji name. Must be at least 2 characters.
+        image: bytes
+            The *bytes-like* object representing the image data to use.
+            Only JPG and PNG images are supported.
+
+        Returns
+        --------
+        :class:`Emoji`
+            The created emoji.
+
+        Raises
+        -------
+        Forbidden
+            You are not allowed to create emojis.
+        HTTPException
+            An error occurred creating an emoji.
+        """
+
+        img = utils._bytes_to_base64_data(image)
+        data = yield from self.http.create_custom_emoji(server.id, name, img)
+        return Emoji(server=server, **data)
+
+    @asyncio.coroutine
+    def delete_custom_emoji(self, emoji):
+        """|coro|
+
+        Deletes a custom :class:`Emoji` from a :class:`Server`.
+
+        This follows the same rules as :meth:`create_custom_emoji`.
+
+        Parameters
+        -----------
+        emoji: :class:`Emoji`
+            The emoji to delete.
+
+        Raises
+        -------
+        Forbidden
+            You are not allowed to delete emojis.
+        HTTPException
+            An error occurred deleting the emoji.
+        """
+
+        yield from self.http.delete_custom_emoji(emoji.server.id, emoji.id)
+
+    @asyncio.coroutine
+    def edit_custom_emoji(self, emoji, *, name):
+        """|coro|
+
+        Edits a :class:`Emoji`.
+
+        Parameters
+        -----------
+        emoji: :class:`Emoji`
+            The emoji to edit.
+        name: str
+            The new emoji name.
+
+        Raises
+        -------
+        Forbidden
+            You are not allowed to edit emojis.
+        HTTPException
+            An error occurred editing the emoji.
+        """
+
+        yield from self.http.edit_custom_emoji(emoji.server.id, emoji.id, name=name)
+
 
     # Invite management
 
@@ -2292,7 +2424,7 @@ class Client:
         if role.position == position:
             return  # Save discord the extra request.
 
-        url = '{0}/{1.id}/roles'.format(endpoints.SERVERS, server)
+        url = '{0}/{1.id}/roles'.format(self.http.GUILDS, server)
 
         change_range = range(min(role.position, position), max(role.position, position) + 1)
 
@@ -2785,4 +2917,31 @@ class Client:
                        description=data['description'], icon=data['icon'],
                        owner=User(**data['owner']))
 
+    @asyncio.coroutine
+    def get_user_info(self, user_id):
+        """|coro|
 
+        Retrieves a :class:`User` based on their ID. This can only
+        be used by bot accounts. You do not have to share any servers
+        with the user to get this information, however many operations
+        do require that you do.
+
+        Parameters
+        -----------
+        user_id: str
+            The user's ID to fetch from.
+
+        Returns
+        --------
+        :class:`User`
+            The user you requested.
+
+        Raises
+        -------
+        NotFound
+            A user with this ID does not exist.
+        HTTPException
+            Fetching the user failed.
+        """
+        data = yield from self.http.get_user_info(user_id)
+        return User(**data)

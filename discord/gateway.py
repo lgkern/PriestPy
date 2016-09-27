@@ -28,8 +28,8 @@ import sys
 import websockets
 import asyncio
 import aiohttp
-from . import utils, endpoints, compat
-from .enums import Status
+from . import utils, compat
+from .enums import Status, try_enum
 from .game import Game
 from .errors import GatewayNotFound, ConnectionClosed, InvalidArgument
 import logging
@@ -155,7 +155,8 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
     GUILD_SYNC         = 12
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, max_size=None, **kwargs)
+        super().__init__(*args, **kwargs)
+        self.max_size = None
         # an empty dispatcher to prevent crashes
         self._dispatch = lambda *args: None
         # generic event listeners
@@ -318,6 +319,7 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
             state.sequence = None
             state.session_id = None
             if data == True:
+                yield from self.close()
                 raise ResumeWebSocket()
 
             yield from self.identify()
@@ -404,18 +406,25 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
                 raise ConnectionClosed(e) from e
 
     @asyncio.coroutine
-    def change_presence(self, *, game=None, idle=None):
+    def change_presence(self, *, game=None, status=None, afk=False, since=0.0, idle=None):
         if game is not None and not isinstance(game, Game):
             raise InvalidArgument('game must be of Game or None')
 
-        idle_since = None if idle == False else int(time.time() * 1000)
+        if idle:
+            status = 'idle'
+
+        if status == 'idle':
+            since = int(time.time() * 1000)
+
         sent_game = dict(game) if game else None
 
         payload = {
             'op': self.PRESENCE,
             'd': {
                 'game': sent_game,
-                'idle_since': idle_since
+                'afk': afk,
+                'since': since,
+                'status': status
             }
         }
 
@@ -423,14 +432,17 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
         log.debug('Sending "{}" to change status'.format(sent))
         yield from self.send(sent)
 
+        status_enum = try_enum(Status, status)
+        if status_enum is Status.invisible:
+            status_enum = Status.offline
+
         for server in self._connection.servers:
             me = server.me
             if me is None:
                 continue
 
             me.game = game
-            status = Status.idle if idle_since else Status.online
-            me.status = status
+            me.status = status_enum
 
     @asyncio.coroutine
     def request_sync(self, guild_ids):
@@ -459,11 +471,11 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
             self._connection._remove_voice_client(guild_id)
 
     @asyncio.coroutine
-    def close(self, code=1000, reason=''):
+    def close_connection(self, force=False):
         if self._keep_alive:
             self._keep_alive.stop()
 
-        yield from super().close(code, reason)
+        yield from super().close_connection(force=force)
 
 class DiscordVoiceWebSocket(websockets.client.WebSocketClientProtocol):
     """Implements the websocket protocol for handling voice connections.
@@ -605,10 +617,10 @@ class DiscordVoiceWebSocket(websockets.client.WebSocketClientProtocol):
             raise ConnectionClosed(e) from e
 
     @asyncio.coroutine
-    def close(self, code=1000, reason=''):
+    def close_connection(self, force=False):
         if self._keep_alive:
             self._keep_alive.stop()
 
-        yield from super().close(code, reason)
+        yield from super().close_connection(force=force)
 
 

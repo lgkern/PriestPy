@@ -42,12 +42,15 @@ class MessageType(Enum):
     call                = 3
     channel_name_change = 4
     channel_icon_change = 5
+    pins_add            = 6
 
 class ServerRegion(Enum):
     us_west       = 'us-west'
     us_east       = 'us-east'
     us_south      = 'us-south'
     us_central    = 'us-central'
+    eu_west       = 'eu-west'
+    eu_central    = 'eu-central'
     singapore     = 'singapore'
     london        = 'london'
     sydney        = 'sydney'
@@ -61,10 +64,23 @@ class ServerRegion(Enum):
     def __str__(self):
         return self.value
 
+class VerificationLevel(Enum):
+    none       = 0
+    low        = 1
+    medium     = 2
+    high       = 3
+    table_flip = 3
+
+    def __str__(self):
+        return self.name
+
 class Status(Enum):
     online = 'online'
     offline = 'offline'
     idle = 'idle'
+    dnd = 'dnd'
+    do_not_disturb = 'dnd'
+    invisible = 'invisible'
 
     def __str__(self):
         return self.value
