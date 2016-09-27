@@ -22,7 +22,7 @@
     "bis.invalid":"Invalid argument\nUsage: !bis <spec> [subtype]",
     "boss.invalid":"Invalid argument\nUsage: !boss <spec> <bossName>",
 	"artifact.invalid":"Invalid argument\nUsage: !artifact <spec> <route>\nRoutes: first, second, full",
-	"pawn.invalid":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: combined, stm, lotv, ms",
+	"pawn.invalid":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: combined, stm, lotv, ms\nDiscipline subtypes: raid, dungeon",
 
 	"shame":"http://i.imgur.com/FidZknJ.gif",		
 	"power":"http://i.imgur.com/8Igah2t.png",
