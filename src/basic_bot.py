@@ -116,21 +116,23 @@ async def sendPinMessages(message):
 	size = 10
 	count = 0
 	command = message.content.split(' ')
-	if len(command) > 1:
-		size = command[1]
-		if not isinstance(size, int):
-			size = 10
-	for msg in pins:
-		if count > size:
-			return
-		await client.send_message(message.author, msg.content)
-		count += 1
-		
 	try:
 		await client.delete_message(message)
 	except Exception:
 		print('Error deleting message, probably from whisper')
-	
+	if len(command) > 1:
+		try:
+			size = int(command[1])
+		except Exception:
+			size = 10
+
+	for msg in pins:
+		if count >= size:
+			return
+		if msg.content:
+			await client.send_message(message.author, '``` Pin '+ str(count+1) + ' ```')
+			await client.send_message(message.author, msg.content)
+		count += 1
 
 async def generalMessage(message):
 	p = DictionaryReader()
