@@ -139,7 +139,7 @@ async def generalMessage(message):
 	except Exception:
 		roles = 10
 	command = message.content[1::].split(' ')[0].lower()
-	msg = p.commandReader(message.content[1::])
+	msg = p.commandReader(message.content[1::],message.channel.name)
 	if msg != None:
 		if command in p.whisperCommands():
 			if command == 'pub' and len(roles) > 1 and 'help' not in message.content:

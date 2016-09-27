@@ -28,7 +28,7 @@ class DictionaryReader:
 	def logChannels(self):
 		return self.dictionary["logchannels"]
 
-	def readEntry(self, entry):
+	def readEntry(self, entry, channelName):
 		self.loop = self.loop + 1
 		if self.loop > 10:
 			print("Loop error")
@@ -41,7 +41,7 @@ class DictionaryReader:
 			return fixed
 		else:
 			print(entry.split('.')[0]+".invalid")
-			return self.readEntry(entry.split('.')[0]+".invalid")
+			return self.readEntry(entry.split('.')[0]+"."+channelName,channelName)
 
 
 			
@@ -103,9 +103,9 @@ class DictionaryReader:
 	
 		return result
 		
-	def commandReader(self, params):
+	def commandReader(self, params, channelName):
 		self.loop = 0
-		return self.readEntry('.'.join(params.split(' ')))
+		return self.readEntry('.'.join(params.split(' ')), channelName)
 
 	def itemReader(self, params):
 		self.loop = 0
