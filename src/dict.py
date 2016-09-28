@@ -27,6 +27,9 @@ class DictionaryReader:
 		
 	def logChannels(self):
 		return self.dictionary["logchannels"]
+	
+	def sentCommands(self):
+		return self.dictionary["sentcommands"]
 
 	def readEntry(self, entry, channelName):
 		self.loop = self.loop + 1
@@ -103,7 +106,7 @@ class DictionaryReader:
 	
 		return result
 		
-	def commandReader(self, params, channelName):
+	def commandReader(self, params, channelName = ''):
 		self.loop = 0
 		return self.readEntry('.'.join(params.split(' ')), channelName)
 
