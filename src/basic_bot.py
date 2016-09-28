@@ -31,7 +31,7 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 		
-	if message.channel.name in r.logChannels():
+	if message.channel.name != None and message.channel.name in r.logChannels():
 		logger.log(message)
 		
 	if message.content.startswith(prefix):
@@ -155,7 +155,4 @@ async def generalMessage(message):
 		else:
 			await client.send_message(message.channel, msg)
 
-#client.run('MjI4NTQzMzIwNzE5MDk3ODU2.CsWPFw.Hz3E67ykKwVRt6Dy14qnEJUiSUw')
 client.run(Key().value())
-#bot.run(Key().value())
-
