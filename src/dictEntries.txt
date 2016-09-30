@@ -3,6 +3,7 @@
 	"roles":"Staff",
 	"authorized":"118461244784115713",
 	"logchannels":"general shadow discipline holy timeout",
+	"sentcommands":"fantasy sims power shame",
 
 	"help":"Welcome to HowToPriest! The Priest class Discord by https://howtopriest.com/\n\n I'm PriestBot, your robot friend for links and quick info! My function is to provide you with information and resources.\n\nAdditional info for specializations can be found in the pinned messages of each spec's channel.\n\nBelow you'll find my basic commands.\n\n```You can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tartifact\t\t Displays the paths of the artifact of a given specialization;\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all classes Discord channels;\n\tweakauras, wa\tLinks to WeakAuras from a given specialization;\n\tlexicon\t\t  Link to the \"Raider's Lexicon\" with overall info into Legion systems;\n\tguide\t\t\tSpecialization guides;\n\tboss\t\t\t Links to boss' discussions on HowToPriest\n\tpawn\t\t\t Pawn strings for different specs and talents\n\tpins\t\t\t Whisper all pinned messages to you (useful for mobile users)\n\nList of prefixes:\n\tpub\t\t\t  Displays a result in the channel instead of by whisper\n\tsend\t\t\t Sends the result to a target person - only usable by Staff members\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```\n\nExample of a command:```!guide shadow```Gives you a link to the Shadow Priest guide",
 	
@@ -102,6 +103,7 @@
 	
 	"pawn.shadow":"pawn.shadow.stm",
 	"pawn.shadow.combined":"Combined stat weights\n```( Pawn: v1: \"Shadow Combined\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.25, IsAxe=-1000000, HasteRating=1.39, MasteryRating=1.05, IsCrossbow=-1000000, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Is2HSword=-1000000, IsSword=-1000000, Versatility=0.94, Avoidance=0.01, Stamina=0.01, IsShield=-1000000 )```",
+	"pawn.shadow.s2m":"pawn.shadow.stm",
 	"pawn.shadow.lotv":"pawn.shadow.lotv-ms",
 	"pawn.shadow.ms":"pawn.shadow.lotv-ms",
 	"pawn.shadow.lotv-ms":"LotV/MS stat weights\n```( Pawn: v1: \"LotV\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.25, IsShield=-1000000, HasteRating=1.2, MasteryRating=1.03, Versatility=0.94, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Avoidance=0.01, IsSword=-1000000, IsCrossbow=-1000000, Is2HSword=-1000000, Stamina=0.01, IsAxe=-1000000 )```",
