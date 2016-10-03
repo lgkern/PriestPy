@@ -13,11 +13,11 @@ class PriestLogger:
 		self.logger.setLevel( logging.INFO )
 	
 	def log(self, message):
-		sent = false
+		sent = False
 		while not sent:
 			try:
 				self.logger.info(message.channel.name + ' - ' + message.author.name+': ' + message.content)
-				sent = true
+				sent = True
 			except:
 				sleep(0.2)
 			
