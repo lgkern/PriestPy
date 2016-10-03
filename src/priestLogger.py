@@ -1,5 +1,6 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
+from time import sleep
 
 class PriestLogger:
 
@@ -12,4 +13,11 @@ class PriestLogger:
 		self.logger.setLevel( logging.INFO )
 	
 	def log(self, message):
-		self.logger.info(message.channel.name + ' - ' + message.author.name+': ' + message.content)
+		sent = false
+		while not sent:
+			try:
+				self.logger.info(message.channel.name + ' - ' + message.author.name+': ' + message.content)
+				sent = true
+			except:
+				sleep(0.2)
+			
