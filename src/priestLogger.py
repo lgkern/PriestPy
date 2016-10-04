@@ -5,19 +5,20 @@ from time import sleep
 class PriestLogger:
 
 	def __init__(self):
-		logHandler = TimedRotatingFileHandler("C:\\lucas\\PriestPy\\Dropbox\\logs\\HowToPriest",when="midnight",backupCount=365)
+		logHandler = TimedRotatingFileHandler('C:\\lucas\\PriestPy\\Dropbox\\logs\\HowToPriest',when='midnight',backupCount=365)
 		logFormatter = logging.Formatter('%(asctime)s - %(message)s')
 		logHandler.setFormatter( logFormatter )
 		self.logger = logging.getLogger( 'H2PLogger' )
 		self.logger.addHandler( logHandler )
 		self.logger.setLevel( logging.INFO )
+		logHandler.createLock()
 	
 	def log(self, message):
-		sent = False
-		while not sent:
-			try:
-				self.logger.info(message.channel.name + ' - ' + message.author.name+': ' + message.content)
-				sent = True
-			except:
-				sleep(0.2)
+		logHandler.acquire()
+		try:
+			self.logger.info(message.channel.name + ' - ' + message.author.name+': ' + message.content)
+			logHandler.release()
+		except:
+			logHandler.release()
+		
 			
