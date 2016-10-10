@@ -41,22 +41,29 @@ async def on_message(message):
 async def on_member_join(member):
 	await sendWelcomeMessage(member)
 	await logAction(member, 'joined')
-	
+
+@client.event	
 async def on_member_remove(member):
+	print('member left')
 	await logAction(member, 'left')
 	
+@client.event
 async def on_member_ban(member):
 	await logAction(member, 'banned')
 	
+@client.event
 async def on_member_unban(member):
-	await logAction(member, 'banned')
-	
+	await logAction(member, 'unbanned')
+
 async def logAction(member, action):
 	r = DictionaryReader()
 	try:
 		await client.send_message(client.get_channel(r.actionLogChannel()), '{0.server.name} - {0.name} ({0.id}) {1}'.format(member, action))
 	except:
-		print('error while writing {0} log'.format(action))
+		try:
+			await client.send_message(client.get_channel(r.actionLogChannel()), 'No Server - {0.name} ({0.id}) {1}'.format(member, action))
+		except:
+			print('error while writing {0} log'.format(action))
 
 			
 async def messageHandler(message):
