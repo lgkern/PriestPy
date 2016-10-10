@@ -56,7 +56,7 @@ async def logAction(member, action):
 	try:
 		await client.send_message(client.get_channel(r.actionLogChannel()), '{0.server.name} - {0.name} ({0.id}) {1}'.format(member, action))
 	except:
-		print('error while writing {0} log', action)
+		print('error while writing {0} log'.format(action))
 
 			
 async def messageHandler(message):
