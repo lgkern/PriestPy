@@ -8,6 +8,7 @@ from subprocess import call
 import sys
 from priestLogger import PriestLogger
 import logging
+import time
 
 logging.basicConfig(level=logging.INFO)
 
@@ -58,7 +59,7 @@ async def on_member_unban(member):
 async def logAction(member, action):
 	r = DictionaryReader()
 	try:
-		await client.send_message(client.get_channel(r.actionLogChannel()), '{0.server.name} - {0.name} ({0.id}) {1}'.format(member, action))
+		await client.send_message(client.get_channel(r.actionLogChannel()), '['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {0.server.name} - {0.name} ({0.id}) {1}'.format(member, action))
 	except:
 		try:
 			await client.send_message(client.get_channel(r.actionLogChannel()), 'No Server - {0.name} ({0.id}) {1}'.format(member, action))
