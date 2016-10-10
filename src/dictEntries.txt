@@ -2,6 +2,7 @@
 	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub",
 	"roles":"Staff",
 	"authorized":"118461244784115713",
+	"actionLogChannel":"230154359122427904",
 	"logchannels":"general shadow discipline holy timeout",
 	"sentcommands":"fantasy sims power shame",
 

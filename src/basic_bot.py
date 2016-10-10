@@ -40,6 +40,24 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
 	await sendWelcomeMessage(member)
+	await logAction(member, 'joined')
+	
+async def on_member_remove(member):
+	await logAction(member, 'left')
+	
+async def on_member_ban(member):
+	await logAction(member, 'banned')
+	
+async def on_member_unban(member):
+	await logAction(member, 'banned')
+	
+async def logAction(member, action):
+	r = DictionaryReader()
+	try:
+		await client.send_message(client.get_channel(r.actionLogChannel()), '{0.server.name} - {0.name} ({0.id}) {1}'.format(member, action))
+	except:
+		print('error while writing {0} log', action)
+
 			
 async def messageHandler(message):
 	try:
@@ -50,7 +68,7 @@ async def messageHandler(message):
 		except:
 			print('error while writing log')
 	
-	if message.content.startswith(prefix+'fullupdate') or message.content.startswith(prefix+'update'):
+	if message.content.startswith(prefix+'fullupdate') or message.content.startswith(prefix+'update') or message.content.startswith(prefix+'channel'):
 		await maintenanceMessages(message)
 
 	elif message.content.startswith(prefix+'send'):

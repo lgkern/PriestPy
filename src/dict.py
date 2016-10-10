@@ -30,6 +30,9 @@ class DictionaryReader:
 	
 	def sentCommands(self):
 		return self.dictionary["sentcommands"]
+		
+	def actionLogChannel(self):
+		return str(self.dictionary["actionLogChannel"])
 
 	def readEntry(self, entry, channelName):
 		self.loop = self.loop + 1
