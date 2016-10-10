@@ -88,7 +88,7 @@
 	"link.guide.shadow":"link.shadow.guide",
 	"link.bis.shadow":"link.shadow.bis",
 	"link.hub.shadow":"link.shadow.hub",
-	
+	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
 	
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
@@ -109,9 +109,9 @@
 	"pawn.shadow.ms":"pawn.shadow.lotv-ms",
 	"pawn.shadow.lotv-ms":"LotV/MS stat weights\n```( Pawn: v1: \"LotV\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.25, IsShield=-1000000, HasteRating=1.2, MasteryRating=1.03, Versatility=0.94, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Avoidance=0.01, IsSword=-1000000, IsCrossbow=-1000000, Is2HSword=-1000000, Stamina=0.01, IsAxe=-1000000 )```",
 	"pawn.shadow.stm":"StM stat weights\n```( Pawn: v1: \"Shadow S2M\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.26, IsAxe=-1000000, HasteRating=1.78, MasteryRating=1.07, IsCrossbow=-1000000, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Is2HSword=-1000000, IsSword=-1000000, Versatility=0.94, Avoidance=0.01, Stamina=0.01, IsShield=-1000000 )```",
-	"pawn.discipline":"pawn.discipline.raid",
+	"pawn.discipline":"pawn.discipline.dungeon",
 	"pawn.discipline.raid":"```( Pawn: v1: \"Disc - Raid\": Intellect=0.865, Versatility=0.655, HasteRating=1, MasteryRating=0.729, CritRating=0.685 )```",
-	"pawn.discipline.dungeon":"```( Pawn: v1: \"Disc - Dungeon\": Intellect=10, Versatility=5, HasteRating=8, MasteryRating=1, Stamina=0.01, Leech=0.01, CritRating=6.5 )```",
+	"pawn.discipline.dungeon":"```( Pawn: v1: \"Disc - Dungeon\": CritRating=0.961, HasteRating=1, MasteryRating=0.617, Versatility=0.928, Intellect=1.225 )```",
 	
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 	
