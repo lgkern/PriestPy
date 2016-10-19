@@ -5,12 +5,10 @@
 	"actionLogChannel":"230154359122427904",
 	"logchannels":"general shadow discipline holy timeout",
 	"sentcommands":"fantasy sims power shame",
-
 	"help":"Welcome to HowToPriest! The Priest class Discord by https://howtopriest.com/\n\n I'm PriestBot, your robot friend for links and quick info! My function is to provide you with information and resources.\n\nAdditional info for specializations can be found in the pinned messages of each spec's channel.\n\nBelow you'll find my basic commands.\n\n```You can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tartifact\t\t Displays the paths of the artifact of a given specialization;\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all classes Discord channels;\n\tweakauras, wa\tLinks to WeakAuras from a given specialization;\n\tlexicon\t\t  Link to the \"Raider's Lexicon\" with overall info into Legion systems;\n\tguide\t\t\tSpecialization guides;\n\tboss\t\t\t Links to boss' discussions on HowToPriest\n\tpawn\t\t\t Pawn strings for different specs and talents\n\tpins\t\t\t Whisper all pinned messages to you (useful for mobile users)\n\nList of prefixes:\n\tpub\t\t\t  Displays a result in the channel instead of by whisper\n\tsend\t\t\t Sends the result to a target person - only usable by Staff members\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```\n\nExample of a command:```!guide shadow```Gives you a link to the Shadow Priest guide",
 	
 	"command":"help",
 	"commands":"help",
-
 	"item.invalid":"Invalid argument\nUsage:\n\t!item <spec> <slot>\n\t!item <itemNumber>",
 	"list.invalid":"Invalid argument\nUsage: !list <spec> <type>",
 	"link.invalid":"Invalid argument\nUsage: !link <spec> [information]",
@@ -20,12 +18,10 @@
 	"stats.invalid":"Invalid argument\nUsage: !stats <spec> [subtype]",
     "wa.invalid":"Invalid argument\nUsage: !weakauras <spec> [author]",
 	"guide.invalid":"Invalid argument\nUsage: !guide <spec>",
-
     "bis.invalid":"Invalid argument\nUsage: !bis <spec> [subtype]",
     "boss.invalid":"Invalid argument\nUsage: !boss <spec> <bossName>",
 	"artifact.invalid":"Invalid argument\nUsage: !artifact <spec> <route>\nRoutes: first, second, full",
 	"pawn.invalid":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: combined, stm, lotv, ms\nDiscipline subtypes: raid, dungeon",
-
 	"shame":"http://i.imgur.com/FidZknJ.gif",		
 	"power":"http://i.imgur.com/8Igah2t.png",
 	"decent":"Here is Twintop's best StM to date:\nhttps://puu.sh/qgWCQ/f565207eb0.jpg",
@@ -33,13 +29,11 @@
 	"fantasy":"http://i.imgur.com/EMSiUF3.jpg",
 	"sims":"stm",
 	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
-
 	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
 	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
 	
 	"item.legendary.shadow.wrist":"item.shadow.wrist",
 	"item.shadow.wrist":"https://legion.wowhead.com/item=132409",
-
 	"item.legendary.shadow.waist":"item.shadow.waist",
 	"item.shadow.waist":"https://legion.wowhead.com/item=132864",
 	
@@ -53,7 +47,6 @@
 	"list.holy.legendaries":"list.healing.legendaries",
 	"list.discipline.legendaries":"list.healing.legendaries",
 	"list.healing.legendaries":"https://legion.wowhead.com/items=4.1?filter=minle=895;ub=5;ro=4;qu=5",
-
 	"item.legendary.discipline.waist":"item.discipline.waist",
 	"item.discipline.waist":"https://legion.wowhead.com/item=133800",
 	
@@ -112,6 +105,7 @@
 	"pawn.discipline":"pawn.discipline.dungeon",
 	"pawn.discipline.raid":"```( Pawn: v1: \"Disc - Raid\": Intellect=0.865, Versatility=0.655, HasteRating=1, MasteryRating=0.729, CritRating=0.685 )```",
 	"pawn.discipline.dungeon":"```( Pawn: v1: \"Disc - Dungeon\": CritRating=0.961, HasteRating=1, MasteryRating=0.617, Versatility=0.928, Intellect=1.225 )```",
+    "pawn.holy":"```( Pawn: v1: \"Holy\": Intellect=1, IsFist=-1000000, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.8, Versatility=0.64, IsPolearm=-1000000, IsGun=-1000000, IsShield=-1000000, IsPlate=-1000000, Is2HAxe=-1000000, IsOffHand=-1000000, IsCrossbow=-1000000, IsBow=-1000000, IsMail=-1000000, IsSword=-1000000, IsLeather=-1000000, IsWarglaive=-1000000, Is2HMace=-1000000, CritRating=0.79, Avoidance=0.01, Is2HSword=-1000000, IsAxe=-1000000, Stamina=0.01 )```by AutomaticJak",
 	
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 	
@@ -193,7 +187,6 @@
     "boss.shadow.high.botanist.tel'arn":"TBA",
     "boss.shadow.tichondrius":"TBA",
     "boss":"TBA",
-
     "boss.shadow.dragons.of.nightmare":"boss.shadow.don",
     "boss.shadow.dragons":"boss.shadow.don",
     "boss.shadow.dragon.council":"boss.shadow.don",    
