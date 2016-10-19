@@ -105,7 +105,7 @@
 	"pawn.discipline":"pawn.discipline.dungeon",
 	"pawn.discipline.raid":"```( Pawn: v1: \"Disc - Raid\": Intellect=0.865, Versatility=0.655, HasteRating=1, MasteryRating=0.729, CritRating=0.685 )```",
 	"pawn.discipline.dungeon":"```( Pawn: v1: \"Disc - Dungeon\": CritRating=0.961, HasteRating=1, MasteryRating=0.617, Versatility=0.928, Intellect=1.225 )```",
-    "pawn.holy":"```( Pawn: v1: \"Holy\": Intellect=1, IsFist=-1000000, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.8, Versatility=0.64, IsPolearm=-1000000, IsGun=-1000000, IsShield=-1000000, IsPlate=-1000000, Is2HAxe=-1000000, IsOffHand=-1000000, IsCrossbow=-1000000, IsBow=-1000000, IsMail=-1000000, IsSword=-1000000, IsLeather=-1000000, IsWarglaive=-1000000, Is2HMace=-1000000, CritRating=0.79, Avoidance=0.01, Is2HSword=-1000000, IsAxe=-1000000, Stamina=0.01 )```by AutomaticJak",
+    "pawn.holy":"Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"Holy\": Intellect=1, IsFist=-1000000, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.8, Versatility=0.64, IsPolearm=-1000000, IsGun=-1000000, IsShield=-1000000, IsPlate=-1000000, Is2HAxe=-1000000, IsOffHand=-1000000, IsCrossbow=-1000000, IsBow=-1000000, IsMail=-1000000, IsSword=-1000000, IsLeather=-1000000, IsWarglaive=-1000000, Is2HMace=-1000000, CritRating=0.79, Avoidance=0.01, Is2HSword=-1000000, IsAxe=-1000000, Stamina=0.01 )```by AutomaticJak",
 	
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 	
