@@ -147,7 +147,7 @@
 	"discord.lock":"discord.warlock",
 	"discord.shammy":"discord.shaman",
 	
-    "bis.shadow":"https://howtopriest.com/viewtopic.php?f=19&t=8693",
+    "bis.shadow":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
     "bis.shadow.cop":"http://howtopriest.com/viewtopic.php?t=7643",
     "bis.shadow.as":"http://howtopriest.com/viewtopic.php?t=7642",
     "bis.holy":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7648#BiS",
