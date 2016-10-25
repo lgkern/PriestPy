@@ -14,3 +14,4 @@ cmdhere.bat
 *.bat
 .vs
 *.pyproj
+*.sln
