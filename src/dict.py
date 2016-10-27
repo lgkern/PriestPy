@@ -47,7 +47,8 @@ class DictionaryReader:
 			return fixed
 		else:
 			print(entry.split('.')[0]+".invalid")
-			return self.readEntry(entry.split('.')[0]+"."+channelName,channelName)
+            entryText = entry.split('.')[0] if isinstance(entry, str) else ''
+			return self.readEntry(entryText+"."+channelName,channelName)
 
 
 			
