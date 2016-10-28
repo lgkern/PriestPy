@@ -9,6 +9,7 @@ import sys
 from priestLogger import PriestLogger
 import logging
 import time
+from discord import HTTPException
 
 logging.basicConfig(level=logging.INFO)
 
@@ -139,14 +140,11 @@ async def sendPinMessages(message):
     command = message.content.split(' ')
     try:
         await client.delete_message(message)
-    except Exception:
+    except (HTTPException, Forbidden):
         print('Error deleting message, probably from whisper')
     if len(command) > 1:
-        try:
-            size = int(command[1])
-        except Exception:
-            size = 10
-
+        size = int(command[1]) if isinstance(command[1], int) else 10
+        
     for msg in pins:
         if count >= size:
             return
@@ -171,7 +169,7 @@ async def generalMessage(message):
                 await client.send_message(message.author, msg)
                 try:
                     await client.delete_message(message)
-                except Exception:
+                except (HTTPException, Forbidden):
                     print('Error deleting message, probably from whisper')
         else:
             await client.send_message(message.channel, msg)
