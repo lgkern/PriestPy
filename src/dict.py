@@ -48,7 +48,8 @@ class DictionaryReader:
         else:
             print(entry.split('.')[0]+".invalid")
             entryText = entry.split('.')[0] if isinstance(entry, str) else ''
-            return self.readEntry(entryText+"."+channelName,channelName)
+            chName = channelName if isinstance(channelName, str) else ''
+            return self.readEntry(entryText+"."+chName,chName)
 
 
             
