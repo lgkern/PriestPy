@@ -101,7 +101,7 @@
 	"pawn.shadow.lotv":"pawn.shadow.lotv-ms",
 	"pawn.shadow.ms":"pawn.shadow.lotv-ms",
 	"pawn.shadow.lotv-ms":"LotV/MS stat weights\n```( Pawn: v1: \"LotV\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.25, IsShield=-1000000, HasteRating=1.2, MasteryRating=1.03, Versatility=0.94, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Avoidance=0.01, IsSword=-1000000, IsCrossbow=-1000000, Is2HSword=-1000000, Stamina=0.01, IsAxe=-1000000 )```",
-	"pawn.shadow.stm":"StM pre-BP weights\n```( Pawn: v1: \"1 Shadow S2M\": Intellect=1, HasteRating=1.73, MasteryRating=1.19, CritRating=1.51, Versatility=1.03 )```StM post 12k BP weights```( Pawn: v1: \"2 Shadow S2M Post BP\": Intellect=1, HasteRating=0.9, MasteryRating=1.4, CritRating=1.23, Versatility=1.01 )```",
+	"pawn.shadow.stm":"S2M 8k Haste``` ( Pawn: v1: \"08k Shadow S2M\": Intellect=1, HasteRating=2.21, MasteryRating=1.09, CritRating=1.60, Versatility=0.99)```S2M 10k Haste```( Pawn: v1: \"10k Shadow S2M\": Intellect=1, HasteRating=1.47, MasteryRating=1.18, CritRating=1.47, Versatility=0.98 )```S2M 12k Haste```( Pawn: v1: \"12k Shadow S2M\": Intellect=1, HasteRating=1.08, MasteryRating=1.29, CritRating=1.41, Versatility=0.98 )```",
 	"pawn.discipline":"```( Pawn: v1: \"Disc - Combined\": Intellect=1, HasteRating=0.986, MasteryRating=0.674, Stamina=0.01, CritRating=0.789, Leech=0.01, Versatility=0.758 )```",
 	"pawn.discipline.raid":"```( Pawn: v1: \"Disc - Raid\": Intellect=1, HasteRating=1.156, MasteryRating=0.843, Stamina=0.01, Versatility=0.757, Leech=0.01, CritRating=0.792  )```",
 	"pawn.discipline.dungeon":"```( Pawn: v1: \"Disc - Dungeon\": Intellect=1, Stamina=0.01, HasteRating=0.816, MasteryRating=0.504, CritRating=0.785, Leech=0.01, Versatility=0.758 )```",
@@ -109,7 +109,7 @@
 	
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 	
-	"stats.shadow":"Surrender to Madness pre-breakpoint\nIntellect: 1.0\nHaste: 1.73\nCrit: 1.51\nMastery: 1.19\nVersatility: 1.03\n\nSurrender to Madness post 12k Haste breakpoint:\nIntellect: 1.0\nHaste: 0.9\nCrit: 1.23\nMastery: 1.4\nVersatility: 1.01\n\nLegacy of the Void / Mind Spike\nInt = 1.00\nCrit = 1.25\nHaste = 1.20\nMast = 1.03\nVers = 0.94\n\nCombined\nInt = 1.00\nCrit = 1.25\nHaste = 1.39\nMast = 1.05\nVers = 0.94",
+	"stats.shadow":"Surrender to Madness at 8k Haste:\nIntellect: 1.0\nHaste: 2.21\nCrit: 1.60\nMastery: 1.09\nVersatility: 0.99\n\n\nSurrender to Madness at 10k Haste:\nIntellect: 1.0\nHaste: 1.47\nCrit: 1.47\nMastery: 1.18\nVersatility: 0.98\n\nSurrender to Madness at 12k Haste:\nIntellect: 1.0\nHaste: 1.08\nCrit: 1.41\nMastery: 1.29\nVersatility: 0.98\n\nLegacy of the Void / Mind Spike\nInt = 1.00\nCrit = 1.25\nHaste = 1.20\nMast = 1.03\nVers = 0.94\n\nCombined\nInt = 1.00\nCrit = 1.25\nHaste = 1.39\nMast = 1.05\nVers = 0.94",
 	"stats.shadow.short":"Surrender to Madness\nHaste>>Crit>Mastery>=Int>Vers\n\nLegacy of the Void / Mind Spike\nCrit>=Haste>Mastery>=Int>Vers\n\nCombined\nHaste>Crit>Mastery>=Int>Vers",
 	"stats.shadow.cop":"Int = 1.0000\nSpell Power = 0.9057\nCrit = 0.7592\nHaste = 0.8540\nMastery = 0.9198\nMultistrike = 0.6584\nVersatility = 0.6427\nDPS (Pure Damage) = 0.1118",
 	"stats.shadow.cop.short":"Int>SP>Mastery>Haste>Crit>Multi>Vers>DPS",
