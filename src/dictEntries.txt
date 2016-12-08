@@ -85,6 +85,9 @@
 	"link.bis.shadow":"link.shadow.bis",
 	"link.hub.shadow":"link.shadow.hub",
 	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
+	
+	"trinkets.shadow":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
+	"trinket.shadow":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
 
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
