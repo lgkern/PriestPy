@@ -74,7 +74,10 @@
 	"link.donor":"http://howtopriest.com/viewtopic.php?f=5&t=2714",
 
 	"link.shadow.hub":"https://howtopriest.com/viewtopic.php?f=8&t=8687",
-	"link.shadow.bis":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?t=7637",
+	"link.shadow.relics":"http://i.imgur.com/Np5NNxt.png",
+	"link.shadow.timeline":"http://i.imgur.com/wd5KeuG.png",
+	"link.shadow.trinkets":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
+	"link.shadow.bis":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
 	"link.shadow.bis.cop":"http://howtopriest.com/viewtopic.php?t=7643",
 	"link.shadow.bis.as":"http://howtopriest.com/viewtopic.php?t=7642",
 	"link.shadow.guide":"http://howtopriest.com/viewtopic.php?f=19&t=8402",
