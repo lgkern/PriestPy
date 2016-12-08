@@ -1,12 +1,12 @@
 {
-	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands shadow",
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands shadow trinkets trinket",
 	"roles":"Staff",
 	"authorized":"118461244784115713,165904439947952128",
 	"actionLogChannel":"230154359122427904",
 	"logchannels":"general shadow discipline holy timeout",
 	"sentcommands":"fantasy sims power shame",
 	"help":"Welcome to HowToPriest! The Priest class Discord by https://howtopriest.com/\n\n I'm PriestBot, your robot friend for links and quick info! My function is to provide you with information and resources.\n\nAdditional info for specializations can be found in the pinned messages of each spec's channel.\n\nBelow you'll find my basic commands.\n\n```You can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tartifact\t\t Displays the paths of the artifact of a given specialization;\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all classes Discord channels;\n\tweakauras, wa\tLinks to WeakAuras from a given specialization;\n\tlexicon\t\t  Link to the \"Raider's Lexicon\" with overall info into Legion systems;\n\tguide\t\t\tSpecialization guides;\n\tboss\t\t\t Links to boss' discussions on HowToPriest\n\tpawn\t\t\t Pawn strings for different specs and talents\n\tpins\t\t\t Whisper all pinned messages to you (useful for mobile users)\n\nList of prefixes:\n\tpub\t\t\t  Displays a result in the channel instead of by whisper\n\tsend\t\t\t Sends the result to a target person - only usable by Staff members\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```\n\nExample of a command:```!guide shadow```Gives you a link to the Shadow Priest guide",
-	
+
 	"command":"help",
 	"commands":"help",
 	"item.invalid":"Invalid argument\nUsage:\n\t!item <spec> <slot>\n\t!item <itemNumber>",
@@ -22,59 +22,62 @@
     "boss.invalid":"Invalid argument\nUsage: !boss <spec> <bossName>",
 	"artifact.invalid":"Invalid argument\nUsage: !artifact <spec> <route>\nRoutes: first, second, full",
 	"pawn.invalid":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: combined, stm, lotv, ms\nDiscipline subtypes: raid, dungeon",
-	"shame":"http://i.imgur.com/FidZknJ.gif",		
+	"shame":"http://i.imgur.com/FidZknJ.gif",
 	"power":"http://i.imgur.com/8Igah2t.png",
 	"decent":"Here is Twintop's best StM to date:\nhttps://puu.sh/qgWCQ/f565207eb0.jpg",
-	"racial":"Racials are extraordinarily close to one another in Legion, comprising less than a 1% difference. That being said, it may be useful to look at things like Arcane Torrent, Rocket Jump, and Darkflight. Otherwise, just go for whatever race you enjoy playing.\n\nTL;DR: \"Follow your :heart:\"\n~Hygeia 2016",	
+	"racial":"Racials are extraordinarily close to one another in Legion, comprising less than a 1% difference. That being said, it may be useful to look at things like Arcane Torrent, Rocket Jump, and Darkflight. Otherwise, just go for whatever race you enjoy playing.\n\nTL;DR: \"Follow your :heart:\"\n~Hygeia 2016",
 	"fantasy":"http://i.imgur.com/EMSiUF3.jpg",
 	"sims":"stm",
 	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
 	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
 	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
-	
+
 	"item.legendary.shadow.wrist":"item.shadow.wrist",
 	"item.shadow.wrist":"https://legion.wowhead.com/item=132409",
 	"item.legendary.shadow.waist":"item.shadow.waist",
 	"item.shadow.waist":"https://legion.wowhead.com/item=132864",
-	
+
 	"item.legendary.shadow.helm":"item.shadow.head",
 	"item.shadow.head":"https://legion.wowhead.com/item=133971",
-	
+
 	"list.shadow.legendaries":"list.legendary.shadow",
 	"list.legendaries.shadow":"list.legendary.shadow",
 	"list.legendary.shadow":"https://legion.wowhead.com/items=4.1?filter=minle=895;ub=5;ro=2;qu=5",
-	
+
 	"list.holy.legendaries":"list.healing.legendaries",
 	"list.discipline.legendaries":"list.healing.legendaries",
 	"list.healing.legendaries":"https://legion.wowhead.com/items=4.1?filter=minle=895;ub=5;ro=4;qu=5",
 	"item.legendary.discipline.waist":"item.discipline.waist",
 	"item.discipline.waist":"https://legion.wowhead.com/item=133800",
-	
+
 	"item.legendary.discipline.chest":"item.discipline.chest",
 	"item.discipline.chest":"https://legion.wowhead.com/item=132861",
-	
+
 	"item.legendary.discipline.gloves":"item.discipline.gloves",
 	"item.discipline.gloves":"https://legion.wowhead.com/item=132461",
-	
+
 	"item.legendary.discipline.wrist":"item.discipline.wrist",
 	"item.discipline.wrist":"https://legion.wowhead.com/item=132436",
-	
+
 	"item.legendary.holy.waist":"item.holy.waist",
 	"item.holy.waist":"https://legion.wowhead.com/item=132445",
-	
+
 	"item.legendary.holy.legs":"item.holy.legs",
 	"item.holy.legs":"https://legion.wowhead.com/item=132447",
-		
+
 	"item.legendary.holy.wrist":"item.holy.wrist",
 	"item.holy.wrist":"https://legion.wowhead.com/item=132450",
-	
+
 	"link.shadow.guide.cop.kilee":"http://howtopriest.com/viewtopic.php?f=19&t=7355",
-	
+
 	"link.patreon":"https://www.patreon.com/howtopriest",
 	"link.donor":"http://howtopriest.com/viewtopic.php?f=5&t=2714",
-	
+
 	"link.shadow.hub":"https://howtopriest.com/viewtopic.php?f=8&t=8687",
-	"link.shadow.bis":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?t=7637",
+	"link.shadow.relics":"http://i.imgur.com/Np5NNxt.png",
+	"link.shadow.timeline":"http://i.imgur.com/wd5KeuG.png",
+	"link.shadow.trinkets":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
+	"link.shadow.bis":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
 	"link.shadow.bis.cop":"http://howtopriest.com/viewtopic.php?t=7643",
 	"link.shadow.bis.as":"http://howtopriest.com/viewtopic.php?t=7642",
 	"link.shadow.guide":"http://howtopriest.com/viewtopic.php?f=19&t=8402",
@@ -83,18 +86,20 @@
 	"link.hub.shadow":"link.shadow.hub",
 	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
 	
+	"trinkets.shadow":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
+	"trinket.shadow":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
+
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
 	"link.discipline.hub":"link.healing.hub",
 	"link.holy.guide":"https://howtopriest.com/viewtopic.php?f=25&t=8666",
-	"link.discipline.guide":"https://howtopriest.com/viewtopic.php?f=108&t=8624",	
+	"link.discipline.guide":"https://howtopriest.com/viewtopic.php?f=108&t=8624",
 	"link.guide.holy":"link.holy.guide",
 	"link.guide.discipline":"link.discipline.guide",
 	"link.bis.holy":"link.holy.bis",
 	"link.hub.holy":"link.holy.hub",
 	"link.bis.discipline":"link.discipline.bis",
 	"link.hub.discipline":"link.discipline.hub",
-	
 	"18stacks":"http://i.imgur.com/cZioXZF.jpg",
 	
 	"pawn.shadow":"pawn.shadow.stm",
@@ -102,34 +107,35 @@
 	"pawn.shadow.s2m":"pawn.shadow.stm",
 	"pawn.shadow.lotv":"pawn.shadow.lotv-ms",
 	"pawn.shadow.ms":"pawn.shadow.lotv-ms",
+	"pawn.shadow.dungeon":"LotV <10.5k Haste weights\n```( Pawn: v1: \"Shadow - Dungeon - LotV\": Intellect=1, HasteRating=1.30, MasteryRating=0.96, CritRating=1.22, Versatility=0.98 )```StM >10.5k Haste weights```( Pawn: v1: \"Shadow - Dungeon - StM\": Intellect=1, HasteRating=1.09, MasteryRating=1, CritRating=1.40, Versatility=0.99 )```",
 	"pawn.shadow.lotv-ms":"LotV/MS stat weights\n```( Pawn: v1: \"LotV\": IsOffHand=-1000000, IsFist=-1000000, Is2HMace=-1000000, IsWarglaive=-1000000, CritRating=1.25, IsShield=-1000000, HasteRating=1.2, MasteryRating=1.03, Versatility=0.94, IsPolearm=-1000000, IsGun=-1000000, Intellect=1, Indestructible=0.01, Is2HAxe=-1000000, Leech=0.01, MovementSpeed=0.01, IsBow=-1000000, IsMail=-1000000, IsPlate=-1000000, IsLeather=-1000000, Avoidance=0.01, IsSword=-1000000, IsCrossbow=-1000000, Is2HSword=-1000000, Stamina=0.01, IsAxe=-1000000 )```",
 	"pawn.shadow.stm":"Shadow - 9.5k Haste```( Pawn: v1: \"Shadow - 9.5k Haste\": Intellect=1, HasteRating=1.49, MasteryRating=1.1, CritRating=1.33, Versatility=1 )```Shadow - 9k Crit```( Pawn: v1: \"Shadow - 9k Crit\": Intellect=1, HasteRating=1.1, MasteryRating=1.21, CritRating=1.37, Versatility=1.01 )```",
 	"pawn.discipline":"```( Pawn: v1: \"Disc\": Intellect=1, HasteRating=1.119, MasteryRating=0.756, Stamina=0.01, CritRating=0.794, Leech=0.01, Versatility=0.757 )```",
 	"pawn.discipline.raid":"pawn.discipline",
 	"pawn.discipline.dungeon":"pawn.discipline",
     "pawn.holy":"Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"Holy\": Intellect=1, IsFist=-1000000, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.8, Versatility=0.64, IsPolearm=-1000000, IsGun=-1000000, IsShield=-1000000, IsPlate=-1000000, Is2HAxe=-1000000, IsOffHand=-1000000, IsCrossbow=-1000000, IsBow=-1000000, IsMail=-1000000, IsSword=-1000000, IsLeather=-1000000, IsWarglaive=-1000000, Is2HMace=-1000000, CritRating=0.79, Avoidance=0.01, Is2HSword=-1000000, IsAxe=-1000000, Stamina=0.01 )```by AutomaticJak",
-	
+
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
-	
+
 	"stats.shadow":"Surrender to Madness at 8k Haste:\nIntellect: 1.0\nHaste: 2.21\nCrit: 1.60\nMastery: 1.09\nVersatility: 0.99\n\n\nSurrender to Madness at 10k Haste:\nIntellect: 1.0\nHaste: 1.47\nCrit: 1.47\nMastery: 1.18\nVersatility: 0.98\n\nSurrender to Madness at 12k Haste:\nIntellect: 1.0\nHaste: 1.08\nCrit: 1.41\nMastery: 1.29\nVersatility: 0.98\n\nLegacy of the Void / Mind Spike\nInt = 1.00\nCrit = 1.25\nHaste = 1.20\nMast = 1.03\nVers = 0.94\n\nCombined\nInt = 1.00\nCrit = 1.25\nHaste = 1.39\nMast = 1.05\nVers = 0.94",
 	"stats.shadow.short":"Surrender to Madness\nHaste>>Crit>Mastery>=Int>Vers\n\nLegacy of the Void / Mind Spike\nCrit>=Haste>Mastery>=Int>Vers\n\nCombined\nHaste>Crit>Mastery>=Int>Vers",
 	"stats.shadow.cop":"Int = 1.0000\nSpell Power = 0.9057\nCrit = 0.7592\nHaste = 0.8540\nMastery = 0.9198\nMultistrike = 0.6584\nVersatility = 0.6427\nDPS (Pure Damage) = 0.1118",
 	"stats.shadow.cop.short":"Int>SP>Mastery>Haste>Crit>Multi>Vers>DPS",
 	"stats.shadow.as":"Int = 1.0000\nSpell Power = 0.9266\nCrit = 1.0729\nHaste = 0.8429\nMastery = 0.4907\nMultistrike = 0.6946\nVersatility = 0.6529\nDPS (Pure Damage) = 0.1125",
 	"stats.shadow.as.short":"Crit>Int>SP>Haste>Multi>Vers>Mast>DPS",
-	
+
 	"stats.discipline":"Raids: Haste > Crit > Versatiliy = Mastery\nDungeons: Haste > Crit > Versatility >>> Mastery",
 	"stats.holy":"Mastery > Crit > Haste > Versatility",
-    
+
     "wa.shadow":"wa.shadow.twintop",
     "wa.holy":"None",
     "wa.discipline":"None",
 	"wa.shadow.val":"http://howtopriest.com/viewtopic.php?f=95&t=8341",
 	"wa.shadow.twintop":"http://howtopriest.com/viewtopic.php?f=104&t=8339",
-	
-	
-	"discord":"Invalid Argument\nUsage: !discord <class>",	
-	"discord.invalid":"discord",	
+
+
+	"discord":"Invalid Argument\nUsage: !discord <class>",
+	"discord.invalid":"discord",
 	"discord.death.knight":" https://discord.gg/0ez1cFfUH3ingV96",
 	"discord.demon.hunter":"https://discord.gg/0enuZ4FBFluNZH1r",
 	"discord.druid":"https://discord.gg/0dWu0WkuetF87H9H",
@@ -142,34 +148,34 @@
 	"discord.warlock":"https://discord.gg/0onXDymd9Wpc2CEu",
 	"discord.warrior":"https://discord.gg/0pYY7932lTH4FHW6",
 	"discord.shaman":"https://discord.gg/0VcupJEQX0JmBCcC",
-	
+
 	"discord.dh":"discord.demon.hunter",
 	"discord.dk":"discord.death.knight",
 	"discord.pally":"discord.paladin",
 	"discord.lock":"discord.warlock",
 	"discord.shammy":"discord.shaman",
-	
+
     "bis.shadow":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
     "bis.shadow.cop":"http://howtopriest.com/viewtopic.php?t=7643",
     "bis.shadow.as":"http://howtopriest.com/viewtopic.php?t=7642",
     "bis.holy":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7648#BiS",
     "bis.discipline":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7649#BiS",
-	
+
 	"artifact.shadow":"artifact.shadow.full",
 	"artifact.shadow.full":"http://i.imgur.com/4XxPlQ0.png\nMore info: https://howtopriest.com/viewtopic.php?f=19&t=8402#Artifact",
 	"artifact.shadow.first":"http://i.imgur.com/KcxBzbI.png",
 	"artifact.shadow.second":"http://i.imgur.com/i7Y7RK6.png",
-	
+
 	"artifact.holy":"artifact.holy.full",
 	"artifact.holy.full":"http://i.imgur.com/uS8GYKC.png",
 	"artifact.holy.first":"http://i.imgur.com/VNCWHGI.png",
 	"artifact.holy.second":"http://i.imgur.com/s7BdF71.png",
-	
+
 	"artifact.discipline":"artifact.discipline.full",
 	"artifact.discipline.full":"http://i.imgur.com/ibZJ5tP.png",
 	"artifact.discipline.first":"artifact.discipline.full",
 	"artifact.discipline.second":"artifact.discipline.full",
-    
+
     "boss.shadow.nythendra":"TBA",
     "boss.shadow.ursoc":"TBA",
     "boss.shadow.xavius":"TBA",
@@ -184,20 +190,20 @@
     "boss.shadow.trilliax":"TBA",
     "boss.shadow.star.augur.etraeus":"TBA",
     "boss.shadow.guldan":"TBA",
-    "boss.shadow.grand.magistrix.elisande":"TBA",   
+    "boss.shadow.grand.magistrix.elisande":"TBA",
     "boss.shadow.spellblade.aluriel":"TBA",
     "boss.shadow.high.botanist.tel'arn":"TBA",
     "boss.shadow.tichondrius":"TBA",
     "boss":"TBA",
     "boss.shadow.dragons.of.nightmare":"boss.shadow.don",
     "boss.shadow.dragons":"boss.shadow.don",
-    "boss.shadow.dragon.council":"boss.shadow.don",    
+    "boss.shadow.dragon.council":"boss.shadow.don",
     "boss.shadow.chromaticanomaly":"boss.shadow.chromatic.anomaly",
     "boss.shadow.ca":"boss.shadow.chromatic.anomaly",
     "boss.shadow.gul'dan":"boss.shadow.guldan",
     "boss.shadow.sae":"boss.shadow.star.augur.etraeus",
     "boss.shadow.star.augur":"boss.shadow.star.augur.etraeus",
-    "boss.shadow.etraeus":"boss.shadow.star.augur.etraeus",    
+    "boss.shadow.etraeus":"boss.shadow.star.augur.etraeus",
     "boss.shadow.gme":"boss.shadow.grand.magistrix.elisande",
     "boss.shadow.grand.magistrix":"boss.shadow.grand.magistrix.elisande",
     "boss.shadow.elisande":"boss.shadow.grand.magistrix.elisande",
