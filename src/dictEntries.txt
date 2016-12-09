@@ -31,6 +31,7 @@
 	"stm":"http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
 	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
 	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
+	"retired":"http://i.imgur.com/r24wnyE.jpg",
 
 	"item.legendary.shadow.wrist":"item.shadow.wrist",
 	"item.shadow.wrist":"https://legion.wowhead.com/item=132409",
