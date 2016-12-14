@@ -41,6 +41,10 @@ class DictionaryReader:
             return None
         fixed = self.fixEntry(entry)
         print(fixed)
+        if "pawn.discipline" in fixed and len(fixed.split(".")) == 7:
+            fixed = map(int,fixed.split(".")[2:])                                              
+            fixed = self.getdiscstats(*fixed)
+            return fixed
         if fixed in self.dictionary:
             while fixed in self.dictionary:
                 fixed = self.dictionary[fixed]
@@ -50,6 +54,31 @@ class DictionaryReader:
             entryText = entry.split('.')[0] if isinstance(entry, str) else ''
             chName = channelName if isinstance(channelName, str) else ''
             return self.readEntry(entryText+"."+chName,chName)
+            
+    def getdiscstats(self,intellect,crit,haste,mastery,vers,blef=0):
+        hasterating = 325
+        critrating = 350
+        masteryrating = 233.3333
+        versrating = 400
+        critpun = 1 #punishment for crit for being unreliable
+        baseatonment = 0.68
+        intellect = intellect + 1300  #flask
+       
+        intweight = 1000/((intellect/100)/1.05)
+        hasteweight = intweight * 1.1
+        basecrit = 0.05+(0,0.01)[blef]
+        critweight = 1000*(critpun/critrating/(((((crit/critrating)/100+basecrit)*critpun)+1)))
+        masteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*baseatonment)
+        versweight = 1000*(1/versrating/(  1+(vers/versrating)/100))
+        leechweight = 1000/300*0.75
+        normint = str(round(intweight/intweight,2))
+        normhaste = str(round(hasteweight/intweight,2))
+        normcrit = str(round(critweight/intweight,2))
+        normmastery = str(round(masteryweight/intweight,2))
+        normvers = str(round(versweight/intweight,2))
+        normleech = str(round(leechweight/intweight,2))
+        #return "```( Pawn: v1: \"Disc raid\": Intellect =",normint,", Versatility =",normvers,", HasteRating = 1.1, MasteryRating =",normmastery,", CritRating =",normcrit,", Leech =",normleech,")```"
+        return '```( Pawn: v1: \"Disc raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+normmastery+', CritRating='+normcrit+', Leech='+normleech+')```'
 
 
             
