@@ -94,11 +94,13 @@
 	"link.holy.hub":"link.healing.hub",
 	"link.discipline.hub":"link.healing.hub",
 	"link.holy.guide":"https://howtopriest.com/viewtopic.php?f=25&t=8666",
+	"link.holy.trinkets":"https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
 	"link.discipline.guide":"https://howtopriest.com/viewtopic.php?f=108&t=8624",
 	"link.guide.holy":"link.holy.guide",
 	"link.guide.discipline":"link.discipline.guide",
 	"link.bis.holy":"link.holy.bis",
 	"link.hub.holy":"link.holy.hub",
+	"link.disc.trinkets":"https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.bis.discipline":"link.discipline.bis",
 	"link.hub.discipline":"link.discipline.hub",
 	"18stacks":"http://i.imgur.com/cZioXZF.jpg",
@@ -114,7 +116,7 @@
 	"pawn.discipline":"```( Pawn: v1: \"Disc\": Intellect=1, HasteRating=1.119, MasteryRating=0.756, Stamina=0.01, CritRating=0.794, Leech=0.01, Versatility=0.757 )```",
 	"pawn.discipline.raid":"pawn.discipline",
 	"pawn.discipline.dungeon":"pawn.discipline",
-    "pawn.holy":"Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"Holy\": Intellect=1, IsFist=-1000000, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.8, Versatility=0.64, IsPolearm=-1000000, IsGun=-1000000, IsShield=-1000000, IsPlate=-1000000, Is2HAxe=-1000000, IsOffHand=-1000000, IsCrossbow=-1000000, IsBow=-1000000, IsMail=-1000000, IsSword=-1000000, IsLeather=-1000000, IsWarglaive=-1000000, Is2HMace=-1000000, CritRating=0.79, Avoidance=0.01, Is2HSword=-1000000, IsAxe=-1000000, Stamina=0.01 )```by AutomaticJak",
+    "pawn.holy":"Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"Holy\": Intellect=1, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.79, Versatility=0.64 CritRating=0.8, Avoidance=0.01, Stamina=0.01 )```",
 
 	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 
@@ -159,8 +161,8 @@
     "bis.shadow":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
     "bis.shadow.cop":"http://howtopriest.com/viewtopic.php?t=7643",
     "bis.shadow.as":"http://howtopriest.com/viewtopic.php?t=7642",
-    "bis.holy":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7648#BiS",
-    "bis.discipline":">>Not updated to Legion<<\nhttp://howtopriest.com/viewtopic.php?f=13&t=7649#BiS",
+    "bis.holy":"https://docs.google.com/spreadsheets/d/1H1hIGy_8LJdMnGLI0bQLW1D-UIJ3A4jj63S_SEdh8LU/edit#gid=0",
+    "bis.discipline":"https://docs.google.com/spreadsheets/d/1m9hJO3WLCK02eQyeBdfs5OvC2or9AbaDPkabPb896j0/edit?usp=sharing",
 
 	"artifact.shadow":"artifact.shadow.full",
 	"artifact.shadow.full":"http://i.imgur.com/4XxPlQ0.png\nMore info: https://howtopriest.com/viewtopic.php?f=19&t=8402#Artifact",
@@ -168,9 +170,9 @@
 	"artifact.shadow.second":"http://i.imgur.com/i7Y7RK6.png",
 
 	"artifact.holy":"artifact.holy.full",
-	"artifact.holy.full":"http://i.imgur.com/uS8GYKC.png",
-	"artifact.holy.first":"http://i.imgur.com/VNCWHGI.png",
-	"artifact.holy.second":"http://i.imgur.com/s7BdF71.png",
+	"artifact.holy.full":"http://i.imgur.com/wDtAotC.jpg",
+	"artifact.holy.first":"http://i.imgur.com/wDtAotC.jpg",
+	"artifact.holy.second":"http://i.imgur.com/wDtAotC.jpg",
 
 	"artifact.discipline":"artifact.discipline.full",
 	"artifact.discipline.full":"http://i.imgur.com/ibZJ5tP.png",
