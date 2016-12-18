@@ -61,7 +61,7 @@ class DictionaryReader:
         masteryrating = 233.3333
         versrating = 400
         critpun = 1 #punishment for crit for being unreliable
-        baseatonment = 0.68
+        baseatonment = 0.75
         intellect = intellect + 1300  #flask
        
         intweight = 1000/((intellect/100)/1.05)

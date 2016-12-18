@@ -1,5 +1,5 @@
 {
-	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands shadow trinkets trinket",
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands shadow trinkets trinket holy disc shadow",
 	"roles":"Staff",
 	"authorized":"118461244784115713,165904439947952128",
 	"actionLogChannel":"230154359122427904",
