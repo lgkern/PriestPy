@@ -35,6 +35,10 @@
   	"18stacks":"http://i.imgur.com/cZioXZF.jpg",
 
   	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
+	
+	"bis.shadow":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
+  	"bis.holy":"https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
+  	"bis.discipline":"https://docs.google.com/spreadsheets/d/1m9hJO3WLCK02eQyeBdfs5OvC2or9AbaDPkabPb896j0/edit?usp=sharing",
 
   	"item.legendary.shadow.shoulder":"item.shadow.shoulder",
 	"item.shadow.shoulder":"https://legion.wowhead.com/item=132437",
@@ -91,9 +95,9 @@
   	"link.disc.trinkets":"https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.guide.holy":"link.holy.guide",
 	"link.guide.discipline":"link.discipline.guide",
-	"link.bis.holy":"link.holy.bis",
+	"link.bis.holy":"bis.holy",
 	"link.hub.holy":"link.holy.hub",
-	"link.bis.discipline":"link.discipline.bis",
+	"link.bis.discipline":"bis.disc",
 	"link.hub.discipline":"link.discipline.hub",
 
   	"trinkets.shadow":"link.shadow.trinkets",
@@ -145,10 +149,6 @@
   	"discord.pally":"discord.paladin",
   	"discord.lock":"discord.warlock",
   	"discord.shammy":"discord.shaman",
-
-  	"bis.shadow":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
-  	"bis.holy":"https://docs.google.com/spreadsheets/d/1H1hIGy_8LJdMnGLI0bQLW1D-UIJ3A4jj63S_SEdh8LU/edit#gid=0",
-  	"bis.discipline":"https://docs.google.com/spreadsheets/d/1m9hJO3WLCK02eQyeBdfs5OvC2or9AbaDPkabPb896j0/edit?usp=sharing",
 
   	"artifact.shadow":"artifact.shadow.full",
   	"artifact.shadow.full":"http://i.imgur.com/4XxPlQ0.png\nMore info: https://howtopriest.com/viewtopic.php?f=19&t=8402#Artifact",
