@@ -86,6 +86,7 @@
 	"link.guide.shadow":"link.shadow.guide",
 	"link.bis.shadow":"link.shadow.bis",
 	"link.hub.shadow":"link.shadow.hub",
+	"link.customizing.bar":"https://www.youtube.com/watch?v=CdJuRN_SYKU",
 	
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
