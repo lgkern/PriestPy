@@ -105,6 +105,7 @@
 	"response.logs":"If you are having trouble with dps as a Shadow Priest there are three main things to look at:\n```1. Check DoT uptimes (at least 90% or higher)\n2. Check CD usage. You want to maximize Power Infusion and Mindbender/Shadowfiend casts, this is vital for out of StM damage.\n3. Surrender to Madness Voidform Duration. Simply put, longer StM = more dps.```",
 	"response.3rd":"If you are having trouble reaching 3rd Void Torrent just be careful on two things: **Power Infusion Usage** and **Shadow Word: Death Usage**. Longer you can delay PI the better. For SW:D make sure you don't go trigger happy on the charges, save them for when you really need it. Also, try and follow this **timeline** here: http://i.imgur.com/wd5KeuG.png",
 	"response.pins":"Before asking your question, we expect you to read the pinned messages as they answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you can type `!pins` and have the bot whisper the pinned messages to you.",
+	"response.weights":"The weights for Shadow Priest are as follows:```1. Use the 9.5k Haste Weights until you reach 9.5k Haste.\n2. Use the 9k Crit weights while maintaining 9.5k haste until you reach 9k crit.\n3. Get more Mastery while maintaining 9.5k haste and 9k crit.```",
 
   	"trinkets.shadow":"link.shadow.trinkets",
   	"trinket.shadow":"link.shadow.trinkets",
