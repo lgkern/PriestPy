@@ -135,7 +135,7 @@
   	"wa.discipline":"Mend's Ramp-UP WA for ToV: https://wago.io/NyqyZIv-M\nMend's Ramp-UP for EN: https://wago.io/VJTP_vCpb\nLaiPlays WAs: <https://youtu.be/Vvx8BZzU2pU>",
   	"wa.shadow.val":"http://howtopriest.com/viewtopic.php?f=95&t=8341",
   	"wa.shadow.twintop":"http://howtopriest.com/viewtopic.php?f=104&t=8339",
-  	"wa.shadow.publik":"https://wago.io/p/publikpriest",
+  	"wa.shadow.publik":"https://howtopriest.com/viewtopic.php?f=104&t=9400",
 
   	"discord":"Invalid Argument\nUsage: !discord <class>",
   	"discord.invalid":"discord",
