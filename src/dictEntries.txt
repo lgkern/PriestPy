@@ -1,5 +1,5 @@
 {
-	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands shadow trinkets trinket holy disc shadow",
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands response shadow trinkets trinket holy disc shadow",
 	"roles":"Staff",
 	"authorized":"118461244784115713,165904439947952128",
 	"actionLogChannel":"230154359122427904",
@@ -100,6 +100,10 @@
 	"link.hub.holy":"link.holy.hub",
 	"link.bis.discipline":"bis.disc",
 	"link.hub.discipline":"link.discipline.hub",
+	
+	"!response.logs":"If you are having trouble with dps as a Shadow Priest there are three main things to look at:\n```1. Check DoT uptimes (at least 90% or higher)\n2. Check CD usage. You want to maximize Power Infusion and Mindbender/Shadowfiend casts, this is vital for out of StM damage.\n3. Surrender to Madness Voidform Duration. Simply put, longer StM = more dps.```",
+	"!response.3rd":"If you are having trouble reaching 3rd Void Torrent just be careful on two things: **Power Infusion Usage** and **Shadow Word: Death Usage**. Longer you can delay PI the better. For SW:D make sure you don't go trigger happy on the charges, save them for when you really need it. Also, try and follow this **timeline** here: http://i.imgur.com/wd5KeuG.png",
+	"!response.pins":"Before asking your question, we expect you to read the pinned messages as they answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you can type `!pins` and have the bot whisper the pinned messages to you.",
 
   	"trinkets.shadow":"link.shadow.trinkets",
   	"trinket.shadow":"link.shadow.trinkets",
