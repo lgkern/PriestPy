@@ -65,11 +65,11 @@ class DictionaryReader:
         intellect = intellect + 1300  #flask
        
         intweight = 1000/((intellect/100)/1.05)
-        hasteweight = intweight * 1.1
         basecrit = 0.05+(0,0.01)[blef]
         critweight = 1000*(critpun/critrating/(((((crit/critrating)/100+basecrit)*critpun)+1)))
         masteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*baseatonment)
         versweight = 1000*(1/versrating/(  1+(vers/versrating)/100))
+        hasteweight = max(critweight,masteryweight,versweight)  * 1.1
         leechweight = 1000/300*0.75
         normint = str(round(intweight/intweight,2))
         normhaste = str(round(hasteweight/intweight,2))
