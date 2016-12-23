@@ -35,7 +35,7 @@
   	"18stacks":"http://i.imgur.com/cZioXZF.jpg",
 	"racials":"racial",
 	"smitemachine":"http://i.imgur.com/NLOd9wt.jpg",
-	"discstatweights":"http://i.imgur.com/dOnu9fz.png",
+	"disciplinestats":"http://i.imgur.com/dOnu9fz.png",
 	
   	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
 	
