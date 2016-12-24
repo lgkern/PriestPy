@@ -1,5 +1,7 @@
 import json
- 
+import requests
+from botkey import Key
+
 class DictionaryReader:
     
     def __init__(self):
@@ -41,8 +43,12 @@ class DictionaryReader:
             return None
         fixed = self.fixEntry(entry)
         print(fixed)
-        if "pawn.discipline" in fixed and len(fixed.split(".")) == 7:
-            fixed = map(int,fixed.split(".")[2:])                                              
+        if "pawn.discipline" in fixed and len(fixed.split(".")) >= 5:
+            fixed = fixed.split(".")[2:]
+            charname = fixed[0]
+            charrealm = "-".join(fixed[1:-1])
+            charzone = fixed[-1]
+            fixed = self.getcharstats(charname,charrealm,charzone)
             fixed = self.getdiscstats(*fixed)
             return fixed
         if fixed in self.dictionary:
@@ -54,7 +60,22 @@ class DictionaryReader:
             entryText = entry.split('.')[0] if isinstance(entry, str) else ''
             chName = channelName if isinstance(channelName, str) else ''
             return self.readEntry(entryText+"."+chName,chName)
-            
+        
+    def getcharstats(self,name,realm,zone):
+        zone = zone.lower()
+        locales = {"us":"en_US","eu":"en_GB","kr":"ko_KR","tw":"zh_TW"}
+        locale = locales[zone]
+        url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=stats&locale="+locale+"&apikey="+Key().bnetApiKey()
+        r = requests.get(url)
+        response = r.json()
+        bloodelf = (0,1)[response["class"] == 5]
+        charint = response["stats"]["int"]
+        charcrit = response["stats"]["critRating"]
+        charhaste = response["stats"]["hasteRating"]
+        charmastery = response["stats"]["masteryRating"]
+        charvers = response["stats"]["versatility"]
+        return [charint,charcrit,charhaste,charmastery,charvers,bloodelf]
+    
     def getdiscstats(self,intellect,crit,haste,mastery,vers,blef=0):
         hasterating = 325
         critrating = 350
