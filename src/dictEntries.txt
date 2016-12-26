@@ -1,5 +1,5 @@
 {
-	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands response shadow trinkets trinket holy disc shadow",
+	"whisper":"artifact list item link stats bis discord wa weakauras lexicon guide help pawn pub followers command commands response shadow trinkets trinket holy disc shadow relics timeline",
 	"roles":"Staff",
 	"authorized":"118461244784115713,165904439947952128",
 	"actionLogChannel":"230154359122427904",
@@ -89,6 +89,11 @@
 	"link.bis.shadow":"link.shadow.bis",
 	"link.hub.shadow":"link.shadow.hub",
 	"link.customizing.bar":"https://www.youtube.com/watch?v=CdJuRN_SYKU",
+	
+	"relics.shadow":"link.shadow.relics",
+	"shadow.relics":"link.shadow.relics",
+	"timeline.shadow":"link.shadow.timeline",
+	"shadow.timeline":"link.shadow.timeline",
 	
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
