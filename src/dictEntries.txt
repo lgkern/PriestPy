@@ -81,6 +81,7 @@
 
 	"link.shadow.hub":"https://howtopriest.com/viewtopic.php?f=8&t=8687",
 	"link.shadow.relics":"http://i.imgur.com/Np5NNxt.png",
+	"link.shadow.relicsmeme":"http://i.imgur.com/JkCOjrK.png",
 	"link.shadow.timeline":"http://i.imgur.com/wd5KeuG.png",
 	"link.shadow.trinkets":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844&utm_source=trinket_list&utm_medium=google_drive&utm_campaign=elvenbane",
 	"link.shadow.bis":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
@@ -92,6 +93,8 @@
 	
 	"relics.shadow":"link.shadow.relics",
 	"shadow.relics":"link.shadow.relics",
+	"relicsmeme.shadow":"link.shadow.relicsmeme",
+	"shadow.relicsmeme":"link.shadow.relicsmeme",
 	"timeline.shadow":"link.shadow.timeline",
 	"shadow.timeline":"link.shadow.timeline",
 	
@@ -117,6 +120,7 @@
 
   	"trinkets.shadow":"link.shadow.trinkets",
   	"trinket.shadow":"link.shadow.trinkets",
+	"shadow.trinkets":"link.shadow.trinkets",
 
 	"pawn.shadow":"pawn.shadow.stm",
 	"pawn.shadow.combined":"Combined stat weights\n```( Pawn: v1: \"Shadow Combined\": CritRating=1.25, IsAxe=-1000000, HasteRating=1.39, MasteryRating=1.05, Intellect=1, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, Versatility=0.94, Avoidance=0.01, Stamina=0.01 )```",
