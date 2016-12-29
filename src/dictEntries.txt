@@ -159,7 +159,7 @@
   	"discord.paladin":"https://discord.gg/0dvRDgpa5xZHFfnD",
   	"discord.priest":"https://discord.gg/0f1Ta8lT8xXXEAIY",
   	"discord.rogue":"https://discord.gg/0h08tydxoNhfDVZf",
-  	"discord.monk":"https://discord.gg/0dkfBMAxzTmggsPH",
+  	"discord.monk":"https://discord.gg/0dkfBMAxzTkWj21F",
   	"discord.warlock":"https://discord.gg/0onXDymd9Wpc2CEu",
   	"discord.warrior":"https://discord.gg/0pYY7932lTH4FHW6",
   	"discord.shaman":"https://discord.gg/0VcupJEQX0JmBCcC",
