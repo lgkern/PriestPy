@@ -117,6 +117,7 @@
 	"response.pins":"Before asking your question, we expect you to read the pinned messages as they answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated.",
 	"response.weights":"The weights for Shadow Priest are as follows:```1. Use the 9.5k Haste Weights until you reach 9.5k Haste.\n2. Use the 9k Crit weights while maintaining 9.5k haste until you reach 9k crit.\n3. Get more Mastery while maintaining 9.5k haste and 9k crit.```",
 	"response.715":"Patch 7.1.5 is due to come out soon, but we don't know when for sure. Until then we cannot confirm any of the changes going live in their current state so there's little point determining how shadow will do numbers wise. At this point the only changes we can discuss are the mechanical changes of the spec. As of now blizzard seems to be taking power out of StM and into normal VFs. In addition, shadow is also getting some nice cleave/aoe options and abilities. Once we know more, we'll make a post.",
+	"response.stm":"Here is an example of a 130 second surrender on a target dummy (no belt): <https://www.youtube.com/watch?v=glO-hM3W3tk>",
 
   	"trinkets.shadow":"link.shadow.trinkets",
   	"trinket.shadow":"link.shadow.trinkets",
