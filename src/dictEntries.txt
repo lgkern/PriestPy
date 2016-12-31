@@ -90,6 +90,7 @@
 	"link.bis.shadow":"link.shadow.bis",
 	"link.hub.shadow":"link.shadow.hub",
 	"link.customizing.bar":"https://www.youtube.com/watch?v=CdJuRN_SYKU",
+	"link.shadow.mythic+":"Here is the efficiency calculator for mythic+: https://howtopriest.com/viewtopic.php?f=19&t=9419&p=76631#p76631",
 	
 	"relics.shadow":"link.shadow.relics",
 	"shadow.relics":"link.shadow.relics",
@@ -128,7 +129,7 @@
 	"pawn.shadow.s2m":"pawn.shadow.stm",
 	"pawn.shadow.lotv":"pawn.shadow.lotv-ms",
 	"pawn.shadow.ms":"pawn.shadow.lotv-ms",
-	"pawn.shadow.dungeon":"LotV <10.5k Haste weights\n```( Pawn: v1: \"Shadow - Dungeon - LotV\": Intellect=1, HasteRating=1.30, MasteryRating=0.96, CritRating=1.22, Versatility=0.98 )```StM >10.5k Haste weights```( Pawn: v1: \"Shadow - Dungeon - StM\": Intellect=1, HasteRating=1.09, MasteryRating=1, CritRating=1.40, Versatility=0.99 )```",
+	"pawn.shadow.dungeon":"LotV <10.5k Haste weights```( Pawn: v1: \"Shadow - Dungeon - LotV\": Intellect=1, HasteRating=1.30, MasteryRating=0.96, CritRating=1.22, Versatility=0.98 )```StM >10.5k Haste weights```( Pawn: v1: \"Shadow - Dungeon - StM\": Intellect=1, HasteRating=1.09, MasteryRating=1, CritRating=1.40, Versatility=0.99 )```",
 	"pawn.shadow.lotv-ms":"LotV/MS stat weights\n```( Pawn: v1: \"LotV\": CritRating=1.25, HasteRating=1.2, MasteryRating=1.03, Versatility=0.94, Intellect=1, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, Avoidance=0.01, Stamina=0.01 )```",
 	"pawn.shadow.stm":"Shadow - 9.5k Haste```( Pawn: v1: \"Shadow - 9.5k Haste\": Intellect=1, HasteRating=1.49, MasteryRating=1.1, CritRating=1.33, Versatility=1 )```Shadow - 9k Crit```( Pawn: v1: \"Shadow - 9k Crit\": Intellect=1, HasteRating=1.1, MasteryRating=1.21, CritRating=1.37, Versatility=1.01 )```",
 
