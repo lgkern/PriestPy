@@ -112,6 +112,10 @@
 	"link.hub.holy":"link.holy.hub",
 	"link.bis.discipline":"bis.disc",
 	"link.hub.discipline":"link.discipline.hub",
+	"link.holy.relics":"http://i.imgur.com/oUIs8kB.png",
+	
+	"relics.holy":"link.holy.relics",
+	"holy.relics":"link.holy.relics",
 	
 	"response.logs":"If you are having trouble with dps as a Shadow Priest there are three main things to look at:\n```1. Check DoT uptimes (at least 90% or higher)\n2. Check CD usage. You want to maximize Power Infusion and Mindbender/Shadowfiend casts, this is vital for out of StM damage.\n3. Surrender to Madness Voidform Duration. Simply put, longer StM = more dps.```",
 	"response.3rd":"If you are having trouble reaching 3rd Void Torrent just be careful on two things: **Power Infusion Usage** and **Shadow Word: Death Usage**. Longer you can delay PI the better. For SW:D make sure you don't go trigger happy on the charges, save them for when you really need it. Also, try and follow this **timeline** here: http://i.imgur.com/wd5KeuG.png",
