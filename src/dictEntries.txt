@@ -112,7 +112,7 @@
 	"link.hub.holy":"link.holy.hub",
 	"link.bis.discipline":"bis.disc",
 	"link.hub.discipline":"link.discipline.hub",
-	"link.holy.relics":"http://i.imgur.com/oUIs8kB.png",
+	"link.holy.relics":"http://i.imgur.com/cNSZotU.png",
 	
 	"relics.holy":"link.holy.relics",
 	"holy.relics":"link.holy.relics",
