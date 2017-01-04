@@ -36,6 +36,7 @@
 	"racials":"racial",
 	"smitemachine":"http://i.imgur.com/NLOd9wt.jpg",
 	"disciplinestats":"http://i.imgur.com/dOnu9fz.png",
+	"veiled":"http://fanaru.com/the-little-mermaid/image/188216-the-little-mermaid-ursula.gif",
 	
   	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
 	
@@ -91,6 +92,7 @@
 	"link.hub.shadow":"link.shadow.hub",
 	"link.customizing.bar":"https://www.youtube.com/watch?v=CdJuRN_SYKU",
 	"link.shadow.mythic+":"Here is the efficiency calculator for mythic+: https://howtopriest.com/viewtopic.php?f=19&t=9419&p=76631#p76631",
+	"link.shadow.faq":"https://howtopriest.com/viewtopic.php?f=8&t=9301&p=76055#p76055",
 	
 	"relics.shadow":"link.shadow.relics",
 	"shadow.relics":"link.shadow.relics",
@@ -98,6 +100,8 @@
 	"shadow.relicsmeme":"link.shadow.relicsmeme",
 	"timeline.shadow":"link.shadow.timeline",
 	"shadow.timeline":"link.shadow.timeline",
+	"shadow.faq":"link.shadow.faq",
+	"faq.shadow":"link.shadow.faq",
 	
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
@@ -148,7 +152,7 @@
   	"stats.discipline":"Raids: Haste > Crit > Versatiliy = Mastery\nDungeons: Haste > Crit > Versatility >>> Mastery",
   	"stats.holy":"Mastery > Crit > Haste > Versatility",
 
-  	"wa.shadow":"wa.shadow.twintop",
+  	"wa.shadow":"https://howtopriest.com/viewtopic.php?f=104&t=9438",
   	"wa.holy":"Tal's Holy Priest HUD: https://wago.io/EyXsPuGOW\nTal's Holy Priest CDs: https://wago.io/41-AvOMOW",
   	"wa.discipline":"Mend's Ramp-UP WA for ToV: https://wago.io/NyqyZIv-M\nMend's Ramp-UP for EN: https://wago.io/VJTP_vCpb\nLaiPlays WAs: <https://youtu.be/Vvx8BZzU2pU>",
   	"wa.shadow.val":"http://howtopriest.com/viewtopic.php?f=95&t=8341",
