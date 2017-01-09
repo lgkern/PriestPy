@@ -141,7 +141,7 @@
 	"pawn.shadow.lotv-ms":"LotV/MS stat weights\n```( Pawn: v1: \"LotV\": CritRating=1.25, HasteRating=1.2, MasteryRating=1.03, Versatility=0.94, Intellect=1, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, Avoidance=0.01, Stamina=0.01 )```",
 	"pawn.shadow.stm":"Shadow - 9.5k Haste```( Pawn: v1: \"Shadow - 9.5k Haste\": Intellect=1, HasteRating=1.49, MasteryRating=1.1, CritRating=1.33, Versatility=1 )```Shadow - 9k Crit```( Pawn: v1: \"Shadow - 9k Crit\": Intellect=1, HasteRating=1.1, MasteryRating=1.21, CritRating=1.37, Versatility=1.01 )```",
 
-  	"pawn.discipline":"```( Pawn: v1: \"Disc\": Intellect=1, HasteRating=1.119, MasteryRating=0.756, Stamina=0.01, CritRating=0.794, Leech=0.01, Versatility=0.757 )```",
+  	"pawn.discipline":"To get stat weights for your character there is a custom command that will generate weights based on your current gear. Type ```!pawn disc charactername realm region```  For example ```!pawn disc joshqt draenor eu``` Make sure your character is logged out in your disc raiding gear before doing this. Single item upgrades wont change the values much, but redoing this every few items will keep your priority up to date. If you're having trouble post for help in the disc specific channel.",
 	"pawn.discipline.raid":"pawn.discipline",
 	"pawn.discipline.dungeon":"pawn.discipline",
   	"pawn.holy":"Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"Holy\": Intellect=1, Indestructible=0.01, Leech=0.01, MovementSpeed=0.01, HasteRating=0.65, MasteryRating=0.79, Versatility=0.64 CritRating=0.8, Avoidance=0.01, Stamina=0.01 )```",
@@ -149,7 +149,7 @@
   	"stats.shadow":"Surrender to Madness to 9.5k Haste:\nIntellect: 1.0\nHaste: 1.49\nCrit: 1.33\nMastery: 1.1\nVersatility: 1.00\n\n\nSurrender to Madness to 9k Crit:\nIntellect: 1.0\nHaste: 1.1\nCrit: 1.37\nMastery: 1.21\nVersatility: 1.01\n\nLegacy of the Void / Mind Spike\nInt = 1.00\nCrit = 1.25\nHaste = 1.20\nMast = 1.03\nVers = 0.94\n\nCombined\nInt = 1.00\nCrit = 1.25\nHaste = 1.39\nMast = 1.05\nVers = 0.94",
   	"stats.shadow.short":"Surrender to Madness\nHaste>>Crit>Mastery>=Int>Vers\n\nLegacy of the Void / Mind Spike\nCrit>=Haste>Mastery>=Int>Vers\n\nCombined\nHaste>Crit>Mastery>=Int>Vers",
 
-  	"stats.discipline":"Raids: Haste > Crit > Versatiliy = Mastery\nDungeons: Haste > Crit > Versatility >>> Mastery",
+  	"stats.discipline":"Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
   	"stats.holy":"Mastery > Crit > Haste > Versatility",
 
   	"wa.shadow":"https://howtopriest.com/viewtopic.php?f=104&t=9438",
