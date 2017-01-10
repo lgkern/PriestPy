@@ -125,7 +125,7 @@
 	"response.3rd":"If you are having trouble reaching 3rd Void Torrent just be careful on two things: **Power Infusion Usage** and **Shadow Word: Death Usage**. Longer you can delay PI the better. For SW:D make sure you don't go trigger happy on the charges, save them for when you really need it. Also, try and follow this **timeline** here: http://i.imgur.com/wd5KeuG.png",
 	"response.pins":"The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated.",
 	"response.weights":"Sims are still in progress for weights for 7.1.5. Stay tuned and check the pinned message in the #shadow channel for updated information.",
-	"response.100":"Our level 100 row talents and the sims/weights of them are still in progress. Here is what prelim testing looks like:```S2M: Fight times below 4 minutes\nSC: Stacked Adds/Priority Targets throughout a fight\nLotV: Everything else```More information can be found here: <https://howtopriest.com/viewtopic.php?f=25&t=9466>",
+	"response.100":"Our level 100 row talents and the sims/weights of them are still in progress. Here is what prelim testing looks like: ```S2M: Fight times below 4 minutes\nSC: Stacked Adds/Priority Targets throughout a fight\nLotV: Everything else``` More information can be found here: <https://howtopriest.com/viewtopic.php?f=25&t=9466>",
 
   	"trinkets.shadow":"link.shadow.trinkets",
   	"trinket.shadow":"link.shadow.trinkets",
