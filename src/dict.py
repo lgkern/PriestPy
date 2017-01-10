@@ -103,7 +103,7 @@ class DictionaryReader:
         normint = str(round(intweight/intweight,2))
         normhaste = str(round(hasteweight/intweight,2))
         normcrit = str(round(critweight/intweight,2))
-        raidnormmastery = str(round(/intweight,2))
+        raidnormmastery = str(round(raidmasteryweight/intweight,2))
         dungeonnormmastery = str(round(dungeonmasteryweight/intweight,2))
         normvers = str(round(versweight/intweight,2))
         normleech = str(round(leechweight/intweight,2))
