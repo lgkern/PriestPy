@@ -140,7 +140,7 @@
 	"pawn.shadow.s2m":"pawn.shadow.stm",
 	"pawn.shadow.lotv":"WIP for 7.1.5",
 	"pawn.shadow.sc":"WIP for 7.1.5",
-	"pawn.shadow.dungeon":"WIP for 7.1.5",
+	"pawn.shadow.dungeon":"AS: ```( Pawn: v1: \"H2P Shadow - Dungeon - AS\": Intellect=1, HasteRating=1.2, MasteryRating=1.38, CritRating=1.25, Versatility=0.96 )```SL: ```( Pawn: v1: \"H2P Shadow - Dungeon - SL\": Intellect=1, HasteRating=1.02, MasteryRating=1.44, CritRating=1 Versatility=0.96 )```More info can be found here: https://howtopriest.com/viewtopic.php?f=19&t=9481",
 	"pawn.shadow.stm":"WIP for 7.1.5",
 
   	"pawn.discipline":"To get stat weights for your character there is a custom command that will generate weights based on your current gear. Type ```!pawn disc charactername realm region```  For example ```!pawn disc joshqt draenor eu``` Make sure your character is logged out in your disc raiding gear before doing this. Single item upgrades wont change the values much, but redoing this every few items will keep your priority up to date. If you're having trouble post for help in the disc specific channel.",
