@@ -85,7 +85,7 @@
 	"link.shadow.relics":"WIP for 7.1.5\nhttp://i.imgur.com/Np5NNxt.png",
 	"link.shadow.relicsmeme":"WIP for 7.1.5\nhttp://i.imgur.com/JkCOjrK.png",
 	"link.shadow.timeline":"WIP for 7.1.5\nhttp://i.imgur.com/wd5KeuG.png",
-	"link.shadow.trinkets":"WIP for 7.1.5\nDjriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844",
+	"link.shadow.trinkets":"Djriff's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8896\nElvenbane's Sheet: https://howtopriest.com/viewtopic.php?f=19&t=8844",
 	"link.shadow.bis":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
 	"link.shadow.guide":"http://howtopriest.com/viewtopic.php?f=19&t=8402",
 	"link.guide.shadow":"link.shadow.guide",
