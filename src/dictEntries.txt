@@ -38,7 +38,7 @@
 	"disciplinestats":"http://i.imgur.com/dOnu9fz.png",
 	"veiled":"http://fanaru.com/the-little-mermaid/image/188216-the-little-mermaid-ursula.gif",
 	"memepins":"http://i.imgur.com/tPCRnoZ.jpg",
-	"meme.pins":"pinsmeme",
+	"meme.pins":"memepins",
 	
   	"followers":"https://www.reddit.com/r/wow/comments/519b0t/what_orderhall_champions_to_deactivate_all",
 	"support":"**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/HowToPriest>\nLike <https://www.Facebook.com/HowToPriest>\nSubscribe: <https://www.YouTube.com/HowToPriest>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nDonate: <https://howtopriest.com/viewtopic.php?f=5&t=2714>",
