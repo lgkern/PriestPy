@@ -79,27 +79,27 @@ class DictionaryReader:
         r = requests.get(url)
         response = r.json()
         drape = (0,1)[response["items"]["back"]["name"] == "Drape of Shame"]
-        
+       
         return [charint,charcrit,charhaste,charmastery,charvers,blelfworg,taurdwarf,drape]
-    
+   
     def getdiscstats(self,intellect,crit,haste,mastery,vers,blef=0,tauren=0,drape=0):
         hasterating = 375
-        critrating = 400
+        critrating = 400   
         masteryrating = 266.66666
         versrating = 475
-        critpun = 1+(0,0.1)[drape]+(0,0.02)[tauren] 
+        critpun = 1+(0,0.1)[drape]+(0,0.02)[tauren]
         raidatone = 0.75
         dungeonatone = 0.45
-        intellect = intellect + 1300  #flask
-       
+        intellect = intellect + 1706
         intweight = 1000/((intellect/100)/1.05)
         basecrit = 0.05+(0,0.01)[blef]
         critweight = 1000*((critpun)/critrating/(((((crit/critrating)/100+basecrit)*(critpun))+1)))
         raidmasteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*raidatone)
         dungeonmasteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*dungeonatone)
         versweight = 1000*(1/versrating/(  1+(vers/versrating)/100))
-        hasteweight = max(critweight,masteryweight,versweight)  * 1.1
+        hasteweight = max(critweight,raidmasteryweight,versweight)  * 1.1
         leechweight = 1000/300*0.75
+        dungleech = 1000/300*0.75/2
         normint = str(round(intweight/intweight,2))
         normhaste = str(round(hasteweight/intweight,2))
         normcrit = str(round(critweight/intweight,2))
@@ -107,11 +107,9 @@ class DictionaryReader:
         dungeonnormmastery = str(round(dungeonmasteryweight/intweight,2))
         normvers = str(round(versweight/intweight,2))
         normleech = str(round(leechweight/intweight,2))
+        normdungleech = str(round(dungleech/intweight,2))
         return '```( Pawn: v1: \"Disc Raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+raidnormmastery+', CritRating='+normcrit+', Leech='+normleech+')```\
-    ```( Pawn: v1: \"Disc Dungeon\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+dungeonnormmastery+', CritRating='+normcrit+', Leech='+normleech/2+')```'
-
-
-            
+```( Pawn: v1: \"Disc Dungeon\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+dungeonnormmastery+', CritRating='+normcrit+', Leech='+normdungleech+')```'
     def fixEntry(self, entry):
         result = entry.lower()
         #Head
