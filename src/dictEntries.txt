@@ -146,7 +146,7 @@
 	"pawn.shadow":"pawn.shadow.s2m",
 	"pawn.shadow.s2m":"Recomended build for S2M: pawn.shadow.stm (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
 	"pawn.shadow.lotv":"Recomended build for LotV: pawn.shadow.sl.0 pawn.shadow.sl.4 (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
-	"pawn.shadow.as":"Recomended build for LotV-AS: pawn.shadow.as.0 pawn.shadow.as.4 (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
+	"pawn.shadow.as":"Recomended build for LotV-AS: " + "pawn.shadow.as.0" + "pawn.shadow.as.4" + (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
 	"pawn.shadow.sl":"Recomended build for LotV-SL: pawn.shadow.sl.0 pawn.shadow.sl.4 (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
 	"pawn.shadow.sc":"Recomended build for SC: pawn.shadow.sc.0 pawn.shadow.sc.4 (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
 	"pawn.shadow.dungeon":"AS: ```( Pawn: v1: \"H2P Shadow - Dungeon - AS\": Intellect=1, HasteRating=1.2, MasteryRating=1.38, CritRating=1.25, Versatility=0.96 )```SL: ```( Pawn: v1: \"H2P Shadow - Dungeon - SL\": Intellect=1, HasteRating=1.02, MasteryRating=1.44, CritRating=1 Versatility=0.96 )```More info can be found here: https://howtopriest.com/viewtopic.php?f=19&t=9481",
