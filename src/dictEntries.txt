@@ -129,13 +129,14 @@
 	"response.weights":"Sims are still in progress for weights for 7.1.5. Stay tuned and check the pinned message in the #shadow channel for updated information.",
 	"response.as":"Currently AS (crit) and SL (mastery) builds will perform pretty equal in current gear and in current farm scenarios. H2P reccomends going for SL focused builds as this will increase tremendously in the coming weeks with tier and NH gear. That being said if you currently have 6k crit or more it is likely that AS will outperform SL until you can drop crit for mastery. TLDR Mastery is Gud but you can use AS with your crit heavy gear until you get more.",
 	"response.sl":"response.as",
-	"response.haste":"Minimum haste we reccomend for dungeons is 10k haste (more info here: https://howtopriest.com/viewtopic.php?f=19&t=9481), and the haste target for raids is 12k. This doesnt mean you should sacrifice 40 ilvls to get to 12k, just make it a goal. Dropping more than 10 or so ilvl for more haste generally isn't worth it. We will have weights out for raid builds soon.",
+	"response.haste":"Minimum haste we reccomend for dungeons is 10k haste (more info here: https://howtopriest.com/viewtopic.php?f=19&t=9481), and the haste target for raids is 12k. This doesnt mean you should sacrifice 40 ilvls to get to 12k, just make it a goal. Dropping more than 10 or so ilvl for more haste generally isn't worth it. More info can be found here: https://howtopriest.com/viewtopic.php?f=19&t=9481 / https://howtopriest.com/viewtopic.php?f=25&t=9495",
 
   	"trinkets.shadow":"link.shadow.trinkets",
   	"trinket.shadow":"link.shadow.trinkets",
 	"shadow.trinkets":"link.shadow.trinkets",
 
 	"pawn.shadow":"pawn.shadow.lotv",
+	"pawn.shadow.stm":"pawn.shadow.s2m",
 	"pawn.shadow.s2m":"Recomended build for S2M: ```( Pawn: v1: \"H2P Shadow S2M\": Intellect=1, MasteryRating=1.39, HasteRating=1.11, CritRating=1.03, Versatility=0.9 )``` (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
 	"pawn.shadow.lotv":"Recomended build for LotV: ```( Pawn: v1: \"H2P Shadow SL no-set\": Intellect=1, MasteryRating=1.25, HasteRating=1.24, CritRating=1.07, Versatility=0.85 )``` ```( Pawn: v1: \"H2P Shadow SL 4-piece\": Intellect=1, MasteryRating=1.35, HasteRating=1.21, CritRating=1.04, Versatility=0.88 )``` (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
 	"pawn.shadow.as":"Recomended build for LotV-AS: ```( Pawn: v1: \"H2P Shadow AS no-set\": Intellect=1, MasteryRating=1.19, HasteRating=1.13, CritRating=1.29, Versatility=0.86 )``` ```( Pawn: v1: \"H2P Shadow AS 4-piece\": Intellect=1, MasteryRating=1.29, HasteRating=1.15, CritRating=1.29, Versatility=0.89 )``` (more info: <https://howtopriest.com/viewtopic.php?f=25&t=9495>)",
@@ -148,8 +149,8 @@
 	"pawn.discipline.dungeon":"pawn.discipline",
   	"pawn.holy":"Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"H2P Holy 7.1.5\": Intellect=1, MasteryRating=0.78, HasteRating=0.74, Leech=0.35, CritRating=0.73, Versatility=0.7 )```",
 
-  	"stats.shadow":"WIP for 7.1.5",
-  	"stats.shadow.short":"WIP for 7.1.5",
+  	"stats.shadow":"Haste > Mastery > Critical Strike > Intellecy > Versatility. More info here: https://howtopriest.com/viewtopic.php?f=25&t=9495",
+  	"stats.shadow.short":"stats.shadow",
 
   	"stats.discipline":"Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
   	"stats.holy":"Mastery > Crit > Haste > Versatility",
