@@ -91,6 +91,8 @@ async def messageHandler(message):
         await generalMessage(message)
 
 async def maintenanceMessages(message):
+    if message.content.startswith(prefix+'update'):
+        call(["git","pull"])
     p = DictionaryReader()
     if message.content.startswith(prefix+'fullupdate'): 
         if message.author.id not in p.admins():
@@ -99,8 +101,6 @@ async def maintenanceMessages(message):
         call(["git","pull"])
         call(["cmdhere.bat"])
         sys.exit()
-    elif message.content.startswith('!update'):
-        call(["git","pull"])
 
 async def forwardMessage(message):
     p = DictionaryReader()
