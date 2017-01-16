@@ -238,5 +238,5 @@
   	"boss.shadow.tel'arn":"boss.shadow.high.botanist.tel'arn",
   	"boss.shadow.telarn":"boss.shadow.high.botanist.tel'arn",
 	
-	"pawn":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: as, sl, stm, lotv, sc\nDiscipline subtypes: raid, dungeon",
+	"pawn":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: as, sl, stm, lotv, sc\nDiscipline subtypes: raid, dungeon"
 }
