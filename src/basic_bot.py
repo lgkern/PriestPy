@@ -33,12 +33,12 @@ async def on_message(message):
     if message.author == client.user:
         return
         
-    if message.channel.name != None and message.channel.name in r.logChannels():
-        logger.log(message)
-        
     if message.content.startswith(prefix):
         await messageHandler(message)
-            
+        
+    if message.channel.name != None and message.channel.name in r.logChannels():
+        logger.log(message)    
+                 
 @client.event
 async def on_member_join(member):
     await sendWelcomeMessage(member)
