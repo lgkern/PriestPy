@@ -106,6 +106,8 @@
 	"shadow.timeline":"link.shadow.timeline",
 	"shadow.faq":"link.shadow.faq",
 	"faq.shadow":"link.shadow.faq",
+	"trinket.shadow":"trinkets.shadow",
+	"trinket.shadow":"https://goo.gl/RXcuxi",
 	
 	"link.healing.hub":"https://howtopriest.com/viewtopic.php?f=13&t=8688",
 	"link.holy.hub":"link.healing.hub",
