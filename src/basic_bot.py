@@ -173,5 +173,12 @@ async def generalMessage(message):
                     print('Error deleting message, probably from whisper')
         else:
             await client.send_message(message.channel, msg)
+    else:
+        msg = p.commandReader('invalid',message.channel.name)
+        await client.send_message(message.author, msg)        
+        try:
+            await client.delete_message(message)
+        except (HTTPException, Forbidden):
+            print('Error deleting message, probably from whisper')
 
 client.run(Key().value())

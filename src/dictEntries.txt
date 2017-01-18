@@ -23,6 +23,7 @@
   	"boss.invalid":"Invalid argument\nUsage: !boss <spec> <bossName>",
 	"artifact.invalid":"Invalid argument\nUsage: !artifact <spec> <route>\nRoutes: first, second, full",
 	"pawn.invalid":"Invalid argument\nUsage: !pawn <spec> [subtype]\nShadow subtypes: as, sl, stm, lotv, sc\nDiscipline subtypes: raid, dungeon",
+    "invalid":"Invalid Command!\nType ``!help`` to see a list of possible commands.",
   
 	"shame":"http://i.imgur.com/FidZknJ.gif",
 	"power":"http://i.imgur.com/8Igah2t.png",
