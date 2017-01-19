@@ -218,6 +218,7 @@
   	"boss.shadow.grand.magistrix.elisande":"https://www.howtopriest.com/viewtopic.php?t=8480",
   	"boss.shadow.spellblade.aluriel":"https://www.howtopriest.com/viewtopic.php?t=8470",
   	"boss.shadow.high.botanist.tel'arn":"https://www.howtopriest.com/viewtopic.php?t=8478",
+	"boss.shadow.botanist":"boss.shadow.high.botanist.tel'arn",
   	"boss.shadow.tichondrius":"https://www.howtopriest.com/viewtopic.php?t=8472",
   	"boss":"https://howtopriest.com/viewtopic.php?f=25&t=8415",
   	"boss.shadow.dragons.of.nightmare":"boss.shadow.don",
