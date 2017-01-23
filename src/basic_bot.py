@@ -165,20 +165,23 @@ async def generalMessage(message):
         if command in p.whisperCommands():
             if command == 'pub' and roles > 1 and 'help' not in message.content:
                 await client.send_message(message.channel, msg)
+                return
             else:
                 await client.send_message(message.author, msg)
                 try:
                     await client.delete_message(message)
                 except (HTTPException, Forbidden):
                     print('Error deleting message, probably from whisper')
+                return
         else:
             await client.send_message(message.channel, msg)
+            return
     else:
         msg = p.commandReader('invalid',message.channel.name)
         await client.send_message(message.author, msg)        
-        try:
-            await client.delete_message(message)
-        except (HTTPException, Forbidden):
-            print('Error deleting message, probably from whisper')
+    try:
+        await client.delete_message(message)
+    except (HTTPException, Forbidden):
+        print('Error deleting message, probably from whisper')
 
 client.run(Key().value())
