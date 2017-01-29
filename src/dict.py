@@ -52,14 +52,14 @@ class DictionaryReader:
             fixed = self.getdiscstats(*fixed)
             return fixed
         if "cmd" in fixed and len(fixed.split(".")) >= 4:
-            fixed = fixed.split(".")[1:]
-            charname = fixed[0]
-            charrealm = "-".join(fixed[1:-1])
-            charzone = fixed[2]
             if len(fixed.split(".")) > 4:
                 food = fixed[3]  
             else:
                 food = None
+            fixed = fixed.split(".")[1:]
+            charname = fixed[0]
+            charrealm = "-".join(fixed[1:-1])
+            charzone = fixed[2]
             fixed = self.getShadowCharStats(charname,charrealm,charzone)
             fixed = self.getCMDratioResponse(*fixed,food)
             return fixed
