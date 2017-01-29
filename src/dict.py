@@ -60,7 +60,6 @@ class DictionaryReader:
             charname = fixed[0]
             charrealm = "-".join(fixed[1:2])
             charzone = fixed[2]
-            print([charname,charrealm,charzone])
             fixed = self.getShadowCharStats(charname,charrealm,charzone)
             fixed = self.getCMDratioResponse(*fixed,food)
             
