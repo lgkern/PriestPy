@@ -51,6 +51,14 @@ class DictionaryReader:
             fixed = self.getcharstats(charname,charrealm,charzone)
             fixed = self.getdiscstats(*fixed)
             return fixed
+        if "cmd" in fixed and len(fixed.split(".")) >= 4:
+            fixed = fixed.split(".")[1:]
+            charname = fixed[0]
+            charrealm = "-".join(fixed[1:-1])
+            charzone = fixed[-1]
+            fixed = self.getcharstats(charname,charrealm,charzone)
+            fixed = self.getCMDratioResponse(*fixed)
+            return fixed
         if fixed in self.dictionary:
             while fixed in self.dictionary:
                 fixed = self.dictionary[fixed]
@@ -110,6 +118,10 @@ class DictionaryReader:
         normdungleech = str(round(dungleech/intweight,2))
         return '```( Pawn: v1: \"Disc Raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+raidnormmastery+', CritRating='+normcrit+', Leech='+normleech+')```\
 ```( Pawn: v1: \"Disc Dungeon\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+dungeonnormmastery+', CritRating='+normcrit+', Leech='+normdungleech+')```'
+
+    def getCMDratioResponse(self,intellect,crit,haste,mastery,vers,blef=0,tauren=0,drape=0):
+        return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'\nCMD Ratio: '+str(crit/(crit+mastery))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+        
     def fixEntry(self, entry):
         result = entry.lower()
         #Head
