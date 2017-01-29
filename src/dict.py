@@ -56,7 +56,7 @@ class DictionaryReader:
             charname = fixed[0]
             charrealm = "-".join(fixed[1:-1])
             charzone = fixed[-1]
-            fixed = self.getcharstats(charname,charrealm,charzone)
+            fixed = self.getShadowCharStats(charname,charrealm,charzone)
             fixed = self.getCMDratioResponse(*fixed)
             return fixed
         if fixed in self.dictionary:
@@ -89,6 +89,23 @@ class DictionaryReader:
         drape = (0,1)[response["items"]["back"]["name"] == "Drape of Shame"]
        
         return [charint,charcrit,charhaste,charmastery,charvers,blelfworg,taurdwarf,drape]
+        
+    def getShadowCharStats(self,name,realm,zone):
+        zone = zone.lower()
+        locales = {"us":"en_US","eu":"en_GB","kr":"ko_KR","tw":"zh_TW"}
+        locale = locales[zone]
+        url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=stats&locale="+locale+"&apikey="+Key().bnetApiKey()
+        r = requests.get(url)
+        response = r.json()
+        extracrit = (0,1)[response["race"] == 10 or response["race"] == 22 or response["race"] == 4]        
+        extrafood = (0,1)[response["race"] == 24 or response["race"] == 25 or response["race"] == 26]
+        charint = response["stats"]["int"]
+        charcrit = response["stats"]["critRating"]
+        charhaste = response["stats"]["hasteRating"]
+        charmastery = response["stats"]["masteryRating"]
+        charvers = response["stats"]["versatility"]
+               
+        return [charint,charcrit,charhaste,charmastery,charvers,extracrit,extrafood]
    
     def getdiscstats(self,intellect,crit,haste,mastery,vers,blef=0,tauren=0,drape=0):
         hasterating = 375
@@ -119,8 +136,13 @@ class DictionaryReader:
         return '```( Pawn: v1: \"Disc Raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+raidnormmastery+', CritRating='+normcrit+', Leech='+normleech+')```\
 ```( Pawn: v1: \"Disc Dungeon\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+dungeonnormmastery+', CritRating='+normcrit+', Leech='+normdungleech+')```'
 
-    def getCMDratioResponse(self,intellect,crit,haste,mastery,vers,blef=0,tauren=0,drape=0):
-        return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'\nCMD Ratio: '+str(crit/(crit+mastery))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+    def getCMDratioResponse(self,intellect,crit,haste,mastery,vers,extracrit=0,extrafood=0):
+        if extracrit == 0 and extrafood == 0:
+            return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'(+375 from Food)\nCMD Ratio: '+'{0:.2f}'.format(crit/(crit+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+        if extracrit == 1:
+            return 'Crit Rating: '+str(crit)+'(+400 from Racial)\nMastery Rating: '+str(mastery)+'(+375 from Food)\nCMD Ratio: '+'{0:.2f}'.format((crit+400)/(crit+400+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+        if extrafood == 1:
+            return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'(+750 from Food)\nCMD Ratio: '+'{0:.2f}'.format((crit)/(crit+mastery+750))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
         
     def fixEntry(self, entry):
         result = entry.lower()
