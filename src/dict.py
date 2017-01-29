@@ -55,9 +55,10 @@ class DictionaryReader:
             fixed = fixed.split(".")[1:]
             charname = fixed[0]
             charrealm = "-".join(fixed[1:-1])
-            charzone = fixed[-1]
+            charzone = fixed[2]
+            food = fixed[3] if len(fixed.split(".")) > 4 else food = None
             fixed = self.getShadowCharStats(charname,charrealm,charzone)
-            fixed = self.getCMDratioResponse(*fixed)
+            fixed = self.getCMDratioResponse(*fixed,food)
             return fixed
         if fixed in self.dictionary:
             while fixed in self.dictionary:
@@ -136,13 +137,19 @@ class DictionaryReader:
         return '```( Pawn: v1: \"Disc Raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+raidnormmastery+', CritRating='+normcrit+', Leech='+normleech+')```\
 ```( Pawn: v1: \"Disc Dungeon\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+dungeonnormmastery+', CritRating='+normcrit+', Leech='+normdungleech+')```'
 
-    def getCMDratioResponse(self,intellect,crit,haste,mastery,vers,extracrit=0,extrafood=0):
-        if extracrit == 0 and extrafood == 0:
-            return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'(+375 from Food)\nCMD Ratio: '+'{0:.2f}'.format(crit/(crit+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
-        if extracrit == 1:
-            return 'Crit Rating: '+str(crit)+'(+400 from Racial)\nMastery Rating: '+str(mastery)+'(+375 from Food)\nCMD Ratio: '+'{0:.2f}'.format((crit+400)/(crit+400+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
-        if extrafood == 1:
-            return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'(+750 from Food)\nCMD Ratio: '+'{0:.2f}'.format((crit)/(crit+mastery+750))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+    def getCMDratioResponse(self,intellect,crit,haste,mastery,vers,extracrit=0,extrafood=0,food=None):
+        if not food:
+            if extracrit == 0 and extrafood == 0:
+                return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'(+375 from Food)\nCMD Ratio: '+'{0:.2f}'.format(crit/(crit+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+            if extracrit == 1:
+                return 'Crit Rating: '+str(crit)+'(+400 from Racial)\nMastery Rating: '+str(mastery)+'(+375 from Food)\nCMD Ratio: '+'{0:.2f}'.format((crit+400)/(crit+400+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+            if extrafood == 1:
+                return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'(+750 from Food)\nCMD Ratio: '+'{0:.2f}'.format((crit)/(crit+mastery+750))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+        else:
+            if extracrit == 0 and extrafood == 0:
+                return 'Crit Rating: '+str(crit)+'\nMastery Rating: '+str(mastery)+'\nCMD Ratio: '+'{0:.2f}'.format(crit/(crit+mastery))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'
+            if extracrit == 1:
+                return 'Crit Rating: '+str(crit)+'(+400 from Racial)\nMastery Rating: '+str(mastery)+'\nCMD Ratio: '+'{0:.2f}'.format((crit+400)/(crit+400+mastery+375))+'\nMore info: https://howtopriest.com/viewtopic.php?f=60&t=9734'        
         
     def fixEntry(self, entry):
         result = entry.lower()
