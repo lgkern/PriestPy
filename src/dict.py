@@ -56,7 +56,10 @@ class DictionaryReader:
             charname = fixed[0]
             charrealm = "-".join(fixed[1:-1])
             charzone = fixed[2]
-            food = fixed[3] if (len(fixed.split(".")) > 4) else food = None
+            if len(fixed.split(".")) > 4:
+                food = fixed[3]  
+            else:
+                food = None
             fixed = self.getShadowCharStats(charname,charrealm,charzone)
             fixed = self.getCMDratioResponse(*fixed,food)
             return fixed
