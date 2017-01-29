@@ -58,7 +58,7 @@ class DictionaryReader:
                 food = None
             fixed = fixed.split(".")[1:]
             charname = fixed[0]
-            charrealm = "-".join(fixed[1:-1])
+            charrealm = "-".join(fixed[1:2])
             charzone = fixed[2]
             print([charname,charrealm,charzone])
             fixed = self.getShadowCharStats(charname,charrealm,charzone)
