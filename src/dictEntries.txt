@@ -192,9 +192,9 @@
   	"artifact.shadow.second":"http://i.imgur.com/i7Y7RK6.png",
 
   	"artifact.holy":"artifact.holy.full",
-  	"artifact.holy.full":"http://i.imgur.com/wDtAotC.jpg",
-  	"artifact.holy.first":"http://i.imgur.com/wDtAotC.jpg",
-  	"artifact.holy.second":"http://i.imgur.com/wDtAotC.jpg",
+  	"artifact.holy.full":"http://i.imgur.com/W4UXsdY.png",
+  	"artifact.holy.first":"http://i.imgur.com/W4UXsdY.png",
+  	"artifact.holy.second":"http://i.imgur.com/W4UXsdY.png",
 
   	"artifact.discipline":"artifact.discipline.full",
   	"artifact.discipline.full":"http://i.imgur.com/ibZJ5tP.png",
