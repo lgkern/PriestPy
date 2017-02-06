@@ -100,7 +100,7 @@
 	"link.customizing.bar":"https://www.youtube.com/watch?v=CdJuRN_SYKU",
 	"link.shadow.mythic+":"Here is the efficiency calculator for mythic+: https://howtopriest.com/viewtopic.php?f=19&t=9419&p=76631#p76631",
 	"link.shadow.faq":"https://howtopriest.com/viewtopic.php?f=8&t=9301&p=76055#p76055",
-	"link.shadow.logs":"https://howtopriest.com/viewtopic.php?f=19&t=9813&p=78277",
+	"link.shadow.logs":"For help looking at logs or improving DPS check out this post: https://howtopriest.com/viewtopic.php?f=19&t=9813&p=78277",
 	
 	"relics.shadow":"link.shadow.relics",
 	"shadow.relics":"link.shadow.relics",
