@@ -104,9 +104,9 @@ class DictionaryReader:
     def getShadowCharStats(self,name,realm,zone):
         zone = zone.lower()
         locales = {"us":"en_US","eu":"en_GB","kr":"ko_KR","tw":"zh_TW"}
-        locale = locales[zone]
-        url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=stats&locale="+locale+"&apikey="+Key().bnetApiKey()
         try:
+            locale = locales[zone]
+            url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=stats&locale="+locale+"&apikey="+Key().bnetApiKey()
             r = requests.get(url)
             response = r.json()
             extracrit = (0,1)[response["race"] == 10 or response["race"] == 22 or response["race"] == 4]        
