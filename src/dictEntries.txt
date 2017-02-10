@@ -10,6 +10,8 @@
 	"command":"help",
 	"commands":"help",
   
+    "armoryFetchError":"Invalid Battle.Net Armory response\nThis could mean that the Armory is offline or that you're entered invalid parameters.\nMake sure you follow the following format:\n\t!cmd character realm-name region\n\nIf your realm has a space in the name, replace it by -\nFor instance:\n\tBleeding Hollow -> bleeding-hollow",
+  
 	"item.invalid":"Invalid argument\nUsage:\n\t!item <spec> <slot>\n\t!item <itemNumber>",
 	"list.invalid":"Invalid argument\nUsage: !list <spec> <type>",
 	"link.invalid":"Invalid argument\nUsage: !link <spec> [information]",

@@ -35,7 +35,10 @@ class DictionaryReader:
         
     def actionLogChannel(self):
         return str(self.dictionary["actionLogChannel"])
-
+        
+    def armoryFetchError(self):
+        return str(self.dictionary["armoryFetchError"])
+        
     def readEntry(self, entry, channelName):
         self.loop = self.loop + 1
         if self.loop > 10:
@@ -61,7 +64,10 @@ class DictionaryReader:
             charrealm = "-".join(fixed[1:2])
             charzone = fixed[2]
             fixed = self.getShadowCharStats(charname,charrealm,charzone)
-            fixed = self.getCMDratioResponse(*fixed,food)
+            if fixed != None:
+                fixed = self.getCMDratioResponse(*fixed,food)
+            else:
+                fixed = self.armoryFetchError()
             
             return fixed
         if fixed in self.dictionary:
@@ -100,18 +106,21 @@ class DictionaryReader:
         locales = {"us":"en_US","eu":"en_GB","kr":"ko_KR","tw":"zh_TW"}
         locale = locales[zone]
         url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=stats&locale="+locale+"&apikey="+Key().bnetApiKey()
-        r = requests.get(url)
-        response = r.json()
-        extracrit = (0,1)[response["race"] == 10 or response["race"] == 22 or response["race"] == 4]        
-        extrafood = (0,1)[response["race"] == 24 or response["race"] == 25 or response["race"] == 26]
-        charint = response["stats"]["int"]
-        charcrit = response["stats"]["critRating"]
-        charhaste = response["stats"]["hasteRating"]
-        charmastery = response["stats"]["masteryRating"]
-        charvers = response["stats"]["versatility"]
-               
-        return [charint,charcrit,charhaste,charmastery,charvers,extracrit,extrafood]
-   
+        try:
+            r = requests.get(url)
+            response = r.json()
+            extracrit = (0,1)[response["race"] == 10 or response["race"] == 22 or response["race"] == 4]        
+            extrafood = (0,1)[response["race"] == 24 or response["race"] == 25 or response["race"] == 26]
+            charint = response["stats"]["int"]
+            charcrit = response["stats"]["critRating"]
+            charhaste = response["stats"]["hasteRating"]
+            charmastery = response["stats"]["masteryRating"]
+            charvers = response["stats"]["versatility"]
+                   
+            return [charint,charcrit,charhaste,charmastery,charvers,extracrit,extrafood]
+        except:
+            return None
+            
     def getdiscstats(self,intellect,crit,haste,mastery,vers,blef=0,tauren=0,drape=0):
         hasterating = 375
         critrating = 400   
