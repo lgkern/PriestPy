@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import json
 import requests
 from botkey import Key

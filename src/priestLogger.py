@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from time import sleep
