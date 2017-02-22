@@ -130,7 +130,7 @@
 	"link.holy.hub":"link.healing.hub",
 	"link.discipline.hub":"link.healing.hub",
 	"link.holy.guide":"https://howtopriest.com/viewtopic.php?f=25&t=8666",
-	"link.discipline.guide":"https://howtopriest.com/viewtopic.php?f=108&t=8624",
+	"link.discipline.guide":https://howtopriest.com/viewtopic.php?f=108&t=8882",
   	"link.holy.trinkets":"https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
   	"link.disc.trinkets":"https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.guide.holy":"link.holy.guide",
