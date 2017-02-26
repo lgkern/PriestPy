@@ -87,8 +87,10 @@ class DictionaryReader:
         locales = {"us":"en_US","eu":"en_GB","kr":"ko_KR","tw":"zh_TW"}
         locale = locales[zone]
         url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=stats&locale="+locale+"&apikey="+Key().bnetApiKey()
+        print(url)
         r = requests.get(url)
         response = r.json()
+        print(response)
         blelfworg = (0,1)[response["race"] == 10 or response["race"] == 22]
         taurdwarf = (0,1)[response["race"] == 6 or response["race"] == 3]
         charint = response["stats"]["int"]
@@ -99,6 +101,7 @@ class DictionaryReader:
         url = "https://"+zone+".api.battle.net/wow/character/"+realm+"/"+name+"?fields=items&locale="+locale+"&apikey="+Key().bnetApiKey()
         r = requests.get(url)
         response = r.json()
+        
         drape = (0,1)[response["items"]["back"]["name"] == "Drape of Shame"]
        
         return [charint,charcrit,charhaste,charmastery,charvers,blelfworg,taurdwarf,drape]
@@ -199,7 +202,7 @@ class DictionaryReader:
         #Off-hand
         
         #Specs
-        if "ord" not in result:
+        if "ord." not in result:
             if "discipline" not in result:
                 result = result.replace("disc","discipline",1)
         
