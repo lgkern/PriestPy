@@ -221,7 +221,7 @@
   	"artifact.holy.second":"http://i.imgur.com/W4UXsdY.png",
 
   	"artifact.discipline":"artifact.discipline.full",
-  	"artifact.discipline.full":"http://i.imgur.com/ibZJ5tP.png",
+  	"artifact.discipline.full":"Artifact Path 1-35\nhttp://i.imgur.com/8TzKeI7.png\n\nArtifact Path 35+\nhttp://i.imgur.com/99vTyTc.png",
   	"artifact.discipline.first":"artifact.discipline.full",
   	"artifact.discipline.second":"artifact.discipline.full",
 
