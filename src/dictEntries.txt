@@ -216,12 +216,12 @@
   	"artifact.shadow.second":"http://i.imgur.com/i7Y7RK6.png",
 
   	"artifact.holy":"artifact.holy.full",
-  	"artifact.holy.full":"http://i.imgur.com/W4UXsdY.png",
+  	"artifact.holy.full":"**Artifact Path 1-35**\nhttp://i.imgur.com/W4UXsdY.png\n\n**Artifact Path 35+**\nhttps://cdn.discordapp.com/attachments/118456954371833860/295115323194081280/Holy_Artifact.png ",
   	"artifact.holy.first":"http://i.imgur.com/W4UXsdY.png",
   	"artifact.holy.second":"http://i.imgur.com/W4UXsdY.png",
 
   	"artifact.discipline":"artifact.discipline.full",
-  	"artifact.discipline.full":"**Artifact Path 1-35**\nhttp://i.imgur.com/8TzKeI7.png\n\n**Artifact Path 35+**\nhttp://i.imgur.com/zMqKCMh.png",
+  	"artifact.discipline.full":"**Artifact Path 1-35**\nhttp://i.imgur.com/CpSwHHm.png\n\n**Artifact Path 35+**\nhttp://i.imgur.com/zMqKCMh.png",
   	"artifact.discipline.first":"artifact.discipline.full",
   	"artifact.discipline.second":"artifact.discipline.full",
 
