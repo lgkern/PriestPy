@@ -109,8 +109,8 @@
   	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 
 	"link.shadow.hub":"https://howtopriest.com/viewtopic.php?f=8&t=8687",
-	"link.shadow.relics":"http://i.imgur.com/768GbSj.png\nMore info here: <https://howtopriest.com/viewtopic.php?f=60&t=9485>",
-	"link.shadow.relicsmeme":"http://i.imgur.com/Hnp74ZK.png\nMore info here: <https://howtopriest.com/viewtopic.php?f=60&t=9485>",
+	"link.shadow.relics":"<https://howtopriest.com/viewtopic.php?f=60&t=9485>",
+	"link.shadow.relicsmeme":"<https://howtopriest.com/viewtopic.php?f=60&t=9485>",
 	"link.shadow.timeline":"WIP for 7.1.5\nhttp://i.imgur.com/wd5KeuG.png",
 	"link.shadow.trinkets":"Djriff's Sheet: <https://howtopriest.com/viewtopic.php?f=19&t=8896>\nElvenbane's Sheet: <https://howtopriest.com/viewtopic.php?f=19&t=8844>\nSimulation Comparison: <https://howtopriest.com/viewtopic.php?f=60&t=9567>",
 	"link.shadow.bis":"https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
