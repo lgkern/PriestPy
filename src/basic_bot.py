@@ -12,6 +12,7 @@ from priestLogger import PriestLogger
 import logging
 import time
 from discord import HTTPException
+from discord import utils
 
 logging.basicConfig(level=logging.INFO)
 
@@ -61,13 +62,20 @@ async def on_member_unban(member):
     
 @client.event
 async def on_member_update(before, after):
-    p = DictionaryReader()
-    role = utils.find(lambda r: r.name == p.streamingRole(), after.server.roles)
-    if role is not None:        
-        if after.game is None #and after.game.type = 1:
-            await client.add_roles(after, role)
+    # Checks if the Game state changed
+    if before.game != after.game:
+        p = DictionaryReader()
+        if after.game is None: 
+            # Removes role if assigned
+            role = utils.find(lambda r: r.name == p.streamingRole(), after.roles)
+            if role is not None:
+                await client.remove_roles(after, role)
+                
         else:
-            await client.remove_roles(after, role)
+            role = utils.find(lambda r: r.name == p.streamingRole(), after.server.roles)
+            if role not in after.roles: # and after.game.type = 1:
+            # Adds the role if started streaming
+                await client.add_roles(after, role)
 
 async def logAction(member, action):
     r = DictionaryReader()
