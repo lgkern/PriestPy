@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import discord
 from discord import Forbidden
 from discord.ext import commands
@@ -96,6 +98,9 @@ async def messageHandler(message):
     elif message.content.startswith(prefix+'channel'):
         await client.send_message(message.channel, message.channel.id)
         
+    elif message.content.startswith(prefix+'ban'):
+        await adminControl(message)
+        
     else:
         await generalMessage(message)
 
@@ -190,4 +195,31 @@ async def generalMessage(message):
         except (HTTPException, Forbidden):
             print('Error deleting message, probably from whisper')
 
+async def adminControl(message):
+    p = DictionaryReader()
+    roles = message.author.roles
+    canSend = False
+    for role in roles:
+        canSend = canSend or (role.name in p.roles())
+    if not canSend:
+        print('{0.author.name} can\'t ban members!'.format(message))
+        return
+    else:
+        if message.content.startswith(prefix+'ban'):
+            if not message.server.me.server_permissions.ban_members:
+                await client.send_message(message.author, 'The bot does not have permissions to ban members.')
+                return
+            id = message.content.split(' ')[1]
+            try:
+                await client.http.ban(id, message.server.id)
+                user = await client.get_user_info(id)
+                if user != None:
+                    await client.send_message(message.author, 'User '+user.name+' banned successfully')                            
+                else:
+                    await client.send_message(message.author, 'Invalid user ID')                            
+            except discord.HTTPException:
+                pass
+            finally:
+                await client.delete_message(message)
+    
 client.run(Key().value())
