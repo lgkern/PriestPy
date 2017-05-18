@@ -56,6 +56,16 @@ async def on_member_ban(member):
 @client.event
 async def on_member_unban(member):
     await logAction(member, 'unbanned')
+    
+@client.event
+async def on_member_update(before, after):
+    p = DictionaryReader()
+    role = utils.find(lambda r: r.name == p.streamingRole(), after.server.roles)
+    if role is not None:        
+        if after.game is None #and after.game.type = 1:
+            await client.add_roles(after, role)
+        else:
+            await client.remove_roles(after, role)
 
 async def logAction(member, action):
     r = DictionaryReader()
@@ -64,7 +74,6 @@ async def logAction(member, action):
     else:
         await client.send_message(client.get_channel(r.actionLogChannel()), 'No Server - {0.name} ({0.id}) {1}'.format(member, action))
     #print('error while writing {0} log'.format(action))
-
             
 async def messageHandler(message):
     if message.server:

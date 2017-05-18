@@ -39,6 +39,9 @@ class DictionaryReader:
     def armoryFetchError(self):
         return str(self.dictionary["armoryFetchError"])
         
+    def streamingRole(self):
+        return str(self.dictionary["streamingRole"])
+        
     def readEntry(self, entry, channelName):
         self.loop = self.loop + 1
         if self.loop > 10:
