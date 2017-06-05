@@ -41,7 +41,7 @@
 	"smitemachine":"http://i.imgur.com/NLOd9wt.jpg",
 	"disciplinestats":"http://i.imgur.com/dOnu9fz.png",
 	"veiled":"http://fanaru.com/the-little-mermaid/image/188216-the-little-mermaid-ursula.gif",
-	"memepins":"http://i.imgur.com/tPCRnoZ.jpg",
+	"memepins":"https://i.imgflip.com/1qckg5.jpg",
 	"meme.pins":"memepins",
 	"everything":"http://i2.kym-cdn.com/entries/icons/original/000/016/301/icon.png",
 	"mindblown":"http://i.imgur.com/AAK0Jvj.gifv",
