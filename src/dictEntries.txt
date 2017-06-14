@@ -71,6 +71,8 @@
 	"voidfawn":"http://i.imgur.com/qPb56If.png",
 	"washedup":"http://i.imgur.com/aXRdjgT.png",
 	"whispers":"http://i.imgur.com/qzxWjt1.jpg",
+  "popcorn":"http://i.imgur.com/iOzZJ3s.gifv",
+  "nobodycares":"http://gph.is/1IMXp37",
 	
   	"followers":"https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support":"**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/HowToPriest>\nLike <https://www.Facebook.com/HowToPriest>\nSubscribe: <https://www.YouTube.com/HowToPriest>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nDonate: <https://howtopriest.com/viewtopic.php?f=5&t=2714>",
@@ -113,7 +115,7 @@
   
 	"link.patreon":"https://www.patreon.com/howtopriest",
 	"link.donor":"http://howtopriest.com/viewtopic.php?f=5&t=2714",
-  	"link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
+  "link.lexicon":"https://docs.google.com/spreadsheets/d/1TiiI4huz4NXKfx7PGvvVTyP6xu8VaDNZ4-FEn69mOhc/pubhtml#",
 
 	"link.shadow.hub":"https://howtopriest.com/viewtopic.php?f=8&t=8687",
 	"link.shadow.relics":"<https://howtopriest.com/viewtopic.php?f=60&t=9485>",
@@ -148,8 +150,8 @@
 	"link.discipline.hub":"link.healing.hub",
 	"link.holy.guide":"https://howtopriest.com/viewtopic.php?f=25&t=8666",
 	"link.discipline.guide":"https://howtopriest.com/viewtopic.php?f=108&t=8882",
-  	"link.holy.trinkets":"https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
-  	"link.disc.trinkets":"https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
+  "link.holy.trinkets":"https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
+  "link.disc.trinkets":"https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.guide.holy":"link.holy.guide",
 	"link.guide.discipline":"link.discipline.guide",
 	"link.bis.holy":"bis.holy",
@@ -164,9 +166,11 @@
 	"response.pins":"The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
 	"response.weights":"Sims are still in progress for weights for 7.2.5. Stay tuned and check the pinned message in the #shadow channel for updated information.",
 	"response.sims":"response.weights",
+  "response.as":"The haste that San'layn takes to reach the same DPS levels as Auspicious Spirits, however, is pretty high (above 15k haste). This haste isn't reasonable to be attained, especially early in the tier. Although, the overall difference between them is pretty negligible, so running either is fine.",
+  "response.sl":"response.as",
 
-  	"trinkets.shadow":"link.shadow.trinkets",
-  	"trinket.shadow":"link.shadow.trinkets",
+  "trinkets.shadow":"link.shadow.trinkets",
+  "trinket.shadow":"link.shadow.trinkets",
 	"shadow.trinkets":"link.shadow.trinkets",
 
 	"pawn.shadow":"pawn.shadow.lotv",
