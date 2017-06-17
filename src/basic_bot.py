@@ -62,6 +62,7 @@ async def on_member_unban(member):
     
 @client.event
 async def on_member_update(before, after):
+    return
     # Checks if the Game state changed
     if before.game != after.game:
         p = DictionaryReader()
@@ -73,7 +74,7 @@ async def on_member_update(before, after):
                 
         else:
             role = utils.find(lambda r: r.name == p.streamingRole(), after.server.roles)
-            if role not in after.roles and after.game.type = 1:
+            if role not in after.roles and after.game.type == 1:
             # Adds the role if started streaming
                 await client.add_roles(after, role)
 
