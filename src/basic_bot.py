@@ -2,7 +2,7 @@
 
 import discord
 from discord import Forbidden
-from discord.ext import commands
+#from discord.ext import commands
 import random
 from dict import DictionaryReader
 from botkey import Key
