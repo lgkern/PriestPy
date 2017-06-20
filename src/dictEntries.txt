@@ -50,7 +50,6 @@
 	"4piece":"4p",
 	"emp4p":"http://i.imgur.com/IUb86G2.gifv",
 	"empowered4p":"emp4p",
-	"cake":"http://i.imgur.com/6f5hiVM.png",
 	"dikdik":"http://i.imgur.com/uGvd7qw.gifv",
 	"arcanonine":"http://i.imgur.com/UohgvHD.png",
 	"arconine":"arcanonine",
