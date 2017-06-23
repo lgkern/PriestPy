@@ -71,6 +71,7 @@
 	"nobodycares": "http://gph.is/1IMXp37",
 	"hastecap": "This is the only haste cap you need for shadow priest \n http://i.imgur.com/QgYaEpl.png",
 	"cow": "http://i.imgur.com/IZnrSBG.png",
+	"19stacks": "http://i.imgur.com/6kVC367.png",
 
 	"followers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/HowToPriest>\nLike <https://www.Facebook.com/HowToPriest>\nSubscribe: <https://www.YouTube.com/HowToPriest>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nDonate: <https://howtopriest.com/viewtopic.php?f=5&t=2714>",
