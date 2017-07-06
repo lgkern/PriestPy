@@ -119,7 +119,7 @@
 
 	"link.shadow.hub": "https://howtopriest.com/viewtopic.php?f=8&t=8687",
 	"link.shadow.relics": "http://i.imgur.com/0OzezhO.png \nMore info: <https://howtopriest.com/viewtopic.php?f=60&t=9485>",
-	"link.shadow.relicsmeme": "http://i.imgur.com/qz63bgx.png",
+	"link.shadow.relicsmeme": "http://i.imgur.com/qz63bgx.png \nMore info: <https://howtopriest.com/viewtopic.php?f=60&t=9485>",
 	"link.shadow.trinkets": "Djriff's Sheet: <https://howtopriest.com/viewtopic.php?f=19&t=8896>\nSimulation Comparison: <https://howtopriest.com/viewtopic.php?f=60&t=9567>",
 	"link.shadow.bis": "https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
 	"link.shadow.guide": "http://howtopriest.com/viewtopic.php?f=19&t=8402",
