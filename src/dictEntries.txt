@@ -154,7 +154,7 @@
 	"link.hub.holy": "link.holy.hub",
 	"link.bis.discipline": "bis.disc",
 	"link.hub.discipline": "link.discipline.hub",
-	"link.holy.relics": "http://i.imgur.com/cNSZotU.png",
+	"link.holy.relics": "For relic priority an their approximate value see <http://bit.ly/HPriestRelics>. For more detailed relic information use the spreadsheet at <http://bit.ly/HPriestSheet>",
 
 	"relics.holy": "link.holy.relics",
 	"holy.relics": "link.holy.relics",
@@ -174,7 +174,7 @@
 	"pawn.discipline": "To get stat weights for your character there is a custom command that will generate weights based on your current gear. Type ```!pawn disc charactername realm region```  For example ```!pawn disc joshqt draenor eu``` Make sure your character is logged out in your disc raiding gear before doing this. Single item upgrades wont change the values much, but redoing this every few items will keep your priority up to date. If you're having trouble post for help in the disc specific channel.",
 	"pawn.discipline.raid": "pawn.discipline",
 	"pawn.discipline.dungeon": "pawn.discipline",
-	"pawn.holy": "Disclaimer: Those values are only guidelines, not a bible on how the be the best healer.\n```( Pawn: v1: \"H2P Holy 7.1.5\": Intellect=1, MasteryRating=0.78, HasteRating=0.74, Leech=0.35, CritRating=0.73, Versatility=0.7 )```",
+	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. Check out this guide <http://bit.ly/HPriestRaidTldr> for gearing suggestions, and the spreadsheet at <http://bit.ly/HPriestSheet> if you want more detailed stat breakdowns.",
 
 	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery > Intellect. More info here: https://howtopriest.com/viewtopic.php?f=120&t=10323",
 	"stats.shadow.short": "stats.shadow",
