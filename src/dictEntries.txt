@@ -162,6 +162,7 @@
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
 	"response.as": "The haste that San'layn takes to reach the same DPS levels as Auspicious Spirits, however, is pretty high (above 15k haste). This haste isn't reasonable to be attained, especially early in the tier. Although, the overall difference between them is pretty negligible, so running either is fine.",
 	"response.sl": "response.as",
+	"response.owl":"The **optimal** time to use Tarnished Sentinel Medallion ( :owl: ) is 14 seconds before Voidform ends. However, by doing so you may risk losing an use at the end, which makes this optimization risky.",
 
 	"trinkets.shadow": "link.shadow.trinkets",
 	"trinket.shadow": "link.shadow.trinkets",
