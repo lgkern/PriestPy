@@ -228,7 +228,6 @@ async def adminControl(message):
             id = message.content.split(' ')[1]
             reason = ' '.join(message.content.split(' ')[2::])
             try:
-                print(reason)
                 user = await client.get_user_info(id)
                 await message.guild.ban(user=user, reason=reason)
                 if user != None:
@@ -258,7 +257,6 @@ async def adminControl(message):
             
             await message.author.send( '```Unbans```' )
             async for entry in message.guild.audit_logs(action=discord.AuditLogAction.unban):
-                #print('{0.user} banned {0.target}'.format(entry))
                 if entry.target.id == int(id):
                     await message.author.send('-> User {0.target} was **unbanned** by {0.user}({0.user.id}) on {0.created_at} (UTC)'.format(entry))                    
             if not isUserBanned:
