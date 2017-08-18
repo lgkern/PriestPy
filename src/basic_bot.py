@@ -231,7 +231,7 @@ async def adminControl(message):
                 user = await client.get_user_info(id)
                 await message.guild.ban(user=user, reason=reason)
                 if user != None:
-                    await message.author.send('User '+user.name+' banned successfully')                            
+                    await message.author.send('User {0.mention} banned successfully'.format(user))
                 else:
                     await message.author.send('Invalid user ID')                            
             except discord.HTTPException:
@@ -248,7 +248,7 @@ async def adminControl(message):
             
             user = await client.get_user_info(id)
             
-            await message.author.send( 'User {0.name}\n```Bans```'.format(user) )
+            await message.author.send( 'User {0.mention}\n```Bans```'.format(user) )
             
             async for entry in message.guild.audit_logs(action=discord.AuditLogAction.ban):                
                 if str(entry.target.id) == str(id):               
