@@ -112,7 +112,7 @@ async def messageHandler(message):
     elif message.content.startswith(prefix+'channel'):
         await message.channel.send(string(message.channel.id))
         
-    elif message.content.startswith(prefix+'ban'):
+    elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
         
     else:
@@ -212,21 +212,25 @@ async def generalMessage(message):
 async def adminControl(message):
     p = DictionaryReader()
     roles = message.author.roles
-    canSend = False
+    canBan = False
     for role in roles:
-        canSend = canSend or (role.name in p.roles())
-    if not canSend:
-        print('{0.author.name} can\'t ban members!'.format(message))
+        canBan = canBan or (role.name in p.roles())
+    if not canBan:
+        print('{0.author.name} can\'t manage members!'.format(message))
+        await message.author.send('You can\'t manage members!')  
         return
     else:
+        # Bans - Format:  !ban 9999999999999
         if message.content.startswith(prefix+'ban'):
             if not message.guild.me.guild_permissions.ban_members:
-                await message.author.send('The bot does not have permissions to ban members.')
+                await message.author.send('The bot does not have permissions to manage members.')
                 return
             id = message.content.split(' ')[1]
+            reason = ' '.join(message.content.split(' ')[2::])
             try:
-                await client.http.ban(id, message.guild.id)
+                print(reason)
                 user = await client.get_user_info(id)
+                await message.guild.ban(user=user, reason=reason)
                 if user != None:
                     await message.author.send('User '+user.name+' banned successfully')                            
                 else:
@@ -235,5 +239,28 @@ async def adminControl(message):
                 pass
             finally:
                 await message.delete()
-    
+        # Ban info - Format:  !info 9999999999999
+        if message.content.startswith(prefix+'info'):        
+            if not message.guild.me.guild_permissions.view_audit_log:
+                await message.author.send('The bot does not have permissions to view audit logs.')
+                return
+            id = message.content.split(' ')[1]
+            isUserBanned = False
+            
+            user = await client.get_user_info(id)
+            
+            await message.author.send( 'User {0.name}\n```Bans```'.format(user) )
+            
+            async for entry in message.guild.audit_logs(action=discord.AuditLogAction.ban):                
+                if str(entry.target.id) == str(id):               
+                    await message.author.send('-> User {0.target}({0.target.id}) was **banned** by {0.user}({0.user.id}) on {0.created_at} (UTC)\n\tReason: {0.reason}\n'.format(entry))
+                    isUserBanned = True
+            
+            await message.author.send( '```Unbans```' )
+            async for entry in message.guild.audit_logs(action=discord.AuditLogAction.unban):
+                #print('{0.user} banned {0.target}'.format(entry))
+                if entry.target.id == int(id):
+                    await message.author.send('-> User {0.target} was **unbanned** by {0.user}({0.user.id}) on {0.created_at} (UTC)'.format(entry))                    
+            if not isUserBanned:
+                await message.author.send('User was never banned.')
 client.run(Key().value())
