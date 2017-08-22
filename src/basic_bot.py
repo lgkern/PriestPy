@@ -45,12 +45,12 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
     await sendWelcomeMessage(member)
-    await logAction(member, 'joined')
+    await logAction(member, member.guild, 'joined')
 
 @client.event   
 async def on_member_remove(member):
     print('member left')
-    await logAction(member, 'left')
+    await logAction(member, member.guild, 'left')
     
 @client.event
 async def on_member_ban(guild, user):
@@ -58,7 +58,7 @@ async def on_member_ban(guild, user):
     
 @client.event
 async def on_member_unban(member):
-    await logAction(member, 'unbanned')
+    await logAction(member, member.guild, 'unbanned')
     
 @client.event
 async def on_member_update(before, after):
@@ -78,14 +78,13 @@ async def on_member_update(before, after):
             # Adds the role if started streaming
                 await after.add_roles(after, role)
 
-async def logAction(member, action):
-    await logAction(member, member.guild, action)
+
 
     
 async def logAction(user, guild, action):
     r = DictionaryReader()
     if guild:
-        await client.get_channel(int(r.actionLogChannel())).send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.name} ({0.id}) {2}'.format(user, guild, action))
+        await client.get_channel(int(r.actionLogChannel())).send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.mention} ({0.id}) {2}'.format(user, guild, action))
     else:
         await client.get_channel(int(r.actionLogChannel())).send('No Server - {0.name} ({0.id}) {1}'.format(user, action))
     #print('error while writing {0} log'.format(action))
