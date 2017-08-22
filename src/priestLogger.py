@@ -28,8 +28,7 @@ class PriestLogger:
        #     self.createDb()
         
     def log(self, message):
-        self.logHandler.acquire()
-        print(type(message.channel))
+        self.logHandler.acquire()        
         channelName = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'
         self.logger.info(channelName + ' - ' + message.author.name+'('+str(message.author.id)+') : (' + str(message.id) + ') '+ ''.join(filter(lambda x: x in self.printable, message.content)))
         self.logHandler.release()
