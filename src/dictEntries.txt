@@ -3,7 +3,7 @@
 	"roles": "Staff",
 	"authorized": "118461244784115713,165904439947952128",
 	"actionLogChannel": "230154359122427904",
-	"logchannels": "general shadow discipline holy ot-shadow ot-dank-memes-n-heckin-doggos spoilers-got-lore-ptr xmog gear-questions donors-only stream-recruit-promote pvp timeout",
+	"logchannels": "general shadow discipline holy ot-shadow ot-dank-memes-n-heckin-doggos spoilers-got-lore-ptr xmog gear-questions donors-only  promote-yourself pvp timeout",
 	"sentcommands": "fantasy sims power shame",
 	"streamingRole": "Now Streaming",
 
