@@ -81,6 +81,7 @@
 	"hazzal":"Who?",
 	"snipe":"http://i.imgur.com/cPDAfzk.png",
 	"jah":"http://i.imgur.com/2yhEAjA.png",
+	"melgane":"https://i.imgur.com/6JaxQZP.png",
 
 	"followers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/HowToPriest>\nLike <https://www.Facebook.com/HowToPriest>\nSubscribe: <https://www.YouTube.com/HowToPriest>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nDonate: <https://howtopriest.com/viewtopic.php?f=5&t=2714>",
