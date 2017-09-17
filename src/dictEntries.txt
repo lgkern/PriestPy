@@ -80,7 +80,7 @@
 	"kelsey":"http://i.imgur.com/Z6NRJNR.png",
 	"hazzal":"Who?",
 	"snipe":"http://i.imgur.com/cPDAfzk.png",
-	"jah":"http://i.imgur.com/2yhEAjA.png",
+	"jah":"https://i.imgur.com/Lozvv97.png",
 	"melgane":"https://i.imgur.com/6JaxQZP.png",
 
 	"followers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
