@@ -5,6 +5,7 @@ from logging.handlers import TimedRotatingFileHandler
 from time import sleep
 import string
 import sqlite3
+from discord import TextChannel
 from os import path
 
 class PriestLogger:
@@ -27,9 +28,9 @@ class PriestLogger:
        #     self.createDb()
         
     def log(self, message):
-        self.logHandler.acquire()
-        channelName = message.channel.name if not message.channel.is_private else 'PM'
-        self.logger.info(channelName + ' - ' + message.author.name+': ' + ''.join(filter(lambda x: x in self.printable, message.content)))
+        self.logHandler.acquire()        
+        channelName = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'
+        self.logger.info(channelName + ' - ' + message.author.name+'('+str(message.author.id)+') : (' + str(message.id) + ') '+ ''.join(filter(lambda x: x in self.printable, message.content)))
         self.logHandler.release()
       
     def createDb(self):

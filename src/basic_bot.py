@@ -45,20 +45,20 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
     await sendWelcomeMessage(member)
-    await logAction(member, 'joined')
+    await logAction(member, member.guild, 'joined')
 
 @client.event   
 async def on_member_remove(member):
     print('member left')
-    await logAction(member, 'left')
+    await logAction(member, member.guild, 'left')
     
 @client.event
-async def on_member_ban(member):
-    await logAction(member, 'banned')
+async def on_member_ban(guild, user):
+    await logAction(user, guild, 'banned')
     
 @client.event
 async def on_member_unban(member):
-    await logAction(member, 'unbanned')
+    await logAction(member, member.guild, 'unbanned')
     
 @client.event
 async def on_member_update(before, after):
@@ -70,27 +70,31 @@ async def on_member_update(before, after):
             # Removes role if assigned
             role = utils.find(lambda r: r.name == p.streamingRole(), after.roles)
             if role is not None:
-                await client.remove_roles(after, role)
+                await after.remove_roles(after, role)
                 
         else:
-            role = utils.find(lambda r: r.name == p.streamingRole(), after.server.roles)
+            role = utils.find(lambda r: r.name == p.streamingRole(), after.guild.roles)
             if role not in after.roles and after.game.type == 1:
             # Adds the role if started streaming
-                await client.add_roles(after, role)
+                await after.add_roles(after, role)
 
-async def logAction(member, action):
+
+
+    
+async def logAction(user, guild, action):
     r = DictionaryReader()
-    if member.server:
-        await client.send_message(client.get_channel(r.actionLogChannel()), '['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {0.server.name} - {0.name} ({0.id}) {1}'.format(member, action))
+    if guild:
+        await client.get_channel(int(r.actionLogChannel())).send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.mention} ({0.id}) {2}'.format(user, guild, action))
     else:
-        await client.send_message(client.get_channel(r.actionLogChannel()), 'No Server - {0.name} ({0.id}) {1}'.format(member, action))
+        await client.get_channel(int(r.actionLogChannel())).send('No Server - {0.name} ({0.id}) {1}'.format(user, action))
     #print('error while writing {0} log'.format(action))
+    
             
 async def messageHandler(message):
-    if message.server:
-        await client.send_message(client.get_channel('220534135947526154'), '{0.server.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
+    if message.guild:
+        await client.get_channel(220534135947526154).send('{0.guild.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
     else:
-        await client.send_message(client.get_channel('220534135947526154'), 'PM - PM - {0.author} invoked {0.content}'.format(message))
+        await client.get_channel(220534135947526154).send('PM - PM - {0.author} invoked {0.content}'.format(message))
     
     if message.content.startswith(prefix+'fullupdate') or message.content.startswith(prefix+'update') or message.content.startswith(prefix+'channel'):
         await maintenanceMessages(message)
@@ -105,9 +109,9 @@ async def messageHandler(message):
         await sendPinMessages(message)
         
     elif message.content.startswith(prefix+'channel'):
-        await client.send_message(message.channel, message.channel.id)
+        await message.channel.send(string(message.channel.id))
         
-    elif message.content.startswith(prefix+'ban'):
+    elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
         
     else:
@@ -118,8 +122,8 @@ async def maintenanceMessages(message):
         call(["git","pull"])
     p = DictionaryReader()
     if message.content.startswith(prefix+'fullupdate'): 
-        if message.author.id not in p.admins():
-            await client.send_message(message.channel, 'You\'re not my dad, {0.mention}!'.format(message.author))
+        if string(message.author.id) not in p.admins():
+            await message.channel.send('You\'re not my dad, {0.mention}!'.format(message.author))
             return
         call(["git","pull"])
         call(["start_bot.sh"])
@@ -140,29 +144,29 @@ async def forwardMessage(message):
         entry = ' '.join(entries[2::])
         msg = p.commandReader(entry)
         if msg != None:
-            await client.send_message(target, msg)
-            await client.delete_message(message)    
-            await client.send_message(message.author, 'Message sent to {0.mention}'.format(target))
+            await target.send(msg)
+            await message.delete()
+            await message.author.send('Message sent to {0.mention}'.format(target))
         else:
-            await client.send_message(message.channel, 'Invalid Message, {0.mention}'.format(message.author))
+            await message.channel.send('Invalid Message, {0.mention}'.format(message.author))
 
 async def itemMessage(message):
     p = DictionaryReader()
     msg = p.itemReader(message.content[1::])
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
     
 async def sendWelcomeMessage(member):
     p = DictionaryReader()
     msg = p.commandReader('help')
-    await client.send_message(member, msg)
+    await member.send(msg)
     
 async def sendPinMessages(message):
-    pins = await client.pins_from(message.channel)
+    pins = await message.channel.pins()
     size = 10
     count = 0
     command = message.content.split(' ')
     try:
-        await client.delete_message(message)
+        await message.delete()
     except (HTTPException, Forbidden):
         print('Error deleting message, probably from whisper')
     if len(command) > 1:
@@ -172,8 +176,8 @@ async def sendPinMessages(message):
         if count >= size:
             return
         if msg.content:
-            await client.send_message(message.author, '``` Pin '+ str(count+1) + ' ```')
-            await client.send_message(message.author, msg.content)
+            await message.author.send('``` Pin '+ str(count+1) + ' ```')
+            await message.author.send(msg.content)
         count += 1
 
 async def generalMessage(message):
@@ -187,48 +191,73 @@ async def generalMessage(message):
     if msg != None:
         if command in p.whisperCommands():
             if command == 'pub' and roles > 1 and 'help' not in message.content:
-                await client.send_message(message.channel, msg)
+                await message.channel.send(msg)
             else:
-                await client.send_message(message.author, msg)
+                await message.author.send(msg)
                 try:
-                    await client.delete_message(message)
+                    await message.delete()
                 except (HTTPException, Forbidden):
                     print('Error deleting message, probably from whisper')
         else:
-            await client.send_message(message.channel, msg)
+            await message.channel.send(msg)
     else:
         msg = p.commandReader('invalid',message.channel.name)
-        await client.send_message(message.author, msg)        
+        await message.author.send(msg)        
         try:
-            await client.delete_message(message)
+            await message.delete()
         except (HTTPException, Forbidden):
             print('Error deleting message, probably from whisper')
 
 async def adminControl(message):
     p = DictionaryReader()
     roles = message.author.roles
-    canSend = False
+    canBan = False
     for role in roles:
-        canSend = canSend or (role.name in p.roles())
-    if not canSend:
-        print('{0.author.name} can\'t ban members!'.format(message))
+        canBan = canBan or (role.name in p.roles())
+    if not canBan:
+        print('{0.author.name} can\'t manage members!'.format(message))
+        await message.author.send('You can\'t manage members!')  
         return
     else:
+        # Bans - Format:  !ban 9999999999999
         if message.content.startswith(prefix+'ban'):
-            if not message.server.me.server_permissions.ban_members:
-                await client.send_message(message.author, 'The bot does not have permissions to ban members.')
+            if not message.guild.me.guild_permissions.ban_members:
+                await message.author.send('The bot does not have permissions to manage members.')
                 return
             id = message.content.split(' ')[1]
+            reason = ' '.join(message.content.split(' ')[2::])
             try:
-                await client.http.ban(id, message.server.id)
                 user = await client.get_user_info(id)
+                await message.guild.ban(user=user, reason=reason)
                 if user != None:
-                    await client.send_message(message.author, 'User '+user.name+' banned successfully')                            
+                    await message.author.send('User {0.mention} banned successfully'.format(user))
                 else:
-                    await client.send_message(message.author, 'Invalid user ID')                            
+                    await message.author.send('Invalid user ID')                            
             except discord.HTTPException:
                 pass
             finally:
-                await client.delete_message(message)
-    
+                await message.delete()
+        # Ban info - Format:  !info 9999999999999
+        if message.content.startswith(prefix+'info'):        
+            if not message.guild.me.guild_permissions.view_audit_log:
+                await message.author.send('The bot does not have permissions to view audit logs.')
+                return
+            id = message.content.split(' ')[1]
+            isUserBanned = False
+            
+            user = await client.get_user_info(id)
+            
+            await message.author.send( 'User {0.mention}\n```Bans```'.format(user) )
+            
+            async for entry in message.guild.audit_logs(action=discord.AuditLogAction.ban):                
+                if str(entry.target.id) == str(id):               
+                    await message.author.send('-> User {0.target}({0.target.id}) was **banned** by {0.user}({0.user.id}) on {0.created_at} (UTC)\n\tReason: {0.reason}\n'.format(entry))
+                    isUserBanned = True
+            
+            await message.author.send( '```Unbans```' )
+            async for entry in message.guild.audit_logs(action=discord.AuditLogAction.unban):
+                if entry.target.id == int(id):
+                    await message.author.send('-> User {0.target} was **unbanned** by {0.user}({0.user.id}) on {0.created_at} (UTC)'.format(entry))                    
+            if not isUserBanned:
+                await message.author.send('User was never banned.')
 client.run(Key().value())
