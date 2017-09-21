@@ -51,30 +51,30 @@ class DictionaryReader:
             return None
         fixed = self.fixEntry(entry)
         print(fixed)
-        if "pawn.discipline" in fixed and len(fixed.split(".")) >= 5:
-            fixed = fixed.split(".")[2:]
-            charname = fixed[0]
-            charrealm = "-".join(fixed[1:-1])
-            charzone = fixed[-1]
-            fixed = self.getcharstats(charname,charrealm,charzone)
-            fixed = self.getdiscstats(*fixed)
-            return fixed
-        if "cmd" in fixed and len(fixed.split(".")) >= 4:
-            if len(fixed.split(".")) > 4:
-                food = fixed[3]  
-            else:
-                food = None
-            fixed = fixed.split(".")[1:]
-            charname = fixed[0]
-            charrealm = "-".join(fixed[1:2])
-            charzone = fixed[2]
-            fixed = self.getShadowCharStats(charname,charrealm,charzone)
-            if fixed != None:
-                fixed = self.getCMDratioResponse(*fixed,food)
-            else:
-                fixed = self.armoryFetchError()
-            
-            return fixed
+        #if "pawn.discipline" in fixed and len(fixed.split(".")) >= 5:
+        #    fixed = fixed.split(".")[2:]
+        #    charname = fixed[0]
+        #    charrealm = "-".join(fixed[1:-1])
+        #    charzone = fixed[-1]
+        #    fixed = self.getcharstats(charname,charrealm,charzone)
+        #    fixed = self.getdiscstats(*fixed)
+        #    return fixed
+        #if "cmd" in fixed and len(fixed.split(".")) >= 4:
+        #    if len(fixed.split(".")) > 4:
+        #        food = fixed[3]  
+        #    else:
+        #        food = None
+        #    fixed = fixed.split(".")[1:]
+        #    charname = fixed[0]
+        #    charrealm = "-".join(fixed[1:2])
+        #    charzone = fixed[2]
+        #    fixed = self.getShadowCharStats(charname,charrealm,charzone)
+        #    if fixed != None:
+        #        fixed = self.getCMDratioResponse(*fixed,food)
+        #    else:
+        #        fixed = self.armoryFetchError()
+        #    
+        #    return fixed
         if fixed in self.dictionary:
             while fixed in self.dictionary:
                 fixed = self.dictionary[fixed]
@@ -132,21 +132,19 @@ class DictionaryReader:
     def getdiscstats(self,intellect,crit,haste,mastery,vers,blef=0,tauren=0,drape=0):
         hasterating = 375
         critrating = 400   
-        masteryrating = 266.66666
+        masteryrating = 250
         versrating = 475
         critpun = 1+(0,0.1)[drape]+(0,0.02)[tauren]
-        raidatone = 0.75
-        dungeonatone = 0.45
-        intellect = intellect + 1706
+        raidatone = 0.72        
+        intellect = intellect + 1706.25
         intweight = 1000/((intellect/100)/1.05)
         basecrit = 0.05+(0,0.01)[blef]
         critweight = 1000*((critpun)/critrating/(((((crit/critrating)/100+basecrit)*(critpun))+1)))
-        raidmasteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*raidatone)
-        dungeonmasteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*dungeonatone)
+        masteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.128)*raidatone)
+        #dungeonmasteryweight = 1000*(1/masteryrating/((1+(mastery/masteryrating)/100)+0.12)*dungeonatone)
         versweight = 1000*(1/versrating/(  1+(vers/versrating)/100))
-        hasteweight = max(critweight,raidmasteryweight,versweight)  * 1.1
+        hasteweight = max(critweight,masteryweight)  * 1.05
         leechweight = 1000/300*0.75
-        dungleech = 1000/300*0.75/2
         normint = str(round(intweight/intweight,2))
         normhaste = str(round(hasteweight/intweight,2))
         normcrit = str(round(critweight/intweight,2))
@@ -155,8 +153,7 @@ class DictionaryReader:
         normvers = str(round(versweight/intweight,2))
         normleech = str(round(leechweight/intweight,2))
         normdungleech = str(round(dungleech/intweight,2))
-        return '```( Pawn: v1: \"Disc Raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+raidnormmastery+', CritRating='+normcrit+', Leech='+normleech+')```\
-```( Pawn: v1: \"Disc Dungeon\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+dungeonnormmastery+', CritRating='+normcrit+', Leech='+normdungleech+')```'
+        return '```( Pawn: v1: \"Disc Raid\": Intellect=' + normint+', Versatility='+normvers+', HasteRating='+normhaste+', MasteryRating='+raidnormmastery+', CritRating='+normcrit+', Leech='+normleech+')```'
 
     def getCMDratioResponse(self,intellect,crit,haste,mastery,vers,extracrit=0,extrafood=0,food=None):
         if not food:
