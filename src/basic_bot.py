@@ -84,9 +84,9 @@ async def on_member_update(before, after):
 async def logAction(user, guild, action):
     r = DictionaryReader()
     if guild:
-        await client.get_channel(int(r.actionLogChannel())).send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.mention} ({0.id}) {2}'.format(user, guild, action))
+        await client.get_channel(int(r.actionLogChannel())).send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.name} {0.mention} ({0.id}) {2}'.format(user, guild, action))
     else:
-        await client.get_channel(int(r.actionLogChannel())).send('No Server - {0.name} ({0.id}) {1}'.format(user, action))
+        await client.get_channel(int(r.actionLogChannel())).send('No Server - {0.name} {0.mention} ({0.id}) {1}'.format(user, action))
     #print('error while writing {0} log'.format(action))
     
             
