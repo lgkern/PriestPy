@@ -13,6 +13,7 @@ import logging
 import time
 from discord import HTTPException
 from discord import utils
+from discord import DMChannel
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,7 +40,7 @@ async def on_message(message):
     if message.content.startswith(prefix):
         await messageHandler(message)
         
-    if message.channel.name != None and message.channel.name in r.logChannels():
+    if isinstance(message.channel, DMChannel) or message.channel.name in r.logChannels():
         logger.log(message)    
                  
 @client.event
@@ -187,7 +188,12 @@ async def generalMessage(message):
     except Exception:
         roles = 10
     command = message.content[1::].split(' ')[0].lower()
-    msg = p.commandReader(message.content[1::],message.channel.name)
+    msg = ''
+    if not isinstance(message.channel, DMChannel):
+        msg = p.commandReader(message.content[1::],message.channel.name)
+    else:
+        msg = p.commandReader(message.content[1::],'PM')
+        
     if msg != None:
         if command in p.whisperCommands():
             if command == 'pub' and roles > 1 and 'help' not in message.content:
@@ -244,6 +250,11 @@ async def adminControl(message):
                 return
             id = message.content.split(' ')[1]
             isUserBanned = False
+            
+            try:
+                await message.delete()
+            except (HTTPException, Forbidden):
+                print('Error deleting message, probably from whisper')
             
             user = await client.get_user_info(id)
             
