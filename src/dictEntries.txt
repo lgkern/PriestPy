@@ -185,7 +185,7 @@
 	"pawn.shadow.below": "```( Pawn: v1: \"H2P AS T20 below 13k haste\": Intellect=1, MasteryRating=1.13, HasteRating=1.8, CritRating=1.51, Versatility=1.13 )``` More info here: <https://howtopriest.com/viewtopic.php?f=120&t=10323>",
 	"pawn.shadow.above": "```( Pawn: v1: \"H2P AS T20 above 13k haste\": Intellect=1, MasteryRating=1.15, HasteRating=1.67, CritRating=1.55, Versatility=1.16 )``` More info here: <https://howtopriest.com/viewtopic.php?f=120&t=10323>",
 
-	"pawn.discipline": "To get stat weights for your character there is a custom command that will generate weights based on your current gear. Type ```!pawn disc charactername realm region```  For example ```!pawn disc joshqt draenor eu``` Make sure your character is logged out in your disc raiding gear before doing this. Single item upgrades wont change the values much, but redoing this every few items will keep your priority up to date. If you're having trouble post for help in the disc specific channel.",
+	"pawn.discipline": "statsdiscipline",
 	"pawn.discipline.raid": "pawn.discipline",
 	"pawn.discipline.dungeon": "pawn.discipline",
 	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. Check out this guide <http://bit.ly/HPriestRaidTldr> for gearing suggestions, and the spreadsheet at <http://bit.ly/HPriestSheet> if you want more detailed stat breakdowns.",
@@ -195,6 +195,7 @@
 
 	"stats.discipline": "Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
 	"stats.holy": "Mastery > Crit > Haste > Versatility",
+    "trinketsdiscipline":"trinkets.discipline",
 
 	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nAll Disc secondaries are very close in terms of value. This means that we have the freedom to take ilvl upgrades because Intellect is our most valuable stat. There are no stat break points which you must have to be able to perform effectively.\nThat being said there are a few things to be aware of:\n- Haste is a mostly about personal preference. Most people run within the range of 25-35% as it makes game play feel smoother, but disc still performs well with values both higher and lower.\n- Leech: For progress raiding leech is a very strong stat for all healers, especially for us disc-priests as it's one of the few effects that double-dip with both our healing and damage. Don't go crazy stacking leech items as it often can just add to more overhealing; also has far less value in heroic.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 	"trinkets.discipline": "**What trinkets do I wanna get as a Discipline Priest?**\nIn raids \"Velen's Future Sight\" is always our best possible choice since it combos perfectly with Evangelism. After that we generally view \"Tarnished Sentinel Medallion\" (Owl) and \"Darkmoon Deck: Promises\" as our best options. Crazy titanforges of something like a statstick, arcano or DGD can change this priority though, so keep that in mind.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
