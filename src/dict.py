@@ -25,6 +25,9 @@ class DictionaryReader:
     
     def roles(self):
         return self.dictionary["roles"]
+        
+    def donor(self):
+        return self.dictionary["donor"]
 
     def admins(self):
         return self.dictionary["authorized"]

@@ -14,6 +14,7 @@ import time
 from discord import HTTPException
 from discord import utils
 from discord import DMChannel
+from roleHandler import RoleHandler
 
 logging.basicConfig(level=logging.INFO)
 
@@ -114,6 +115,10 @@ async def messageHandler(message):
         
     elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
+        
+    elif message.content.startswith(prefix+'stream'):
+        await RoleHandler.toggleStream(client, message)
+        await message.delete()
         
     else:
         await generalMessage(message)
