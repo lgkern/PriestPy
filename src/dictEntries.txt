@@ -33,6 +33,7 @@
 	"fantasy": "http://i.imgur.com/EMSiUF3.jpg",
 	"sims": "stm",
 	"stm": "http://i.giphy.com/l2SpX1WV6tx8rT8Ws.gif",
+	"mechanics":"https://media.giphy.com/media/xUOxeYxhUCabIbJGQU/giphy.gif",
 	"retired": "http://i.imgur.com/r24wnyE.jpg",
 	"18stacks": "http://i.imgur.com/cZioXZF.jpg",
 	"racials": "racial",
