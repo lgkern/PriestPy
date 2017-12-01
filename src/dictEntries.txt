@@ -59,7 +59,6 @@
 	"magicsim": "http://i.imgur.com/MhfYrG6.jpg",
 	"725discipline": "http://i.imgur.com/xuhEiSK.png",
 	"degenerate": "http://i.imgur.com/1dpehik.png",
-	"renew": "http://i.imgur.com/xdCR2wb.png",
 	"lof": "http://i.imgur.com/uM2Bs1Z.png",
 	"ellipsis": "http://i.imgur.com/JPYbQT2.png",
 	"fawn": "http://i.imgur.com/qJ9eNYA.png",
