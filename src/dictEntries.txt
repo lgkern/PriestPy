@@ -82,7 +82,7 @@
 	"melgane": "https://i.imgur.com/6JaxQZP.png",
 	"hinnar": "https://i.imgur.com/OreQNzk.gifv",
 	"veiled2": "https://giphy.com/gifs/queen-elizabeth-aw9vw51zjTa8g",
-	"romaxton": "https://giphy.com/gifs/pug-toilet-animals-being-jerks-9muUXOtrd5gpG",
+	"romaxton": "https://i.imgur.com/TxjpY58.gif",
 	"thonkstar": "https://i.imgur.com/h2MJZ8D.gif",
 	"achievement": "https://i.imgur.com/YDPEisM.png",
 	"t20": "https://i.imgur.com/bds7k80.png",
