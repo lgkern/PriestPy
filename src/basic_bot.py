@@ -207,7 +207,12 @@ async def generalMessage(message):
         else:
             await message.channel.send(msg)
     else:
-        msg = p.commandReader('invalid',message.channel.name)
+        if not isinstance(message.channel, DMChannel):
+            msg = p.commandReader(message.content[1::],message.channel.name)
+        else:
+            msg = p.commandReader(message.content[1::],'PM')
+        print(message.content[1::])
+        print(msg)
         await message.author.send(msg)        
         try:
             await message.delete()
