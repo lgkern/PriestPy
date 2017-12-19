@@ -53,6 +53,9 @@ class DictionaryReader:
     def streamingRole(self):
         return str(self.dictionary["streamingRole"])
         
+    def currentlyStreamingRole(self):
+        return str(self.dictionary["currentlyStreamingRole"])
+        
     def readEntry(self, entry, channelName):
         self.loop = self.loop + 1
         if self.loop > 10:

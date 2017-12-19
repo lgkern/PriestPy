@@ -38,8 +38,7 @@ class RoleHandler:
     async def toggleUserState(client, before, after):
         p = DictionaryReader()
         
-        streamingRole = utils.find(lambda r: r.name == p.streamingRole(), before.guild.roles)
-       
+        streamingRole = utils.find(lambda r: r.name == p.streamingRole(), before.guild.roles)        
          
         # User doesn't have the streaming role, move along
         if streamingRole not in before.roles:
@@ -72,10 +71,13 @@ class RoleHandler:
     async def removeStream(client, member):
         p = DictionaryReader()
         channel = client.get_channel(int(p.streamingBroadcastChannel()))
+        currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), before.guild.roles)
                         
         if channel is None:
             print('Streaming Channel not found!')
             return
+            
+        await member.remove_roles(currentlyStreaming, reason='User stopped streaming')
         
         # This could be slow, but shouldn't, assuming there should be few messages in the channel
         messages = await channel.history(limit=None).flatten()
@@ -87,6 +89,7 @@ class RoleHandler:
     async def addStream(client, member):
         p = DictionaryReader()
         channel = client.get_channel(int(p.streamingBroadcastChannel()))
+        currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), before.guild.roles)
         
         await RoleHandler.removeStream(client, member)
                         
@@ -108,6 +111,17 @@ class RoleHandler:
         emb.set_footer(text='Created by PriestBot', icon_url=p.h2pIcon())
         emb.set_thumbnail(url=avatar)
         emb.set_author(name=member.name,icon_url=member.avatar_url)
+                
+        if currentlyStreaming not in member.roles:
+            await member.add_roles(currentlyStreaming, reason='User started streaming')            
+            await channel.send('{0.mention} is now Live on Twitch!'.format(member),embed=emb)
+            
+        else:
+            # This could be slow, but shouldn't, assuming there should be few messages in the channel
+            messages = await channel.history(limit=None).flatten()
         
-        await channel.send('{0.mention} is now Live on Twitch!'.format(member),embed=emb)
+            for message in messages:
+                if member in message.mentions:
+                    await message.edit(embed=emb)
+        
         

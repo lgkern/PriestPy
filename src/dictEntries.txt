@@ -7,6 +7,7 @@
 	"logchannels": "general shadow discipline holy ot-shadow ot-dank-memes-n-heckin-doggos spoilers-got-lore-ptr xmog gear-questions donors-only  promote-yourself pvp timeout",
 	"sentcommands": "fantasy sims power shame",
 	"streamingRole": "Streaming Partner",
+    "currentlyStreamingRole": "Currently Streaming",
     "streamingChannels":"379990067319668737",
     "h2pIcon":"https://pbs.twimg.com/profile_images/692173478775095297/Jev5t7cu_400x400.png",
 

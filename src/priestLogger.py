@@ -30,7 +30,13 @@ class PriestLogger:
     def log(self, message):
         self.logHandler.acquire()        
         channelName = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'
-        self.logger.info(channelName + ' - ' + message.author.name+'('+str(message.author.id)+') : (' + str(message.id) + ') '+ ''.join(filter(lambda x: x in self.printable, message.content)))
+        self.logger.info('{0} - {1.author.name}({1.author.id}) : ({1.id}) {1.content}'.format(channelName, message))        
+        self.logHandler.release()
+        
+    def logEdit(self, before, after):
+        self.logHandler.acquire()        
+        channelName = before.channel.name if isinstance(before.channel, TextChannel) else 'PM'        
+        self.logger.info('{0} - {1.author.name}({1.author.id}) : ({1.id}) edited from <{1.content}> to <{2.content}>'.format(channelName, before, after))
         self.logHandler.release()
       
     def createDb(self):

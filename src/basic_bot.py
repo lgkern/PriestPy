@@ -43,7 +43,11 @@ async def on_message(message):
         
     if isinstance(message.channel, DMChannel) or message.channel.name in r.logChannels():
         logger.log(message)    
-                 
+        
+@client.event
+async def on_message_edit(before, after):
+    logger.logEdit(before, after)    
+    
 @client.event
 async def on_member_join(member):
     await sendWelcomeMessage(member)
