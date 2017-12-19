@@ -1,5 +1,9 @@
 from dict import DictionaryReader
+from botkey import Key
 from discord import utils
+from discord import Embed
+from discord import Colour
+from twitchHandler import TwitchHandler
 
 class RoleHandler:
     
@@ -12,8 +16,6 @@ class RoleHandler:
         staff = utils.find(lambda r: r.name == p.roles(), message.author.roles)
         donor = utils.find(lambda r: r.name == p.donor(), message.author.roles)
         streamingRole = utils.find(lambda r: r.name == p.streamingRole(), message.author.guild.roles)
-        
-        
                 
         # Target doesn't have the Streaming Role
         if role is None:
@@ -27,8 +29,85 @@ class RoleHandler:
                 if donor is not None:
                     await message.author.add_roles(streamingRole, reason='Donor adding role to themselves')
         
-        #User already has the Streaming Role, so remove it
+        # User already has the Streaming Role, so remove it
         else:
             # If user has the Staff role or is the author
             if staff is not None or target == message.author:
-                await target.remove_roles(role, reason='Role removed by {0.name}'.format(message.author))               
+                await target.remove_roles(role, reason='Role removed by {0.name}'.format(message.author))
+
+    async def toggleUserState(client, before, after):
+        p = DictionaryReader()
+        
+        streamingRole = utils.find(lambda r: r.name == p.streamingRole(), before.guild.roles)
+       
+         
+        # User doesn't have the streaming role, move along
+        if streamingRole not in before.roles:
+            return
+        
+        # Left the server
+        if after is None:
+            print('left server')
+            await RoleHandler.removeStream(client, before)
+        # Role was removed        
+        elif streamingRole in before.roles and streamingRole not in after.roles:
+            print('role removed')
+            await RoleHandler.removeStream(client, before)
+        
+        # Checks if the Game state changed or if the user isn't streaming
+        # This or statement might be costly and subject to improvement
+        elif before.game != after.game or after.game is None or after.game.type != 1:
+            p = DictionaryReader()
+            if after.game is None or after.game.type != 1: 
+                print('stopped stream')
+                # Stopped Streaming                
+                await RoleHandler.removeStream(client, after)                
+                    
+            elif after.game.type == 1:
+                # Started Streaming
+                print('started stream')
+                await RoleHandler.addStream(client, after)
+        
+        
+    async def removeStream(client, member):
+        p = DictionaryReader()
+        channel = client.get_channel(int(p.streamingBroadcastChannel()))
+                        
+        if channel is None:
+            print('Streaming Channel not found!')
+            return
+        
+        # This could be slow, but shouldn't, assuming there should be few messages in the channel
+        messages = await channel.history(limit=None).flatten()
+        
+        for message in messages:
+            if member in message.mentions:
+                await message.delete()
+    
+    async def addStream(client, member):
+        p = DictionaryReader()
+        channel = client.get_channel(int(p.streamingBroadcastChannel()))
+        
+        await RoleHandler.removeStream(client, member)
+                        
+        if channel is None:
+            print('Streaming Channel not found!')
+            return
+        
+        if not await TwitchHandler.validateStream(member.game.url, Key().twitchApiKey()):
+            return
+        
+        title, description, avatar = await TwitchHandler.fetchStreamInfo(member.game.url, Key().twitchApiKey())
+        
+        emb = Embed()
+        emb.title = title
+        emb.type = 'rich'
+        emb.description=description
+        emb.url = member.game.url
+        emb.colour = Colour.purple()
+        emb.set_footer(text='Created by PriestBot', icon_url=p.h2pIcon())
+        emb.set_thumbnail(url=avatar)
+        emb.set_author(name=member.name,icon_url=member.avatar_url)
+        
+        await channel.send('{0.mention} is now Live on Twitch!'.format(member),embed=emb)
+        

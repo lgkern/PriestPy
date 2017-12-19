@@ -53,6 +53,7 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print('member left')
     await logAction(member, member.guild, 'left')
+    await RoleHandler.toggleUserState(client, member, None)
     
 @client.event
 async def on_member_ban(guild, user):
@@ -64,24 +65,7 @@ async def on_member_unban(member):
     
 @client.event
 async def on_member_update(before, after):
-    return
-    # Checks if the Game state changed
-    if before.game != after.game:
-        p = DictionaryReader()
-        if after.game is None: 
-            # Removes role if assigned
-            role = utils.find(lambda r: r.name == p.streamingRole(), after.roles)
-            if role is not None:
-                await after.remove_roles(after, role)
-                
-        else:
-            role = utils.find(lambda r: r.name == p.streamingRole(), after.guild.roles)
-            if role not in after.roles and after.game.type == 1:
-            # Adds the role if started streaming
-                await after.add_roles(after, role)
-
-
-
+    await RoleHandler.toggleUserState(client, before, after)
     
 async def logAction(user, guild, action):
     r = DictionaryReader()

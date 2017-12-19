@@ -41,6 +41,12 @@ class DictionaryReader:
     def actionLogChannel(self):
         return str(self.dictionary["actionLogChannel"])
         
+    def streamingBroadcastChannel(self):
+        return str(self.dictionary["streamingChannels"])
+        
+    def h2pIcon(self):
+        return str(self.dictionary["h2pIcon"])
+        
     def armoryFetchError(self):
         return str(self.dictionary["armoryFetchError"])
         
