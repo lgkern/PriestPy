@@ -71,7 +71,7 @@ class RoleHandler:
     async def removeStream(client, member):
         p = DictionaryReader()
         channel = client.get_channel(int(p.streamingBroadcastChannel()))
-        currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), before.guild.roles)
+        currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), member.guild.roles)
                         
         if channel is None:
             print('Streaming Channel not found!')
@@ -89,7 +89,7 @@ class RoleHandler:
     async def addStream(client, member):
         p = DictionaryReader()
         channel = client.get_channel(int(p.streamingBroadcastChannel()))
-        currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), before.guild.roles)
+        currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), member.guild.roles)
         
         await RoleHandler.removeStream(client, member)
                         
