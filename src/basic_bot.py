@@ -99,7 +99,7 @@ async def messageHandler(message):
         await sendPinMessages(message)
         
     elif message.content.startswith(prefix+'channel'):
-        await message.channel.send(string(message.channel.id))
+        await message.channel.send(str(message.channel.id))
         
     elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
@@ -116,7 +116,7 @@ async def maintenanceMessages(message):
         call(["git","pull"])
     p = DictionaryReader()
     if message.content.startswith(prefix+'fullupdate'): 
-        if string(message.author.id) not in p.admins():
+        if str(message.author.id) not in p.admins():
             await message.channel.send('You\'re not my dad, {0.mention}!'.format(message.author))
             return
         call(["git","pull"])
