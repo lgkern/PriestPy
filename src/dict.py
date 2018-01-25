@@ -43,6 +43,9 @@ class DictionaryReader:
         
     def streamingBroadcastChannel(self):
         return str(self.dictionary["streamingChannels"])
+
+    def perspectiveLogChannel(self):        
+        return str(self.dictionary["perspectiveLogChannel"])
         
     def h2pIcon(self):
         return str(self.dictionary["h2pIcon"])

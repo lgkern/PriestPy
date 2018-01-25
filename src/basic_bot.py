@@ -9,6 +9,7 @@ from botkey import Key
 from subprocess import call
 import sys
 from priestLogger import PriestLogger
+from perspectiveHandler import PerspectiveHandler
 import logging
 import time
 from discord import HTTPException
@@ -23,6 +24,8 @@ client = discord.Client()
 prefix = Key().prefix()
 
 logger = PriestLogger()
+
+toxicity = PerspectiveHandler()
 
 @client.event
 async def on_ready():
@@ -42,7 +45,8 @@ async def on_message(message):
         await messageHandler(message)
         
     if isinstance(message.channel, DMChannel) or message.channel.name in r.logChannels():
-        logger.log(message)    
+        logger.log(message)
+        await toxicity.measure(client, message)    
         
 @client.event
 async def on_message_edit(before, after):
