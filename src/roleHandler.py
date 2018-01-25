@@ -46,11 +46,11 @@ class RoleHandler:
         
         # Left the server
         if after is None:
-            print('left server')
+            #print('left server')
             await RoleHandler.removeStream(client, before)
         # Role was removed        
         elif streamingRole in before.roles and streamingRole not in after.roles:
-            print('role removed')
+            #print('role removed')
             await RoleHandler.removeStream(client, before)
         
         # Checks if the Game state changed or if the user isn't streaming
@@ -58,13 +58,13 @@ class RoleHandler:
         elif before.game != after.game or after.game is None or after.game.type != 1:
             p = DictionaryReader()
             if after.game is None or after.game.type != 1: 
-                print('stopped stream')
+                #print('stopped stream')
                 # Stopped Streaming                
                 await RoleHandler.removeStream(client, after)                
                     
             elif after.game.type == 1:
                 # Started Streaming
-                print('started stream')
+                #print('started stream')
                 await RoleHandler.addStream(client, after)
         
         

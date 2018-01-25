@@ -20,11 +20,11 @@ class PerspectiveHandler:
         
         body = self.buildRequest(message.content, self.buildAttributes(self.defaultAttributes))
 
-        print(json.dumps(body, indent=2))
+        #print(json.dumps(body, indent=2))
 
         response = service.comments().analyze(body=body).execute()
 
-        print(json.dumps(response, indent=2))
+        #print(json.dumps(response, indent=2))
 
         if response is not None:            
             score = response['attributeScores']['TOXICITY']['summaryScore']['value']
