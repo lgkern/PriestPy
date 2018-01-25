@@ -37,6 +37,9 @@ class DictionaryReader:
     
     def sentCommands(self):
         return self.dictionary["sentcommands"]
+
+    def perspectiveChannels(self):
+        return self.dictionary["perspectiveChannels"]
         
     def actionLogChannel(self):
         return str(self.dictionary["actionLogChannel"])
