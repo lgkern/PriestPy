@@ -91,6 +91,7 @@
 	"thonkstar": "https://i.imgur.com/h2MJZ8D.gif",
 	"achievement": "https://i.imgur.com/YDPEisM.png",
 	"t20": "https://i.imgur.com/bds7k80.png",
+	"mangaza":"https://i.imgur.com/PEmCawf.png",
 
 	"followers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/HowToPriest>\nLike <https://www.Facebook.com/HowToPriest>\nSubscribe: <https://www.YouTube.com/HowToPriest>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nDonate: <https://howtopriest.com/viewtopic.php?f=5&t=2714>",
@@ -162,7 +163,7 @@
 	"link.holy.hub": "link.healing.hub",
 	"link.discipline.hub": "link.healing.hub",
 	"link.holy.guide": "https://howtopriest.com/viewtopic.php?f=25&t=8666",
-	"link.discipline.guide": "https://howtopriest.com/viewtopic.php?f=107&t=10405",
+	"link.discipline.guide": "http://bit.ly/Disc_Healing_Guide",
 	"link.holy.trinkets": "https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
 	"link.disc.trinkets": "https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.guide.holy": "link.holy.guide",
@@ -202,7 +203,7 @@
 	"stats.holy": "Mastery > Crit > Haste > Versatility",
     "trinketsdiscipline":"trinkets.discipline",
 
-	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nAll Disc secondaries are very close in terms of value. This means that we have the freedom to take ilvl upgrades because Intellect is our most valuable stat. There are no stat break points which you must have to be able to perform effectively.\nThat being said there are a few things to be aware of:\n- Haste is a mostly about personal preference. Most people run within the range of 25-35% as it makes game play feel smoother, but disc still performs well with values both higher and lower.\n- Leech: For progress raiding leech is a very strong stat for all healers, especially for us disc-priests as it's one of the few effects that double-dip with both our healing and damage. Don't go crazy stacking leech items as it often can just add to more overhealing; also has far less value in heroic.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
+	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nAll Disc secondaries are very close in terms of value. This means that we have the freedom to take ilvl upgrades because higher stat budgets are most valuable. There are no stat break points which you must have to be able to perform effectively.\nThat being said there are a few things to be aware of:\n- Haste is a mostly about personal preference. Most people run within the range of 25-35% as it makes game play feel smoother, but disc still performs well with values both higher and lower.\n- Leech: For progress raiding leech is a very strong stat for all healers, especially for us disc-priests as it's one of the few effects that double-dip with both our healing and damage. Don't go crazy stacking leech items as it often can just add to more overhealing; also has far less value in heroic.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 	"trinkets.discipline": "**What trinkets do I wanna get as a Discipline Priest?**\nIn raids \"Velen's Future Sight\" is always our best possible choice since it combos perfectly with Evangelism. After that we generally view \"Tarnished Sentinel Medallion\" (Owl) and \"Darkmoon Deck: Promises\" as our best options. Crazy titanforges of something like a statstick, arcano or DGD can change this priority though, so keep that in mind.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 	"owldiscipline": "**Why is Tarnished Sentinel Medallion regarded as our best trinket and how do I use it?**\n- The Tarnished Sentinel Medallion, or Owl as it's more commonly referred to, is valued as high as it is because it's high damage on demand that heals through atonement, which is exactly what a discipline priest wants.\n- View it as a different version of Mindbender or Shadowfiend - something to use whenever you want to push extra healing through atonement.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 	"legendariesdiscipline": "**What are my best legendaries as a Discipline Priest?**\nIn Raids:\n- Top two for progression raiding are usually Velens and the talent ring with Prydaz as a solid third. For a ranking of all legendaries check the pins!\nIn Mythic+:\n- M+ is a little bit more nuanced, since the variety of situations which you'll come across is a lot broader. In situations where you don't need to heal too much you might want to push more damage, which makes Belt and Sephuz strong. But generally when doing hard keys where healing is intense the most popular picks are usually Prydaz and talent-ring. We do encourage you to test them all out though, they all fill their purpose!\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
