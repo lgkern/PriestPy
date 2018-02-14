@@ -218,7 +218,7 @@
 
 	"discord": "Invalid Argument\nUsage: !discord <class>",
 	"discord.invalid": "discord",
-	"discord.death.knight": " https://discord.gg/0ez1cFfUH3ingV96",
+	"discord.death.knight": "https://discord.gg/acherus",
 	"discord.demon.hunter": "https://discord.gg/asaPbum",
 	"discord.druid": "https://discord.gg/0dWu0WkuetF87H9H",
 	"discord.hunter": "https://discord.gg/yqer4BX",
