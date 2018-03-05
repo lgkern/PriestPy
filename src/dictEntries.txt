@@ -137,9 +137,9 @@
 	"link.donor": "http://howtopriest.com/viewtopic.php?f=5&t=2714",
 
 	"link.shadow.hub": "https://howtopriest.com/viewtopic.php?f=8&t=8687",
-	"link.shadow.relics": "http://i.imgur.com/0OzezhO.png \nMore info: <https://howtopriest.com/viewtopic.php?f=60&t=9485>",
-	"link.shadow.relicsmeme": "http://i.imgur.com/qz63bgx.png \nMore info: <https://howtopriest.com/viewtopic.php?f=60&t=9485>",
-	"link.shadow.trinkets": "Djriff's Sheet: <https://howtopriest.com/viewtopic.php?f=19&t=8896>\nSimulation Comparison: <https://howtopriest.com/viewtopic.php?f=60&t=9567>",
+	"link.shadow.relics": "https://i.imgur.com/skTgCBw.png \nMore info: <https://howtopriest.com/viewtopic.php?f=120&t=10588>",
+	"link.shadow.relicsmeme": "https://i.imgur.com/skTgCBw.png \nMore info: <https://howtopriest.com/viewtopic.php?f=120&t=10588>",
+	"link.shadow.trinkets": "Djriff's Sheet: <https://howtopriest.com/viewtopic.php?f=19&t=8896>\nSimulation Comparison: https://howtopriest.com/viewtopic.php?f=120&t=9567",
 	"link.shadow.bis": "https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
 	"link.shadow.guide": "http://howtopriest.com/viewtopic.php?f=19&t=8402",
 	"link.guide.shadow": "link.shadow.guide",
@@ -179,8 +179,6 @@
 	"holy.relics": "link.holy.relics",
 
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
-	"response.as": "The haste that San'layn takes to reach the same DPS levels as Auspicious Spirits, however, is pretty high (above 15k haste). This haste isn't reasonable to be attained, especially early in the tier. Although, the overall difference between them is pretty negligible, so running either is fine.",
-	"response.sl": "response.as",
 	"response.owl": "The **optimal** time to use Tarnished Sentinel Medallion ( :owl: ) is 14 seconds before Voidform ends. However, by doing so you may risk losing a use at the end, which makes this optimization risky.",
 	"response.voit": "**When should you use VoiT? Should you use it right away or delay it to use it before Mindbender?**\n\n\tThere are pros and cons to both usages, and though in some circumstances using VoiT later in VF to delay Mindbender usage might be an increase in DPS, it is both incredibly risky and difficult on some fights. There are many other circumstances where using it early would be better anyway, so you won't lose VoiT casts. \n\tNever under any circumstance intentionally hold VoiT until after mindbender has finished, nor attempt to use two VoiTs in the same Voidform without S2M. If you use 2 VoiTs in the same VF, VoiT will be out of sync and you will pay in your next 2 Voidform cycles to fix that.",
 
@@ -195,7 +193,7 @@
 	"pawn.discipline.dungeon": "pawn.discipline",
 	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. Check out this guide <http://bit.ly/HPriestRaidTldr> for gearing suggestions, and the spreadsheet at <http://bit.ly/HPriestSheet> if you want more detailed stat breakdowns.",
 
-	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery > Intellect. More info here: https://howtopriest.com/viewtopic.php?f=120&t=10323",
+	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery > Intellect. More info here: https://howtopriest.com/viewtopic.php?f=120&t=10598",
 	"stats.shadow.short": "stats.shadow",
 
 	"stats.discipline": "Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
