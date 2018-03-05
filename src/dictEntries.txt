@@ -188,9 +188,9 @@
 	"trinket.shadow": "link.shadow.trinkets",
 	"shadow.trinkets": "link.shadow.trinkets",
 
-	"pawn.shadow": "pawn.shadow.below",
-	"pawn.shadow.below": "```( Pawn: v1: \"H2P AS T20 below 13k haste\": Intellect=1, MasteryRating=1.13, HasteRating=1.8, CritRating=1.51, Versatility=1.13 )``` More info here: <https://howtopriest.com/viewtopic.php?f=120&t=10323>",
-	"pawn.shadow.above": "```( Pawn: v1: \"H2P AS T20 above 13k haste\": Intellect=1, MasteryRating=1.15, HasteRating=1.67, CritRating=1.55, Versatility=1.16 )``` More info here: <https://howtopriest.com/viewtopic.php?f=120&t=10323>",
+	"pawn.shadow": "pawn.shadow.above",
+	"pawn.shadow.below": "```( Pawn: v1: \"H2P T21 low haste\": Intellect=1, MasteryRating=1.5, HasteRating=1.8, CritRating=1.7, Versatility=1.35 )``` More info here: <https://howtopriest.com/viewtopic.php?f=120&t=10598>",
+	"pawn.shadow.above": "```( Pawn: v1: \"H2P AS T21 16k haste\": Intellect=1, MasteryRating=1.5, HasteRating=1.4, CritRating=1.7, Versatility=1.4 )``` More info here: <https://howtopriest.com/viewtopic.php?f=120&t=10598>",
 
 	"pawn.discipline": "statsdiscipline",
 	"pawn.discipline.raid": "pawn.discipline",
