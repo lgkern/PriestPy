@@ -32,7 +32,7 @@ class PerspectiveHandler:
 
             source = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'        
 
-            if float(score) > 0.65:
+            if float(score) > 0.85:
                 await client.get_channel(int(p.perspectiveLogChannel())).send('Toxic Message Warning - {0:.2g}% Toxicity - on {2} from {1.author}({1.author.id})```{1.content}```'.format(score * 100.0, message, source))
 
     # Creates a JSON with all attributes requested
@@ -47,3 +47,10 @@ class PerspectiveHandler:
     def buildRequest(self, message, attributes):
 
         return {'comment': { 'text': message }, 'requestedAttributes': {'TOXICITY': {}} }
+
+    async def addReactions(self, dictionary, message):
+        emojiList = dictionary.perspectiveReactions()
+
+        for emoji in emojiList:
+            print(emoji)
+            await message.add_reaction(emoji)

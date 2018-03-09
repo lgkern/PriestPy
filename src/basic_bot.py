@@ -37,6 +37,10 @@ async def on_ready():
 @client.event
 async def on_message(message):
     r = DictionaryReader()
+
+    if message.channel.id == int(r.perspectiveLogChannel()):
+        await toxicity.addReactions(r, message)
+
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return

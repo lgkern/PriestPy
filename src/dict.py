@@ -49,6 +49,9 @@ class DictionaryReader:
 
     def perspectiveLogChannel(self):        
         return str(self.dictionary["perspectiveLogChannel"])
+
+    def perspectiveReactions(self):
+        return self.dictionary["perspectiveReactions"]
         
     def h2pIcon(self):
         return str(self.dictionary["h2pIcon"])
