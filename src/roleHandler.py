@@ -55,14 +55,14 @@ class RoleHandler:
         
         # Checks if the Game state changed or if the user isn't streaming
         # This or statement might be costly and subject to improvement
-        elif before.game != after.game or after.game is None or after.game.type != 1:
+        elif before.activity.id != after.activity.id or after.activity is None or after.activity.type != discord.ActivityType.streaming:
             p = DictionaryReader()
-            if after.game is None or after.game.type != 1: 
+            if after.activity is None or after.activity.type != discord.ActivityType.streaming:
                 #print('stopped stream')
                 # Stopped Streaming                
                 await RoleHandler.removeStream(client, after)                
                     
-            elif after.game.type == 1:
+            elif after.activity.type == discord.ActivityType.streaming:
                 # Started Streaming
                 #print('started stream')
                 await RoleHandler.addStream(client, after)
@@ -97,16 +97,16 @@ class RoleHandler:
             print('Streaming Channel not found!')
             return
         
-        if not await TwitchHandler.validateStream(member.game.url, Key().twitchApiKey()):
+        if not await TwitchHandler.validateStream(member.activity.url, Key().twitchApiKey()):
             return
         
-        title, description, avatar = await TwitchHandler.fetchStreamInfo(member.game.url, Key().twitchApiKey())
+        title, description, avatar = await TwitchHandler.fetchStreamInfo(member.activity.url, Key().twitchApiKey())
         
         emb = Embed()
         emb.title = title
         emb.type = 'rich'
         emb.description=description
-        emb.url = member.game.url
+        emb.url = member.activity.url
         emb.colour = Colour.purple()
         emb.set_footer(text='Created by PriestBot', icon_url=p.h2pIcon())
         emb.set_thumbnail(url=avatar)
