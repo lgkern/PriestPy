@@ -52,5 +52,5 @@ class PerspectiveHandler:
         emojiList = dictionary.perspectiveReactions()
 
         for emoji in emojiList:
-            print(emoji)
+            #print(emoji)
             await message.add_reaction(emoji)

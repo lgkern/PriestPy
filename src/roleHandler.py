@@ -55,7 +55,7 @@ class RoleHandler:
         
         # Checks if the Game state changed or if the user isn't streaming
         # This or statement might be costly and subject to improvement
-        elif before.activity.id != after.activity.id or after.activity is None or after.activity.type != discord.ActivityType.streaming:
+        elif before.activity != after.activity or after.activity is None or after.activity.type != discord.ActivityType.streaming:
             p = DictionaryReader()
             if after.activity is None or after.activity.type != discord.ActivityType.streaming:
                 #print('stopped stream')
