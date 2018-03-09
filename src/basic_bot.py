@@ -61,6 +61,17 @@ async def on_member_join(member):
     await sendWelcomeMessage(member)
     await logAction(member, member.guild, 'joined')
 
+@client.event
+async def on_reaction_add(reaction, user):
+    if reaction.message.author == client.user:
+        return
+
+    r = DictionaryReader()
+
+    #Only for reactions inside the report channel
+    if reaction.message.channel.id == int(r.perspectiveLogChannel()):
+        await toxicity.feedback(reaction, user, r)
+
 @client.event   
 async def on_member_remove(member):
     print('member left')
