@@ -10,7 +10,7 @@
 	"streamingRole": "Streaming Partner",
     "currentlyStreamingRole": "Currently Streaming",
     "streamingChannels":"379990067319668737",
-    "perspectiveLogChannel":"405834894808186900",
+    "perspectiveLogChannel":"405890162015469568",
     "perspectiveLogChannelH2P":"405890162015469568",
     "perspectiveReactions":["1\u20e3","2\u20e3","3\u20e3","4\u20e3","5\u20e3","6\u20e3","7\u20e3","8\u20e3","9\u20e3","0\u20e3"],
     "h2pIcon":"https://pbs.twimg.com/profile_images/692173478775095297/Jev5t7cu_400x400.png",
