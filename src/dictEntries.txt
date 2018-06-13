@@ -95,6 +95,7 @@
 	"achievement": "https://i.imgur.com/YDPEisM.png",
 	"t20": "https://i.imgur.com/bds7k80.png",
 	"mangaza":"https://i.imgur.com/PEmCawf.png",
+	"cynth":"<@155483156546453505>\nhttps://i.imgur.com/0iHqiBE.png",
 
 	"followers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/HowToPriest>\nLike <https://www.Facebook.com/HowToPriest>\nSubscribe: <https://www.YouTube.com/HowToPriest>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nDonate: <https://howtopriest.com/viewtopic.php?f=5&t=2714>",
