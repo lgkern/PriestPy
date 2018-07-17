@@ -85,6 +85,7 @@
 	"normative": "http://i.imgur.com/BweybOa.png",
 	"kelsey": "http://i.imgur.com/Z6NRJNR.png",
 	"hazzal": "Who?",
+	"kcr": "https://cdn.discordapp.com/attachments/343442333695475712/468362312785592352/unknown.png",
 	"snipe": "http://i.imgur.com/cPDAfzk.png",
 	"jah": "https://i.imgur.com/Lozvv97.png",
 	"melgane": "https://i.imgur.com/6JaxQZP.png",
