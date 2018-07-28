@@ -54,8 +54,8 @@ class PerspectiveHandler:
         for emoji in emojiList:
             await message.add_reaction(emoji)
 
-    async def feedback(self, reaction, user, dictionary):
+    async def feedback(self, emoji, user_id, dictionary):
         return
-        # if reaction.emoji in dictionary.perspectiveReactions():
+        # if emoji.name in dictionary.perspectiveReactions():
             # Find out the ranking based on the emoji 
             # Report the score

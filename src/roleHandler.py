@@ -8,6 +8,49 @@ from twitchHandler import TwitchHandler
 
 class RoleHandler:
 
+    async def newsSubscriptionAdd(client, emoji, user_id, guild_id):
+
+        if not emoji.is_custom_emoji():
+            return
+
+        targetRole = '{0}News'.format(emoji.name.capitalize())        
+
+        print(targetRole)
+        guild = client.get_guild(guild_id)
+        role = utils.find(lambda r: r.name == targetRole, guild.roles)
+
+        if not role:
+            return
+
+        member = guild.get_member(user_id)        
+        p = DictionaryReader()
+
+        if role not in member.roles:
+            await member.add_roles(role, reason='Subscribed to {0}'.format(targetRole))
+            await member.send(p.readEntry('newssubscriptionadd', '').format(targetRole))
+
+    async def newsSubscriptionRemove(client, emoji, user_id, guild_id):
+
+
+        if not emoji.is_custom_emoji():
+            return
+
+        targetRole = '{0}News'.format(emoji.name.capitalize())        
+
+        print(targetRole)
+        guild = client.get_guild(guild_id)
+        role = utils.find(lambda r: r.name == targetRole, guild.roles)
+
+        if not role:
+            return
+
+        member = guild.get_member(user_id) 
+        p = DictionaryReader()         
+
+        if role in member.roles:
+            await member.remove_roles(role, reason='Unsubscribed to {0}'.format(targetRole))
+            await member.send(p.readEntry('newssubscriptionremove', '').format(targetRole))
+
     async def newsSubscription(client, message):
         p = DictionaryReader()
 

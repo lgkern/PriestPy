@@ -38,7 +38,7 @@ async def on_ready():
 async def on_message(message):
     r = DictionaryReader()
 
-    if message.channel.id == int(r.perspectiveLogChannel()):
+    if message.channel.id == int(r.perspectiveLogChannelH2P()):
         await toxicity.addReactions(r, message)
 
     # we do not want the bot to reply to itself
@@ -62,15 +62,28 @@ async def on_member_join(member):
     await logAction(member, member.guild, 'joined')
 
 @client.event
-async def on_reaction_add(reaction, user):
-    if reaction.message.author == client.user:
+async def on_raw_reaction_add(payload):
+
+    if payload.user_id == client.user.id:
         return
 
     r = DictionaryReader()
 
+    print(r.readEntry('subscriptionchannel',''))
+    print(payload.emoji.name)
     #Only for reactions inside the report channel
-    if reaction.message.channel.id == int(r.perspectiveLogChannel()):
-        await toxicity.feedback(reaction, user, r)
+    if payload.channel_id == int(r.perspectiveLogChannel()):
+        await toxicity.feedback(payload.emoji, payload.user_id, r)
+
+    elif payload.channel_id == int(r.readEntry('subscriptionchannel','')):
+        await RoleHandler.newsSubscriptionAdd(client, payload.emoji, payload.user_id, payload.guild_id)
+
+@client.event
+async def on_raw_reaction_remove(payload):
+    r = DictionaryReader()
+
+    if payload.channel_id == int(r.readEntry('subscriptionchannel','')):
+        await RoleHandler.newsSubscriptionRemove(client, payload.emoji, payload.user_id, payload.guild_id)
 
 @client.event   
 async def on_member_remove(member):
