@@ -3,12 +3,41 @@ from botkey import Key
 from discord import utils
 from discord import Embed
 from discord import Colour
+from discord import ActivityType
 from twitchHandler import TwitchHandler
 
 class RoleHandler:
+
+    async def newsSubscription(client, message):
+        p = DictionaryReader()
+
+        if not message.guild:
+            return
+
+        targetRole = '{0}News'.format(message.content[5::].capitalize())
+
+        print(targetRole)
+
+        role = utils.find(lambda r: r.name == targetRole, message.author.guild.roles)
+
+        # Role Desired doesn't exist
+        if not role:
+            await message.author.send('Invalid subscription name. Valid subscriptions are:\n{0}'.format(p.readEntry('validsubscriptions','')))            
+        else:
+            # Doesn't have the role already
+            if role not in message.author.roles:
+                await message.author.add_roles(role, reason='Subscribed to {0}'.format(targetRole))
+                await message.author.send(p.readEntry('newssubscriptionadd', '').format(targetRole))
+
+            # Already has the role, unsubscribing
+            else:  
+                await message.author.remove_roles(role, reason='Unsubscribed to {0}'.format(targetRole))
+                await message.author.send(p.readEntry('newssubscriptionremove', '').format(targetRole))
     
     async def toggleStream(client, message):
         p = DictionaryReader()
+
+        print(message.content)
         
         target = message.mentions[0] if message.mentions else message.author
         
@@ -55,14 +84,14 @@ class RoleHandler:
         
         # Checks if the Game state changed or if the user isn't streaming
         # This or statement might be costly and subject to improvement
-        elif before.activity != after.activity or after.activity is None or after.activity.type != discord.ActivityType.streaming:
+        elif before.activity != after.activity or after.activity is None or after.activity.type != ActivityType.streaming:
             p = DictionaryReader()
-            if after.activity is None or after.activity.type != discord.ActivityType.streaming:
+            if after.activity is None or after.activity.type != ActivityType.streaming:
                 #print('stopped stream')
                 # Stopped Streaming                
                 await RoleHandler.removeStream(client, after)                
                     
-            elif after.activity.type == discord.ActivityType.streaming:
+            elif after.activity.type == ActivityType.streaming:
                 # Started Streaming
                 #print('started stream')
                 await RoleHandler.addStream(client, after)

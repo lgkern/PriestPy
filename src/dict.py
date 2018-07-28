@@ -50,6 +50,12 @@ class DictionaryReader:
     def perspectiveLogChannel(self):        
         return str(self.dictionary["perspectiveLogChannel"])
 
+    def perspectiveLogChannelH2P(self):
+        return str(self.dictionary["perspectiveLogChannelH2P"])
+
+    def logReportChannel(self):
+        return int(self.dictionary["logReportChannel"])
+
     def perspectiveReactions(self):
         return self.dictionary["perspectiveReactions"]
         

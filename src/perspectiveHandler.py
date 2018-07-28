@@ -32,7 +32,7 @@ class PerspectiveHandler:
 
             source = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'        
 
-            if float(score) > 0.85:
+            if float(score) > 0.90:
                 await client.get_channel(int(p.perspectiveLogChannelH2P())).send('Toxic Message Warning - {0:.2g}% Toxicity - on {2} from {1.author}({1.author.id})```{1.content}```'.format(score * 100.0, message, source))
 
     # Creates a JSON with all attributes requested

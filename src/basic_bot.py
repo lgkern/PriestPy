@@ -100,10 +100,12 @@ async def logAction(user, guild, action):
     
             
 async def messageHandler(message):
+    p = DictionaryReader()
+
     if message.guild:
-        await client.get_channel(220534135947526154).send('{0.guild.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
+        await client.get_channel(p.logReportChannel()).send('{0.guild.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
     else:
-        await client.get_channel(220534135947526154).send('PM - PM - {0.author} invoked {0.content}'.format(message))
+        await client.get_channel(p.logReportChannel()).send('PM - PM - {0.author} invoked {0.content}'.format(message))
     
     if message.content.startswith(prefix+'fullupdate') or message.content.startswith(prefix+'update') or message.content.startswith(prefix+'channel'):
         await maintenanceMessages(message)
@@ -116,14 +118,16 @@ async def messageHandler(message):
     
     elif message.content.startswith(prefix+'pin') or message.content.startswith(prefix+'pins'):
         await sendPinMessages(message)
-        
-    elif message.content.startswith(prefix+'channel'):
-        await message.channel.send(str(message.channel.id))
+
+    elif message.content.startswith(prefix+'sub'):
+        await RoleHandler.newsSubscription(client, message)
+        await message.delete()
         
     elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
         
     elif message.content.startswith(prefix+'stream'):
+        print('StreamCommand')
         await RoleHandler.toggleStream(client, message)
         await message.delete()
         
@@ -141,6 +145,8 @@ async def maintenanceMessages(message):
         call(["git","pull"])
         call(["start_bot.sh"])
         sys.exit()
+    elif message.content.startswith(prefix+'channel'):
+        await message.author.send(str(message.channel.id))
 
 async def forwardMessage(message):
     p = DictionaryReader()
