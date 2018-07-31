@@ -10,7 +10,7 @@
 	"sentcommands": "fantasy sims power shame",
 	"streamingRole": "Streaming Partner",
     "currentlyStreamingRole": "Currently Streaming",
-    "streamingChannels":"379990067319668737",
+    "streamingChannels":"462423373096419328",
     "perspectiveLogChannel":"405834894808186900",
     "perspectiveLogChannelH2P":"405890162015469568",
     "perspectiveReactions":["1\u20e3","2\u20e3","3\u20e3","4\u20e3","5\u20e3","6\u20e3","7\u20e3","8\u20e3","9\u20e3","0\u20e3"],
