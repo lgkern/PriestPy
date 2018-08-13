@@ -143,6 +143,7 @@
 	"link.hub.discipline": "link.discipline.hub",
 	
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
+	"response.leveling": "For shadow priests we suggest using Chest/Sephuz for leveling to 120.",
 	
 	"trinkets.shadow": "link.shadow.trinkets",
 	"trinket.shadow": "link.shadow.trinkets",
