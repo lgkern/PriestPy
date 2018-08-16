@@ -101,6 +101,7 @@
 	"t20": "https://i.imgur.com/bds7k80.png",
 	"mangaza":"https://i.imgur.com/PEmCawf.png",
 	"cynth":"https://i.imgur.com/0iHqiBE.png",
+	"yikes":"https://cdn.discordapp.com/attachments/478009758201413637/479789327141044224/image.jpg",
 
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 
