@@ -103,6 +103,7 @@
 	"cynth":"https://i.imgur.com/0iHqiBE.png",
 	"yikes":"https://cdn.discordapp.com/attachments/478009758201413637/479789327141044224/image.jpg",
 	"draug":"https://media.discordapp.net/attachments/426796520612954113/479795598539620352/Draugarth_Bot.png",
+	"haste":"https://g.redditmedia.com/x8KQ3kYZZSvMULi4q51pDp8eAlTnRKP2vV37xoarguw.gif?fm=mp4&mp4-fragmented=false&s=0f53b9b9dfcb9d007c3523be28b25327",
 
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 
