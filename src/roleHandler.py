@@ -172,7 +172,7 @@ class RoleHandler:
         if not await TwitchHandler.validateStream(member.activity.url, Key().twitchApiKey()):
             return
         
-        title, description, avatar = await TwitchHandler.fetchStreamInfo(member.activity.url, Key().twitchApiKey())
+        title, description, avatar, views, followers = await TwitchHandler.fetchStreamInfo(member.activity.url, Key().twitchApiKey())
         
         emb = Embed()
         emb.title = title
@@ -183,6 +183,8 @@ class RoleHandler:
         emb.set_footer(text='Created by PriestBot', icon_url=p.h2pIcon())
         emb.set_thumbnail(url=avatar)
         emb.set_author(name=member.name,icon_url=member.avatar_url)
+        emb.add_field(name='Views', value=views)
+        emb.add_field(name='Followers', value=followers)
                 
         if currentlyStreaming not in member.roles:
             await member.add_roles(currentlyStreaming, reason='User started streaming')            

@@ -14,7 +14,7 @@
     "perspectiveLogChannel":"405834894808186900",
     "perspectiveLogChannelH2P":"405890162015469568",
     "perspectiveReactions":["1\u20e3","2\u20e3","3\u20e3","4\u20e3","5\u20e3","6\u20e3","7\u20e3","8\u20e3","9\u20e3","0\u20e3"],
-    "h2pIcon":"https://pbs.twimg.com/profile_images/692173478775095297/Jev5t7cu_400x400.png",
+    "h2pIcon":"https://www.wowhead.com/uploads/screenshots/normal/773740.jpg",
     "validsubscriptions":"``!sub holy``\n``!sub discipline``\n``!sub shadow``",
     "newssubscriptionadd":"You've subscribed to {0}",
     "newssubscriptionremove":"You've canceled the subscription to {0}",
@@ -101,10 +101,10 @@
 	"t20": "https://i.imgur.com/bds7k80.png",
 	"mangaza":"https://i.imgur.com/PEmCawf.png",
 	"cynth":"https://i.imgur.com/0iHqiBE.png",
-	"yikes":"https://cdn.discordapp.com/attachments/478009758201413637/479789327141044224/image.jpg",
-	"draug":"https://media.discordapp.net/attachments/426796520612954113/479795598539620352/Draugarth_Bot.png",
-	"haste":"https://g.redditmedia.com/x8KQ3kYZZSvMULi4q51pDp8eAlTnRKP2vV37xoarguw.gif?fm=mp4&mp4-fragmented=false&s=0f53b9b9dfcb9d007c3523be28b25327",
+	"60scycle":"https://i.imgur.com/DJ1XBbV.png",
+	"whispers":"https://i.imgur.com/DJ1XBbV.png",
 
+	"legionfollowers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 
 	"bis.shadow": "https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
@@ -123,6 +123,10 @@
 	"link.shadow.faq": "https://warcraftpriests.com/shadow/",
 	"link.shadow.logs": "For help looking at logs or improving DPS check out this post: https://howtopriest.com/viewtopic.php?f=19&t=9813&p=78277",
 
+	"relics.shadow": "link.shadow.relics",
+	"shadow.relics": "link.shadow.relics",
+	"relicsmeme.shadow": "link.shadow.relicsmeme",
+	"shadow.relicsmeme": "link.shadow.relicsmeme",
 	"shadow.faq": "link.shadow.faq",
 	"faq.shadow": "link.shadow.faq",
 	"shadow.logs": "link.shadow.logs",
@@ -144,8 +148,9 @@
 	"link.hub.discipline": "link.discipline.hub",
 	
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
-	"response.leveling": "For shadow priests we suggest using Chest/Sephuz for leveling in Battle for Azeroth.",
-	
+	"response.owl": "The **optimal** time to use Tarnished Sentinel Medallion ( :owl: ) is 14 seconds before Voidform ends. However, by doing so you may risk losing a use at the end, which makes this optimization risky.",
+	"response.voit": "**When should you use VoiT? Should you use it right away or delay it to use it before Mindbender?**\n\n\tThere are pros and cons to both usages, and though in some circumstances using VoiT later in VF to delay Mindbender usage might be an increase in DPS, it is both incredibly risky and difficult on some fights. There are many other circumstances where using it early would be better anyway, so you won't lose VoiT casts. \n\tNever under any circumstance intentionally hold VoiT until after mindbender has finished, nor attempt to use two VoiTs in the same Voidform without S2M. If you use 2 VoiTs in the same VF, VoiT will be out of sync and you will pay in your next 2 Voidform cycles to fix that.",
+
 	"trinkets.shadow": "link.shadow.trinkets",
 	"trinket.shadow": "link.shadow.trinkets",
 	"shadow.trinkets": "link.shadow.trinkets",
@@ -157,7 +162,7 @@
 	"pawn.discipline.dungeon": "pawn.discipline",
 	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. Check out this guide <http://bit.ly/HPriestRaidTldr> for gearing suggestions, and the spreadsheet at <http://bit.ly/HPriestSheet> if you want more detailed stat breakdowns.",
 
-	"stats.shadow": "Int > Haste/Critical Strike > Versatility > Mastery. More info here: <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
+	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery. More info here: <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
 	"stats.shadow.short": "stats.shadow",
 
 	"stats.discipline": "Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
@@ -166,12 +171,15 @@
 
 	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nAll Disc secondaries are very close in terms of value. This means that we have the freedom to take ilvl upgrades because higher stat budgets are most valuable. There are no stat break points which you must have to be able to perform effectively.\nThat being said there are a few things to be aware of:\n- Haste is a mostly about personal preference. Most people run within the range of 25-35% as it makes game play feel smoother, but disc still performs well with values both higher and lower.\n- Leech: For progress raiding leech is a very strong stat for all healers, especially for us disc-priests as it's one of the few effects that double-dip with both our healing and damage. Don't go crazy stacking leech items as it often can just add to more overhealing; also has far less value in heroic.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 	"trinkets.discipline": "**What trinkets do I wanna get as a Discipline Priest?**\nIn raids \"Velen's Future Sight\" is always our best possible choice since it combos perfectly with Evangelism. After that we generally view \"Tarnished Sentinel Medallion\" (Owl) and \"Darkmoon Deck: Promises\" as our best options. Crazy titanforges of something like a statstick, arcano or DGD can change this priority though, so keep that in mind.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
+	"owldiscipline": "**Why is Tarnished Sentinel Medallion regarded as our best trinket and how do I use it?**\n- The Tarnished Sentinel Medallion, or Owl as it's more commonly referred to, is valued as high as it is because it's high damage on demand that heals through atonement, which is exactly what a discipline priest wants.\n- View it as a different version of Mindbender or Shadowfiend - something to use whenever you want to push extra healing through atonement.\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
+	"legendariesdiscipline": "**What are my best legendaries as a Discipline Priest?**\nIn Raids:\n- Top two for progression raiding are usually Velens and the talent ring with Prydaz as a solid third. For a ranking of all legendaries check the pins!\nIn Mythic+:\n- M+ is a little bit more nuanced, since the variety of situations which you'll come across is a lot broader. In situations where you don't need to heal too much you might want to push more damage, which makes Belt and Sephuz strong. But generally when doing hard keys where healing is intense the most popular picks are usually Prydaz and talent-ring. We do encourage you to test them all out though, they all fill their purpose!\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 	"lw": "**Why does my Light's Wrath sometimes hits for a ton of damage?**\n<http://www.wowhead.com/spell=223166/overloaded-with-light>\nIt's a buff-effect that'll randomly proc when casting spells which makes your next Light's Wrath hit for 500% extra damage.\nIt does not proc when doing \"relevant\" content like raids, M+ or arenas. It will only proc in the world, dungeons below M+ or normal bgs (reduced to 200%).\n\nFor more Disc Answers: <https://goo.gl/UZMjag>",
 
-	"wa.shadow": "https://wago.io/HkQsadDaf",
+	"wa.shadow": "https://howtopriest.com/viewtopic.php?f=104&t=9438",
 	"wa.holy": "PoM: <http://bit.ly/HPriestPoMWA>\nCake WA: <https://wago.io/VJrWeZmvz>\nAspartaami's HPriest Procs: <http://bit.ly/HPriestWAProcs>\nOthers: <http://bit.ly/HPriestHub>",
 	"wa.discipline": "WIP",
-	"wa.shadow.publik": "https://wago.io/HkQsadDaf",
+	"wa.shadow.twintop": "http://howtopriest.com/viewtopic.php?f=104&t=8339",
+	"wa.shadow.publik": "https://howtopriest.com/viewtopic.php?f=104&t=9400",
 
 	"discord": "Invalid Argument\nUsage: !discord <class>",
 	"discord.invalid": "discord",
