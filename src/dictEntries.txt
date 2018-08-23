@@ -157,7 +157,9 @@
 
 	"pawn.shadow": "Check more info at <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
 
-	"pawn.discipline": "statsdiscipline",
+	"pawn.discipline": "Currently two methods exist for generating a pawn string. ```!pawn discipline characterName realm zone``` This calculates a pawn and NLC string (for use with crucible weights) based off of your currently equipped gear in the armory. ```!pawn discipline logs logURL``` generates a list of kills from the given log. ```!pawn discipline logs logURL fightID characterName realm zone``` This generates a pawn/NLC string based off the fight specified from the log and uses the stats from your currently equipped gear in the armory. ``` ```` Examples: ```!pawn discipline djriff sargeras us``````!pawn discipline log https://www.warcraftlogs.com/reports/tvXHDjFQdzmV3BkT#fight=9&type=summary``````!pawn discipline log https://www.warcraftlogs.com/reports/tvXHDjFQdzmV3BkT#fight=9&type=summary 4088-42 djriff sargeras us```",
+	"pawn.discipline.log": "Correct usage: ```!pawn discipline log logURL```",
+	"pawn.disc.log. : "pawn.discipline.log",
 	"pawn.discipline.raid": "pawn.discipline",
 	"pawn.discipline.dungeon": "pawn.discipline",
 	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. Check out this guide <http://bit.ly/HPriestRaidTldr> for gearing suggestions, and the spreadsheet at <http://bit.ly/HPriestSheet> if you want more detailed stat breakdowns.",

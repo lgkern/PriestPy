@@ -3,6 +3,7 @@
 import json
 import requests
 from botkey import Key
+import disc_functions.py
 
 class DictionaryReader:
     
@@ -78,30 +79,44 @@ class DictionaryReader:
             return None
         fixed = self.fixEntry(entry)
         print(fixed)
-        #if "pawn.discipline" in fixed and len(fixed.split(".")) >= 5:
-        #    fixed = fixed.split(".")[2:]
-        #    charname = fixed[0]
-        #    charrealm = "-".join(fixed[1:-1])
-        #    charzone = fixed[-1]
-        #    fixed = self.getcharstats(charname,charrealm,charzone)
-        #    fixed = self.getdiscstats(*fixed)
-        #    return fixed
-        #if "cmd" in fixed and len(fixed.split(".")) >= 4:
-        #    if len(fixed.split(".")) > 4:
-        #        food = fixed[3]  
-        #    else:
-        #        food = None
-        #    fixed = fixed.split(".")[1:]
-        #    charname = fixed[0]
-        #    charrealm = "-".join(fixed[1:2])
-        #    charzone = fixed[2]
-        #    fixed = self.getShadowCharStats(charname,charrealm,charzone)
-        #    if fixed != None:
-        #        fixed = self.getCMDratioResponse(*fixed,food)
-        #    else:
-        #        fixed = self.armoryFetchError()
-        #    
-        #    return fixed
+        if "pawn.discipline" in fixed and len(fixed.split(".")) >= 5:
+            fixed = fixed.split(".")[2:]
+            charname = fixed[0]
+            charrealm = "-".join(fixed[1:-1])
+            charzone = fixed[-1]
+            fixed = self.armoryImport(charname,charrealm,charzone)
+            fixed = self.armoryPawnAndNlcString(*fixed)
+            return fixed
+        if "pawn.discipline.log" in fixed and len(fixed.split(".")) >= 4 and len(fixed.split(".")) <= 5:
+            fixed = fixed.split(".")[3:]
+            logurl = fixed[0]
+            fixed = self.wclBossSelector(logurl)
+            return fixed
+        if "pawn.discipline.log" in fixed and len(fixed.split(".")) >= 10:
+            fixed = fixed.spliit(".")[3:]
+            logurl = fixed[0]
+            fightID = fixed[1]
+            charname = fixed[2]
+            charrealm = "-".join(fixed[3:4])
+            charzone = fixed[4]
+            fixed = self.wclPawnAndNlcString(logurl,fightID,charname,charrealm,charzone)
+            return fixed            
+        if "cmd" in fixed and len(fixed.split(".")) >= 4:
+            if len(fixed.split(".")) > 4:
+                food = fixed[3]  
+            else:
+                food = None
+            fixed = fixed.split(".")[1:]
+            charname = fixed[0]
+            charrealm = "-".join(fixed[1:2])
+            charzone = fixed[2]
+            fixed = self.getShadowCharStats(charname,charrealm,charzone)
+            if fixed != None:
+                fixed = self.getCMDratioResponse(*fixed,food)
+            else:
+                fixed = self.armoryFetchError()
+            
+            return fixed
         if fixed in self.dictionary:
             while fixed in self.dictionary:
                 fixed = self.dictionary[fixed]
