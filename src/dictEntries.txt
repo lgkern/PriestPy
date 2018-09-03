@@ -201,5 +201,6 @@
 	"bis": "bis.invalid",
 	"stats": "stats.invalid",
 	"guide": "guide.invalid",
-	"seabreeze": "**How good is Seabreeze? Is the haste proc worth the lack of secondaries?**\n\nIts not awful but its not amazing either. Mostly it doesnt change your gear prioritization. Its worth a tiny bit less than staves with BIS stats at the same ilvl."
+	"seabreeze": "**How good is Seabreeze? Is the haste proc worth the lack of secondaries?**\n\nIts not awful but its not amazing either. Mostly it doesnt change your gear prioritization. Its worth a tiny bit less than staves with BIS stats at the same ilvl.",
+	"potions": "**Which potion is better?**\nRising Death is better on single target/most raid encounters only if you can remain max ranged during the potion's duration. Otherwise you should use Battle Potion of Intellect. Eventually as we get gear Battle Potion of Intellect will completely out scale Rising Death.\nIn M+/dungeons always use battle potion of intellect."
 }
