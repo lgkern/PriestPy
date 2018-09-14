@@ -83,7 +83,7 @@
 	"hastecap": "This is the only haste cap you need for shadow priest \n http://i.imgur.com/QgYaEpl.png",
 	"cow": "http://i.imgur.com/IZnrSBG.png",
 	"19stacks": "http://i.imgur.com/6kVC367.png",
-	"laiken": "https://images.discordapp.net/attachments/118456931726786561/331532558212792330/Im-an-18stacker.gif",
+	"laiken": "https://cdn.discordapp.com/attachments/478009758201413637/489910735057453078/laiken-fire.gif",
 	"bender": "http://i.imgur.com/t8m9WyR.png",
 	"venomstar": "http://i.imgur.com/xHAk5nw.png",
 	"jate": "http://i.imgur.com/ziLnWNJ.png",
