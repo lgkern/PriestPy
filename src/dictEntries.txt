@@ -5,7 +5,7 @@
 	"authorized": "118461244784115713,165904439947952128",
 	"actionLogChannel": "230154359122427904",
 	"logReportChannel":"220534135947526154",
-	"logchannels": "general shadow discipline holy ot-shadow ot-holy ot-dank-memes-n-heckin-doggos spoilers-ptr xmog gear-questions donors-only promote-yourself pvp timeout word-podcasts toxicity-testing",
+	"logchannels": "general shadow discipline holy pvp offtopic spoilers-ptr xmog gear-questions donors-only promote-yourself pvp timeout word-podcasts toxicity-testing tasteful-memes-n-doggos",
 	"perspectiveChannels": "general shadow discipline holy spoilers-ptr xmog gear-questions donors-only promote-yourself pvp timeout word-podcasts toxicity-testing",
 	"sentcommands": "fantasy sims power shame",
 	"streamingRole": "Streaming Partner",
