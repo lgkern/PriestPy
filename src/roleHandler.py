@@ -3,12 +3,84 @@ from botkey import Key
 from discord import utils
 from discord import Embed
 from discord import Colour
+from discord import ActivityType
 from twitchHandler import TwitchHandler
 
 class RoleHandler:
+
+    async def newsSubscriptionAdd(client, emoji, user_id, guild_id):
+
+        if not emoji.is_custom_emoji():
+            return
+
+        targetRole = '{0}News'.format(emoji.name.capitalize())        
+
+        print(targetRole)
+        guild = client.get_guild(guild_id)
+        role = utils.find(lambda r: r.name == targetRole, guild.roles)
+
+        if not role:
+            return
+
+        member = guild.get_member(user_id)        
+        p = DictionaryReader()
+
+        if role not in member.roles:
+            await member.add_roles(role, reason='Subscribed to {0}'.format(targetRole))
+            await member.send(p.readEntry('newssubscriptionadd', '').format(targetRole))
+
+    async def newsSubscriptionRemove(client, emoji, user_id, guild_id):
+
+
+        if not emoji.is_custom_emoji():
+            return
+
+        targetRole = '{0}News'.format(emoji.name.capitalize())        
+
+        print(targetRole)
+        guild = client.get_guild(guild_id)
+        role = utils.find(lambda r: r.name == targetRole, guild.roles)
+
+        if not role:
+            return
+
+        member = guild.get_member(user_id) 
+        p = DictionaryReader()         
+
+        if role in member.roles:
+            await member.remove_roles(role, reason='Unsubscribed to {0}'.format(targetRole))
+            await member.send(p.readEntry('newssubscriptionremove', '').format(targetRole))
+
+    async def newsSubscription(client, message):
+        p = DictionaryReader()
+
+        if not message.guild:
+            return
+
+        targetRole = '{0}News'.format(message.content[5::].capitalize())
+
+        print(targetRole)
+
+        role = utils.find(lambda r: r.name == targetRole, message.author.guild.roles)
+
+        # Role Desired doesn't exist
+        if not role:
+            await message.author.send('Invalid subscription name. Valid subscriptions are:\n{0}'.format(p.readEntry('validsubscriptions','')))            
+        else:
+            # Doesn't have the role already
+            if role not in message.author.roles:
+                await message.author.add_roles(role, reason='Subscribed to {0}'.format(targetRole))
+                await message.author.send(p.readEntry('newssubscriptionadd', '').format(targetRole))
+
+            # Already has the role, unsubscribing
+            else:  
+                await message.author.remove_roles(role, reason='Unsubscribed to {0}'.format(targetRole))
+                await message.author.send(p.readEntry('newssubscriptionremove', '').format(targetRole))
     
     async def toggleStream(client, message):
         p = DictionaryReader()
+
+        print(message.content)
         
         target = message.mentions[0] if message.mentions else message.author
         
@@ -55,14 +127,14 @@ class RoleHandler:
         
         # Checks if the Game state changed or if the user isn't streaming
         # This or statement might be costly and subject to improvement
-        elif before.activity != after.activity or after.activity is None or after.activity.type != discord.ActivityType.streaming:
+        elif before.activity != after.activity or after.activity is None or after.activity.type != ActivityType.streaming:
             p = DictionaryReader()
-            if after.activity is None or after.activity.type != discord.ActivityType.streaming:
+            if after.activity is None or after.activity.type != ActivityType.streaming:
                 #print('stopped stream')
                 # Stopped Streaming                
                 await RoleHandler.removeStream(client, after)                
                     
-            elif after.activity.type == discord.ActivityType.streaming:
+            elif after.activity.type == ActivityType.streaming:
                 # Started Streaming
                 #print('started stream')
                 await RoleHandler.addStream(client, after)
@@ -100,7 +172,7 @@ class RoleHandler:
         if not await TwitchHandler.validateStream(member.activity.url, Key().twitchApiKey()):
             return
         
-        title, description, avatar = await TwitchHandler.fetchStreamInfo(member.activity.url, Key().twitchApiKey())
+        title, description, avatar, views, followers = await TwitchHandler.fetchStreamInfo(member.activity.url, Key().twitchApiKey())
         
         emb = Embed()
         emb.title = title
@@ -111,6 +183,8 @@ class RoleHandler:
         emb.set_footer(text='Created by PriestBot', icon_url=p.h2pIcon())
         emb.set_thumbnail(url=avatar)
         emb.set_author(name=member.name,icon_url=member.avatar_url)
+        emb.add_field(name='Views', value=views)
+        emb.add_field(name='Followers', value=followers)
                 
         if currentlyStreaming not in member.roles:
             await member.add_roles(currentlyStreaming, reason='User started streaming')            

@@ -38,7 +38,7 @@ async def on_ready():
 async def on_message(message):
     r = DictionaryReader()
 
-    if message.channel.id == int(r.perspectiveLogChannel()):
+    if message.channel.id == int(r.perspectiveLogChannelH2P()):
         await toxicity.addReactions(r, message)
 
     # we do not want the bot to reply to itself
@@ -62,15 +62,28 @@ async def on_member_join(member):
     await logAction(member, member.guild, 'joined')
 
 @client.event
-async def on_reaction_add(reaction, user):
-    if reaction.message.author == client.user:
+async def on_raw_reaction_add(payload):
+
+    if payload.user_id == client.user.id:
         return
 
     r = DictionaryReader()
 
+    print(r.readEntry('subscriptionchannel',''))
+    print(payload.emoji.name)
     #Only for reactions inside the report channel
-    if reaction.message.channel.id == int(r.perspectiveLogChannel()):
-        await toxicity.feedback(reaction, user, r)
+    if payload.channel_id == int(r.perspectiveLogChannel()):
+        await toxicity.feedback(payload.emoji, payload.user_id, r)
+
+    elif payload.channel_id == int(r.readEntry('subscriptionchannel','')):
+        await RoleHandler.newsSubscriptionAdd(client, payload.emoji, payload.user_id, payload.guild_id)
+
+@client.event
+async def on_raw_reaction_remove(payload):
+    r = DictionaryReader()
+
+    if payload.channel_id == int(r.readEntry('subscriptionchannel','')):
+        await RoleHandler.newsSubscriptionRemove(client, payload.emoji, payload.user_id, payload.guild_id)
 
 @client.event   
 async def on_member_remove(member):
@@ -100,10 +113,12 @@ async def logAction(user, guild, action):
     
             
 async def messageHandler(message):
+    p = DictionaryReader()
+
     if message.guild:
-        await client.get_channel(220534135947526154).send('{0.guild.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
+        await client.get_channel(p.logReportChannel()).send('{0.guild.name} - {0.channel.name} - {0.author} invoked {0.content}'.format(message))
     else:
-        await client.get_channel(220534135947526154).send('PM - PM - {0.author} invoked {0.content}'.format(message))
+        await client.get_channel(p.logReportChannel()).send('PM - PM - {0.author} invoked {0.content}'.format(message))
     
     if message.content.startswith(prefix+'fullupdate') or message.content.startswith(prefix+'update') or message.content.startswith(prefix+'channel'):
         await maintenanceMessages(message)
@@ -116,14 +131,16 @@ async def messageHandler(message):
     
     elif message.content.startswith(prefix+'pin') or message.content.startswith(prefix+'pins'):
         await sendPinMessages(message)
-        
-    elif message.content.startswith(prefix+'channel'):
-        await message.channel.send(str(message.channel.id))
+
+    elif message.content.startswith(prefix+'sub'):
+        await RoleHandler.newsSubscription(client, message)
+        await message.delete()
         
     elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
         
     elif message.content.startswith(prefix+'stream'):
+        print('StreamCommand')
         await RoleHandler.toggleStream(client, message)
         await message.delete()
         
@@ -141,6 +158,8 @@ async def maintenanceMessages(message):
         call(["git","pull"])
         call(["start_bot.sh"])
         sys.exit()
+    elif message.content.startswith(prefix+'channel'):
+        await message.author.send(str(message.channel.id))
 
 async def forwardMessage(message):
     p = DictionaryReader()

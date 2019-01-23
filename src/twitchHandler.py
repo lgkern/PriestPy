@@ -21,11 +21,15 @@ class TwitchHandler:
         title = None
         description = None
         avatar = None
+        views = None
+        followers = None
                 
         if channels:
             channel = channels[0]
             avatar = channel.logo
             title = channel.status
             description = channel.description
+            views = channel.views
+            followers = channel.followers
         
-        return title, description, avatar
+        return title, description, avatar, views, followers

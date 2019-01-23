@@ -32,8 +32,8 @@ class PerspectiveHandler:
 
             source = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'        
 
-            if float(score) > 0.85:
-                await client.get_channel(int(p.perspectiveLogChannel())).send('Toxic Message Warning - {0:.2g}% Toxicity - on {2} from {1.author}({1.author.id})```{1.content}```'.format(score * 100.0, message, source))
+            if float(score) > 0.90:
+                await client.get_channel(int(p.perspectiveLogChannelH2P())).send('Toxic Message Warning - {0:.2g}% Toxicity - on {2} from {1.author}({1.author.id})```{1.content}```'.format(score * 100.0, message, source))
 
     # Creates a JSON with all attributes requested
     def buildAttributes(self, attributes):
@@ -52,10 +52,10 @@ class PerspectiveHandler:
         emojiList = dictionary.perspectiveReactions()
 
         for emoji in emojiList:
-            #print(emoji)
             await message.add_reaction(emoji)
 
-    async def feedback(self, reaction, user, dictionary):
-        if reaction.emoji in dictionary.perspectiveReactions():
+    async def feedback(self, emoji, user_id, dictionary):
+        return
+        # if emoji.name in dictionary.perspectiveReactions():
             # Find out the ranking based on the emoji 
             # Report the score
