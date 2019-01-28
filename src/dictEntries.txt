@@ -105,7 +105,7 @@
 	"whispers":"https://i.imgur.com/DJ1XBbV.png",
 	"patrick":"https://i.imgur.com/Gro7x8q.jpg",
 	"patrickbalance":"https://imgur.com/a/ae3cvO3",
-	"opulence":"If you get to choose freely, follow this priority:```Shadow: Opal. Emerald is fine aswell, but is currently bugged for some.``` ```Holy/Disc: Outside of Amethyst Requirements, grab Sapphire.```",
+	"opulence":"If you get to choose freely, follow this priority:```Shadow: Opal or Emerald.``` ```Holy/Disc: Outside of Amethyst Requirements, grab Sapphire.```",
 
 	"legionfollowers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
