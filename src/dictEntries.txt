@@ -113,8 +113,7 @@
 
 	"bis.shadow": "https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
 	"bis.holy": "https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
-	"bis.discipline": "https://docs.google.com/spreadsheets/d/1m9hJO3WLCK02eQyeBdfs5OvC2or9AbaDPkabPb896j0/edit?usp=sharing",
-
+	
 	"link.patreon": "https://www.patreon.com/warcraftpriests",
 	"link.donor": "https://www.patreon.com/warcraftpriests",
 
@@ -148,7 +147,6 @@
 	"link.guide.discipline": "link.discipline.guide",
 	"link.bis.holy": "bis.holy",
 	"link.hub.holy": "link.holy.hub",
-	"link.bis.discipline": "bis.disc",
 	"link.hub.discipline": "link.discipline.hub",
 	
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
