@@ -11,9 +11,9 @@ class PerspectiveHandler:
     def __init__(self):        
         logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
         self.bodyBase = '{{comment: {{text: "{0}"}}, languages: ["en"], requestedAttributes: {{ {1} }} }}'
-        self.analyze_request = {'comment': { 'text': 'friendly greetings from python' }, 'requestedAttributes': {'TOXICITY': {}} }
+        self.analyze_request = {'comment': { 'text': 'friendly greetings from python' }, 'requestedAttributes': {'SEVERE_TOXICITY': {}} }
         self.attributesBase = '"{0}": {{}},'        
-        self.defaultAttributes = [ 'TOXICITY' ]
+        self.defaultAttributes = [ 'SEVERE_TOXICITY' ]
 
     async def measure(self, client, message):
         p = DictionaryReader()
@@ -28,7 +28,7 @@ class PerspectiveHandler:
         #print(json.dumps(response, indent=2))
 
         if response is not None:            
-            score = response['attributeScores']['TOXICITY']['summaryScore']['value']
+            score = response['attributeScores']['SEVERE_TOXICITY']['summaryScore']['value']
 
             source = message.channel.name if isinstance(message.channel, TextChannel) else 'PM'        
 
@@ -46,7 +46,7 @@ class PerspectiveHandler:
 
     def buildRequest(self, message, attributes):
 
-        return {'comment': { 'text': message }, 'requestedAttributes': {'TOXICITY': {}} }
+        return {'comment': { 'text': message }, 'requestedAttributes': {'SEVERE_TOXICITY': {}} }
 
     async def addReactions(self, dictionary, message):
         emojiList = dictionary.perspectiveReactions()
