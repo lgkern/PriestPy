@@ -112,7 +112,7 @@
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 
 	"bis.shadow": "https://howtopriest.com/viewtopic.php?f=19&t=8402#BiS",
-	"bis.holy": "https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
+	"bis.holy": "For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
 	
 	"link.patreon": "https://www.patreon.com/warcraftpriests",
 	"link.donor": "https://www.patreon.com/warcraftpriests",
@@ -139,9 +139,9 @@
 
 	"link.holy.hub": "https://warcraftpriests.com/holy/",
 	"link.discipline.hub": "https://warcraftpriests.com/discipline/",
-	"link.holy.guide": "https://warcraftpriests.com/holy/holy-priest-bfa-battle-for-azeroth-guide-introduction/",
+	"link.holy.guide": "https://warcraftpriests.com/holy/holy-priest-quickstart/",
 	"link.discipline.guide": "https://warcraftpriests.com/discipline/battle-for-azeroth-discipline-guide-bfa-8-0-1/",
-	"link.holy.trinkets": "https://docs.google.com/spreadsheets/d/1IHI02u1RJXsy4LDlMm8x_s3JjVFjeeHm3XWbyvYs-ys/edit#gid=355536425",
+	"link.holy.trinkets": "For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
 	"link.disc.trinkets": "https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.guide.holy": "link.holy.guide",
 	"link.guide.discipline": "link.discipline.guide",
@@ -163,19 +163,19 @@
 	"pawn.discipline": "statsdiscipline",
 	"pawn.discipline.raid": "pawn.discipline",
 	"pawn.discipline.dungeon": "pawn.discipline",
-	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. Check out this guide <http://bit.ly/HPriestRaidTldr> for gearing suggestions, and the spreadsheet at <http://bit.ly/HPriestSheet> if you want more detailed stat breakdowns.",
+	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
 
 	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery. More info here: <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
 	"stats.shadow.short": "stats.shadow",
 
 	"stats.discipline": "Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
-	"stats.holy": "Mastery > Crit > Haste > Versatility",
+	"stats.holy": "For how to optimise your gear, see the Stats section in #holy-faq.",
     "trinketsdiscipline":"trinkets.discipline",
 
 	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nBattle for Azeroth is similar to Legion in that all our secondary stats are close in terms of value whilst Intellect remains strong. This is magnified by the increased gain of intellect per ilvl compared to secondaries. The outcome of this is that in the majority of situations where two pieces of gear are weighted against one another the one with the higher ilvl usually wins out! So, as with previous iterations of the spec - ilvl is usually king! Common exceptions to this could be Azerite armor with uniquely strong traits or certain trinkets with strong/over budgeted effects. For more help/resourses on this matter and more check out #disc-faq!",
 	
 	"wa.shadow": "https://howtopriest.com/viewtopic.php?f=104&t=9438",
-	"wa.holy": "PoM: <http://bit.ly/HPriestPoMWA>\nCake WA: <https://wago.io/VJrWeZmvz>\nAspartaami's HPriest Procs: <http://bit.ly/HPriestWAProcs>\nOthers: <http://bit.ly/HPriestHub>",
+	"wa.holy": "For common Holy Priest Weak Auras see #holy-faq.",
 	"wa.discipline": "WIP",
 	"wa.shadow.twintop": "http://howtopriest.com/viewtopic.php?f=104&t=8339",
 	"wa.shadow.publik": "https://howtopriest.com/viewtopic.php?f=104&t=9400",
