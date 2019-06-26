@@ -107,7 +107,8 @@
 	"patrickbalance":"https://imgur.com/a/ae3cvO3",
 	"opulence":"If you get to choose freely, follow this priority:```Shadow: Opal wins on longer kill times, but Emerald will provide more DPS on short kills and P1 progress.``` ```Holy/Disc: Outside of Amethyst Requirements, grab Sapphire.```",
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
-
+	"lucid":"When should you use the Lucid Dreams Major? ```Use it at 20 stacks of VF or when you are struggling to stay above 50 insanity. Keep in mind that it uses a GCD so you should use it before you fall below 50 insanity at 20 stacks.```",
+	
 	"legionfollowers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 
@@ -146,6 +147,7 @@
 	"link.bis.holy": "bis.holy",
 	"link.hub.holy": "link.holy.hub",
 	"link.hub.discipline": "link.discipline.hub",
+	"link.shadow.trinkets": "https://warcraftpriests.github.io/index.html",
 	
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
 	"response.owl": "The **optimal** time to use Tarnished Sentinel Medallion ( :owl: ) is 14 seconds before Voidform ends. However, by doing so you may risk losing a use at the end, which makes this optimization risky.",
@@ -155,7 +157,19 @@
 	"trinkets.shadow": "link.shadow.trinkets",
 	"trinket.shadow": "link.shadow.trinkets",
 	"shadow.trinkets": "link.shadow.trinkets",
-
+	
+	"traits.shadow":"shadow.traits",
+	"trait.shadow": "shadow.traits",
+	"shadow.traits":"Traits: ```Nothing really changed, still run 3x CoI, 2x SA, 1 WotD or 3x SA, 2x CoI, 1 WotD```",
+	
+	"talents.shadow": "shadow.talents",
+	"talent.shadow":"shadow.talents",
+	"shadow.talents": "Talents: AS vs SC vs SW: D ```All three are close, AS is better on spread cleave, while crash is slightly better on pure ST. AS Isn't that far behind on ST, choose your favorite. SW: D falls a bit behind in all scenarios.```",
+	
+	"essences.shadow": "shadow.essences",
+	"essence.shadow": shadow.essences",
+	"shadow.essences": "```Lucid is strong, however until you can get it, use Worldvein on stacked fights if you raid has at least 8+ people running it, Crucible of Flame otherwise.``` ```We'll have more information on exactly where essences are at in terms of rankings once things have settled down on the balance front.```",
+	
 	"pawn.shadow": "Check more info at <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
 
 	"pawn.discipline": "statsdiscipline",
