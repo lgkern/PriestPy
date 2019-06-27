@@ -158,13 +158,13 @@
 	"trinket.shadow": "link.shadow.trinkets",
 	"shadow.trinkets": "link.shadow.trinkets",
 	
+	"shadow.traits":"Traits: ```Nothing really changed, still run 3x CoI, 2x SA, 1 WotD or 3x SA, 2x CoI, 1 WotD```",
 	"traits.shadow":"shadow.traits",
 	"trait.shadow": "shadow.traits",
-	"shadow.traits":"Traits: ```Nothing really changed, still run 3x CoI, 2x SA, 1 WotD or 3x SA, 2x CoI, 1 WotD```",
 	
+	"shadow.talents": "Talents: AS vs SC vs SW: D ```All three are close, AS is better on spread cleave, while crash is slightly better on pure ST. AS Isn't that far behind on ST, choose your favorite. SW: D falls a bit behind in all scenarios.```",
 	"talents.shadow": "shadow.talents",
 	"talent.shadow":"shadow.talents",
-	"shadow.talents": "Talents: AS vs SC vs SW: D ```All three are close, AS is better on spread cleave, while crash is slightly better on pure ST. AS Isn't that far behind on ST, choose your favorite. SW: D falls a bit behind in all scenarios.```",
 	
 	"essences.shadow": "shadow.essences",
 	"essence.shadow": shadow.essences",
