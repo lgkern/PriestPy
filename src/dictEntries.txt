@@ -107,7 +107,7 @@
 	"patrickbalance":"https://imgur.com/a/ae3cvO3",
 	"opulence":"If you get to choose freely, follow this priority:```Shadow: Opal wins on longer kill times, but Emerald will provide more DPS on short kills and P1 progress.``` ```Holy/Disc: Outside of Amethyst Requirements, grab Sapphire.```",
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
-	"lucid":"When should you use the Lucid Dreams Major? ```Use it at 20 stacks of VF or when you are struggling to stay above 50 insanity. Keep in mind that it uses a GCD so you should use it before you fall below 50 insanity at 20 stacks.```",
+	"lucid":"When should you use the Lucid Dreams Major? ```Use it at 20 stacks of VF or when you are struggling to stay above 50 insanity. Keep in mind that it uses a GCD so you should use it before you fall below 50 insanity at 20 stacks.```\nHow does the minor work? ```Everytime you gain a stack of voidform, you have a 15% chance to refund the last second worth of drain. This has an internal cooldown of 1 second (we'll never see it)```",
 	
 	"legionfollowers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
@@ -169,6 +169,14 @@
 	"essences.shadow": "shadow.essences",
 	"essence.shadow": shadow.essences",
 	"shadow.essences": "```Lucid is strong, however until you can get it, use Worldvein on stacked fights if you raid has at least 8+ people running it, Crucible of Flame otherwise.``` ```We'll have more information on exactly where essences are at in terms of rankings once things have settled down on the balance front.```",
+	
+	"enchants.shadow: "shadow.enchants",
+	"enchant.shadow": "shadow.enchants",
+	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Machinist's Brilliance\nRing - Accord of Haste```",
+	
+	"shadow.food": "The best food for shadow is a Baked Port Tato or a free feast.",
+	"shadow.flask": "The best flask for shadow is a Greater Flask of Endless Fathoms.",
+	"shadow.potion": "The best potion for shadow is the Potion of Unbridled Fury. The Potion of Focused Resolve is slightly better (~0.5%) increase on single target.",
 	
 	"pawn.shadow": "Check more info at <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
 
