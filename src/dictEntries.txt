@@ -170,7 +170,7 @@
 	"essence.shadow": "shadow.essences",
 	"shadow.essences": "```Lucid is strong, however until you can get it, use Worldvein on stacked fights if you raid has at least 8+ people running it, Crucible of Flame otherwise.``` ```We'll have more information on exactly where essences are at in terms of rankings once things have settled down on the balance front.```",
 	
-	"enchants.shadow: "shadow.enchants",
+	"enchants.shadow": "shadow.enchants",
 	"enchant.shadow": "shadow.enchants",
 	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Machinist's Brilliance\nRing - Accord of Haste```",
 	
