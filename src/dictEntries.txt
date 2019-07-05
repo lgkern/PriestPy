@@ -1,5 +1,5 @@
 {
-	"whisper": "artifact wcl cmd cmd1 list item link stats bis discord wa weakauras guide help pawn pub followers command commands response shadow trinkets trinket holy disc shadow relics timeline invalid",
+	"whisper": "artifact lucid essences wcl cmd cmd1 list item link stats bis discord wa weakauras guide help pawn pub followers command commands response shadow trinkets trinket holy disc shadow relics timeline invalid",
 	"roles": "Staff",
     "donor": "H2P Donor",
 	"authorized": "118461244784115713,165904439947952128",
