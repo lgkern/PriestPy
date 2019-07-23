@@ -123,7 +123,7 @@
 	"link.bis.shadow": "link.shadow.bis",
 	"link.hub.shadow": "link.shadow.hub",
 	"link.customizing.bar": "https://www.youtube.com/watch?v=CdJuRN_SYKU",
-	"link.shadow.faq": "https://warcraftpriests.com/shadow/",
+	"link.shadow.faq": "https://warcraftpriests.com/shadow-priest-patch-8-2-faqs/",
 
 	"relics.shadow": "link.shadow.relics",
 	"shadow.relics": "link.shadow.relics",
