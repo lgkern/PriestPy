@@ -168,7 +168,7 @@
 	
 	"essences.shadow": "shadow.essences",
 	"essence.shadow": "shadow.essences",
-	"shadow.essences": "```Lucid is strong, however until you can get it, use Worldvein on stacked fights if you raid has at least 8+ people running it, Crucible of Flame otherwise.``` ```We'll have more information on exactly where essences are at in terms of rankings once things have settled down on the balance front.```",
+	"shadow.essences": "```Lucid Dreams and Condensed Life Force are both strong majors for raiding. Lucid being stronger on longer fights, and multi target encounters, while CLF is more effective on shorter fights. Essence of the Focusing Iris is the go to major for Mythic Plus.``` ```Lucid minor should be chosen if it has not been chosen as a major. Besides that, Iris, Blood of the Enemy, Purification Protocol, and Crucible are all fine options depending on the content and type of fight.```",
 	
 	"enchants.shadow": "shadow.enchants",
 	"enchant.shadow": "shadow.enchants",
