@@ -162,7 +162,7 @@
 	"traits.shadow":"shadow.traits",
 	"trait.shadow": "shadow.traits",
 	
-	"shadow.talents": "Talents: AS vs SC vs SW: D ```All three are close, AS is better on spread cleave, while crash is slightly better on pure ST. AS Isn't that far behind on ST, choose your favorite. SW: D falls a bit behind in all scenarios.```",
+	"shadow.talents": "Talents: AS vs SC vs SW: D ```Currently, you'll find yourself running mostly AS. There are some niche situations when SC can be viable, but you're safe running AS all the time. SWD is never used.```",
 	"talents.shadow": "shadow.talents",
 	"talent.shadow":"shadow.talents",
 	
