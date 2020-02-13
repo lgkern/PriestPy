@@ -136,7 +136,7 @@ async def messageHandler(message):
         await RoleHandler.newsSubscription(client, message)
         await message.delete()
         
-    elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info') or message.content.startswith(prefix+'massban'):
+    elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
         await adminControl(message)
         
     elif message.content.startswith(prefix+'stream'):
@@ -261,8 +261,8 @@ async def adminControl(message):
         await message.author.send('You can\'t manage members!')  
         return
     else:
-        # Mass bans - Format: !massban id0 id1 id2
-        if message.content.startswith(prefix+'massban'):
+        # Mass bans - Format: !banall id0 id1 id2
+        if message.content.startswith(prefix+'banall'):
             if not message.guild.me.guild_permissions.ban_members:
                 await message.author.send('The bot does not have permissions to manage members.')
                 return
@@ -284,7 +284,7 @@ async def adminControl(message):
             await message.delete()
 
         # Bans - Format:  !ban 9999999999999
-        if message.content.startswith(prefix+'ban'):
+        elif message.content.startswith(prefix+'ban'):
             if not message.guild.me.guild_permissions.ban_members:
                 await message.author.send('The bot does not have permissions to manage members.')
                 return
@@ -302,7 +302,7 @@ async def adminControl(message):
             finally:
                 await message.delete()
         # Ban info - Format:  !info 9999999999999
-        if message.content.startswith(prefix+'info'):        
+        elif message.content.startswith(prefix+'info'):        
             if not message.guild.me.guild_permissions.view_audit_log:
                 await message.author.send('The bot does not have permissions to view audit logs.')
                 return
