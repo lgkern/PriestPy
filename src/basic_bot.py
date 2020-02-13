@@ -261,6 +261,28 @@ async def adminControl(message):
         await message.author.send('You can\'t manage members!')  
         return
     else:
+        # Mass bans - Format: !massban id0 id1 id2
+        if message.content.startswith(prefix+'massban'):
+            if not message.guild.me.guild_permissions.ban_members:
+                await message.author.send('The bot does not have permissions to manage members.')
+                return
+            ids = message.content.split(' ')[1::]
+            reason = 'mass ban'
+            bannedCount = 0
+            for id in ids:
+                try:
+                    user = await client.get_user_info(id)
+                    await message.guild.ban(user=user, reason=reason)
+                    if user != None:
+                        await message.author.send('User {0.mention} banned successfully'.format(user))
+                        bannedCount +=1
+                    else:
+                        await message.author.send('{0} is an invalid user ID'.format(string(id)))                            
+                except discord.HTTPException:
+                    pass
+            await message.author.send('Successfully banned {0} users'.format(string(bannedCount)))
+            await message.delete()
+
         # Bans - Format:  !ban 9999999999999
         if message.content.startswith(prefix+'ban'):
             if not message.guild.me.guild_permissions.ban_members:
