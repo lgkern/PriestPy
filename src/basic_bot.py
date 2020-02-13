@@ -279,7 +279,7 @@ async def adminControl(message):
                     else:
                         await message.author.send('{0} is an invalid user ID'.format(string(id)))                            
                 except discord.HTTPException:
-                    pass
+                    continue
             await message.author.send('Successfully banned {0} users'.format(string(bannedCount)))
             await message.delete()
 
