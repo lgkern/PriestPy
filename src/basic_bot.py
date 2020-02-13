@@ -136,7 +136,7 @@ async def messageHandler(message):
         await RoleHandler.newsSubscription(client, message)
         await message.delete()
         
-    elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info'):
+    elif message.content.startswith(prefix+'ban') or message.content.startswith(prefix+'info') or message.content.startswith(prefix+'massban'):
         await adminControl(message)
         
     elif message.content.startswith(prefix+'stream'):
