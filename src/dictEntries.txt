@@ -204,7 +204,7 @@
 	"discord.druid": "https://discord.gg/0dWu0WkuetF87H9H",
 	"discord.hunter": "https://discord.gg/yqer4BX",
 	"discord.mage": "https://discord.gg/0gLMHikX2aZ23VdA",
-	"discord.paladin": "https://discord.gg/0dvRDgpa5xZHFfnD",
+	"discord.paladin": "https://discordapp.com/invite/hammerofwrath",
 	"discord.priest": "https://discord.gg/warcraftpriests",
 	"discord.rogue": "https://discord.gg/0h08tydxoNhfDVZf",
 	"discord.monk": "https://discord.gg/0dkfBMAxzTkWj21F",
