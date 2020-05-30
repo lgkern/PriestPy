@@ -110,33 +110,43 @@ class RoleHandler:
     async def toggleUserState(client, before, after):
         p = DictionaryReader()
         
-        streamingRole = utils.find(lambda r: r.name == p.streamingRole(), before.guild.roles)        
-         
+        streamingRole = utils.find(lambda r: r.name == p.streamingRole(), before.guild.roles)     
+                 
         # User doesn't have the streaming role, move along
         if streamingRole not in before.roles:
             return
         
         # Left the server
         if after is None:
-            #print('left server')
             await RoleHandler.removeStream(client, before)
         # Role was removed        
         elif streamingRole in before.roles and streamingRole not in after.roles:
-            #print('role removed')
+            print('role removed')
             await RoleHandler.removeStream(client, before)
         
         # Checks if the Game state changed or if the user isn't streaming
         # This or statement might be costly and subject to improvement
         elif before.activity != after.activity or after.activity is None or after.activity.type != ActivityType.streaming:
-            p = DictionaryReader()
-            if after.activity is None or after.activity.type != ActivityType.streaming:
-                #print('stopped stream')
+            
+            # Fetches streaming activities in after and before to compare, to avoid reposting
+            beforeStream = None
+            stream = None
+            for act in after.activities:
+                if act.type == ActivityType.streaming:
+                    stream = act
+                    break
+
+            for act in before.activities:
+                if act.type == ActivityType.streaming:
+                    beforeStream = act
+                    break
+
+            if after.activity is None or not stream:
                 # Stopped Streaming                
                 await RoleHandler.removeStream(client, after)                
                     
-            elif after.activity.type == ActivityType.streaming:
+            elif stream and beforeStream != stream:
                 # Started Streaming
-                #print('started stream')
                 await RoleHandler.addStream(client, after)
         
         
@@ -164,21 +174,28 @@ class RoleHandler:
         currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), member.guild.roles)
         
         await RoleHandler.removeStream(client, member)
+
+        stream = None
+        for act in member.activities:
+            if act.type == ActivityType.streaming:
+                stream = act
                         
         if channel is None:
             print('Streaming Channel not found!')
             return
         
-        if not await TwitchHandler.validateStream(member.activity.url, Key().twitchApiKey()):
+        #if not await TwitchHandler.validateStream(stream.url, Key().twitchApiKey()):
+           # return
+        if not stream.game.startswith('World of Warcraft'):
             return
         
-        title, description, avatar, views, followers = await TwitchHandler.fetchStreamInfo(member.activity.url, Key().twitchApiKey())
+        title, description, avatar, views, followers = await TwitchHandler.fetchStreamInfo(stream.url, Key().twitchApiKey())
         
         emb = Embed()
         emb.title = title
         emb.type = 'rich'
         emb.description=description
-        emb.url = member.activity.url
+        emb.url = stream.url
         emb.colour = Colour.purple()
         emb.set_footer(text='Created by PriestBot', icon_url=p.h2pIcon())
         emb.set_thumbnail(url=avatar)

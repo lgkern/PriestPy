@@ -12,9 +12,12 @@ from priestLogger import PriestLogger
 from perspectiveHandler import PerspectiveHandler
 import logging
 import time
+import datetime
 from discord import HTTPException
 from discord import utils
 from discord import DMChannel
+from discord import Embed
+from discord import Colour
 from roleHandler import RoleHandler
 
 logging.basicConfig(level=logging.INFO)
@@ -32,13 +35,13 @@ async def on_ready():
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
-    print('------')
+    print('------')    
 
 @client.event
 async def on_message(message):
     r = DictionaryReader()
 
-    if message.channel.id == int(r.perspectiveLogChannelH2P()):
+    if message.channel.id == int(r.perspectiveLogChannelH2P()) and not message.author.bot:
         await toxicity.addReactions(r, message)
 
     # we do not want the bot to reply to itself
@@ -50,11 +53,20 @@ async def on_message(message):
         
     if isinstance(message.channel, DMChannel) or message.channel.name in r.logChannels():
         logger.log(message)
-        await toxicity.measure(client, message)    
+        #await toxicity.measure(client, message)    
         
 @client.event
 async def on_message_edit(before, after):
-    logger.logEdit(before, after)    
+    # bots edit messages to add embeds, we dont want to react to that
+    if before.author.bot:
+        return
+
+    logger.logEdit(before, after)
+    await logEdit(before, after)    
+
+@client.event
+async def on_message_delete(message):
+    await logDelete(message)
     
 @client.event
 async def on_member_join(member):
@@ -90,9 +102,10 @@ async def on_member_remove(member):
     print('member left')
     await logAction(member, member.guild, 'left')
     await RoleHandler.toggleUserState(client, member, None)
-    
+   
 @client.event
 async def on_member_ban(guild, user):
+    await logBan(guild, user)
     await logAction(user, guild, 'banned')
     
 @client.event
@@ -105,10 +118,10 @@ async def on_member_update(before, after):
     
 async def logAction(user, guild, action):
     r = DictionaryReader()
-    if guild:
-        await client.get_channel(int(r.actionLogChannel())).send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.name} {0.mention} ({0.id}) {2}'.format(user, guild, action))
-    else:
-        await client.get_channel(int(r.actionLogChannel())).send('No Server - {0.name} {0.mention} ({0.id}) {1}'.format(user, action))
+    channel = client.get_channel(int(r.actionLogChannel()))
+    if guild and channel:
+        await channel.send('['+time.strftime("%Y-%m-%d %H:%M:%S")+'] {1.name} - {0.name} {0.mention} ({0.id}) {2}'.format(user, guild, action))
+    
     #print('error while writing {0} log'.format(action))
     
             
@@ -212,6 +225,96 @@ async def sendPinMessages(message):
             await message.author.send(msg.content)
         count += 1
 
+async def logEdit(before, after):
+    r = DictionaryReader()
+
+    emb = Embed()
+    emb.title = 'Message Edited in {0.channel.name}'.format(before)
+    emb.type = 'rich'
+    emb.url = after.jump_url
+    emb.colour = Colour.blue()
+    emb.set_footer(text='UserID: {0.author.id}'.format(before), icon_url=before.author.avatar_url)
+    emb.set_author(name=before.author.name,icon_url=before.author.avatar_url)
+    emb.add_field(name='Before', value=before.content)
+    emb.add_field(name='After', value=after.content, inline=False)
+
+    logChannel = client.get_channel(int(r.moderationLogChannel()))
+    await logChannel.send(embed=emb)
+
+async def logDelete(message):
+    r = DictionaryReader()    
+    logChannel = client.get_channel(int(r.moderationLogChannel()))
+
+    if not message.guild:
+        return
+
+    deletedBy = message.author
+
+    # Checks if the bot can see the audit log
+    if message.guild.me.guild_permissions.view_audit_log:        
+        auditLogs = message.guild.audit_logs(limit=100, action=discord.AuditLogAction.message_delete)
+        logs = await auditLogs.flatten()
+        deletionLog = None
+        for log in logs:
+            if log.target.id == message.author.id:
+                deletionLog = log
+                break
+        
+        deletedBy = deletionLog.user if deletionLog else deletedBy
+
+
+    emb = Embed()
+    emb.title = 'Message Deleted in {0.channel.name}'.format(message)
+    emb.type = 'rich'
+    emb.url = message.jump_url
+    emb.colour = Colour.red()
+    emb.set_footer(text='Timestamp: '+ time.strftime("%Y-%m-%d %H:%M:%S"))
+    emb.set_author(name=message.author.name,icon_url=message.author.avatar_url)
+    emb.add_field(name='Author', value=message.author.name)
+    emb.add_field(name='Deleted by', value=deletedBy.name)
+    if not message.guild.me.guild_permissions.view_audit_log:
+        emb.add_field(name='Warning', value='Bot cant see AuditLog')    
+    emb.add_field(name='Message', value=message.content, inline=False)
+    
+    await logChannel.send(embed=emb)
+
+async def logBan(guild, user):
+    r = DictionaryReader()    
+    logChannel = client.get_channel(int(r.moderationLogChannel()))
+
+    if not guild:
+        return
+
+    bannedBy = guild.me
+    banReason = ''
+
+    # Checks if the bot can see the audit log
+    if guild.me.guild_permissions.view_audit_log:        
+        auditLogs = guild.audit_logs(limit=100, action=discord.AuditLogAction.ban)
+        logs = await auditLogs.flatten()
+        banLog = None
+        for log in logs:
+            if log.target.id == user.id:
+                banLog = log
+                break
+        
+        bannedBy = banLog.user if banLog else bannedBy
+        banReason = banLog.reason
+
+
+    emb = Embed()
+    emb.title = 'User {0.name} Banned'.format(user)
+    emb.type = 'rich'
+    emb.colour = Colour.dark_red()
+    emb.set_footer(text='Timestamp: '+ time.strftime("%Y-%m-%d %H:%M:%S"))
+    emb.set_author(name=user.name,icon_url=user.avatar_url)
+    emb.add_field(name='Banned by', value=bannedBy.name)
+    if not guild.me.guild_permissions.view_audit_log:
+        emb.add_field(name='Warning', value='Bot cant see AuditLog')    
+    emb.add_field(name='Reason', value=banReason, inline=False)
+    
+    await logChannel.send(embed=emb)
+
 async def generalMessage(message):
     p = DictionaryReader()
     try:
@@ -271,16 +374,16 @@ async def adminControl(message):
             bannedCount = 0
             for id in ids:
                 try:
-                    user = await client.get_user_info(id)
-                    await message.guild.ban(user=user, reason=reason)
+                    user = await client.fetch_user(id)
+                    await message.guild.ban(user=user, reason=reason, delete_message_days=7)
                     if user != None:
                         await message.author.send('User {0.mention} banned successfully'.format(user))
                         bannedCount +=1
                     else:
-                        await message.author.send('{0} is an invalid user ID'.format(string(id)))                            
+                        await message.author.send('{0} is an invalid user ID'.format(str(id)))                            
                 except discord.HTTPException:
                     continue
-            await message.author.send('Successfully banned {0} users'.format(string(bannedCount)))
+            await message.author.send('Successfully banned {0} users'.format(str(bannedCount)))
             await message.delete()
 
         # Bans - Format:  !ban 9999999999999
@@ -288,12 +391,20 @@ async def adminControl(message):
             if not message.guild.me.guild_permissions.ban_members:
                 await message.author.send('The bot does not have permissions to manage members.')
                 return
-            id = message.content.split(' ')[1]
-            reason = ' '.join(message.content.split(' ')[2::])
+            splitMessage = message.content.split(' ')
+            id = splitMessage[1]        
+            deleteDays = 0 
+            reasonStart = 2
+            if len(splitMessage) > 2:
+                deleteDays = splitMessage[2] if splitMessage[2].isdigit() else 0
+                reasonStart = 3 if splitMessage[2].isdigit() else 2
+
+            reason = ' '.join(splitMessage[reasonStart::])
+            print(reason)
             try:
-                user = await client.get_user_info(id)
-                await message.guild.ban(user=user, reason=reason)
+                user = await client.fetch_user(id)
                 if user != None:
+                    await message.guild.ban(user=user, reason=reason, delete_message_days=deleteDays)
                     await message.author.send('User {0.mention} banned successfully'.format(user))
                 else:
                     await message.author.send('Invalid user ID')                            
@@ -314,7 +425,7 @@ async def adminControl(message):
             except (HTTPException, Forbidden):
                 print('Error deleting message, probably from whisper')
             
-            user = await client.get_user_info(id)
+            user = await client.fetch_user(id)
             
             await message.author.send( 'User {0.mention}\n```Bans```'.format(user) )
             

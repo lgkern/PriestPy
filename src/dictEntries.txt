@@ -19,6 +19,7 @@
     "newssubscriptionadd":"You've subscribed to {0}",
     "newssubscriptionremove":"You've canceled the subscription to {0}",
     "subscriptionchannel":"473692943736242188",
+    "moderationLogChannel":"715758366940725248",
 
 	"help": "Welcome to Warcraft Priests! The Priest class Discord by https://warcraftpriests.com/\n\n I'm PriestBot, your robot friend for links and quick info! My function is to provide you with information and resources.\n\nAdditional info for specializations can be found in the pinned messages of each spec's channel.\n\nBelow you'll find my basic commands.\n\n```You can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all classes Discord channels;\n\tpawn\t\t\t Pawn strings for different specs and talents\n\tpins\t\t\t Whisper all pinned messages to you (useful for mobile users)\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```\n\nExample of a command:```!guide shadow```Gives you a link to the Shadow Priest guide",
 	"command": "help",

@@ -43,6 +43,9 @@ class DictionaryReader:
         
     def actionLogChannel(self):
         return str(self.dictionary["actionLogChannel"])
+
+    def moderationLogChannel(self):
+        return str(self.dictionary["moderationLogChannel"])
         
     def streamingBroadcastChannel(self):
         return str(self.dictionary["streamingChannels"])
