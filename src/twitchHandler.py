@@ -26,6 +26,12 @@ class TwitchHandler:
                 
         if channels:
             channel = channels[0]
+            
+            for ch in channels:
+                if ch.display_name == channelName:
+                    channel = ch
+                    break
+
             avatar = channel.logo
             title = channel.status
             description = channel.description
