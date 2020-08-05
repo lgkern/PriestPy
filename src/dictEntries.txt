@@ -119,7 +119,7 @@
 	"link.donor": "https://www.patreon.com/warcraftpriests",
 
 	"link.shadow.hub": "https://warcraftpriests.com/shadow/",	
-	"link.shadow.guide": "https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/",
+	"link.shadow.guide": "https://warcraftpriests.com/shadow/",
 	"link.guide.shadow": "link.shadow.guide",
 	"link.bis.shadow": "link.shadow.bis",
 	"link.hub.shadow": "link.shadow.hub",
@@ -139,8 +139,8 @@
 
 	"link.holy.hub": "https://warcraftpriests.com/holy/",
 	"link.discipline.hub": "https://warcraftpriests.com/discipline/",
-	"link.holy.guide": "https://warcraftpriests.com/holy/holy-priest-quickstart/",
-	"link.discipline.guide": "https://warcraftpriests.com/discipline/battle-for-azeroth-discipline-guide-bfa-8-0-1/",
+	"link.holy.guide": "https://warcraftpriests.com/holy/",
+	"link.discipline.guide": "https://warcraftpriests.com/discipline/",
 	"link.holy.trinkets": "For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
 	"link.disc.trinkets": "https://docs.google.com/spreadsheets/d/1WjkO6aen3voycXCjN1pCcFC0eDMMRxFOom8yNv0AAYs/edit?usp=sharing",
 	"link.guide.holy": "link.holy.guide",
@@ -179,14 +179,14 @@
 	"shadow.flask": "The best flask for shadow is a Greater Flask of Endless Fathoms.",
 	"shadow.potion": "The best potion for shadow is the Potion of Unbridled Fury. The Potion of Focused Resolve is slightly better (~0.5%) increase on single target.",
 	
-	"pawn.shadow": "Check more info at <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
+	"pawn.shadow": "Check more info at <https://warcraftpriests.com/shadow/>",
 
 	"pawn.discipline": "statsdiscipline",
 	"pawn.discipline.raid": "pawn.discipline",
 	"pawn.discipline.dungeon": "pawn.discipline",
 	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
 
-	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery. More info here: <https://warcraftpriests.com/shadow/shadow-priest-bfa-battle-for-azeroth-guide/>",
+	"stats.shadow": "Haste > Critical Strike > Versatility > Mastery. More info here: <https://warcraftpriests.com/shadow/>",
 	"stats.shadow.short": "stats.shadow",
 
 	"stats.discipline": "Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
