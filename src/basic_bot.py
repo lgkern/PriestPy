@@ -20,9 +20,11 @@ from discord import Embed
 from discord import Colour
 from roleHandler import RoleHandler
 
+intents = discord.Intents.all()
+
 logging.basicConfig(level=logging.INFO)
 
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 prefix = Key().prefix()
 
