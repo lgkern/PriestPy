@@ -104,6 +104,7 @@
 	"cynth":"https://i.imgur.com/0iHqiBE.png",
 	"60scycle":"https://i.imgur.com/DJ1XBbV.png",
 	"whispers":"https://i.imgur.com/DJ1XBbV.png",
+	"panda":"https://i.imgur.com/SdZoh7e.png",
 	"patrick":"https://i.imgur.com/Gro7x8q.jpg",
 	"patrickbalance":"https://imgur.com/a/ae3cvO3",
 	"opulence":"If you get to choose freely, follow this priority:```Shadow: Opal wins on longer kill times, but Emerald will provide more DPS on short kills and P1 progress.``` ```Holy/Disc: Outside of Amethyst Requirements, grab Sapphire.```",
