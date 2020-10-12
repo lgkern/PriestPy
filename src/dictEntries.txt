@@ -43,7 +43,7 @@
 	"shame": "http://i.imgur.com/FidZknJ.gif",
 	"power": "http://i.imgur.com/8Igah2t.png",
 	"decent": "Here is Twintop's best StM to date:\nhttps://puu.sh/qgWCQ/f565207eb0.jpg",
-	"racial": "Racials are extraordinarily close to one another in ~~Legion~~BFA, comprising less than a 1% difference. That being said, it may be useful to look at things like Arcane Torrent, Rocket Jump, and Darkflight. Otherwise, just go for whatever race you enjoy playing.\n\nTL;DR: \"Follow your :heart:\"\n~Hygeia 2016",
+	"racial": "Racials are extraordinarily close to one another in ~~Legion~~~~BFA~~Shadowlands, comprising less than a 1% difference. That being said, it may be useful to look at things like Arcane Torrent, Rocket Jump, and Darkflight. Otherwise, just go for whatever race you enjoy playing.\n\nTL;DR: \"Follow your :heart:\"\n~Hygeia 2016",
 	"fantasy": "http://i.imgur.com/EMSiUF3.jpg",
 	"simsOld": "stm",
 	"sims":"https://i.imgur.com/tvDzLOG.gifv",
