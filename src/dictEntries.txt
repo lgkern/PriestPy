@@ -115,7 +115,8 @@
 	"cov.shadow":"covenant.shadow",
 	"covs.shadow":"covenant.shadow",
 	"whichcovenant":"https://i.imgur.com/OXyhPkO.png",
-	
+	"masterybug":"Due to an error put into SimC Mastery was incorrectly simming for Mind Blast and Shadow Word: Death as a Shadow Priest. After the fix was put in we saw several changes including Mastery value going up and Talbadar's Stratagem becoming our BiS raid legendary.\nFor more information check out this post: <https://warcraftpriests.com/shadow-priest-mastery-calculation-update/>",
+
 	"legionfollowers": "https://www.reddit.com/r/wow/comments/65z91u/order_hall_champion_guide_for_72/",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 
