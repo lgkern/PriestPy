@@ -4,7 +4,7 @@ class TwitchHandler:
 
     async def validateStream(url, twitch_id):
         client = TwitchClient(client_id=twitch_id)
-        channelName = url.split('/')[-1:]
+        channelName = url.split('/')[-1]
         channels = client.search.channels(channelName)
         
         if channels:
