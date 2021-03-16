@@ -8,8 +8,9 @@ class TwitchHandler:
         channels = client.search.channels(channelName)
         
         if channels:
-            channel = channels[0]
-            return 'World of Warcraft' in channel.game
+            for ch in channels:
+                if ch.name.casefold() == channelName.casefold():
+                    return 'World of Warcraft' in ch.game
         
         return False
         
@@ -28,7 +29,7 @@ class TwitchHandler:
             channel = channels[0]
             
             for ch in channels:
-                if ch.display_name == channelName:
+                if ch.name.casefold() == channelName.casefold():
                     channel = ch
                     break
 
