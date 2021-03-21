@@ -171,7 +171,7 @@
 	"traits.shadow":"shadow.traits",
 	"trait.shadow": "shadow.traits",
 	
-	"shadow.talents": "Talents: AS vs SC vs SW: D ```Currently, you'll find yourself running mostly AS. There are some niche situations when SC can be viable, but you're safe running AS all the time. SWD is never used.```",
+	"shadow.talents": "Talents: <https://warcraftpriests.com/shadow/shadow-priest-guide/#Talents>",
 	"talents.shadow": "shadow.talents",
 	"talent.shadow":"shadow.talents",
 	
@@ -181,7 +181,7 @@
 	
 	"enchants.shadow": "shadow.enchants",
 	"enchant.shadow": "shadow.enchants",
-	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Machinist's Brilliance\nRing - Accord of Haste```",
+	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Sinful slightly better for Single Target, Celestial for everything else.```",
 	
 	"shadow.food": "The best food for shadow is a Baked Port Tato or a free feast.",
 	"shadow.flask": "The best flask for shadow is a Greater Flask of Endless Fathoms.",
