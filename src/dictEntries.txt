@@ -233,5 +233,6 @@
 	"seabreeze": "**How good is Seabreeze *for shadow*? Is the haste proc worth the lack of secondaries?**\n\nIts not awful but its not amazing either. Mostly it doesnt change your gear prioritization. Its worth a tiny bit less than staves with BIS stats at the same ilvl.",
 	"potions": "**Which potion is better?**\n**RAIDING**\nRising Death is better on single target/most raid encounters only if you can remain max ranged during the potion's duration. Otherwise you should use Battle Potion of Intellect.\n\n**DUNGEONS**\nIn M+/dungeons always use battle potion of intellect.",
 	"classbalance": "https://i.imgur.com/Ot3U75w",
-	"shenron": "https://i.imgur.com/wMrwlWp"
+	"shenron": "https://i.imgur.com/wMrwlWp",
+	"nopi": "**How do I sim without Power Infusion?**\n\nUnder the `Custom APL and SimC Options` on Raidbots, add the line `priest.self_power_infusion=0` and this will disable using PI on yourself!"
 }
