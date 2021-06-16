@@ -225,6 +225,7 @@
 	"discord.pally": "discord.paladin",
 	"discord.lock": "discord.warlock",
 	"discord.shammy": "discord.shaman",
+	"discord.classic":"https://discord.gg/pDQeay3JZm",
 
 	"pawn": "pawn.invalid",
 	"bis": "bis.invalid",
