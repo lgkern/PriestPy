@@ -81,7 +81,7 @@
 	"washedup": "http://i.imgur.com/aXRdjgT.png",
 	"popcorn": "http://i.imgur.com/iOzZJ3s.gifv",
 	"nobodycares": "http://gph.is/1IMXp37",
-	"hastecap": "This is the only haste cap you need for shadow priest \n http://i.imgur.com/QgYaEpl.png",
+	"hastecap": "This is the only haste cap you need for shadow priest \n https://imgur.com/a/8MV1oBT",
 	"cow": "http://i.imgur.com/IZnrSBG.png",
 	"19stacks": "http://i.imgur.com/6kVC367.png",
 	"bender": "http://i.imgur.com/t8m9WyR.png",
