@@ -121,6 +121,7 @@
 	"mindbender": "Mindbender is currently bugged when using either Glyph of the Sha or Voidling. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1035>",
 	"mindspike": "How do you use Mind Spike with Mind Flay and/or Mind Flay: Insanity? Scroll to the bottom of this page <https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>",
 	"mindsear": "Mind Sear sometimes is not castable, this is a known bug: <https://github.com/SimCMinMax/WoW-BugTracker/issues/955>",
+	"publik": "Every day I wake up, then I start to fix bugs, lonely is a Priest without bugs.\nEvery day I start out, then I cry my heart out, lonely is a Priest without bugs.\nCurrent Bug list: <https://bit.ly/3N6p5X4>",
 
 	"bis.holy": "For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
 	
