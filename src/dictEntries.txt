@@ -217,6 +217,7 @@
 	"stats.holy": "For how to optimise your gear, see the Stats section in #holy-faq.",
     "trinketsdiscipline":"trinkets.discipline",
 	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nBattle for Azeroth is similar to Legion in that all our secondary stats are close in terms of value whilst Intellect remains strong. This is magnified by the increased gain of intellect per ilvl compared to secondaries. The outcome of this is that in the majority of situations where two pieces of gear are weighted against one another the one with the higher ilvl usually wins out! So, as with previous iterations of the spec - ilvl is usually king! Common exceptions to this could be Azerite armor with uniquely strong traits or certain trinkets with strong/over budgeted effects. For more help/resourses on this matter and more check out #disc-faq!",
+  "pitarget": "**Who is the best PI target/Can I have a link to the latest PI spreadsheet?**\nNeither the Discipline nor Holy team maintain PI rankings, we leave this up to DPS players to simulate this and figure it out themselves. You are better off asking this question in a DPS discord.",
 	
 	"wa.holy": "For common Holy Priest Weak Auras see #holy-faq.",
 	"wa.discipline": "WIP",
