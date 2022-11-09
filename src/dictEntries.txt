@@ -104,7 +104,7 @@
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 	
-	"mindbender": "Mindbender is currently bugged when using either Glyph of the Sha or Voidling. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1035>",
+	"mindbender": "Mindbender is currently bugged when using either Glyph of the Sha, Voidling or Lightspawn. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1035>",
 	"mindspike": "How do you use Mind Spike with Mind Flay and/or Mind Flay: Insanity? Scroll to the bottom of this page <https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>",
 	"screams": "Screams of the Void is not working with Mental Decay only with Shadow Word: Pain: <https://github.com/SimCMinMax/WoW-BugTracker/issues/1038>.",
 	"publik": "Every day I wake up, then I start to find bugs, lonely is a Priest without bugs.\nEvery day I start out, then I cry my heart out, lonely is a Priest without bugs.\nCurrent Bug list: <https://bit.ly/3N6p5X4>",
@@ -189,6 +189,13 @@
 	
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
 	"trinity": "**Is your Atonement not applying as expected?**\n1. If you are running with warmode on and running the talent Trinity your Atonements can only be applied through PW:S\n2. Make sure your frames are correctly tracking Atonement.\n3. Trinity also gives Atonement a different spell ID which some frames dont pick up.",
+  "ve.healer": "Vampiric Embrace(and San'layn by extension) are not recommended for Holy and Discipline due to the lack of powerful single target shadow spells. The global cooldown / two talent point investment is better spent elsewhere.",
+  "pom.disc": "**When do I cast Prayer of Mending / Is it worth taking?**\nPrayer of Mending is best used either out of combat or in periods of extremely low damage, where there is no upcoming ramp. Prayer of Mending paths towards Spell Warding, and generally out competes its competitor(Holy Nova). It alone is not a high value/priority point, however it is the best path towards the left side of the tree.",
+  "solace": "**Which talent is better, Power Word: Solace or Shield Discipline?**\nWhile the mana return of both talents is comparable, the added complexity in an already busy rotation makes a passive talent like Shield Discipline easier to manage. On top of this, increased priority of Smite due to Harsh Discipline and Surge of Light hurts the viability of Solace.",
+  "shielddisc" : "solace",
+  "holy.nova.disc": "**Is Holy Nova worth talenting as Discipline?**\nIn most situations Holy Nova is not worth the talent point investment, its primary purpose is for farming legacy content.",
+  "pitarget": "**Who is the best PI target/Can I have a link to the latest PI spreadsheet?**\nAccurate PI spreadsheets do not exist due to the large number of variables required. Take any PI spreadsheets you see with a grain of salt. The best PI target is usually the best DPS in your group, or whoever your Raid Leader tells you to use it on.",
+  "heroicweek":"```md\n# Discipline Priest During Heroic Release Week\n```\n:octagonal_sign: No, the sky isn't falling.\n:octagonal_sign: No, Discipline isn't dead.\n:octagonal_sign: No, we don't need massive buffs.\n\nDiscipline Priest, for a variety of reasons, always underperforms during the first week of the tier by a significant margin. This is normal, totally expected, happens every single tier, and is nothing new.\n\n- Many guilds go into Heroic Raid with their full roster which is often >20 members. Discipline cooldowns don't scale well past 20 people compared to other healers due to the nature of how ramping/atonement works.\n- Disc is very reliant on knowledge of the bosses and damage patterns in order to perform. Many bosses either don't get tested properly or receive significant changes from its PTR version.\n- Boss timers like BigWigs or DBM aren't always accurate during the first few days of the raid release, sometimes longer.\n\nWe will be fine once we move into Mythic, have more knowledge of the encounters, and the amazing developers of the boss timer addons get a chance to update their stuff.",
 
 	"shadow.talents": "Single Target (Talbadar's Stratagem): ```BIQAu+2Vv7op3uGggQnVDr07wIItAAAAAAAAAAAAAAikoEhU0iEJlESAakEJSkABJSRahkAA```\nAoE (Shadowflame Prism): ```BIQAAAAAAAAAAAAAAAAAAAAAAgIIBAAAAAAAAAAAAAJiSESTLJJJFIBoQSkIRCEkIFpFSCA```\nMore builds here: <https://gist.github.com/seanpeters86/14da7d8430be7a9efed24104fee14046>",
 	"shadow.bugs": "Current bug list for Shadow Priests: <https://bit.ly/3N6p5X4>",
@@ -199,7 +206,7 @@
 	"enchants.shadow": "shadow.enchants",
 	"enchant.shadow": "shadow.enchants",
 	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Sinful slightly better for Single Target, Celestial for everything else.```",
-	
+
 	"shadow.food": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-gems-enchants-consumables",
 	"shadow.flask": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-gems-enchants-consumables",
 	"shadow.potion": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-gems-enchants-consumables",
@@ -216,8 +223,8 @@
 	"stats.discipline": "Raids: Int > Haste > Crit => Versatiliy = Mastery\nDungeons: Int > Haste > Crit > Versatility >>> Mastery",
 	"stats.holy": "For how to optimise your gear, see the Stats section in #holy-faq.",
     "trinketsdiscipline":"trinkets.discipline",
-	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nBattle for Azeroth is similar to Legion in that all our secondary stats are close in terms of value whilst Intellect remains strong. This is magnified by the increased gain of intellect per ilvl compared to secondaries. The outcome of this is that in the majority of situations where two pieces of gear are weighted against one another the one with the higher ilvl usually wins out! So, as with previous iterations of the spec - ilvl is usually king! Common exceptions to this could be Azerite armor with uniquely strong traits or certain trinkets with strong/over budgeted effects. For more help/resourses on this matter and more check out #disc-faq!",
-	
+	"statsdiscipline": "**How do I balance my stats as a Discipline Priest?**\nDragonflight is similar to Shadowlands in that all our secondary stats are close in terms of value whilst Intellect remains strong. This is magnified by the increased gain of intellect per ilvl compared to secondaries. The outcome of this is that in the majority of situations where two pieces of gear are weighted against one another the one with the higher ilvl usually wins out! So, as with previous iterations of the spec - ilvl is usually king! Common exceptions to this could be tier sets or certain trinkets with strong/over budgeted effects. For more help/resourses on this matter and more check out #disc-faq!",
+
 	"wa.holy": "For common Holy Priest Weak Auras see #holy-faq.",
 	"wa.discipline": "WIP",
 	
