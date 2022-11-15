@@ -101,8 +101,8 @@
 	"patrickbalance":"https://imgur.com/a/ae3cvO3",
 	"kevin":"https://pbs.twimg.com/media/EpYsRomXIAAyba5?format=jpg&name=large",
 	"minddevourer":"https://i.imgur.com/9J5p8eh.jpg",
-	"wcpeu": "https://i.imgur.com/eKLvgF6.png",
-	"wcpeu2": "https://i.imgur.com/KSVN6ns.png",
+	"wcpeu": "https://i.imgur.com/KSVN6ns.png",
+	"wcpeu2": "https://i.imgur.com/WAwCdBk.png",
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 	
