@@ -106,7 +106,7 @@
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 	
-	"mindbender": "Mindbender is currently bugged when using either Glyph of the Sha, Voidling or Lightspawn. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1035>",
+	"mindbender": "In order to apply Glyphs to Mindbender you need to first un-talent it, then apply the glyph, and then talent back into Mindbender. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1067>",
 	"mindspike": "How do you use Mind Spike with Mind Flay and/or Mind Flay: Insanity? Scroll to the bottom of this page <https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>",
 	"screams": "Screams of the Void is not working with Mental Decay only with Shadow Word: Pain: <https://github.com/SimCMinMax/WoW-BugTracker/issues/1038>.",
 	"publik": "Every day I wake up, then I start to find bugs, lonely is a Priest without bugs.\nEvery day I start out, then I cry my heart out, lonely is a Priest without bugs.\nCurrent Bug list: <https://bit.ly/3N6p5X4>",
