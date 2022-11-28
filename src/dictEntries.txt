@@ -188,7 +188,7 @@
 	"link.bis.holy": "bis.holy",
 	"link.hub.holy": "link.holy.hub",
 	"link.hub.discipline": "link.discipline.hub",
-	"link.shadow.trinkets": "https://warcraftpriests.github.io/index.html",
+	"link.shadow.trinkets": "https://warcraftpriests.github.io/?talents=yshaarj_da&sims=trinkets&fightStyle=Single",
 	
 	"response.pins": "The pinned messages answer 99% of all questions. To view them you can click the thumbtack icon on the desktop application (top right button), or if you are on mobile you click the dropdown arrow on the channel then go to pinned messages (iOS) or hit the 3 dot menu on the top left then go to pinned messages (Android). If you don't see this make sure discord is updated. http://i.imgur.com/XGc54SY.png",
 	"trinity": "**Is your Atonement not applying as expected?**\n1. If you are running with warmode on and running the talent Trinity your Atonements can only be applied through PW:S\n2. Make sure your frames are correctly tracking Atonement.\n3. Trinity also gives Atonement a different spell ID which some frames dont pick up.",
