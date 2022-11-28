@@ -103,12 +103,13 @@
 	"minddevourer":"https://i.imgur.com/9J5p8eh.jpg",
 	"wcpeu": "https://i.imgur.com/KSVN6ns.png",
 	"wcpeu2": "https://i.imgur.com/WAwCdBk.png",
+	"wtf": "https://i.imgur.com/gzupgVu.png",
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
 	"support": "**We have many ways to show your support!**\nFollow: <https://www.Twitter.com/WarcraftPriests>\nLike <https://www.Facebook.com/WarcraftPriests>\nSubscribe: <https://www.youtube.com/c/warcraftpriests>\nTwitch: <https://www.twitch.tv/warcraftpriests>\nPatreon: <https://www.patreon.com/WarcraftPriests>",
 	
 	"mindbender": "In order to apply Glyphs to Mindbender you need to first un-talent it, then apply the glyph, and then talent back into Mindbender. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1067>",
 	"mindspike": "How do you use Mind Spike with Mind Flay and/or Mind Flay: Insanity? Scroll to the bottom of this page <https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>",
-	"screams": "Screams of the Void is not working with Mental Decay only with Shadow Word: Pain: <https://github.com/SimCMinMax/WoW-BugTracker/issues/1038>.",
+	"screams": "Screams of the Void is not working with Mental Decay only with Shadow Word: Pain while channeling Mind Flay: <https://github.com/SimCMinMax/WoW-BugTracker/issues/1038>.",
 	"publik": "Every day I wake up, then I start to find bugs, lonely is a Priest without bugs.\nEvery day I start out, then I cry my heart out, lonely is a Priest without bugs.\nCurrent Bug list: <https://bit.ly/3N6p5X4>",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
@@ -199,7 +200,7 @@
   	"pitarget": "**Who is the best PI target/Can I have a link to the latest PI spreadsheet?**\nAccurate PI spreadsheets do not exist due to the large number of variables required. Take any PI spreadsheets you see with a grain of salt. The best PI target is usually the best DPS in your group, or whoever your Raid Leader tells you to use it on.",
   	"heroicweek":"```md\n# Discipline Priest During Heroic Release Week\n```\n:octagonal_sign: No, the sky isn't falling.\n:octagonal_sign: No, Discipline isn't dead.\n:octagonal_sign: No, we don't need massive buffs.\n\nDiscipline Priest, for a variety of reasons, always underperforms during the first week of the tier by a significant margin. This is normal, totally expected, happens every single tier, and is nothing new.\n\n- Many guilds go into Heroic Raid with their full roster which is often >20 members. Discipline cooldowns don't scale well past 20 people compared to other healers due to the nature of how ramping/atonement works.\n- Disc is very reliant on knowledge of the bosses and damage patterns in order to perform. Many bosses either don't get tested properly or receive significant changes from its PTR version.\n- Boss timers like BigWigs or DBM aren't always accurate during the first few days of the raid release, sometimes longer.\n\nWe will be fine once we move into Mythic, have more knowledge of the encounters, and the amazing developers of the boss timer addons get a chance to update their stuff.",
 
-	"shadow.talents": "Single Target (Talbadar's Stratagem): ```BIQAu+2Vv7op3uGggQnVDr07wIItAAAAAAAAAAAAAAikoEhU0iEJlESAakEJSkABJSRahkAA```\nAoE (Shadowflame Prism): ```BIQAAAAAAAAAAAAAAAAAAAAAAgIIBAAAAAAAAAAAAAJiSESTLJJJFIBoQSkIRCEkIFpFSCA```\nMore builds here: <https://gist.github.com/seanpeters86/14da7d8430be7a9efed24104fee14046>",
+	"shadow.talents": "Single Target: ```BIQAAAAAAAAAAAAAAAAAAAAAAIk04ABAAAAAAAAAAAAQikkSESRLJRSJhEBpRSSiECSQIFpFSCA```\nAoE: ```BIQAAAAAAAAAAAAAAAAAAAAAAgkgEAAAAAAAAAAAAAJSSKpFSjkkkU4ASEkWkEJSIIBh0kWIJAA```\nLeveling: ```BIQAAAAAAAAAAAAAAAAAAAAAAIINOQAAAAAAAAAAAAAkcgkkSahUIJJJFIRQaRSkkEJAkIlWahEAA```\nMore builds here: <https://gist.github.com/seanpeters86/fb76db04cc198dcb709727cf971f6ca0>",
 	"shadow.bugs": "Current bug list for Shadow Priests: <https://bit.ly/3N6p5X4>",
 	"trinkets.shadow": "link.shadow.trinkets",
 	"trinket.shadow": "link.shadow.trinkets",
@@ -207,7 +208,7 @@
 		
 	"enchants.shadow": "shadow.enchants",
 	"enchant.shadow": "shadow.enchants",
-	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Sinful slightly better for Single Target, Celestial for everything else.```",
+	"shadow.enchants": "What enchants do you want as shadow? ```Weapon - Sophic Devotion is your best all around choice but can also use Wafting Devotion to optimize for single target (+100 dps).\nLegs - Frozen Spellthread will be the best option to get the extra Stamina.\nChest - Waking Stats\nRing - Devotion of Haste or Mastery```",
 
 	"shadow.food": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-gems-enchants-consumables",
 	"shadow.flask": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-gems-enchants-consumables",
@@ -217,7 +218,7 @@
 	"pawn.discipline": "statsdiscipline",
 	"pawn.discipline.raid": "pawn.discipline",
 	"pawn.discipline.dungeon": "pawn.discipline",
-	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. For the best Azerite Traits, Trinkets and for how to optimise your other gear slots, see #holy-faq.",
+	"pawn.holy": "Pawn is not a very good fit for Holy Priest stat priorities. For the best Trinkets and for how to optimize your other gear slots, see #holy-faq.",
 
 	"stats.shadow": "Haste > Mastery > Critical Strike = Versatility > . More info here: <https://www.icy-veins.com/wow/shadow-priest-pve-dps-stat-priority>",
 	"stats.shadow.short": "stats.shadow",
