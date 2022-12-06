@@ -109,7 +109,7 @@
 	
 	"mindbender": "In order to apply Glyphs to Mindbender you need to first un-talent it, then apply the glyph, and then talent back into Mindbender. <https://github.com/SimCMinMax/WoW-BugTracker/issues/1067>",
 	"mindspike": "How do you use Mind Spike with Mind Flay and/or Mind Flay: Insanity? Scroll to the bottom of this page <https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>",
-	"screams": "Screams of the Void is not working with Mental Decay only with Shadow Word: Pain while channeling Mind Flay: <https://github.com/SimCMinMax/WoW-BugTracker/issues/1038>.",
+	"screams": "As of 12/6/2022 Screams of the Void is now working properly with Mental Decay, Shadow Word: Pain, and Mind Flay.",
 	"publik": "Every day I wake up, then I start to find bugs, lonely is a Priest without bugs.\nEvery day I start out, then I cry my heart out, lonely is a Priest without bugs.\nCurrent Bug list: <https://bit.ly/3N6p5X4>",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
