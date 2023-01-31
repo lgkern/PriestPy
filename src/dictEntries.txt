@@ -114,7 +114,7 @@
 	"publik": "Every day I wake up, then I start to find bugs, lonely is a Priest without bugs.\nEvery day I start out, then I cry my heart out, lonely is a Priest without bugs.\nCurrent Bug list: <https://bit.ly/3N6p5X4>",
 	"nzoth": "As of 10.0.5 Idol of N'Zoth can be used in Mythic+ builds that take advantage of Void Torrent damage through Psychic Link. It can also be good for 4-target council bosses.",
 	"mindsear": "Why should you use Mind Sear in Mythic+? <https://warcraftpriests.com/should-you-use-mind-sear-in-mythic-plus/>\nhttps://i.imgur.com/aMxmYbQ.png",
-	"mindcontrol": "Generally speaking there are not very many mobs that are worth going out of your way to Mind Control. For most keys its quite situational but can help if you want to make a pack slightly easier. Other than that there are no big examples that make things significantly easier for your group. Some examples:\n- Saboteurs in Nokhud\n- Spiteful Shades\n- Maybe Restorer mob in AA",
+	"mindcontrol": "Generally speaking there are not very many mobs that are worth going out of your way to Mind Control. For most keys its quite situational but can help if you want to make a pack slightly easier. Other than that there are no big examples that make things significantly easier for your group. Some examples:\n- Saboteurs in Nokhud\n- Spiteful Shades",
 	"fillers": "**Basic Shadow Priest Filler Guide**\n1. Mind Flay: Insanity with Idol of C'Thun\n2. Surge of Darkness procs\n3. Mind Flay: Insanity\n4. Mind Spike with Mind Melt and you don't need Mental Decay refresh\n5. Mind Flay\n For more info check: <https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
