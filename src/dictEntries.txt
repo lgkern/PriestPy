@@ -119,6 +119,7 @@
 	"cthun": "Idol of C'Thun procs Void Lasher that casts Mind Sear when facing 3 or more targets. Otherwise it will spawn a Void Tendril that casts Mind Flay. This goes off of how many targets are near your main target when you get a spawn, not how many mobs you are in combat with.",
 	"feedback": "We strongly encourage posting feedback directly to the forums. The developers do not read discord so if you want the best shot at them making changes you need to voice your feedback in a constructive and respectful way on the forums: <https://us.forums.blizzard.com/en/wow/c/classes/priest/182>",
 	"spoils": "By default in SimC Spoils of Neltharus is just synced with Power Infusion using whatever buff is currently active. It does not delay anything for Haste or Mastery buffs.",
+	"bsl": "Blue Silken Lining embellishment DOES stack although it can be buggy. If you are not seeing the tooltip of the Mastery get doubled you need to unequip those gear pieces and put them on at the same time (potentially a few times) to get the correct stats from both.",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
