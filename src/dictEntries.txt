@@ -126,7 +126,7 @@
 	"ominous": "By default Raidbots uses whatever you have set in the custom option settings when simming it. It does not take into account your current flight in-game. As a Shadow Priest you can use Azure (Mastery), Bronze (Haste), Emerald (Critical Strike), or Obsidian and still get good results to fill out the flights for your group. Can always sim it to know for sure.",
 	"oce": "ominous",
 	"entangling": "The best way to deal with Entangling is by taking Phantasm and using Fade to clear the debuff. You can take Improved Fade to easily fit this in for every set.",
-	"afflicted": "The best way to deal with Afflicted as a Priest is by using _Purify_ (Holy/Disc) or _Purify Disease_ (Shadow). _Dispel Magic_ (Shadow) or _Mass Dispel_ do **NOT** work.",
+	"afflicted": "The best way to deal with Afflicted as a Priest is by using _Improved Purify_ (Holy/Disc) or _Purify Disease_ (Shadow). _Dispel Magic_ (Shadow) or _Mass Dispel_ do **NOT** work.",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
