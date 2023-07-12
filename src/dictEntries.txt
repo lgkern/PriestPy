@@ -68,6 +68,7 @@
 	"sephuz": "http://i.imgur.com/LWOwe3a.png",
 	"surprise": "http://i.imgur.com/iFRG0ls.png",
 	"degenerate": "http://i.imgur.com/1dpehik.png",
+	"degenerateDF": "https://i.imgur.com/CPqY0SA.png",
 	"lof": "http://i.imgur.com/uM2Bs1Z.png",
 	"ellipsis": "http://i.imgur.com/JPYbQT2.png",
 	"fawn": "http://i.imgur.com/qJ9eNYA.png",
