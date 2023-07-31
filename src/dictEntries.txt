@@ -129,7 +129,7 @@
 	"oce": "ominous",
 	"entangling": "The best way to deal with Entangling is by taking Phantasm and using Fade to clear the debuff. You can take Improved Fade to easily fit this in for every set.",
 	"afflicted": "The best way to deal with Afflicted as a Priest is by using _Improved Purify_ (Holy/Disc) or _Purify Disease_ (Shadow). _Dispel Magic_ (Shadow) or _Mass Dispel_ do **NOT** work.",
-	"mass": "Mass Dispel has many uses in Season 2 Mythic+ dungeons. Almost every dungeon has something where this can help with, check out the guide for the **full list** of things that can be dispelled: <https://www.icy-veins.com/wow/shadow-priest-pve-dps-mythic-plus-tips>.",
+	"mass": "Mass Dispel has many uses in Season 2 Mythic+ dungeons. Almost every dungeon has something where this can help with, check out the guide for the **full list** of things that can be dispelled: <https://www.icy-veins.com/wow/shadow-priest-pve-dps-mythic-plus-tips#mass>.",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
