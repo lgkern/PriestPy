@@ -104,7 +104,7 @@
 	"minddevourer":"https://i.imgur.com/9J5p8eh.jpg",
 	"wcpeu": "https://i.imgur.com/KSVN6ns.png",
 	"wcpeu2": "https://i.imgur.com/WAwCdBk.png",
-    "wcpeudf": https://i.imgur.com/MKjlqUX.jpeg",
+        "wcpeudf": "https://i.imgur.com/MKjlqUX.jpeg",
 	"wtf": "https://i.imgur.com/gzupgVu.png",
 	"cat": "https://i.imgur.com/fx3soru.png",
 	"zandalari":"What Loa should you pick?```Shadow: Pa'ku``` ```Holy: They are quite close in value, with Pa'ku pulling slightly ahead at higher HPS``` ```Discipline: We recommend Pa'ku, these racials follow the same rules as all others and do not contribute towards Atonement.```",
