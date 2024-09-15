@@ -122,6 +122,7 @@
 	"mass": "Mass Dispel has several uses in Season 1 Mythic+ dungeons. Almost every dungeon has something where this can help with, check out the guide for the **full list** of things that can be dispelled: <https://www.icy-veins.com/wow/shadow-priest-pve-dps-mythic-plus-tips#dungeon-tips-and-tricks-for-shadow-priest-in-the-war-within>.",
 	"logreview": "Check out the [log review](<https://gist.github.com/seanpeters86/0079136f148c49aae7bcb807c72ccb9d>) guide for Shadow Priests. Learning how to analyze your own logs is crucial to improving as a player.",
 	"spymasters": "The best way to use [Spymaster's Web](<https://www.wowhead.com/item=220202/spymasters-web>) as a Shadow Priest is in the opener with Bloodlust, otherwise save for execute with full cds and full stacks of the trinket. Can use otherwise at full stacks with full cds if you still get the execute cast.",
+	"dp": "Devouring Plague rolls over damage when you cast it while it is already active. The duration itself adds time until the next tick onto the base duration of the DoT when refreshing. So if you have 200ms until your next tick of Devouring Plague the refreshed duration will be Base Duration + 200ms. The 2-piece tier set in Season 1 adds 1 second to this base duration.",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
