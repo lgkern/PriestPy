@@ -124,7 +124,7 @@
 	"spymasters": "The best way to use [Spymaster's Web](<https://www.wowhead.com/item=220202/spymasters-web>) as a Shadow Priest is in the opener with Bloodlust, otherwise save for execute with full cds and full stacks of the trinket. Can use otherwise at full stacks with full cds if you still get the execute cast.\n\nThis is about 3% better overall damage than just sending it with each cast of Power Infusion.",
 	"dp": "Devouring Plague rolls over damage when you cast it while it is already active. The duration itself adds time until the next tick onto the base duration of the DoT when refreshing. So if you have 200ms until your next tick of Devouring Plague the refreshed duration will be Base Duration + 200ms. The 2-piece tier set in Season 1 adds 1 second to this base duration.",
 	"fateweaver": "Fate Weaver is a rare off-hand that can drop from Open World content, including Delves. This creates Fateweaved Needle which is a proc-effect 1-handed weapon. If you get lucky and get this to drop after using a Map or inside your Vault at Hero track this can be very powerful and can even beat Myth track 1-handed options. More info can be found in the [Wowhead Post](<https://www.wowhead.com/news/how-to-obtain-fateweaved-weapons-likely-best-in-slot-caster-weapons-for-tww-346717>).",
-	"fateweaved": "fatewaver",
+	"fateweaved": "fateweaver",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
