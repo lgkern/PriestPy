@@ -128,7 +128,6 @@
 	"fateweave": "fateweaver"
 	"changeling": "Shadow Priest prefers to run Unbound Changeling with Mastery (Single Target) or Haste (AoE). The All proc is generally not better for us. For help simming this trinket use [this guide](<https://gist.github.com/seanpeters86/5d78a096c710a502fa36a7d9b869b23d>).",
 	"tww1": "As a Shadow Priest we do not play around our tier set whatsoever for TWW Season 1. The buff is completely passive and does not change how you play. Despite this if you would like to track it you can use [this WeakAura](<https://wago.io/spPtKhvz_>). It is also included in [Publiks Set](<https://wago.io/HkQsadDaf>) but disabled by default.",
-	"shadowtier": "tww1",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
