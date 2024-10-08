@@ -130,6 +130,8 @@
 	"changeling": "Shadow Priest prefers to run Unbound Changeling with Mastery (Single Target) or Haste (AoE). The All proc is generally not better for us. For help simming this trinket use [this guide](<https://gist.github.com/seanpeters86/5d78a096c710a502fa36a7d9b869b23d>).",
 	"tww1": "As a Shadow Priest we do not play around our tier set whatsoever for TWW Season 1. The buff is completely passive and does not change how you play. Despite this if you would like to track it you can use [this WeakAura](<https://wago.io/spPtKhvz_>). It is also included in [Publik's Set](<https://wago.io/HkQsadDaf>) but disabled by default.",
 	"shadowtier": "tww1",
+	"unfurling": "The best way to use Unfurling Darkness is by prioritizing it above Mind Blast when off cooldown as long as Dark Ascension is not active or you have nothing else besides base fillers of Mind Spike or Mind Flay available. You will not end up strictly speaking using it on cooldown but will be used throughout the rotation. Once you proc it you will generally cast Vampiric Touch again to consume it right after.\n\nTo check if it is available to press you simply need to see if you have the debuff active or not.\n\nYou can use [this WeakAura](<https://wago.io/VZNUnVvO0>) to help track Vampiric Touch and Unfurling Darkness. For more rotational tips check out the [guide](<https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>).",
+	"ufd": "unfurling",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
