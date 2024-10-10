@@ -185,6 +185,7 @@
 	"link.hub.shadow": "link.shadow.hub",
 	"link.customizing.bar": "https://www.youtube.com/watch?v=CdJuRN_SYKU",
 	"link.shadow.faq": "Shadow Priest FAQ: https://www.icy-veins.com/wow/shadow-priest-pve-dps-faq",
+	"link.shadow.wa": "## Shadow Priest\n- [Publik's WeakAuras](<https://wago.io/HkQsadDaf>)\n- [Jaerv's UI](<https://pastebin.com/u/jaerv>)\n- [Surge of Insanity extra HUD stacks](<https://wago.io/DNGkeaLy5>)\n- [Unfurling Darkness](<https://wago.io/VZNUnVvO0>)\n- [Pooling Mind Blasts](<https://wago.io/KyDoZneJU>)\n- Mob VT counter [Basic](<https://wago.io/648-HcoQM>) and [Advanced](<https://wago.io/F10ZtLaxA>)\n- [Plater Script for Vampiric Touch Color Changer](<https://wago.io/OTpN9X9Cc>)",
 
 	"relics.shadow": "link.shadow.relics",
 	"shadow.relics": "link.shadow.relics",
