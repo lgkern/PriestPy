@@ -140,6 +140,8 @@
 	"cyrcescirclet": "cyrce",
 	"onyx": "cyrce",
 	"annulet": "cyrce",
+	"circlet": "cyrce",
+	"ring": "cyrce",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
