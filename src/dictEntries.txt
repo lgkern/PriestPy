@@ -21,7 +21,7 @@
     "subscriptionchannel":"473692943736242188",
     "moderationLogChannel":"715758366940725248",
 
-	"help": "Welcome to Warcraft Priests! The Priest class Discord by https://warcraftpriests.com/\n\n I'm PriestBot, your robot friend for links and quick info! My function is to provide you with information and resources.\n\nAdditional info for specializations can be found in the pinned messages of each spec's channel.\n\nBelow you'll find my basic commands.\n\n```You can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all classes Discord channels;\n\tpawn\t\t\t Pawn strings for different specs and talents\n\tpins\t\t\t Whisper all pinned messages to you (useful for mobile users)\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```\n\nExample of a command:```!guide shadow```Gives you a link to the Shadow Priest guide",
+	"help": "Welcome to Warcraft Priests! The Priest class Discord\n\n I'm PriestBot, your robot friend for links and quick info! My function is to provide you with information and resources.\n\nAdditional info for specializations can be found in the pinned messages of each spec's channel.\n\nBelow you'll find my basic commands.\n\n```You can find my full list of commands at https://github.com/lgkern/PriestPy/blob/master/src/dictEntries.txt\n\nBasic command structure\n\t ![prefix ]<command> [subcommand] [specialization] [subtype]\n\nList of commands:\n\tstats\t\t\tStat weights for a given specialization;\n\tbis\t\t\t  Best in Slot lists for a given specialization;\n\tdiscord\t\t  Links to all classes Discord channels;\n\tpawn\t\t\t Pawn strings for different specs and talents\n\tpins\t\t\t Whisper all pinned messages to you (useful for mobile users)\n\nList of specializations:\n\tDiscipline\n\tHoly\n\tShadow```\n\nExample of a command:```!guide shadow```Gives you a link to the Shadow Priest guide",
 	"command": "help",
 	"commands": "help",
 
@@ -188,8 +188,8 @@
 	"link.patreon": "https://www.patreon.com/warcraftpriests",
 	"link.donor": "https://www.patreon.com/warcraftpriests",
 
-	"link.shadow.hub": "https://warcraftpriests.com/shadow/",	
-	"link.shadow.guide": "https://warcraftpriests.com/shadow/",
+	"link.shadow.hub": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",	
+	"link.shadow.guide": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.guide.shadow": "link.shadow.guide",
 	"link.bis.shadow": "link.shadow.bis",
 	"link.hub.shadow": "link.shadow.hub",
@@ -209,10 +209,10 @@
 	"wcl.shadow": "link.shadow.logs",
 
 	"bis.holy": "Check this page out: https://www.icy-veins.com/wow/holy-priest-pve-healing-gear-best-in-slot or see #holy-faq.",
-	"link.holy.hub": "https://warcraftpriests.com/holy/",
-	"link.discipline.hub": "https://warcraftpriests.com/discipline/",
-	"link.holy.guide": "https://warcraftpriests.com/holy/",
-	"link.discipline.guide": "https://warcraftpriests.com/discipline/",
+	"link.holy.hub": "https://www.icy-veins.com/wow/holy-priest-pve-healing-guide",
+	"link.discipline.hub": "https://www.icy-veins.com/wow/discipline-priest-pve-healing-guide",
+	"link.holy.guide": "https://www.icy-veins.com/wow/holy-priest-pve-healing-guide",
+	"link.discipline.guide": "https://www.icy-veins.com/wow/discipline-priest-pve-healing-guide",
 	"link.holy.trinkets": "Check this page out: https://www.icy-veins.com/wow/shadow-priest-pve-dps-gear-best-in-slot or see #holy-faq.",
 	"link.disc.trinkets": "Check this page out: https://www.icy-veins.com/wow/discipline-priest-pve-healing-gear-best-in-slot",
 	"link.guide.holy": "link.holy.guide",
