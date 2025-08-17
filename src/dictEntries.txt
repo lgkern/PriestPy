@@ -128,6 +128,8 @@
 	"devour": "As a Priest you can use Purify (Holy/Discipline), Purify Disease (Shadow), and Mass Dispel to help dispel the Xal'atath's Bargain: Devour Affix. You might need to adjust your frames to track the debuff properly, the ID is `440313`.",
 	"voit": "As an Archon Shadow Priest it is appropriate to cancel Void Torrent channel after 1 GCD if you have Devouring Plague, Void Bolt, or any cooldown available to press. We do this just to proc Idol of C'Thun and get Void Volley. More info in the [rotation guide](<https://www.icy-veins.com/wow/shadow-priest-pve-dps-rotation-cooldowns-abilities>).",
 	"whydoiexistifonlytosuffer": "voit",
+	"voidform": "In Season 3 you should aim for 80-90s Voidforms once you get the new 4-piece set bonus. See this [blog post](<https://warcraftpriests.github.io/bookofshadows/blog/season-3-voidform-duration>) for more details.",
+	"vf": "voidform",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
