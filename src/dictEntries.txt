@@ -130,7 +130,7 @@
 	"whydoiexistifonlytosuffer": "voit",
 	"voidform": "In Season 3 you should aim for 80-90s Voidforms once you get the new 4-piece set bonus. See this [blog post](<https://warcraftpriests.github.io/bookofshadows/blog/season-3-voidform-duration>) for more details.",
 	"vf": "voidform",
-	"classtree": "Class tree gates changed. You need to put 3 more points towards the top of the class tree to progress down it, so old import strings (probably) do not work. #⁠shadow-faq has updated import strings. You get those 3 lower tree points back as you level to 90.",
+	"classtree": "Class tree gates changed. You need to put 3 more points towards the top of the class tree to progress down it, so old import strings (probably) do not work. https://discord.com/channels/118456785047781384/1163625930120515584 has updated import strings. You get those 3 lower tree points back as you level to 90.",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
