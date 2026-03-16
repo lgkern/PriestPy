@@ -135,7 +135,7 @@
 	"slam": "Tentacle Slam and Maddening Tentacles is working as expected, the tooltip is very misleading. When you cast SWM into a Tentacle slam the tooltip will show ticking damage going down. This is because you are refreshing the SWM debuff with a full duration, but only at an extra 25% strength. So you are adding 25% damage over a longer duration, so average ticks goes down but still you get the increase in damage.",
 	"tentacleslam": "slam",
 	"swm": "slam",
-	"tuning": "https://cdn.discordapp.com/attachments/1202289538932678688/1482893814376173618/X2Twitter.com_IGDTiVp5ylooUGVb_360p-ezgif.com-optimize.gif?ex=69b89bfc&is=69b74a7c&hm=6a459085ff151519f9721c79dc3941ac54d87bd472ecfba1830b694471133551&",
+	"tuning": "<https://youtu.be/C6Q_8i1VWk4> https://cdn.discordapp.com/attachments/1202289538932678688/1482893814376173618/X2Twitter.com_IGDTiVp5ylooUGVb_360p-ezgif.com-optimize.gif?ex=69b89bfc&is=69b74a7c&hm=6a459085ff151519f9721c79dc3941ac54d87bd472ecfba1830b694471133551&",
 
 	"link.iv.shadow": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-guide",
 	"link.iv.shadow.talents": "https://www.icy-veins.com/wow/shadow-priest-pve-dps-spec-builds-talents",
