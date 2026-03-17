@@ -232,7 +232,7 @@
 	"trinkets.shadow": "link.shadow.trinkets",
 	"trinket.shadow": "link.shadow.trinkets",
 	"shadow.trinkets": "link.shadow.trinkets",
-	"shadow.crafted": "**Shadow Priest Crafting Suggestions**\nWhen crafting items you want to prioritize getting embellished gear pieces. After that you can focus on crafting pieces with the biggest ilevel increase.\n\nFor more information check out the [IcyVeins Guide](<https://www.icy-veins.com/wow/shadow-priest-pve-dps-gear-best-in-slot#crafted-profession-gear>).",
+	"shadow.crafted": "**Shadow Priest Crafting Suggestions**\nThe most optimal advice is to hold off on crafting anything until you need the power spike. It is very likely that you will be crafting a Staff with the Darkmoon Hunt embellishment, with one exception.\nIf you do not need to craft a weapon this week or next week, and you loot a Myth track staff from your first M+ vault then you can forego crafting a weapon entirely and craft two peices of either the sunfire or arcanoweave set. The reason for this is that hero track and myth track overlap slightly, so you can upgrade a hero staff to 6/6 and then freely upgrade your myth one to 2/6. Effectively allowing you to convert 20 hero crests into 20 myth crests.\n\nThis is an incredibly small long terms optimisation, so do not hesitate to craft if you or your guild are in need of the power.",
 
 	"enchants.shadow": "shadow.enchants",
 	"enchant.shadow": "shadow.enchants",
