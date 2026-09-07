@@ -1,8 +1,11 @@
-from twitch import TwitchClient
-
 class TwitchHandler:
 
+    # The twitch package is discontinued and may stop installing. It is imported
+    # inside each method so that importing this module never fails on its own.
+
     async def validateStream(url, twitch_id):
+        from twitch import TwitchClient
+
         client = TwitchClient(client_id=twitch_id)
         channelName = url.split('/')[-1]
         channels = client.search.channels(channelName)
@@ -15,6 +18,8 @@ class TwitchHandler:
         return False
         
     async def fetchStreamInfo(url, twitch_id):
+        from twitch import TwitchClient
+
         client = TwitchClient(client_id=twitch_id)
         channelName = url.split('/')[-1]
         channels = client.search.channels(channelName)

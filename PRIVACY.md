@@ -22,7 +22,8 @@ monetized, and it is not operated by or affiliated with Discord Inc. or
 Blizzard Entertainment.
 
 Contact for privacy questions: **a direct message to any member of the Warcraft
-Priests server holding the Admin role.**
+Priests server holding the Admin role**, or, if you are no longer able to reach the
+server, by email to **lucasgilbertokern@gmail.com**.
 
 ---
 
@@ -75,17 +76,24 @@ The bot records the following to a private staff audit channel:
 
 ### 2.6 Presence and activity data
 
-The bot reads the Discord presence (online status and current activity) of members who
-hold the opt-in "Streaming Partner" role, in order to announce when they go live on
-Twitch playing World of Warcraft and to grant a temporary "Currently Streaming" role.
+**The bot does not process presence or activity data at this time.** It does not
+request the Discord Presence intent, and the code path that would read member activity
+is disabled, pending replacement of a discontinued third-party library.
 
-Presence data is evaluated in memory and is **not** stored or written to any log. The
-presence of members who do not hold the Streaming Partner role is ignored entirely.
+The description below applies only if and when that feature is restored:
 
-> **Status note:** this feature is currently inactive pending replacement of a
-> discontinued third-party library. The bot does not request the Discord Presence
-> intent and the code path is disabled, so no presence data is being processed at
-> this time.
+- the bot would read the Discord presence (online status and current activity) of
+  members who hold the opt-in "Streaming Partner" role, in order to announce when they
+  go live on Twitch playing World of Warcraft and to grant a temporary "Currently
+  Streaming" role
+- presence data would be evaluated in memory and would **not** be stored or written to
+  any log
+- the presence of members who do not hold the Streaming Partner role would be ignored
+  entirely
+
+The Presence intent is not part of the bot's current privileged intent request. It
+would be requested separately, and this policy will be updated before the feature is
+re-enabled.
 
 ---
 
@@ -112,7 +120,7 @@ category data.
 | Message content, edits and deletions | Moderation evidence, rule enforcement, and review of ban appeals |
 | Command usage | Detecting abuse and troubleshooting bot behaviour |
 | Member events | Maintaining a moderation history and identifying ban evasion or raid patterns |
-| Presence of Streaming Partner role holders | Announcing community members who are live on Twitch |
+| Presence of Streaming Partner role holders (inactive, see 2.6) | Announcing community members who are live on Twitch |
 
 No data is collected for any purpose other than operating and moderating the server.
 
@@ -132,14 +140,22 @@ outside the server's staff, has access.
 
 ## 6. Retention
 
-| Data | Retention period |
-|------|------------------|
-| Message content, edits and deletions | 365 days (one year) |
-| Command usage records | 365 days (one year) |
-| Member join, leave, ban and unban records | 365 days (one year) |
-| Presence data | Not retained |
+| Data | Storage | Retention |
+|------|---------|-----------|
+| Message content and edits (server log files) | Private server | 365 days, deleted automatically by log rotation |
+| Moderation records in staff-only Discord channels (edits, deletions, bans) | Discord | Retained until manually removed by administrators |
+| Member join, leave, ban and unban records | Discord | Retained until manually removed by administrators |
+| Command usage records | Discord | Retained until manually removed by administrators |
+| Presence data | Not stored | Not retained |
 
-Log files older than the retention period are deleted automatically by log rotation.
+Two separate stores are involved, and they expire differently. Log files on the private
+server rotate daily and are deleted automatically once they are 365 days old. Records
+that the bot posts into the staff-only Discord channels are not covered by that
+rotation. Discord does not expire channel history, so those records remain until an
+administrator deletes them by hand.
+
+Deleted message content is recorded only in the staff moderation channel and never in
+the rotating log files, so it falls under the second row.
 
 ---
 
@@ -166,6 +182,10 @@ the Admin role**, to:
 - ask what data the bot holds about you
 - request a copy of that data
 - request deletion of your data
+
+If you have left the server or have been banned you cannot send that direct message.
+Email **lucasgilbertokern@gmail.com** instead. The same rights apply and requests by
+email are handled the same way.
 
 Requests are normally answered within 30 days. Note that data forming part of an
 active moderation record, an ongoing investigation, or an existing ban may be retained

@@ -4,7 +4,6 @@ from discord import utils
 from discord import Embed
 from discord import Colour
 from discord import ActivityType
-from twitchHandler import TwitchHandler
 
 class RoleHandler:
 
@@ -183,6 +182,12 @@ class RoleHandler:
                 await message.delete()
     
     async def addStream(client, member):
+        # Imported here instead of at module level. twitchHandler pulls in the
+        # discontinued twitch package, and the bot has to keep booting if that
+        # package stops installing. Nothing reaches this call while
+        # PRESENCE_INTENT_ENABLED is False.
+        from twitchHandler import TwitchHandler
+
         p = DictionaryReader()
         channel = client.get_channel(int(p.streamingBroadcastChannel()))
         currentlyStreaming = utils.find(lambda r: r.name == p.currentlyStreamingRole(), member.guild.roles)
