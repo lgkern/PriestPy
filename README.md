@@ -11,7 +11,6 @@ PriestBot is a Discord bot based on the Discord API wrapper discord.py.
       debian based systems by doing `sudo apt-get install libffi-dev`.
 - `twitch` library
 - `sqlite3` library
-- `googleapiclient`library
 
 Usually `pip` will handle these for you.
 

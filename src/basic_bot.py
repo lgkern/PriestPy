@@ -9,7 +9,6 @@ from botkey import Key
 from subprocess import call
 import sys
 from priestLogger import PriestLogger
-from perspectiveHandler import PerspectiveHandler
 import logging
 import time
 import datetime
@@ -20,7 +19,15 @@ from discord import Embed
 from discord import Colour
 from roleHandler import RoleHandler
 
-intents = discord.Intents.all()
+# Only the intents the bot actually uses. discord.py 1.x has no message_content
+# flag - message content is governed by the Developer Portal toggle alone.
+intents = discord.Intents.none()
+intents.guilds = True           # get_channel / get_guild / channel cache
+intents.members = True          # PRIVILEGED: join, leave, member update, get_member
+intents.bans = True             # on_member_ban / on_member_unban
+intents.messages = True         # on_message, on_message_edit, on_message_delete
+intents.reactions = True        # on_raw_reaction_add / remove for subscription roles
+intents.presences = False       # PRIVILEGED: not requested, streaming feature is inactive
 
 logging.basicConfig(level=logging.INFO)
 
@@ -29,8 +36,6 @@ client = discord.Client(intents=intents)
 prefix = Key().prefix()
 
 logger = PriestLogger()
-
-toxicity = PerspectiveHandler()
 
 @client.event
 async def on_ready():
@@ -43,9 +48,6 @@ async def on_ready():
 async def on_message(message):
     r = DictionaryReader()
 
-    if message.channel.id == int(r.perspectiveLogChannelH2P()) and not message.author.bot:
-        await toxicity.addReactions(r, message)
-
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
@@ -55,8 +57,7 @@ async def on_message(message):
         
     if isinstance(message.channel, DMChannel) or message.channel.name in r.logChannels():
         logger.log(message)
-        #await toxicity.measure(client, message)    
-        
+
 @client.event
 async def on_message_edit(before, after):
     # bots edit messages to add embeds, we dont want to react to that
@@ -85,11 +86,7 @@ async def on_raw_reaction_add(payload):
 
     print(r.readEntry('subscriptionchannel',''))
     print(payload.emoji.name)
-    #Only for reactions inside the report channel
-    if payload.channel_id == int(r.perspectiveLogChannel()):
-        await toxicity.feedback(payload.emoji, payload.user_id, r)
-
-    elif payload.channel_id == int(r.readEntry('subscriptionchannel','')):
+    if payload.channel_id == int(r.readEntry('subscriptionchannel','')):
         await RoleHandler.newsSubscriptionAdd(client, payload.emoji, payload.user_id, payload.guild_id)
 
 @client.event

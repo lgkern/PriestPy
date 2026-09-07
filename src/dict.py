@@ -38,9 +38,6 @@ class DictionaryReader:
     def sentCommands(self):
         return self.dictionary["sentcommands"]
 
-    def perspectiveChannels(self):
-        return self.dictionary["perspectiveChannels"]
-        
     def actionLogChannel(self):
         return str(self.dictionary["actionLogChannel"])
 
@@ -50,18 +47,9 @@ class DictionaryReader:
     def streamingBroadcastChannel(self):
         return str(self.dictionary["streamingChannels"])
 
-    def perspectiveLogChannel(self):        
-        return str(self.dictionary["perspectiveLogChannel"])
-
-    def perspectiveLogChannelH2P(self):
-        return str(self.dictionary["perspectiveLogChannelH2P"])
-
     def logReportChannel(self):
         return int(self.dictionary["logReportChannel"])
 
-    def perspectiveReactions(self):
-        return self.dictionary["perspectiveReactions"]
-        
     def h2pIcon(self):
         return str(self.dictionary["h2pIcon"])
         
