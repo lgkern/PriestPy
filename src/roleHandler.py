@@ -8,6 +8,13 @@ from twitchHandler import TwitchHandler
 
 class RoleHandler:
 
+    # The stream announcements read member activities, which need the Presences
+    # intent. Presences is not requested at the moment because the Twitch
+    # integration is inactive pending replacement of the discontinued twitch
+    # library. Set this back to True once the Presence intent is approved and
+    # the feature is rebuilt. See also the intent flags in basic_bot.py.
+    PRESENCE_INTENT_ENABLED = False
+
     async def newsSubscriptionAdd(client, emoji, user_id, guild_id):
 
         if not emoji.is_custom_emoji():
@@ -108,8 +115,15 @@ class RoleHandler:
                 await target.remove_roles(role, reason='Role removed by {0.name}'.format(message.author))
 
     async def toggleUserState(client, before, after):
+
+        # Without the Presences intent activity and activities are always empty,
+        # so every member update would look like the user stopped streaming and
+        # would clear roles and delete announcements. Stay inert instead.
+        if not RoleHandler.PRESENCE_INTENT_ENABLED:
+            return
+
         p = DictionaryReader()
-        
+
         streamingRole = utils.find(lambda r: r.name == p.streamingRole(), before.guild.roles)     
                  
         # User doesn't have the streaming role, move along
