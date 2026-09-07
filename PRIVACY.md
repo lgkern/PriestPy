@@ -129,7 +129,7 @@ No data is collected for any purpose other than operating and moderating the ser
 ## 5. Where data is stored and who can access it
 
 - **Log files** are written to disk on a private server controlled by the bot
-  maintainer. They are not exposed to the public internet.
+  maintainer and encrypted at rest. They are not exposed to the public internet.
 - **Staff log channels** inside Discord are restricted to members holding an
   administrator or moderator role.
 
