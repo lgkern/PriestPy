@@ -11,7 +11,8 @@ from os import path
 class PriestLogger:
 
     def __init__(self):
-        self.logHandler = TimedRotatingFileHandler('logs\\WarcraftPriests',when='midnight',backupCount=10000)
+        # backupCount is the retention period in days stated in PRIVACY.md
+        self.logHandler = TimedRotatingFileHandler(path.join('logs','WarcraftPriests'),when='midnight',backupCount=365)
         self.logFormatter = logging.Formatter('%(asctime)s - %(message)s')
         self.logHandler.setFormatter( self.logFormatter )
         self.logger = logging.getLogger( 'H2PLogger' )
